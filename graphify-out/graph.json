@@ -1746,7 +1746,7 @@
       "file_type": "code",
       "norm_label": "mesaserenaad01()",
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L563"
+      "source_location": "L609"
     },
     {
       "id": "videos_src_mesaserenaad01_progress",
@@ -1770,7 +1770,7 @@
       "file_type": "code",
       "norm_label": "scenebook()",
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L289"
+      "source_location": "L309"
     },
     {
       "id": "videos_src_mesaserenaad01_scenecta",
@@ -1782,7 +1782,7 @@
       "file_type": "code",
       "norm_label": "scenecta()",
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L476"
+      "source_location": "L496"
     },
     {
       "id": "videos_src_mesaserenaad01_scenehook",
@@ -1806,7 +1806,7 @@
       "file_type": "code",
       "norm_label": "sceneproduct()",
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L386"
+      "source_location": "L406"
     },
     {
       "id": "videos_src_mesaserenaad01_scenetruth",
@@ -44431,7 +44431,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L289",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -44469,17 +44469,6 @@
     },
     {
       "source": "videos_src_mesaserenaad01",
-      "target": "videos_src_mesaserenaad01_sceneproduct",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L386",
-      "weight": 1.0
-    },
-    {
-      "source": "videos_src_mesaserenaad01",
       "target": "videos_src_mesaserenaad01_brand",
       "relation": "contains",
       "_origin": "ast",
@@ -44491,13 +44480,24 @@
     },
     {
       "source": "videos_src_mesaserenaad01",
+      "target": "videos_src_mesaserenaad01_sceneproduct",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "videos/src/MesaSerenaAd01.tsx",
+      "source_location": "L406",
+      "weight": 1.0
+    },
+    {
+      "source": "videos_src_mesaserenaad01",
       "target": "videos_src_mesaserenaad01_scenecta",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L476",
+      "source_location": "L496",
       "weight": 1.0
     },
     {
@@ -44519,7 +44519,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "videos/src/MesaSerenaAd01.tsx",
-      "source_location": "L563",
+      "source_location": "L609",
       "weight": 1.0
     },
     {
@@ -49082,5 +49082,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d21e00d11c59c57c822bf4824dfed6a49b71c84a"
+  "built_at_commit": "dfd49a49816be44877d12829fc0d6af5ac823773"
 }

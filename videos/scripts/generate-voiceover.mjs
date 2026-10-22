@@ -17,11 +17,11 @@ if (!apiKey || !voiceId) {
 }
 
 const lines = [
-  "¿Te dijeron que con diabetes... se acabó la arepa?",
-  "¡Te mintieron a medias! Se acabó la arepa gigante, con jugo y café con azúcar.",
+  "¿Con diabetes se acabó la arepa?",
+  "¡Te mintieron a medias! Se acabó la gigante, con jugo y café con azúcar.",
   "Cincuenta recetas criollas, con lo de tu mercado.",
-  "Tres menús de siete días y lista de mercado. Todo en un solo libro.",
-  "Cinco dólares, a tasa BCV. Y tu recetario llega directo a tu correo.",
+  "Tres menús de siete días, lista de mercado y seis guías.",
+  "Cinco dólares, a tasa BCV. Tu recetario, directo a tu correo.",
 ];
 
 const outDir = join(root, "public", "audio");
@@ -43,6 +43,7 @@ for (let i = 0; i < lines.length; i += 1) {
         stability: 0.42,
         similarity_boost: 0.82,
         style: 0.38,
+        speed: 1.18,
         use_speaker_boost: true,
       },
     }),

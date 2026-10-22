@@ -1,7 +1,7 @@
 # Graph Report - producto digital  (2026-10-22)
 
 ## Corpus Check
-- 278 files · ~592,666 words
+- 278 files · ~592,808 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d21e00d1`
+- Built from commit: `dfd49a49`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

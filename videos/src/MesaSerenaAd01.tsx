@@ -56,7 +56,7 @@ function Brand({ dark = false }: { dark?: boolean }) {
 function Progress() {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
-  const scenes = [108, 276, 378, 522, 690];
+  const scenes = [60, 192, 282, 375, 504];
   return (
     <div
       style={{
@@ -158,7 +158,7 @@ function SceneHook() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          scale: interpolate(frame, [0, 22, 26, 48, 52, 74, 78, 105], [1.06, 1.14, 1.14, 1.22, 1.22, 1.3, 1.3, 1.38], {
+          scale: interpolate(frame, [0, 14, 17, 30, 33, 46, 49, 60], [1.06, 1.15, 1.15, 1.24, 1.24, 1.33, 1.33, 1.4], {
             ...CLAMP,
             output: "perceptual-scale",
           }),
@@ -175,10 +175,10 @@ function SceneHook() {
       </div>
       <div style={{ position: "absolute", left: 90, right: 90, bottom: 330 }}>
         <div style={{ fontFamily: SERIF, fontSize: 122, lineHeight: 1.02, color: CREMA }}>
-          <Words text="¿Diabetes =" start={6} />
+          <Words text="¿Diabetes =" start={3} step={3} />
           <br />
           <span style={{ color: ORO }}>
-            <Words text="¿sin arepa?" start={20} italicWords={["sin", "arepa"]} />
+            <Words text="¿sin arepa?" start={11} step={3} italicWords={["sin", "arepa"]} />
           </span>
         </div>
         <div
@@ -187,7 +187,7 @@ function SceneHook() {
             borderRadius: 5,
             backgroundColor: TERRA,
             marginTop: 30,
-            width: interpolate(frame, [30, 52], ["0%", "62%"], CLAMP),
+            width: interpolate(frame, [18, 34], ["0%", "62%"], CLAMP),
           }}
         />
       </div>
@@ -200,7 +200,7 @@ function SceneHook() {
           fontSize: 34,
           fontWeight: 600,
           color: "#E7DFCE",
-          opacity: interpolate(frame, [44, 58], [0, 1], CLAMP),
+          opacity: interpolate(frame, [30, 42], [0, 1], CLAMP),
         }}
       >
         Mira esto antes de resignarte ↓
@@ -260,7 +260,7 @@ function SceneTruth() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            scale: interpolate(frame, [0, 40, 44, 90, 94, 150, 154, 216], [1.22, 1.13, 1.13, 1.2, 1.2, 1.1, 1.1, 1.18], {
+            scale: interpolate(frame, [0, 30, 34, 66, 70, 102, 106, 132], [1.22, 1.13, 1.13, 1.21, 1.21, 1.11, 1.11, 1.19], {
               ...CLAMP,
               output: "perceptual-scale",
             }),
@@ -269,16 +269,36 @@ function SceneTruth() {
       </div>
       <div style={{ padding: "62px 90px" }}>
         <div style={{ fontFamily: SERIF, fontSize: 92, lineHeight: 1.04, color: BOSQUE }}>
-          <Words text="Te mintieron" start={4} />
+          <Words text="Te mintieron" start={3} step={3} />
           <br />
           <span style={{ color: TERRA }}>
-            <Words text="a medias." start={14} italicWords={["medias"]} />
+            <Words text="a medias." start={10} step={3} italicWords={["medias"]} />
           </span>
         </div>
-        <div style={{ display: "grid", gap: 24, marginTop: 46 }}>
-          <StrikeItem label="✕  Arepa tamaño plato" at={58} />
-          <StrikeItem label="✕  Jugo “natural”" at={86} />
-          <StrikeItem label="✕  Café con azúcar" at={114} />
+        <div style={{ display: "grid", gap: 22, marginTop: 40 }}>
+          <StrikeItem label="✕  Arepa tamaño plato" at={46} />
+          <StrikeItem label="✕  Jugo “natural”" at={66} />
+          <StrikeItem label="✕  Café con azúcar" at={86} />
+        </div>
+        <div
+          style={{
+            marginTop: 44,
+            backgroundColor: BOSQUE,
+            color: CREMA,
+            fontFamily: SANS,
+            fontSize: 37,
+            fontWeight: 600,
+            lineHeight: 1.35,
+            padding: "26px 30px",
+            borderRadius: 18,
+            opacity: interpolate(frame, [104, 116], [0, 1], { ...CLAMP, easing: easeOut }),
+            translate: interpolate(frame, [104, 116], ["0px 26px", "0px 0px"], {
+              ...CLAMP,
+              easing: easeOut,
+            }),
+          }}
+        >
+          La arepa sigue. Cambia el tamaño… y lo que la acompaña.
         </div>
       </div>
     </AbsoluteFill>
@@ -289,9 +309,9 @@ function SceneTruth() {
 function SceneBook() {
   const frame = useCurrentFrame();
   const dishes = ["AREPA", "PABELLÓN", "POLLO", "AUYAMA", "CARAOTAS"];
-  const dish = dishes[Math.min(dishes.length - 1, Math.floor(frame / 22))];
-  const dishFrame = frame % 22;
-  const count = Math.round(interpolate(frame, [8, 44], [0, 50], { ...CLAMP, easing: easeOut }));
+  const dish = dishes[Math.floor(frame / 13) % dishes.length];
+  const dishFrame = frame % 13;
+  const count = Math.round(interpolate(frame, [5, 30], [0, 50], { ...CLAMP, easing: easeOut }));
   return (
     <AbsoluteFill style={{ backgroundColor: BOSQUE }}>
       <Voice file="audio/voz-03.mp3" />
@@ -302,7 +322,7 @@ function SceneBook() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            scale: interpolate(frame, [0, 34, 38, 80, 84, 132], [1.08, 1.18, 1.18, 1.1, 1.1, 1.2], {
+            scale: interpolate(frame, [0, 24, 28, 56, 60, 90], [1.08, 1.18, 1.18, 1.1, 1.1, 1.2], {
               ...CLAMP,
               output: "perceptual-scale",
             }),
@@ -340,8 +360,8 @@ function SceneBook() {
             letterSpacing: 3,
             padding: "18px 34px",
             borderRadius: 16,
-            opacity: interpolate(dishFrame, [0, 5], [0, 1], CLAMP),
-            translate: interpolate(dishFrame, [0, 5], ["0px 18px", "0px 0px"], CLAMP),
+            opacity: interpolate(dishFrame, [0, 4], [0, 1], CLAMP),
+            translate: interpolate(dishFrame, [0, 4], ["0px 16px", "0px 0px"], CLAMP),
           }}
         >
           {dish}
@@ -363,11 +383,11 @@ function SceneBook() {
                 border: i === 0 ? "none" : "2px solid rgba(196,164,106,0.5)",
                 borderRadius: 999,
                 padding: "15px 26px",
-                opacity: interpolate(frame, [46 + i * 9, 58 + i * 9], [0, 1], {
+                opacity: interpolate(frame, [34 + i * 8, 44 + i * 8], [0, 1], {
                   ...CLAMP,
                   easing: easeOut,
                 }),
-                translate: interpolate(frame, [46 + i * 9, 58 + i * 9], ["0px 26px", "0px 0px"], {
+                translate: interpolate(frame, [34 + i * 8, 44 + i * 8], ["0px 26px", "0px 0px"], {
                   ...CLAMP,
                   easing: easeOut,
                 }),
@@ -393,7 +413,7 @@ function SceneProduct() {
     ["+ 6 guías", "Arepa sin pico, semáforo, sustituciones y más"],
   ];
   return (
-    <AbsoluteFill style={{ backgroundColor: BOSQUE_OSCURO, padding: "170px 90px 0" }}>
+    <AbsoluteFill style={{ backgroundColor: BOSQUE_OSCURO, padding: "128px 90px 0" }}>
       <Voice file="audio/voz-04.mp3" />
       <div style={{ display: "flex", gap: 48, alignItems: "center" }}>
         <Img
@@ -418,7 +438,7 @@ function SceneProduct() {
       </div>
       <div style={{ display: "grid", gap: 22, marginTop: 66 }}>
         {cards.map(([title, text], i) => {
-          const at = 26 + i * 22;
+          const at = 12 + i * 15;
           return (
             <div
               key={title}
@@ -476,8 +496,8 @@ function SceneProduct() {
 function SceneCta(props: AdProps) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const enter = spring({ frame: frame - 22, fps, config: { damping: 12, stiffness: 170 } });
-  const pulse = frame > 60 ? 1 + Math.sin((frame - 60) / 5.5) * 0.022 : 1;
+  const enter = spring({ frame: frame - 14, fps, config: { damping: 12, stiffness: 170 } });
+  const pulse = frame > 46 ? 1 + Math.sin((frame - 46) / 5) * 0.024 : 1;
   return (
     <AbsoluteFill style={{ backgroundColor: CREMA, alignItems: "center", padding: "140px 90px 0", textAlign: "center" }}>
       <Voice file="audio/voz-05.mp3" delay={6} />
@@ -504,8 +524,8 @@ function SceneCta(props: AdProps) {
           lineHeight: 1,
           color: TERRA,
           marginTop: 46,
-          opacity: interpolate(frame, [16, 30], [0, 1], { ...CLAMP, easing: easeOut }),
-          scale: interpolate(frame, [16, 32], [0.9, 1], { ...CLAMP, easing: easeOut, output: "perceptual-scale" }),
+          opacity: interpolate(frame, [9, 20], [0, 1], { ...CLAMP, easing: easeOut }),
+          scale: interpolate(frame, [9, 22], [0.9, 1], { ...CLAMP, easing: easeOut, output: "perceptual-scale" }),
         }}
       >
         {props.priceText}
@@ -537,11 +557,37 @@ function SceneCta(props: AdProps) {
           marginTop: 46,
           maxWidth: 820,
           lineHeight: 1.25,
-          opacity: interpolate(frame, [70, 88], [0, 1], { ...CLAMP, easing: easeOut }),
-          translate: interpolate(frame, [70, 88], ["0px 24px", "0px 0px"], { ...CLAMP, easing: easeOut }),
+          opacity: interpolate(frame, [44, 58], [0, 1], { ...CLAMP, easing: easeOut }),
+          translate: interpolate(frame, [44, 58], ["0px 24px", "0px 0px"], { ...CLAMP, easing: easeOut }),
         }}
       >
         {props.deliveryText}
+      </div>
+      <div style={{ display: "flex", gap: 12, marginTop: 38 }}>
+        {["50 recetas", "Menú de 7 días", "Lista de mercado"].map((pill, i) => (
+          <div
+            key={pill}
+            style={{
+              fontFamily: SANS,
+              fontSize: 29,
+              fontWeight: 700,
+              color: BOSQUE,
+              border: `2px solid ${ORO}`,
+              borderRadius: 999,
+              padding: "12px 22px",
+              opacity: interpolate(frame, [62 + i * 6, 72 + i * 6], [0, 1], {
+                ...CLAMP,
+                easing: easeOut,
+              }),
+              translate: interpolate(frame, [62 + i * 6, 72 + i * 6], ["0px 18px", "0px 0px"], {
+                ...CLAMP,
+                easing: easeOut,
+              }),
+            }}
+          >
+            {pill}
+          </div>
+        ))}
       </div>
       <div
         style={{
@@ -563,19 +609,19 @@ function SceneCta(props: AdProps) {
 export const MesaSerenaAd01 = (props: AdProps) => {
   return (
     <AbsoluteFill style={{ backgroundColor: BOSQUE_OSCURO }}>
-      <Sequence name="01 Gancho" from={0} durationInFrames={108}>
+      <Sequence name="01 Gancho" from={0} durationInFrames={60}>
         <SceneHook />
       </Sequence>
-      <Sequence name="02 Verdad" from={108} durationInFrames={168}>
+      <Sequence name="02 Verdad" from={60} durationInFrames={132}>
         <SceneTruth />
       </Sequence>
-      <Sequence name="03 Libro" from={276} durationInFrames={102}>
+      <Sequence name="03 Libro" from={192} durationInFrames={90}>
         <SceneBook />
       </Sequence>
-      <Sequence name="04 Producto" from={378} durationInFrames={144}>
+      <Sequence name="04 Producto" from={282} durationInFrames={93}>
         <SceneProduct />
       </Sequence>
-      <Sequence name="05 Cierre" from={522} durationInFrames={168}>
+      <Sequence name="05 Cierre" from={375} durationInFrames={129}>
         <SceneCta {...props} />
       </Sequence>
       <Progress />

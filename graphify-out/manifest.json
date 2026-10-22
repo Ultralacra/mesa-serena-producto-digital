@@ -744,9 +744,9 @@
     "semantic_hash": ""
   },
   "videos/scripts/generate-voiceover.mjs": {
-    "mtime": 1792697888.0026443,
-    "seen": 1792698569.8386981,
-    "ast_hash": "aec7468ff8f4212865097d769a683bf8",
+    "mtime": 1792698835.3524134,
+    "seen": 1792699031.1485388,
+    "ast_hash": "0e1b1bc5d04207675dfe9aa59daa1a89",
     "semantic_hash": ""
   },
   "videos/skills-lock.json": {
@@ -756,15 +756,15 @@
     "semantic_hash": ""
   },
   "videos/src/MesaSerenaAd01.tsx": {
-    "mtime": 1792698157.0896626,
-    "seen": 1792698569.8387003,
-    "ast_hash": "2c3ee21906209715278657b1b7740bd6",
+    "mtime": 1792698915.167533,
+    "seen": 1792699031.1485424,
+    "ast_hash": "ca5cc502b16f39986f4cb3c0f506db4c",
     "semantic_hash": ""
   },
   "videos/src/Root.tsx": {
-    "mtime": 1792697918.6002202,
-    "seen": 1792698569.8387012,
-    "ast_hash": "c87cb566aa6510bb0b5678b449350b2f",
+    "mtime": 1792698915.7098918,
+    "seen": 1792699031.1485438,
+    "ast_hash": "9bd73e83e214baea7f724762b971e216",
     "semantic_hash": ""
   },
   "videos/src/index.ts": {
@@ -2166,33 +2166,33 @@
     "semantic_hash": ""
   },
   "videos/public/audio/voz-01.mp3": {
-    "mtime": 1792697902.7004075,
-    "seen": 1792698569.8390694,
-    "ast_hash": "d0b2c073fea88ef1fe0f6ad2792b5e06",
+    "mtime": 1792698853.6105928,
+    "seen": 1792699031.148992,
+    "ast_hash": "6b5417d78891f603684aebb7089c114b",
     "semantic_hash": ""
   },
   "videos/public/audio/voz-02.mp3": {
-    "mtime": 1792697904.4870808,
-    "seen": 1792698569.8390706,
-    "ast_hash": "661da6cf69f7846c19aaea788eaa3583",
+    "mtime": 1792698855.2073903,
+    "seen": 1792699031.1489935,
+    "ast_hash": "f310566d3ecbcda1cfab575b097ba29a",
     "semantic_hash": ""
   },
   "videos/public/audio/voz-03.mp3": {
-    "mtime": 1792697905.6368024,
-    "seen": 1792698569.8390715,
-    "ast_hash": "ea26c87f93f2b8669c8321a66c31afbc",
+    "mtime": 1792698856.3716867,
+    "seen": 1792699031.148995,
+    "ast_hash": "aa93d284e8a118fcfd5414dc77d3fc39",
     "semantic_hash": ""
   },
   "videos/public/audio/voz-04.mp3": {
-    "mtime": 1792697906.7753816,
-    "seen": 1792698569.8390725,
-    "ast_hash": "b301ef58f7223a8944ba45a7fb8021d1",
+    "mtime": 1792698857.4315252,
+    "seen": 1792699031.1489964,
+    "ast_hash": "bea4bb0147b7d813cdd5cc0b4455be99",
     "semantic_hash": ""
   },
   "videos/public/audio/voz-05.mp3": {
-    "mtime": 1792697908.2149951,
-    "seen": 1792698569.8390734,
-    "ast_hash": "95d76817e1c33feea91f4c6ce5a9ccdd",
+    "mtime": 1792698858.7430227,
+    "seen": 1792699031.1489975,
+    "ast_hash": "48ba312da703bcfc17ad786d409d6374",
     "semantic_hash": ""
   }
 }
