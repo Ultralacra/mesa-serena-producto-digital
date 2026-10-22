@@ -1,14 +1,14 @@
 {
   "web/app/api/checkout/route.ts": {
-    "mtime": 1792701648.645802,
-    "seen": 1792701780.006362,
-    "ast_hash": "55546f9d4f2135d7c316925664eccfb8",
+    "mtime": 1792703177.7566779,
+    "seen": 1792703395.1827743,
+    "ast_hash": "eb033166dd8126c7d893e11db8fd1e4c",
     "semantic_hash": ""
   },
   "web/app/api/checkout/status/route.ts": {
-    "mtime": 1792700064.2326984,
-    "seen": 1792700237.7670188,
-    "ast_hash": "58fffe3c3691d97bc1d80cc2b3de3c71",
+    "mtime": 1792703211.424407,
+    "seen": 1792703395.1827767,
+    "ast_hash": "8de277a1bb029749e5c9ae6b742fd6c3",
     "semantic_hash": ""
   },
   "web/app/api/rate/route.ts": {
@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "web/app/api/webhooks/skylink/route.ts": {
-    "mtime": 1792700054.187209,
-    "seen": 1792700237.7670228,
-    "ast_hash": "72bdc7aba1ea5818ea3e4e758b2754cb",
+    "mtime": 1792703202.452586,
+    "seen": 1792703395.1827838,
+    "ast_hash": "c4bf19fefc5dfcabe93f89fd2203d2f3",
     "semantic_hash": ""
   },
   "web/app/gracias/page.tsx": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "web/lib/orders.ts": {
-    "mtime": 1792700009.6258695,
-    "seen": 1792700237.767039,
-    "ast_hash": "2a565e66930b7511d724501c247e353a",
+    "mtime": 1792703173.8915143,
+    "seen": 1792703395.182819,
+    "ast_hash": "b05bf2a836c48aa3b1f3c5475b0be5f8",
     "semantic_hash": ""
   },
   "web/lib/product.ts": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "web/package.json": {
-    "mtime": 1792690983.1491156,
-    "seen": 1792696324.0829504,
-    "ast_hash": "a1350ad9f896dd087642664b43acc1af",
+    "mtime": 1792703095.8854363,
+    "seen": 1792703395.1828375,
+    "ast_hash": "778cdc21014bf98263a97a956c8900bf",
     "semantic_hash": ""
   },
   "web/scripts/pdf/build-pdf.mjs": {
@@ -2259,6 +2259,60 @@
     "mtime": 1792699141.676795,
     "seen": 1792700237.7674398,
     "ast_hash": "fd7495c0300aadbf7051db12ad28061e",
+    "semantic_hash": ""
+  },
+  "web/app/admin/page.tsx": {
+    "mtime": 1792703222.8396816,
+    "seen": 1792703395.1827652,
+    "ast_hash": "56138b9560267fc9e0724dbf4cff5ea9",
+    "semantic_hash": ""
+  },
+  "web/app/api/admin/login/route.ts": {
+    "mtime": 1792703214.6881552,
+    "seen": 1792703395.182768,
+    "ast_hash": "5a0e4e87cdbcb4ce0beb0db329f2a676",
+    "semantic_hash": ""
+  },
+  "web/app/api/admin/logout/route.ts": {
+    "mtime": 1792703216.3891118,
+    "seen": 1792703395.1827693,
+    "ast_hash": "64958e2356ff9e83c84b09ef6cfb3830",
+    "semantic_hash": ""
+  },
+  "web/app/api/admin/purchases/route.ts": {
+    "mtime": 1792703220.2763932,
+    "seen": 1792703395.1827712,
+    "ast_hash": "56d0f9f7587121f768060168fa41eb8b",
+    "semantic_hash": ""
+  },
+  "web/components/AdminLogin.tsx": {
+    "mtime": 1792703228.546912,
+    "seen": 1792703395.1827915,
+    "ast_hash": "6e9807494b54957b0411edef71098a35",
+    "semantic_hash": ""
+  },
+  "web/components/AdminPanel.tsx": {
+    "mtime": 1792703240.1434438,
+    "seen": 1792703395.1827936,
+    "ast_hash": "1c766206eb73e93f5b258a195eef0573",
+    "semantic_hash": ""
+  },
+  "web/lib/admin-auth.ts": {
+    "mtime": 1792703171.1846545,
+    "seen": 1792703395.1828027,
+    "ast_hash": "902e48c6d58383e2a5c458d261033c80",
+    "semantic_hash": ""
+  },
+  "web/lib/db.ts": {
+    "mtime": 1792703154.4129028,
+    "seen": 1792703395.182805,
+    "ast_hash": "5ba59b7a099d9b6bbf8bf5eb1af02979",
+    "semantic_hash": ""
+  },
+  "web/lib/registry.ts": {
+    "mtime": 1792703168.4239154,
+    "seen": 1792703395.1828272,
+    "ast_hash": "a24a3a4125cd0aa532f930a9dcedfe6d",
     "semantic_hash": ""
   }
 }

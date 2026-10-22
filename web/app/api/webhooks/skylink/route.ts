@@ -4,6 +4,11 @@ import { logFlow } from "@/lib/log";
 import { notifyMailWebhook } from "@/lib/notify-webhook";
 import { findOrder, markPaid, patchOrder, saveOrder } from "@/lib/orders";
 import { bsFromCents, evaluatePayment } from "@/lib/payment";
+import {
+  findPurchaseRecord,
+  recordPurchase,
+  recordWebhookEvent,
+} from "@/lib/registry";
 
 type SkylinkWebhook = {
   eventType?: string;
@@ -20,17 +25,19 @@ type SkylinkWebhook = {
 };
 
 export async function POST(request: Request) {
+  const rawText = await request.text().catch(() => "");
   let body: SkylinkWebhook;
   try {
-    body = await request.json();
+    body = JSON.parse(rawText) as SkylinkWebhook;
   } catch {
     logFlow("WEBHOOK · JSON inválido", {});
+    await recordWebhookEvent({ decision: "invalid", raw: rawText });
     return NextResponse.json({ ok: false, message: "JSON inválido." }, { status: 400 });
   }
 
   const status = body.transaction?.status ?? "";
   const buyOrder = body.transaction?.buyOrder ?? "";
-  const existing = buyOrder ? findOrder(buyOrder) : undefined;
+  let existing = buyOrder ? findOrder(buyOrder) : undefined;
 
   const evaluation = evaluatePayment({
     status,
@@ -52,6 +59,67 @@ export async function POST(request: Request) {
     entrega: evaluation.deliver,
     cuerpo: body,
   });
+
+  // SUPER IMPORTANTE: todo lo que llega al webhook queda guardado tal cual,
+  // aunque venga pendiente, rechazado o sin orden local.
+  await recordWebhookEvent({
+    eventType: body.eventType,
+    buyOrder: buyOrder || undefined,
+    skylinkStatus: status || undefined,
+    resultCode: body.transaction?.resultCode,
+    resultMessage: body.transaction?.resultMessage,
+    amountCents:
+      body.transaction?.amount === undefined
+        ? undefined
+        : Number(body.transaction.amount),
+    paidAmountCents:
+      body.transaction?.paidAmount === undefined
+        ? undefined
+        : Number(body.transaction.paidAmount),
+    currency: body.transaction?.currency,
+    decision: evaluation.state,
+    raw: body,
+  });
+
+  // En Vercel la orden del checkout puede vivir en otra instancia:
+  // se recupera nombre/correo/monto desde el registro duradero.
+  if (buyOrder && !existing?.email) {
+    const saved = await findPurchaseRecord(buyOrder);
+    if (saved?.email) {
+      saveOrder({
+        buyOrder,
+        sessionId: saved.sessionId || buyOrder,
+        token: saved.token || "",
+        name: saved.name || "Cliente",
+        email: saved.email,
+        amountCents: saved.amountCents || evaluation.expectedCents,
+        status: saved.delivered ? "paid" : "created",
+        delivered: saved.delivered,
+        createdAt: saved.createdAt,
+        paidAmountCents: saved.paidAmountCents,
+      });
+      existing = findOrder(buyOrder);
+    }
+  }
+
+  if (buyOrder) {
+    await recordPurchase({
+      buyOrder,
+      name: existing?.name,
+      email: existing?.email,
+      amountCents: evaluation.expectedCents || existing?.amountCents || 0,
+      paidAmountCents: evaluation.paidCents ?? undefined,
+      status:
+        evaluation.state === "approved"
+          ? "paid"
+          : evaluation.state === "underpaid"
+            ? "underpaid"
+            : "pending",
+      delivered: Boolean(existing?.delivered),
+      source: "webhook",
+      createdAt: existing?.createdAt,
+    });
+  }
 
   await notifyMailWebhook({
     type:
@@ -110,6 +178,17 @@ export async function POST(request: Request) {
     }
     try {
       const notice = await notifyUnderpaidByRef(buyOrder, evaluation);
+      await recordPurchase({
+        buyOrder,
+        name: existing.name,
+        email: existing.email,
+        amountCents: evaluation.expectedCents,
+        paidAmountCents: evaluation.paidCents ?? undefined,
+        status: "underpaid",
+        underpaidNotified: notice.sent || notice.reason === "already",
+        source: "webhook",
+        createdAt: existing.createdAt,
+      });
       return NextResponse.json({ ok: true, underpaid: true, notified: notice.sent });
     } catch (error) {
       logFlow("WEBHOOK · el correo de monto incorrecto falló", {
@@ -155,7 +234,18 @@ export async function POST(request: Request) {
       buyOrder,
       para: existing.email,
     });
-    await deliverByRef(buyOrder);
+    const delivery = await deliverByRef(buyOrder);
+    await recordPurchase({
+      buyOrder,
+      name: existing.name,
+      email: existing.email,
+      amountCents: evaluation.expectedCents,
+      paidAmountCents: evaluation.paidCents ?? undefined,
+      status: "paid",
+      delivered: delivery.sent || delivery.reason === "already",
+      source: "webhook",
+      createdAt: existing.createdAt,
+    });
     return NextResponse.json({ ok: true, delivered: true });
   } catch (error) {
     logFlow("WEBHOOK · el envío de correo falló", {

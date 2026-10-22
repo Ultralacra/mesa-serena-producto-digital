@@ -3,6 +3,7 @@ import { deliverByRef, notifyUnderpaidByRef } from "@/lib/deliver";
 import { logFlow } from "@/lib/log";
 import { findOrder, markPaid, patchOrder } from "@/lib/orders";
 import { bsFromCents, evaluatePayment } from "@/lib/payment";
+import { recordPurchase } from "@/lib/registry";
 import { readSkylinkCharge } from "@/lib/skylink";
 
 export async function GET(request: Request) {
@@ -104,6 +105,26 @@ export async function GET(request: Request) {
     } else {
       logFlow("RETORNO · Skylink todavía no marca el cobro como pagado", {
         status: charge.status,
+      });
+    }
+
+    if (order) {
+      await recordPurchase({
+        buyOrder: order.buyOrder,
+        sessionId: order.sessionId,
+        token: order.token || undefined,
+        name: order.name,
+        email: order.email,
+        amountCents: evaluation.expectedCents || order.amountCents,
+        paidAmountCents: evaluation.paidCents ?? order.paidAmountCents,
+        status: evaluation.deliver
+          ? "paid"
+          : evaluation.state === "underpaid"
+            ? "underpaid"
+            : order.status,
+        delivered,
+        source: "retorno",
+        createdAt: order.createdAt,
       });
     }
 

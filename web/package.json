@@ -10,6 +10,7 @@
     "pdf": "node scripts/pdf/build-pdf.mjs"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "next": "16.4.2",
     "nodemailer": "^10.2.1",
     "react": "19.3.0",

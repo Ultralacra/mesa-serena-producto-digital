@@ -49,6 +49,10 @@ export function saveOrder(order: Order) {
   save(orders);
 }
 
+export function listOrders() {
+  return load();
+}
+
 export function findOrder(id: string) {
   if (memory.has(id)) return memory.get(id);
   return load().find((item) => item.buyOrder === id || item.token === id);

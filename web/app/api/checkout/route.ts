@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { validateEmail } from "@/lib/email";
 import { logFlow } from "@/lib/log";
 import { saveOrder } from "@/lib/orders";
+import { recordPurchase } from "@/lib/registry";
 import { formatVes, PRODUCT, vesCentsForRate } from "@/lib/product";
 import { bcvRate, createSkylinkCharge, skylinkConfigured } from "@/lib/skylink";
 import { watchPaymentLocally } from "@/lib/watch-payment";
@@ -66,6 +67,16 @@ export async function POST(request: Request) {
       status: "created",
       delivered: false,
       createdAt: new Date().toISOString(),
+    });
+    await recordPurchase({
+      buyOrder,
+      sessionId,
+      token: charge.token,
+      name,
+      email,
+      amountCents,
+      status: "created",
+      source: "checkout",
     });
     logFlow("PAGO · cobro creado en Skylink, redirigiendo al usuario", {
       nombre: name,
