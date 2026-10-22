@@ -18,23 +18,23 @@ async function priceQuote() {
 const pains = [
   {
     num: "01",
-    title: "Me quitaron la arepa",
-    text: "La arepa se queda. Lo que se acaba es la del tamaño de un plato, con jugo y café con azúcar. Comes arepa. Sin que se te dispare.",
+    title: "Te quitaron la arepa",
+    text: "La arepa no tiene que desaparecer de tu mesa. Lo que cambia es el tamaño, el relleno y el combo que la acompaña.",
   },
   {
     num: "02",
-    title: "Como soso y igual se me sube",
-    text: "Ya dejaste el azúcar y el arroz, y el glucometro no perdona. Casi nunca es falta de voluntad: es cómo se arma el plato.",
+    title: "Comes soso y sigues con miedo",
+    text: "Ya quitaste azúcar, arroz y postres, pero igual dudas después de cada comida. No es falta de voluntad: nadie te enseñó a armar el plato.",
   },
   {
     num: "03",
-    title: "Lo “light” no está en mi mercado",
-    text: "Quinoa, salmón y galletas importadas. Tú compras pollo, huevo, caraota y auyama. Con eso se cocina este libro.",
+    title: "Lo “saludable” cuesta como un lujo",
+    text: "Quinoa, salmón y galletas importadas no son la vida real. Aquí cocinas con pollo, huevo, caraota, lenteja y auyama.",
   },
   {
     num: "04",
-    title: "Cocino para todos y yo como aparte",
-    text: "Un caldero para la casa y otro plato para ti, el de enferma. Aquí se cocina una vez: ellos comen, tú comes tu porción.",
+    title: "Cocinas para todos y tú comes aparte",
+    text: "No necesitas un caldero para la familia y otro plato triste para ti. Cocinan lo mismo; cambia tu porción y cómo armas el plato.",
   },
 ];
 
@@ -144,15 +144,15 @@ export default async function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <p className="kicker">Para la que cocina todos los días</p>
+            <p className="kicker">Para la que cocina y carga con el miedo</p>
             <h1>
-              Te dijeron que se acabó la arepa. <em>Te mintieron a medias.</em>
+              Con diabetes no se acaba la comida criolla. <em>Se acaba la improvisación.</em>
             </h1>
             <p className="lead">
-              Abres el recetario y ya está la semana: el calendario, las 50
-              recetas y los tips. Se cocina con el mercado del día a día
-              —huevo, pollo, caraota, lenteja, sardina y auyama—. La arepa se
-              queda. Sin quinoa y sin comprar como rico.
+              Mesa Serena te devuelve una respuesta para cada comida: el
+              calendario de 7 días, 50 recetas criollas y las guías para armar
+              tu plato sin vivir pensando en el pico. Con huevo, pollo, caraota,
+              lenteja, sardina y auyama. Con lo que sí se consigue.
             </p>
             <div className="price-row">
               <span className="now">{PRODUCT.priceUsd} USD</span>
@@ -166,13 +166,13 @@ export default async function Home() {
             </div>
             <p className="fine">
               Tu recetario llega directo a tu correo cuando el pago quede
-              aprobado. Recetario educativo: no sustituye a tu médico.
+              aprobado. Es educativo y acompaña, no reemplaza, a tu médico.
             </p>
             <div className="hero-meta">
-              <span className="chip">Mercado del día a día</span>
-              <span className="chip">Calendario de 7 días</span>
-              <span className="chip">50 recetas</span>
-              <span className="chip">Tips de cocina</span>
+              <span className="chip">50 recetas criollas</span>
+              <span className="chip">Menú de 7 días</span>
+              <span className="chip">Lista de mercado</span>
+              <span className="chip">Para toda la familia</span>
             </div>
           </div>
           <div className="hero-visual">
@@ -195,18 +195,18 @@ export default async function Home() {
 
       <section className="loot" id="incluye">
         <div className="wrap">
-          <p className="kicker">Ábrelo antes de pagar</p>
-          <h2>El calendario, las recetas y los tips. Con el mercado de todos los días.</h2>
+          <p className="kicker">No compras otro PDF de recetas</p>
+          <h2>Compras la semana resuelta y la calma de saber qué cocinar.</h2>
           <p className="lead loot-lead">
-            No es teoría. Es lo que cocinas el lunes con lo que compraste hoy:
-            huevo, pollo, caraota y auyama. Si no está en tu mercado, no está
-            en la semana.
+            No más abrir la nevera a las once y pensar “¿y ahora qué hago?”.
+            Aquí encuentras qué comer, qué comprar y cómo servirlo con lo que
+            ya forma parte de tu cocina.
           </p>
 
           <div className="loot-grid">
             <article className="card loot-calendar">
               <p className="kicker">El calendario</p>
-              <h3>Tu semana, ya escrita</h3>
+              <h3>Tu semana deja de ser una pregunta</h3>
               <div className="week" role="table" aria-label="Menú de 7 días con el mercado del día a día">
                 <div className="week-head" role="row">
                   <span>Día</span>
@@ -223,7 +223,7 @@ export default async function Home() {
                   </div>
                 ))}
               </div>
-              <p className="fine">Menú diario. Hay otro para cuando el mercado alcanza, y uno de domingo.</p>
+              <p className="fine">Hay un menú diario, otro para cuando el mercado alcanza y uno para el domingo.</p>
             </article>
 
             <div className="loot-side">
@@ -263,7 +263,8 @@ export default async function Home() {
 
       <section className="pains">
         <div className="wrap">
-          <p className="kicker">Si cocinas y te suena, es para ti</p>
+          <p className="kicker">Esto es lo que de verdad pesa</p>
+          <h2>Si comer se volvió una lista de prohibiciones, necesitas un plan que entienda tu mesa.</h2>
           <div className="pain-grid">
             {pains.map((pain) => (
               <article className="card" key={pain.title}>
@@ -308,8 +309,9 @@ export default async function Home() {
             <h2>El menú de la semana, con lo que ya está en la nevera.</h2>
             <p className="lead">
               Por {PRODUCT.priceUsd} dólares
-              {vesLabel ? ` (${vesLabel})` : ""} dejas de preguntarte a las once
-              qué se almuerza. La respuesta sale del mercado del día a día.
+              {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar cada día.
+              La respuesta sale del mercado que conoces, no de una lista de
+              ingredientes imposibles.
             </p>
             <ul className="clean">
               {includes.map((item) => (
@@ -328,8 +330,9 @@ export default async function Home() {
                 />
               </div>
               <div>
-                <p className="kicker">Edición digital</p>
+                <p className="kicker">Tu guía para la mesa</p>
                 <h3>Mesa Serena</h3>
+                <p className="fine">Un solo PDF. 50 recetas y 6 guías prácticas.</p>
               </div>
             </div>
             <CheckoutForm />

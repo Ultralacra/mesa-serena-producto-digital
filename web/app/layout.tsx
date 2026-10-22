@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   ),
   title: "Mesa Serena — Recetario criollo para diabetes",
   description:
-    "Para la que cocina en casa: 50 recetas venezolanas para diabetes. Arepa, pabellón y pollo del mercado, sin que se te dispare. 5 USD a tasa BCV. El recetario llega a tu correo.",
+    "Para la que cocina en casa y quiere dejar de improvisar: 50 recetas criollas, menú de 7 días y lista de mercado. 5 USD a tasa BCV. El recetario llega a tu correo.",
   openGraph: {
     title: "Mesa Serena — Recetario criollo para diabetes",
     description:
-      "Come lo de tu casa sin que se te dispare. 50 recetas con lo de tu mercado, para la que cocina todos los días. 5 USD a tasa BCV. El recetario llega a tu correo.",
+      "Come lo de tu casa con más calma y mejor criterio. 50 recetas con lo de tu mercado, menú semanal y guías prácticas. 5 USD a tasa BCV. El recetario llega a tu correo.",
     locale: "es_VE",
     type: "website",
     images: ["/img/ebook.jpg"],
