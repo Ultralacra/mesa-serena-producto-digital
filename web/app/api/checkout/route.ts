@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { validateEmail } from "@/lib/email";
 import { logFlow } from "@/lib/log";
 import { saveOrder } from "@/lib/orders";
-import { PRODUCT } from "@/lib/product";
-import { createSkylinkCharge, skylinkConfigured } from "@/lib/skylink";
+import { formatVes, PRODUCT, vesCentsForRate } from "@/lib/product";
+import { bcvRate, createSkylinkCharge, skylinkConfigured } from "@/lib/skylink";
 import { watchPaymentLocally } from "@/lib/watch-payment";
 
 export async function POST(request: Request) {
@@ -39,11 +39,18 @@ export async function POST(request: Request) {
     nombre: name,
     correo: email,
     buyOrder,
-    cobroPruebaBs: PRODUCT.testVes,
+    precioUsd: PRODUCT.priceUsd,
   });
 
   try {
-    const amountCents = Number(process.env.PRICE_VES_CENTS || PRODUCT.testCents);
+    const rate = await bcvRate();
+    const amountCents = vesCentsForRate(rate);
+    logFlow("PAGO · monto real calculado a tasa BCV", {
+      buyOrder,
+      precioUsd: PRODUCT.priceUsd,
+      tasaBcv: formatVes(rate),
+      montoBs: formatVes(amountCents / 100),
+    });
     const charge = await createSkylinkCharge({
       amountCents,
       buyOrder,

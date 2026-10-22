@@ -1,8 +1,8 @@
 {
   "web/app/api/checkout/route.ts": {
-    "mtime": 1792696093.9491584,
-    "seen": 1792696324.0829215,
-    "ast_hash": "cd42f16bd50c85d6e32158d4a8a93c07",
+    "mtime": 1792701648.645802,
+    "seen": 1792701780.006362,
+    "ast_hash": "55546f9d4f2135d7c316925664eccfb8",
     "semantic_hash": ""
   },
   "web/app/api/checkout/status/route.ts": {
@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "web/app/api/rate/route.ts": {
-    "mtime": 1792687416.346759,
-    "seen": 1792696324.082929,
-    "ast_hash": "c24ed712dfc923ba9773ff449ad3062a",
+    "mtime": 1792701636.0564437,
+    "seen": 1792701780.0063655,
+    "ast_hash": "1a1cb72395e13d1ccc8030446d6da821",
     "semantic_hash": ""
   },
   "web/app/api/test-email/route.ts": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
-    "mtime": 1792696101.749735,
-    "seen": 1792696324.0829358,
-    "ast_hash": "f80c8167437405bebdd94cef01eeab72",
+    "mtime": 1792701660.8624797,
+    "seen": 1792701780.006374,
+    "ast_hash": "73db1d81c17eeee8b855b2af4526369f",
     "semantic_hash": ""
   },
   "web/components/ReturnView.tsx": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "web/lib/product.ts": {
-    "mtime": 1792690493.3231704,
-    "seen": 1792696324.082945,
-    "ast_hash": "81d5f20e6e9e8228faf890751aa6140e",
+    "mtime": 1792701635.1022036,
+    "seen": 1792701780.0063877,
+    "ast_hash": "4df68584047c44127fe9399dcc51441b",
     "semantic_hash": ""
   },
   "web/lib/receipt-email.ts": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792692548.243229,
-    "seen": 1792696324.0829573,
-    "ast_hash": "19822cc8f33ffbeaf2a8abe515df8ca1",
+    "mtime": 1792701665.0460634,
+    "seen": 1792701780.0064085,
+    "ast_hash": "3276fa473c064ef2b89616f06efa5f61",
     "semantic_hash": ""
   },
   "anuncios/00-paleta-y-uso.md": {
@@ -2196,9 +2196,9 @@
     "semantic_hash": ""
   },
   "videos/src/Ads.tsx": {
-    "mtime": 1792700237.1725745,
-    "seen": 1792700237.7670085,
-    "ast_hash": "651f69dcf749ed0df757fb63d36f0c70",
+    "mtime": 1792700353.2245915,
+    "seen": 1792701780.006352,
+    "ast_hash": "865d4e6835df9c17f6e7ef4c60bfe5e1",
     "semantic_hash": ""
   },
   "videos/src/fonts.ts": {
@@ -2214,33 +2214,33 @@
     "semantic_hash": ""
   },
   "anuncios/imagenes/meta-01-arepa.png": {
-    "mtime": 1792699585.3288703,
-    "seen": 1792699715.8244796,
-    "ast_hash": "b2581bdceb7677dea0eb817e9ca2471f",
+    "mtime": 1792700596.994059,
+    "seen": 1792701780.0067503,
+    "ast_hash": "e25ae719d1e49e8e29c4df276334027d",
     "semantic_hash": ""
   },
   "anuncios/imagenes/meta-02-mercado.png": {
-    "mtime": 1792699590.3315248,
-    "seen": 1792699715.8244808,
-    "ast_hash": "6fc4772174c897a0133b3e14dd23b6c3",
+    "mtime": 1792700292.7713435,
+    "seen": 1792701780.0067518,
+    "ast_hash": "1930c1facaa6a8c4da892ef7b64db7dc",
     "semantic_hash": ""
   },
   "anuncios/imagenes/meta-03-familia.png": {
-    "mtime": 1792699696.571239,
-    "seen": 1792699715.824482,
-    "ast_hash": "8a3a7c2f28cb562e8e3ee4bedc2579c0",
+    "mtime": 1792700298.0338545,
+    "seen": 1792701780.006753,
+    "ast_hash": "0c1884051207f21b04856bac81d28703",
     "semantic_hash": ""
   },
   "anuncios/imagenes/meta-04-producto.png": {
-    "mtime": 1792699601.472996,
-    "seen": 1792699715.8244834,
-    "ast_hash": "daef6151ef673054720a15e78b23466a",
+    "mtime": 1792700303.1270785,
+    "seen": 1792701780.0067542,
+    "ast_hash": "d027bad594f42f83285ee7979fb0e802",
     "semantic_hash": ""
   },
   "anuncios/imagenes/meta-05-semaforo.png": {
-    "mtime": 1792699606.4219773,
-    "seen": 1792699715.8244843,
-    "ast_hash": "7b7204ed31071e72ac6acb29078ef4df",
+    "mtime": 1792700308.276386,
+    "seen": 1792701780.0067556,
+    "ast_hash": "8299a7824bc72d64b00737ee5a365c10",
     "semantic_hash": ""
   },
   "web/lib/payment.ts": {

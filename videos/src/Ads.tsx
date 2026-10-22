@@ -207,7 +207,7 @@ export const Ad01Arepa = () => (
         style={{ background: "linear-gradient(180deg, rgba(18,38,31,0.42) 0%, rgba(18,38,31,0) 40%)" }}
       />
       <div style={{ position: "absolute", top: 46, left: 56 }}>
-        <BrandBar light />
+        <BrandBar pill />
       </div>
       <div style={{ position: "absolute", right: 48, bottom: -14 }}>
         <PriceSeal />

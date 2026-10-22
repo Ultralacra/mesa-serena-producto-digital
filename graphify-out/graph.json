@@ -1015,7 +1015,19 @@
       "file_type": "code",
       "norm_label": "formatves()",
       "source_file": "lib/product.ts",
-      "source_location": "L8"
+      "source_location": "L13"
+    },
+    {
+      "id": "web_lib_product_vescentsforrate",
+      "label": "vesCentsForRate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "deliver.ts",
+      "file_type": "code",
+      "norm_label": "vescentsforrate()",
+      "source_file": "lib/product.ts",
+      "source_location": "L9"
     },
     {
       "id": "web_lib_receipt_email_escapehtml",
@@ -1951,7 +1963,7 @@
       "file_type": "code",
       "norm_label": "ad03familia()",
       "source_file": "videos/src/Ads.tsx",
-      "source_location": "L303"
+      "source_location": "L304"
     },
     {
       "id": "videos_src_ads_ad04producto",
@@ -1963,7 +1975,7 @@
       "file_type": "code",
       "norm_label": "ad04producto()",
       "source_file": "videos/src/Ads.tsx",
-      "source_location": "L357"
+      "source_location": "L358"
     },
     {
       "id": "videos_src_ads_ad05semaforo",
@@ -1975,7 +1987,7 @@
       "file_type": "code",
       "norm_label": "ad05semaforo()",
       "source_file": "videos/src/Ads.tsx",
-      "source_location": "L460"
+      "source_location": "L455"
     },
     {
       "id": "videos_src_ads_brandbar",
@@ -3910,6 +3922,62 @@
       "source_location": "L84"
     },
     {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection",
+      "label": "remotion-best-practices/remotion-markup/silence-detection.md",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "silence-detection",
+        "description": "Adaptive silence detection for video/audio files using FFmpeg loudnorm and silencedetect"
+      },
+      "node_kind": "page",
+      "norm_label": "remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_ffmpeg",
+      "label": "remotion-best-practices/remotion-markup/ffmpeg.md",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "ffmpeg",
+        "description": "Using FFmpeg and FFprobe in Remotion"
+      },
+      "node_kind": "page",
+      "norm_label": "remotion-best-practices/remotion-markup/ffmpeg.md",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/ffmpeg.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_ffmpeg_ffmpeg_in_remotion",
+      "label": "FFmpeg in Remotion",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ffmpeg in remotion",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/ffmpeg.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_ffmpeg_trimming_videos",
+      "label": "Trimming videos",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "trimming videos",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/ffmpeg.md",
+      "source_location": "L17"
+    },
+    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_html_in_canvas",
       "label": "remotion-best-practices/remotion-markup/html-in-canvas.md",
       "_origin": "ast",
@@ -4004,6 +4072,78 @@
       "norm_label": "webgl effects",
       "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/html-in-canvas.md",
       "source_location": "L98"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_adaptive_silence_detection",
+      "label": "Adaptive Silence Detection",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "adaptive silence detection",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_identifying_leading_and_trailing_silence",
+      "label": "Identifying leading and trailing silence",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "identifying leading and trailing silence",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_interpreting_the_output",
+      "label": "Interpreting the output",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "interpreting the output",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_step_1_measure_loudness_with_loudnorm",
+      "label": "Step 1: Measure loudness with `loudnorm`",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "step 1: measure loudness with `loudnorm`",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_step_2_detect_silences_using_adaptive_threshold",
+      "label": "Step 2: Detect silences using adaptive threshold",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "step 2: detect silences using adaptive threshold",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_using_with_remotion_s_video_component",
+      "label": "Using with Remotion's `<Video>` component",
+      "_origin": "ast",
+      "community": 100,
+      "community_name": "Using `<HtmlInCanvas>` in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "using with remotion's `<video>` component",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
+      "source_location": "L56"
     },
     {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_light_leaks",
@@ -4590,94 +4730,6 @@
       "source_location": "L77"
     },
     {
-      "id": "videos_agents_skills_remotion_markup_compositions",
-      "label": "skills/remotion-markup/compositions.md",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "compositions",
-        "description": "Defining compositions, stills, folders, default props and dynamic metadata"
-      },
-      "node_kind": "page",
-      "norm_label": "skills/remotion-markup/compositions.md",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_compositions_default_props_and_scaffold_metadata",
-      "label": "Default Props and scaffold metadata",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "default props and scaffold metadata",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L61"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_compositions_dynamic_duration_width_and_height",
-      "label": "Dynamic duration, width, and height",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "dynamic duration, width, and height",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L158"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_compositions_folders",
-      "label": "Folders",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "folders",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L112"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_compositions_nesting_compositions_within_another",
-      "label": "Nesting compositions within another",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "nesting compositions within another",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L162"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_compositions_source_editable_registrations",
-      "label": "Source-editable registrations",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source-editable registrations",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_compositions_stills",
-      "label": "Stills",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "skills/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "stills",
-      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
-      "source_location": "L138"
-    },
-    {
       "id": "web_content_catalogo_50_recetas",
       "label": "content/catalogo-50-recetas.md",
       "_origin": "ast",
@@ -4862,6 +4914,22 @@
       "source_location": "L42"
     },
     {
+      "id": "videos_agents_skills_remotion_markup_silence_detection",
+      "label": "skills/remotion-markup/silence-detection.md",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "remotion-markup/SKILL.md",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "silence-detection",
+        "description": "Adaptive silence detection for video/audio files using FFmpeg loudnorm and silencedetect"
+      },
+      "node_kind": "page",
+      "norm_label": "skills/remotion-markup/silence-detection.md",
+      "source_file": "videos/.agents/skills/remotion-markup/silence-detection.md",
+      "source_location": "L1"
+    },
+    {
       "id": "videos_agents_skills_remotion_markup_text_highlights",
       "label": "skills/remotion-markup/text-highlights.md",
       "_origin": "ast",
@@ -4927,6 +4995,22 @@
       "source_location": "L1"
     },
     {
+      "id": "videos_agents_skills_remotion_markup_ffmpeg",
+      "label": "skills/remotion-markup/ffmpeg.md",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "remotion-markup/SKILL.md",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "ffmpeg",
+        "description": "Using FFmpeg and FFprobe in Remotion"
+      },
+      "node_kind": "page",
+      "norm_label": "skills/remotion-markup/ffmpeg.md",
+      "source_file": "videos/.agents/skills/remotion-markup/ffmpeg.md",
+      "source_location": "L1"
+    },
+    {
       "id": "videos_agents_skills_remotion_markup_cropping",
       "label": "skills/remotion-markup/cropping.md",
       "_origin": "ast",
@@ -4949,6 +5033,30 @@
       "norm_label": "cropping",
       "source_file": "videos/.agents/skills/remotion-markup/cropping.md",
       "source_location": "L1"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_ffmpeg_ffmpeg_in_remotion",
+      "label": "FFmpeg in Remotion",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "remotion-markup/SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ffmpeg in remotion",
+      "source_file": "videos/.agents/skills/remotion-markup/ffmpeg.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_ffmpeg_trimming_videos",
+      "label": "Trimming videos",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "remotion-markup/SKILL.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "trimming videos",
+      "source_file": "videos/.agents/skills/remotion-markup/ffmpeg.md",
+      "source_location": "L17"
     },
     {
       "id": "videos_agents_skills_remotion_markup_parameters_color_picker",
@@ -5453,78 +5561,6 @@
       "norm_label": "text highlights",
       "source_file": "videos/.agents/skills/remotion-markup/text-highlights.md",
       "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_adding_ai_voiceover_to_a_remotion_composition",
-      "label": "Adding AI voiceover to a Remotion composition",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Adding AI voiceover to a Remotion composition",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "adding ai voiceover to a remotion composition",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_delaying_audio_start",
-      "label": "Delaying audio start",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Adding AI voiceover to a Remotion composition",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "delaying audio start",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
-      "source_location": "L101"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_dynamic_composition_duration_with_calculatemetadata",
-      "label": "Dynamic composition duration with calculateMetadata",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Adding AI voiceover to a Remotion composition",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "dynamic composition duration with calculatemetadata",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
-      "source_location": "L56"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_generating_audio_with_elevenlabs",
-      "label": "Generating audio with ElevenLabs",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Adding AI voiceover to a Remotion composition",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "generating audio with elevenlabs",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
-      "source_location": "L24"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_prerequisites",
-      "label": "Prerequisites",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Adding AI voiceover to a Remotion composition",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "prerequisites",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_rendering_audio_in_the_component",
-      "label": "Rendering audio in the component",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Adding AI voiceover to a Remotion composition",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "rendering audio in the component",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
-      "source_location": "L97"
     },
     {
       "id": "videos_agents_skills_remotion_best_practices_remotion_maps_techniques_cesium_technique_build_the_flight",
@@ -6601,6 +6637,22 @@
       "source_location": "L25"
     },
     {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_sequencing",
+      "label": "remotion-best-practices/remotion-markup/sequencing.md",
+      "_origin": "ast",
+      "community": 121,
+      "community_name": "remotion-best-practices/remotion-interactivity/timeline-structure.md",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "sequencing",
+        "description": "Sequencing patterns for Remotion - delay, trim, limit duration of items"
+      },
+      "node_kind": "page",
+      "norm_label": "remotion-best-practices/remotion-markup/sequencing.md",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/sequencing.md",
+      "source_location": "L1"
+    },
+    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_interactivity_timeline_structure",
       "label": "remotion-best-practices/remotion-interactivity/timeline-structure.md",
       "_origin": "ast",
@@ -6754,6 +6806,42 @@
       "node_kind": "heading",
       "norm_label": "multi-scene videos",
       "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/multi-scene-video.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_sequencing_choose_the_timing_boundary",
+      "label": "Choose the timing boundary",
+      "_origin": "ast",
+      "community": 121,
+      "community_name": "remotion-best-practices/remotion-interactivity/timeline-structure.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "choose the timing boundary",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/sequencing.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_timing_props",
+      "label": "remotion-best-practices/remotion-markup/timing-props.md",
+      "_origin": "ast",
+      "community": 121,
+      "community_name": "remotion-best-practices/remotion-interactivity/timeline-structure.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "remotion-best-practices/remotion-markup/timing-props.md",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/timing-props.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_video_editing",
+      "label": "remotion-best-practices/remotion-markup/video-editing.md",
+      "_origin": "ast",
+      "community": 121,
+      "community_name": "remotion-best-practices/remotion-interactivity/timeline-structure.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "remotion-best-practices/remotion-markup/video-editing.md",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/video-editing.md",
       "source_location": "L1"
     },
     {
@@ -8953,7 +9041,7 @@
       "label": "remotion-best-practices/remotion-markup/voiceover.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "voiceover",
@@ -8969,7 +9057,7 @@
       "label": "remotion-best-practices/remotion-markup/calculate-metadata.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "calculate-metadata",
@@ -8985,7 +9073,7 @@
       "label": "remotion-best-practices/remotion-multimedia/get-video-duration.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "get-video-duration",
@@ -9001,7 +9089,7 @@
       "label": "remotion-best-practices/remotion-multimedia/get-audio-duration.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "get-audio-duration",
@@ -9017,7 +9105,7 @@
       "label": "remotion-best-practices/remotion-multimedia/get-video-dimensions.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "get-video-dimensions",
@@ -9033,7 +9121,7 @@
       "label": "remotion-multimedia/REFERENCE.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "remotion-multimedia",
@@ -9050,7 +9138,7 @@
       "label": "remotion-best-practices/remotion-markup/audio.md",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "frontmatter": {
         "name": "audio",
@@ -9062,11 +9150,131 @@
       "source_location": "L1"
     },
     {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_delaying",
+      "label": "Delaying",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "delaying",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_importing_audio",
+      "label": "Importing Audio",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "importing audio",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_looping",
+      "label": "Looping",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "looping",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L145"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_muting",
+      "label": "Muting",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "muting",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_pitch",
+      "label": "Pitch",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pitch",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L173"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_prerequisites",
+      "label": "Prerequisites",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "prerequisites",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_speed",
+      "label": "Speed",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "speed",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_trimming",
+      "label": "Trimming",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "trimming",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_using_audio_in_remotion",
+      "label": "Using audio in Remotion",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "using audio in remotion",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_volume",
+      "label": "Volume",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "volume",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
+      "source_location": "L80"
+    },
+    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_calculate_metadata_matching_dimensions_of_a_video",
       "label": "Matching dimensions of a video",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "matching dimensions of a video",
@@ -9078,7 +9286,7 @@
       "label": "Return value",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "return value",
@@ -9090,7 +9298,7 @@
       "label": "Setting a default outName",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "setting a default outname",
@@ -9102,7 +9310,7 @@
       "label": "Setting duration based on a video",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "setting duration based on a video",
@@ -9114,7 +9322,7 @@
       "label": "Setting duration based on multiple videos",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "setting duration based on multiple videos",
@@ -9126,7 +9334,7 @@
       "label": "Transforming props",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "transforming props",
@@ -9138,7 +9346,7 @@
       "label": "Using calculateMetadata",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "using calculatemetadata",
@@ -9146,11 +9354,143 @@
       "source_location": "L8"
     },
     {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_adding_ai_voiceover_to_a_remotion_composition",
+      "label": "Adding AI voiceover to a Remotion composition",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "adding ai voiceover to a remotion composition",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_delaying_audio_start",
+      "label": "Delaying audio start",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "delaying audio start",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
+      "source_location": "L101"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_dynamic_composition_duration_with_calculatemetadata",
+      "label": "Dynamic composition duration with calculateMetadata",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dynamic composition duration with calculatemetadata",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
+      "source_location": "L56"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_generating_audio_with_elevenlabs",
+      "label": "Generating audio with ElevenLabs",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "generating audio with elevenlabs",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_prerequisites",
+      "label": "Prerequisites",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "prerequisites",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_voiceover_rendering_audio_in_the_component",
+      "label": "Rendering audio in the component",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "rendering audio in the component",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/voiceover.md",
+      "source_location": "L97"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_getting_audio_duration",
+      "label": "Getting audio duration",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "getting audio duration",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_getting_audio_duration_with_mediabunny",
+      "label": "Getting audio duration with Mediabunny",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "getting audio duration with mediabunny",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_in_node_js_and_bun",
+      "label": "In Node.js and Bun",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "in node.js and bun",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_usage",
+      "label": "Usage",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "usage",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_using_with_staticfile_in_remotion",
+      "label": "Using with staticFile in Remotion",
+      "_origin": "ast",
+      "community": 147,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "using with staticfile in remotion",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
+      "source_location": "L35"
+    },
+    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_video_dimensions_getting_video_dimensions",
       "label": "Getting video dimensions",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting video dimensions",
@@ -9162,7 +9502,7 @@
       "label": "Getting video dimensions with Mediabunny",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting video dimensions with mediabunny",
@@ -9174,7 +9514,7 @@
       "label": "Usage",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "usage",
@@ -9186,7 +9526,7 @@
       "label": "Using with local files",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "using with local files",
@@ -9198,7 +9538,7 @@
       "label": "Using with staticFile in Remotion",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "using with staticfile in remotion",
@@ -9210,7 +9550,7 @@
       "label": "Getting video duration",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting video duration",
@@ -9222,7 +9562,7 @@
       "label": "Getting video duration with Mediabunny",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting video duration with mediabunny",
@@ -9234,7 +9574,7 @@
       "label": "In Node.js and Bun",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "in node.js and bun",
@@ -9246,7 +9586,7 @@
       "label": "Usage",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "usage",
@@ -9258,7 +9598,7 @@
       "label": "Video files from the public/ directory",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "video files from the public/ directory",
@@ -9270,7 +9610,7 @@
       "label": "Getting audio duration",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting audio duration",
@@ -9282,7 +9622,7 @@
       "label": "Getting video dimensions",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting video dimensions",
@@ -9294,7 +9634,7 @@
       "label": "Getting video duration",
       "_origin": "ast",
       "community": 147,
-      "community_name": "Using calculateMetadata",
+      "community_name": "Using audio in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting video duration",
@@ -10759,126 +11099,6 @@
       "source_location": "L1"
     },
     {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_animate_words_not_letters",
-      "label": "Animate words, not letters",
-      "_origin": "ast",
-      "community": 177,
-      "community_name": "Arabic and right-to-left text",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "animate words, not letters",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
-      "source_location": "L26"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_arabic_and_right_to_left_text",
-      "label": "Arabic and right-to-left text",
-      "_origin": "ast",
-      "community": 177,
-      "community_name": "Arabic and right-to-left text",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "arabic and right-to-left text",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_fonts",
-      "label": "Fonts",
-      "_origin": "ast",
-      "community": 177,
-      "community_name": "Arabic and right-to-left text",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fonts",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
-      "source_location": "L82"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_per_letter_animation_if_it_is_needed",
-      "label": "Per-letter animation, if it is needed",
-      "_origin": "ast",
-      "community": 177,
-      "community_name": "Arabic and right-to-left text",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "per-letter animation, if it is needed",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
-      "source_location": "L32"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_set_the_base_direction",
-      "label": "Set the base direction",
-      "_origin": "ast",
-      "community": 177,
-      "community_name": "Arabic and right-to-left text",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "set the base direction",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_getting_audio_duration",
-      "label": "Getting audio duration",
-      "_origin": "ast",
-      "community": 178,
-      "community_name": "Getting audio duration with Mediabunny",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "getting audio duration",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_getting_audio_duration_with_mediabunny",
-      "label": "Getting audio duration with Mediabunny",
-      "_origin": "ast",
-      "community": 178,
-      "community_name": "Getting audio duration with Mediabunny",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "getting audio duration with mediabunny",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_in_node_js_and_bun",
-      "label": "In Node.js and Bun",
-      "_origin": "ast",
-      "community": 178,
-      "community_name": "Getting audio duration with Mediabunny",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "in node.js and bun",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
-      "source_location": "L45"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_usage",
-      "label": "Usage",
-      "_origin": "ast",
-      "community": 178,
-      "community_name": "Getting audio duration with Mediabunny",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "usage",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
-      "source_location": "L28"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_multimedia_get_audio_duration_using_with_staticfile_in_remotion",
-      "label": "Using with staticFile in Remotion",
-      "_origin": "ast",
-      "community": 178,
-      "community_name": "Getting audio duration with Mediabunny",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "using with staticfile in remotion",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md",
-      "source_location": "L35"
-    },
-    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_video_editing_choose_the_cut_behavior",
       "label": "Choose the cut behavior",
       "_origin": "ast",
@@ -10993,42 +11213,6 @@
       "norm_label": "installcommand",
       "source_file": "vercel.json",
       "source_location": "L3"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_transitions_calculating_total_composition_duration",
-      "label": "Calculating total composition duration",
-      "_origin": "ast",
-      "community": 180,
-      "community_name": "Duration calculation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "calculating total composition duration",
-      "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
-      "source_location": "L264"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_transitions_duration_calculation",
-      "label": "Duration calculation",
-      "_origin": "ast",
-      "community": 180,
-      "community_name": "Duration calculation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "duration calculation",
-      "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
-      "source_location": "L233"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_transitions_getting_the_duration_of_a_transition",
-      "label": "Getting the duration of a transition",
-      "_origin": "ast",
-      "community": 180,
-      "community_name": "Duration calculation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "getting the duration of a transition",
-      "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
-      "source_location": "L244"
     },
     {
       "id": "readme",
@@ -11342,6 +11526,17 @@
       "source_location": "L1"
     },
     {
+      "id": "web_lib_product_pricefromenv",
+      "label": "priceFromEnv",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "deliver.ts",
+      "file_type": "code",
+      "norm_label": "pricefromenv",
+      "source_file": "lib/product.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "web_lib_product_product",
       "label": "PRODUCT",
       "_origin": "ast",
@@ -11350,7 +11545,7 @@
       "file_type": "code",
       "norm_label": "product",
       "source_file": "lib/product.ts",
-      "source_location": "L1"
+      "source_location": "L3"
     },
     {
       "id": "web_lib_receipt_email",
@@ -11522,22 +11717,6 @@
       "source_location": "L3"
     },
     {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection",
-      "label": "remotion-best-practices/remotion-markup/silence-detection.md",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "remotion-markup/REFERENCE.md",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "silence-detection",
-        "description": "Adaptive silence detection for video/audio files using FFmpeg loudnorm and silencedetect"
-      },
-      "node_kind": "page",
-      "norm_label": "remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L1"
-    },
-    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_reference",
       "label": "remotion-markup/REFERENCE.md",
       "_origin": "ast",
@@ -11585,46 +11764,6 @@
       "norm_label": "remotion-best-practices/remotion-markup/parameters.md",
       "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/parameters.md",
       "source_location": "L1"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_ffmpeg",
-      "label": "remotion-best-practices/remotion-markup/ffmpeg.md",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "remotion-markup/REFERENCE.md",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "ffmpeg",
-        "description": "Using FFmpeg and FFprobe in Remotion"
-      },
-      "node_kind": "page",
-      "norm_label": "remotion-best-practices/remotion-markup/ffmpeg.md",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/ffmpeg.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_ffmpeg_ffmpeg_in_remotion",
-      "label": "FFmpeg in Remotion",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "remotion-markup/REFERENCE.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ffmpeg in remotion",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/ffmpeg.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_ffmpeg_trimming_videos",
-      "label": "Trimming videos",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "remotion-markup/REFERENCE.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "trimming videos",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/ffmpeg.md",
-      "source_location": "L17"
     },
     {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_parameters_color_picker",
@@ -13236,126 +13375,6 @@
       "norm_label": "video",
       "source_file": "videos/.agents/skills/remotion-maps/techniques/maptiler/assets/tokens.ts",
       "source_location": "L29"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_delaying",
-      "label": "Delaying",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "delaying",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L63"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_importing_audio",
-      "label": "Importing Audio",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "importing audio",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L19"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_looping",
-      "label": "Looping",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "looping",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L145"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_muting",
-      "label": "Muting",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "muting",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L112"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_pitch",
-      "label": "Pitch",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pitch",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L173"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_prerequisites",
-      "label": "Prerequisites",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "prerequisites",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_speed",
-      "label": "Speed",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "speed",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L130"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_trimming",
-      "label": "Trimming",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "trimming",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L43"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_using_audio_in_remotion",
-      "label": "Using audio in Remotion",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "using audio in remotion",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_audio_volume",
-      "label": "Volume",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Using audio in Remotion",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "volume",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/audio.md",
-      "source_location": "L80"
     },
     {
       "id": "videos_agents_skills_remotion_markup_remotion_maps_techniques_maptiler_assets_countrylabel",
@@ -15514,18 +15533,6 @@
       "source_location": "L138"
     },
     {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_video_editing",
-      "label": "remotion-best-practices/remotion-markup/video-editing.md",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "remotion-best-practices/remotion-markup/compositions.md",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "remotion-best-practices/remotion-markup/video-editing.md",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/video-editing.md",
-      "source_location": "L1"
-    },
-    {
       "id": "web_tsconfig",
       "label": "tsconfig.json",
       "_origin": "ast",
@@ -17574,11 +17581,99 @@
       "source_location": "L1"
     },
     {
+      "id": "videos_agents_skills_remotion_markup_compositions",
+      "label": "skills/remotion-markup/compositions.md",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "compositions",
+        "description": "Defining compositions, stills, folders, default props and dynamic metadata"
+      },
+      "node_kind": "page",
+      "norm_label": "skills/remotion-markup/compositions.md",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_compositions_default_props_and_scaffold_metadata",
+      "label": "Default Props and scaffold metadata",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "default props and scaffold metadata",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_compositions_dynamic_duration_width_and_height",
+      "label": "Dynamic duration, width, and height",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dynamic duration, width, and height",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L158"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_compositions_folders",
+      "label": "Folders",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "folders",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_compositions_nesting_compositions_within_another",
+      "label": "Nesting compositions within another",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "nesting compositions within another",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L162"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_compositions_source_editable_registrations",
+      "label": "Source-editable registrations",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source-editable registrations",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_compositions_stills",
+      "label": "Stills",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "skills/remotion-markup/compositions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stills",
+      "source_file": "videos/.agents/skills/remotion-markup/compositions.md",
+      "source_location": "L138"
+    },
+    {
       "id": "videos_agents_skills_remotion_markup_connected_compositions",
       "label": "skills/remotion-markup/connected-compositions.md",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "skills/remotion-markup/connected-compositions.md",
@@ -17590,7 +17685,7 @@
       "label": "Connected compositions",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "connected compositions",
@@ -17602,7 +17697,7 @@
       "label": "Create the connection",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "create the connection",
@@ -17614,7 +17709,7 @@
       "label": "Extract an existing group",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "extract an existing group",
@@ -17626,7 +17721,7 @@
       "label": "Make the component independent of its parent",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "make the component independent of its parent",
@@ -17638,7 +17733,7 @@
       "label": "Verify both views",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "verify both views",
@@ -17650,7 +17745,7 @@
       "label": "skills/remotion-markup/multi-scene-video.md",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "skills/remotion-markup/multi-scene-video.md",
@@ -17662,7 +17757,7 @@
       "label": "Multi-scene videos",
       "_origin": "ast",
       "community": 51,
-      "community_name": "Connected compositions",
+      "community_name": "skills/remotion-markup/compositions.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "multi-scene videos",
@@ -17731,6 +17826,18 @@
       "source_location": "L195"
     },
     {
+      "id": "videos_agents_skills_remotion_markup_transitions_calculating_total_composition_duration",
+      "label": "Calculating total composition duration",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "skills/remotion-markup/transitions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "calculating total composition duration",
+      "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
+      "source_location": "L264"
+    },
+    {
       "id": "videos_agents_skills_remotion_markup_transitions_custom_presentation",
       "label": "Custom presentation",
       "_origin": "ast",
@@ -17741,6 +17848,30 @@
       "norm_label": "custom presentation",
       "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
       "source_location": "L53"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_transitions_duration_calculation",
+      "label": "Duration calculation",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "skills/remotion-markup/transitions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "duration calculation",
+      "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
+      "source_location": "L233"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_transitions_getting_the_duration_of_a_transition",
+      "label": "Getting the duration of a transition",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "skills/remotion-markup/transitions.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "getting the duration of a transition",
+      "source_file": "videos/.agents/skills/remotion-markup/transitions.md",
+      "source_location": "L244"
     },
     {
       "id": "videos_agents_skills_remotion_markup_transitions_mixing_transitions_and_overlays",
@@ -18579,7 +18710,7 @@
       "label": "remotion-best-practices/remotion-markup/arabic-text.md",
       "_origin": "ast",
       "community": 59,
-      "community_name": "remotion-best-practices/remotion-markup/arabic-text.md",
+      "community_name": "Arabic and right-to-left text",
       "file_type": "document",
       "frontmatter": {
         "name": "arabic-text",
@@ -18595,7 +18726,7 @@
       "label": "remotion-best-practices/remotion-markup/google-fonts.md",
       "_origin": "ast",
       "community": 59,
-      "community_name": "remotion-best-practices/remotion-markup/arabic-text.md",
+      "community_name": "Arabic and right-to-left text",
       "file_type": "document",
       "frontmatter": {
         "name": "fonts",
@@ -18607,11 +18738,71 @@
       "source_location": "L1"
     },
     {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_animate_words_not_letters",
+      "label": "Animate words, not letters",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Arabic and right-to-left text",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "animate words, not letters",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_arabic_and_right_to_left_text",
+      "label": "Arabic and right-to-left text",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Arabic and right-to-left text",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "arabic and right-to-left text",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_fonts",
+      "label": "Fonts",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Arabic and right-to-left text",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fonts",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_per_letter_animation_if_it_is_needed",
+      "label": "Per-letter animation, if it is needed",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Arabic and right-to-left text",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "per-letter animation, if it is needed",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_arabic_text_set_the_base_direction",
+      "label": "Set the base direction",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Arabic and right-to-left text",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "set the base direction",
+      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/arabic-text.md",
+      "source_location": "L10"
+    },
+    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_google_fonts_google_fonts_with_remotion_google_fonts",
       "label": "Google Fonts with @remotion/google-fonts",
       "_origin": "ast",
       "community": 59,
-      "community_name": "remotion-best-practices/remotion-markup/arabic-text.md",
+      "community_name": "Arabic and right-to-left text",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "google fonts with @remotion/google-fonts",
@@ -18623,7 +18814,7 @@
       "label": "Prerequisites",
       "_origin": "ast",
       "community": 59,
-      "community_name": "remotion-best-practices/remotion-markup/arabic-text.md",
+      "community_name": "Arabic and right-to-left text",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "prerequisites",
@@ -18635,7 +18826,7 @@
       "label": "Using fonts in Remotion",
       "_origin": "ast",
       "community": 59,
-      "community_name": "remotion-best-practices/remotion-markup/arabic-text.md",
+      "community_name": "Arabic and right-to-left text",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "using fonts in remotion",
@@ -18647,7 +18838,7 @@
       "label": "Using in components",
       "_origin": "ast",
       "community": 59,
-      "community_name": "remotion-best-practices/remotion-markup/arabic-text.md",
+      "community_name": "Arabic and right-to-left text",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "using in components",
@@ -19387,46 +19578,6 @@
       "norm_label": "source selection",
       "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/TECHNIQUE.md",
       "source_location": "L58"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_sequencing",
-      "label": "remotion-best-practices/remotion-markup/sequencing.md",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Delaying, trimming",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "sequencing",
-        "description": "Sequencing patterns for Remotion - delay, trim, limit duration of items"
-      },
-      "node_kind": "page",
-      "norm_label": "remotion-best-practices/remotion-markup/sequencing.md",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/sequencing.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_sequencing_choose_the_timing_boundary",
-      "label": "Choose the timing boundary",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Delaying, trimming",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "choose the timing boundary",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/sequencing.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_timing_props",
-      "label": "remotion-best-practices/remotion-markup/timing-props.md",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Delaying, trimming",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "remotion-best-practices/remotion-markup/timing-props.md",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/timing-props.md",
-      "source_location": "L1"
     },
     {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_timing_props_delaying_trimming",
@@ -20726,78 +20877,6 @@
       "source_location": "L90"
     },
     {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_adaptive_silence_detection",
-      "label": "Adaptive Silence Detection",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "adaptive silence detection",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_identifying_leading_and_trailing_silence",
-      "label": "Identifying leading and trailing silence",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "identifying leading and trailing silence",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L49"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_interpreting_the_output",
-      "label": "Interpreting the output",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "interpreting the output",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L38"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_step_1_measure_loudness_with_loudnorm",
-      "label": "Step 1: Measure loudness with `loudnorm`",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "step 1: measure loudness with `loudnorm`",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L14"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_step_2_detect_silences_using_adaptive_threshold",
-      "label": "Step 2: Detect silences using adaptive threshold",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "step 2: detect silences using adaptive threshold",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L26"
-    },
-    {
-      "id": "videos_agents_skills_remotion_best_practices_remotion_markup_silence_detection_using_with_remotion_s_video_component",
-      "label": "Using with Remotion's `<Video>` component",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "using with remotion's `<video>` component",
-      "source_file": "videos/.agents/skills/remotion-best-practices/remotion-markup/silence-detection.md",
-      "source_location": "L56"
-    },
-    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_markup_remotion_maps_techniques_cesium_references_3d_flyover_architecture",
       "label": "remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
       "_origin": "ast",
@@ -21654,6 +21733,90 @@
       "source_location": "L80"
     },
     {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_matching_dimensions_of_a_video",
+      "label": "Matching dimensions of a video",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "matching dimensions of a video",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L46"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_return_value",
+      "label": "Return value",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "return value",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_setting_a_default_outname",
+      "label": "Setting a default outName",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "setting a default outname",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L89"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_setting_duration_based_on_a_video",
+      "label": "Setting duration based on a video",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "setting duration based on a video",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L27"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_setting_duration_based_on_multiple_videos",
+      "label": "Setting duration based on multiple videos",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "setting duration based on multiple videos",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_transforming_props",
+      "label": "Transforming props",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "transforming props",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L103"
+    },
+    {
+      "id": "videos_agents_skills_remotion_markup_calculate_metadata_using_calculatemetadata",
+      "label": "Using calculateMetadata",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "Using audio in Remotion",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "using calculatemetadata",
+      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
+      "source_location": "L8"
+    },
+    {
       "id": "videos_agents_skills_remotion_markup_embedding_videos",
       "label": "skills/remotion-markup/embedding-videos.md",
       "_origin": "ast",
@@ -22028,62 +22191,6 @@
       "norm_label": "texto en la imagen",
       "source_file": "anuncios/guiones-imagen.md",
       "source_location": "L80"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_silence_detection",
-      "label": "skills/remotion-markup/silence-detection.md",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "silence-detection",
-        "description": "Adaptive silence detection for video/audio files using FFmpeg loudnorm and silencedetect"
-      },
-      "node_kind": "page",
-      "norm_label": "skills/remotion-markup/silence-detection.md",
-      "source_file": "videos/.agents/skills/remotion-markup/silence-detection.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_ffmpeg",
-      "label": "skills/remotion-markup/ffmpeg.md",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "ffmpeg",
-        "description": "Using FFmpeg and FFprobe in Remotion"
-      },
-      "node_kind": "page",
-      "norm_label": "skills/remotion-markup/ffmpeg.md",
-      "source_file": "videos/.agents/skills/remotion-markup/ffmpeg.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_ffmpeg_ffmpeg_in_remotion",
-      "label": "FFmpeg in Remotion",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ffmpeg in remotion",
-      "source_file": "videos/.agents/skills/remotion-markup/ffmpeg.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_ffmpeg_trimming_videos",
-      "label": "Trimming videos",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "Adaptive Silence Detection",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "trimming videos",
-      "source_file": "videos/.agents/skills/remotion-markup/ffmpeg.md",
-      "source_location": "L17"
     },
     {
       "id": "videos_agents_skills_remotion_markup_silence_detection_adaptive_silence_detection",
@@ -23294,90 +23401,6 @@
       "source_location": "L1"
     },
     {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_matching_dimensions_of_a_video",
-      "label": "Matching dimensions of a video",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "matching dimensions of a video",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L46"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_return_value",
-      "label": "Return value",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "return value",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L126"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_setting_a_default_outname",
-      "label": "Setting a default outName",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "setting a default outname",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L89"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_setting_duration_based_on_a_video",
-      "label": "Setting duration based on a video",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "setting duration based on a video",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L27"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_setting_duration_based_on_multiple_videos",
-      "label": "Setting duration based on multiple videos",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "setting duration based on multiple videos",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L67"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_transforming_props",
-      "label": "Transforming props",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "transforming props",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L103"
-    },
-    {
-      "id": "videos_agents_skills_remotion_markup_calculate_metadata_using_calculatemetadata",
-      "label": "Using calculateMetadata",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Using calculateMetadata",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "using calculatemetadata",
-      "source_file": "videos/.agents/skills/remotion-markup/calculate-metadata.md",
-      "source_location": "L8"
-    },
-    {
       "id": "videos_agents_skills_remotion_best_practices_remotion_saas_reference",
       "label": "remotion-saas/REFERENCE.md",
       "_origin": "ast",
@@ -23855,6 +23878,22 @@
       "source_location": "L1"
     },
     {
+      "id": "videos_agents_skills_remotion_markup_gifs",
+      "label": "skills/remotion-markup/gifs.md",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
+      "file_type": "document",
+      "frontmatter": {
+        "name": "gif",
+        "description": "Displaying GIFs, APNG, AVIF and WebP in Remotion"
+      },
+      "node_kind": "page",
+      "norm_label": "skills/remotion-markup/gifs.md",
+      "source_file": "videos/.agents/skills/remotion-markup/gifs.md",
+      "source_location": "L1"
+    },
+    {
       "id": "videos_agents_skills_remotion_markup_audio_visualization_audio_visualization_in_remotion",
       "label": "Audio Visualization in Remotion",
       "_origin": "ast",
@@ -23951,27 +23990,11 @@
       "source_location": "L89"
     },
     {
-      "id": "videos_agents_skills_remotion_markup_gifs",
-      "label": "skills/remotion-markup/gifs.md",
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
-      "file_type": "document",
-      "frontmatter": {
-        "name": "gif",
-        "description": "Displaying GIFs, APNG, AVIF and WebP in Remotion"
-      },
-      "node_kind": "page",
-      "norm_label": "skills/remotion-markup/gifs.md",
-      "source_file": "videos/.agents/skills/remotion-markup/gifs.md",
-      "source_location": "L1"
-    },
-    {
       "id": "videos_agents_skills_remotion_markup_gifs_alternative",
       "label": "Alternative",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "alternative",
@@ -23982,8 +24005,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_basic_usage",
       "label": "Basic usage",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "basic usage",
@@ -23994,8 +24017,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_getting_gif_duration",
       "label": "Getting GIF duration",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "getting gif duration",
@@ -24006,8 +24029,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_looping_behavior",
       "label": "Looping behavior",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "looping behavior",
@@ -24018,8 +24041,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_playback_speed",
       "label": "Playback speed",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "playback speed",
@@ -24030,8 +24053,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_sizing_and_fit",
       "label": "Sizing and fit",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "sizing and fit",
@@ -24042,8 +24065,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_styling",
       "label": "Styling",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "styling",
@@ -24054,8 +24077,8 @@
       "id": "videos_agents_skills_remotion_markup_gifs_using_animated_images_in_remotion",
       "label": "Using Animated images in Remotion",
       "_origin": "ast",
-      "community": 95,
-      "community_name": "Using Animated images in Remotion",
+      "community": 94,
+      "community_name": "Audio Visualization in Remotion",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "using animated images in remotion",
@@ -25230,7 +25253,19 @@
     },
     {
       "source": "web_app_api_checkout_route_post",
-      "target": "web_lib_skylink_createskylinkcharge",
+      "target": "web_lib_skylink_bcvrate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/api/checkout/route.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "web_app_api_checkout_route_post",
+      "target": "web_lib_product_vescentsforrate",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -25242,6 +25277,30 @@
     },
     {
       "source": "web_app_api_checkout_route_post",
+      "target": "web_lib_product_formatves",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/api/checkout/route.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "web_app_api_checkout_route_post",
+      "target": "web_lib_skylink_createskylinkcharge",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/api/checkout/route.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "web_app_api_checkout_route_post",
       "target": "web_lib_orders_saveorder",
       "relation": "calls",
       "_origin": "ast",
@@ -25249,7 +25308,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/api/checkout/route.ts",
-      "source_location": "L52",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -25261,7 +25320,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/api/checkout/route.ts",
-      "source_location": "L71",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -27622,6 +27681,18 @@
     },
     {
       "source": "web_app_api_checkout_route",
+      "target": "web_lib_product_formatves",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "app/api/checkout/route.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_app_api_checkout_route",
       "target": "web_lib_product_product",
       "relation": "imports",
       "_origin": "ast",
@@ -27630,6 +27701,30 @@
       "context": "import",
       "source_file": "app/api/checkout/route.ts",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_app_api_checkout_route",
+      "target": "web_lib_product_vescentsforrate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "app/api/checkout/route.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_app_api_checkout_route",
+      "target": "web_lib_skylink_bcvrate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "app/api/checkout/route.ts",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -45835,7 +45930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "videos/src/Ads.tsx",
-      "source_location": "L303",
+      "source_location": "L304",
       "weight": 1.0
     },
     {
@@ -45846,7 +45941,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "videos/src/Ads.tsx",
-      "source_location": "L357",
+      "source_location": "L358",
       "weight": 1.0
     },
     {
@@ -45868,7 +45963,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "videos/src/Ads.tsx",
-      "source_location": "L460",
+      "source_location": "L455",
       "weight": 1.0
     },
     {
@@ -47556,7 +47651,7 @@
     },
     {
       "source": "web_lib_product",
-      "target": "web_lib_product_product",
+      "target": "web_lib_product_pricefromenv",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -47573,7 +47668,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "lib/product.ts",
-      "source_location": "L8",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "web_lib_product",
+      "target": "web_lib_product_product",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/product.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_lib_product",
+      "target": "web_lib_product_vescentsforrate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/product.ts",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -50816,5 +50933,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7971f1f12096acb7b7691cc996df05d2d9167f8e"
+  "built_at_commit": "fde6e749e140109d394721727fe68737f87a6bb0"
 }

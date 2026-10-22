@@ -99,7 +99,12 @@ export function CheckoutForm() {
           ? `Tasa BCV ${formatVes(quote.rate)} · pagas en bolívares.`
           : quote.message || "Precio en bolívares a tasa BCV al pagar."}
       </p>
-      <p className="fine">Cobro de prueba ahora: {PRODUCT.testVes} Bs.</p>
+      {quote.equivalentVes ? (
+        <p className="fine">
+          Hoy son <strong>{formatVes(quote.equivalentVes)} Bs</strong>. Ese es el
+          monto exacto a pagar.
+        </p>
+      ) : null}
       <label htmlFor="checkout-name">
         Nombre
         <input

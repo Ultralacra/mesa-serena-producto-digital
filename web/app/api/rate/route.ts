@@ -8,7 +8,6 @@ export async function GET() {
     return NextResponse.json({
       rate,
       priceUsd: PRODUCT.priceUsd,
-      testVes: PRODUCT.testVes,
       equivalentVes: Math.round(PRODUCT.priceUsd * rate * 100) / 100,
     });
   } catch (error) {

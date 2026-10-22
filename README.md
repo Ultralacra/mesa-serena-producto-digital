@@ -16,8 +16,6 @@ Variables (los valores reales van en el panel de Vercel, no en el repo):
 - `SKYLINK_COMMERCE_CODE`
 - `SKYLINK_API_KEY`
 - `NEXT_PUBLIC_PRICE_USD`
-- `NEXT_PUBLIC_PRICE_VES`
-- `PRICE_VES_CENTS`
 - `NEXT_PUBLIC_SITE_URL`
 - `MAIL_WEBHOOK_URL`
 - `SMTP2GO_USERNAME`
