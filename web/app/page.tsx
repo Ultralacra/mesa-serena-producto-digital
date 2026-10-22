@@ -19,22 +19,47 @@ const pains = [
   {
     num: "01",
     title: "Te quitaron la arepa",
-    text: "La arepa no tiene que desaparecer de tu mesa. Lo que cambia es el tamaño, el relleno y el combo que la acompaña.",
+    text: "No se acabó. Se acabó la del tamaño de un plato, con jugo y café con azúcar. Arepa pequeña, con pollo o huevo, y ensalada al lado.",
   },
   {
     num: "02",
-    title: "Comes soso y sigues con miedo",
-    text: "Ya quitaste azúcar, arroz y postres, pero igual dudas después de cada comida. No es falta de voluntad: nadie te enseñó a armar el plato.",
+    title: "Eso “saludable” no está en tu mercado",
+    text: "Si el recetario empieza con quinoa y salmón, no es para tu cocina. Aquí el plato sale con huevo, pollo, caraota y auyama.",
   },
   {
     num: "03",
-    title: "Lo “saludable” cuesta como un lujo",
-    text: "Quinoa, salmón y galletas importadas no son la vida real. Aquí cocinas con pollo, huevo, caraota, lenteja y auyama.",
+    title: "Cocinas para todos y tú comes aparte",
+    text: "Un solo caldero. Ellos comen pabellón. Tú comes el mismo pabellón, en tu porción. Sin plato de enferma.",
   },
   {
     num: "04",
-    title: "Cocinas para todos y tú comes aparte",
-    text: "No necesitas un caldero para la familia y otro plato triste para ti. Cocinan lo mismo; cambia tu porción y cómo armas el plato.",
+    title: "El miedo después de comer",
+    text: "Ese rato en el que no quieres mirar el glucometro. El libro no te promete un número: te arma el plato para que ese rato pese menos.",
+  },
+  {
+    num: "05",
+    title: "El desayuno te arma el día",
+    text: "No es el pabellón del domingo. Es el lunes: arepa enorme, jugo y café con azúcar. Hay 10 desayunos criollos para cortar eso.",
+  },
+  {
+    num: "06",
+    title: "Para tu mamá, sin sermón",
+    text: "Si ella es la que cocina, cómpraselo a su correo. Le llega el recetario con su nombre. Tú pagas. Mejor que otro audio de “cuídate”.",
+  },
+  {
+    num: "07",
+    title: "El domingo también se come",
+    text: "Pabellón, asado y visita no son el enemigo. El plato montado hasta arriba sí. Hay versión de domingo, con lo que de verdad se sirve en casa.",
+  },
+  {
+    num: "08",
+    title: "Comes soso y sigues con miedo",
+    text: "Ya quitaste el azúcar y el arroz, y igual dudas. No es falta de voluntad. Nadie te enseñó a armar el plato criollo.",
+  },
+  {
+    num: "09",
+    title: "El antojo, sin papelón",
+    text: "Diabetes no es vivir sin postre. Es vivir sin papelón a lo loco. Hay meriendas y un postre de lechosa para cuando el cuerpo pide dulce.",
   },
 ];
 
@@ -263,8 +288,8 @@ export default async function Home() {
 
       <section className="pains">
         <div className="wrap">
-          <p className="kicker">Esto es lo que de verdad pesa</p>
-          <h2>Si comer se volvió una lista de prohibiciones, necesitas un plan que entienda tu mesa.</h2>
+          <p className="kicker">Nueve formas de llegar hasta aquí</p>
+          <h2>Una de estas es la tuya. El recetario responde las nueve.</h2>
           <div className="pain-grid">
             {pains.map((pain) => (
               <article className="card" key={pain.title}>
