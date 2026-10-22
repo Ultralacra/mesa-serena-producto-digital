@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ),
-  title: "Mesa Serena — Recetario criollo para diabetes",
+  title: "Mesa Serena — Recetario de comida casera para diabetes",
   description:
-    "Para la que cocina en casa y quiere dejar de improvisar: 50 recetas criollas, menú de 7 días y lista de mercado. 5 USD a tasa BCV. El recetario llega a tu correo.",
+    "Para la que cocina en casa y quiere dejar de improvisar: 50 recetas caseras con sabores venezolanos, menú de 7 días y lista de mercado. 5 USD a tasa BCV. El recetario llega a tu correo.",
   openGraph: {
-    title: "Mesa Serena — Recetario criollo para diabetes",
+    title: "Mesa Serena — Recetario de comida casera para diabetes",
     description:
-      "Come lo de tu casa con más calma y mejor criterio. 50 recetas con lo de tu mercado, menú semanal y guías prácticas. 5 USD a tasa BCV. El recetario llega a tu correo.",
+      "Come lo de tu casa con más calma y mejor criterio. 50 recetas caseras con sabores venezolanos, menú semanal y guías prácticas. 5 USD a tasa BCV. El recetario llega a tu correo.",
     locale: "es_VE",
     type: "website",
     images: ["/img/ebook.jpg"],
