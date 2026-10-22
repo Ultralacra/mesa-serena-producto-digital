@@ -1497,6 +1497,99 @@ footer strong {
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .sticky-cta {
+    display: flex !important;
+  }
+
+  .wa-float {
+    bottom: calc(82px + env(safe-area-inset-bottom));
+    padding: 0;
+    width: 42px;
+    height: 42px;
+  }
+
+  .wa-label {
+    display: none;
+  }
+
+  body {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Mobile purchase dock: full width keeps the CTA stable on narrow devices. */
+@media (max-width: 980px), (hover: none) and (pointer: coarse) {
+  .sticky-cta {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    min-height: 72px;
+    margin: 0;
+    padding: 10px max(12px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .sticky-cta span {
+    min-width: 0;
+  }
+
+  .sticky-cta strong {
+    font-size: 19px;
+  }
+
+  .sticky-cta small {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sticky-cta .btn {
+    min-height: 44px;
+    padding: 11px 19px;
+    white-space: nowrap;
+  }
+
+  .wa-float {
+    bottom: calc(84px + env(safe-area-inset-bottom));
+    right: max(12px, env(safe-area-inset-right));
+    z-index: 101;
+  }
+
+  body {
+    padding-bottom: calc(86px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 360px) {
+  .sticky-cta {
+    min-height: 68px;
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
+
+  .sticky-cta strong {
+    font-size: 17px;
+  }
+
+  .sticky-cta small {
+    display: none;
+  }
+
+  .sticky-cta .btn {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 /* ---------- Admin ---------- */
 .admin-shell {
   width: min(1180px, calc(100% - 48px));

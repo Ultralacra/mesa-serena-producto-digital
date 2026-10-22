@@ -178,7 +178,7 @@ export default async function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <p className="kicker">Para cocinar con más tranquilidad</p>
+            <p className="kicker">Cocina con calma</p>
             <h1>
               Con diabetes no se acaba la comida rica. <em>Se acaba la improvisación.</em>
             </h1>
@@ -635,7 +635,7 @@ export default async function Home() {
           <strong>{PRODUCT.priceUsd} USD</strong>
           <small>Guía digital + menú semanal</small>
         </span>
-        <a className="btn" href="#comprar">Comprar ahora</a>
+        <a className="btn" href="#comprar">Comprar</a>
       </div>
 
       <a
