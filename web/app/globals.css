@@ -20,10 +20,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100%;
+  overflow-x: hidden;
   font-family: var(--font-sans), system-ui, sans-serif;
   background:
     radial-gradient(1200px 500px at 80% -10%, rgba(196, 164, 106, 0.18), transparent 55%),
@@ -1085,20 +1087,21 @@ footer strong {
 
 .wa-float {
   position: fixed;
-  right: 16px;
-  bottom: 16px;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
   z-index: 40;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--papel);
-  border: 1px solid var(--oro);
-  color: var(--bosque);
+  background: #25d366;
+  border: 0;
+  color: #fff;
   font-weight: 650;
   padding: 14px 18px;
   border-radius: 999px;
-  box-shadow: 0 10px 28px rgba(15, 31, 25, 0.16);
+  box-shadow: 0 10px 28px rgba(15, 31, 25, 0.18);
+  white-space: nowrap;
 }
 
 .wa-float svg {
@@ -1108,8 +1111,8 @@ footer strong {
 }
 
 .wa-float:hover {
-  background: var(--crema);
-  color: var(--bosque);
+  background: #1ebe5d;
+  color: #fff;
 }
 
 .sticky-cta {
@@ -1155,6 +1158,29 @@ footer strong {
   flex: none;
   padding: 11px 15px;
   font-size: 12px;
+}
+
+.wa-mini {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border: 0;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+}
+
+.wa-mini svg {
+  width: 24px;
+  height: 24px;
+}
+
+.wa-mini:hover {
+  background: #1ebe5d;
+  color: #fff;
 }
 
 .wa-label {
@@ -1325,25 +1351,6 @@ footer strong {
 }
 
 @media (max-width: 980px) {
-  .sticky-cta {
-    display: flex !important;
-  }
-
-  body {
-    padding-bottom: 92px;
-  }
-
-  .wa-float {
-    bottom: 82px;
-    padding: 0;
-    width: 42px;
-    height: 42px;
-  }
-
-  .wa-label {
-    display: none;
-  }
-
   .hero-grid,
   .split,
   .include,
@@ -1383,16 +1390,8 @@ footer strong {
     order: -1;
   }
 
-  .hero-art {
-    width: min(500px, 100%);
-    height: 570px;
-    transform: scale(0.9);
-    transform-origin: center top;
-    margin-bottom: -46px;
-  }
-
   .book-stage {
-    width: min(340px, 86%);
+    width: min(280px, 78%);
   }
 
   .nav-links {
@@ -1401,66 +1400,6 @@ footer strong {
 }
 
 @media (max-width: 720px) {
-  .sticky-cta {
-    display: flex;
-    bottom: calc(10px + env(safe-area-inset-bottom));
-  }
-
-  body {
-    padding-bottom: calc(92px + env(safe-area-inset-bottom));
-  }
-
-  .wa-float {
-    bottom: calc(82px + env(safe-area-inset-bottom));
-    right: max(14px, env(safe-area-inset-right));
-    padding: 0;
-    width: 42px;
-    height: 42px;
-    box-shadow: 0 8px 22px rgba(15, 31, 25, 0.2);
-  }
-
-  .wa-label {
-    display: none;
-  }
-
-  .wa-float svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .sticky-cta {
-    min-height: 64px;
-    padding-left: 14px;
-    padding-right: 8px;
-  }
-
-  .sticky-cta .btn {
-    min-height: 44px;
-    padding-left: 13px;
-    padding-right: 13px;
-  }
-
-  .sticky-cta small {
-    max-width: 43vw;
-  }
-
-  @media (max-width: 360px) {
-    .sticky-cta {
-      gap: 7px;
-      padding-left: 11px;
-    }
-
-    .sticky-cta strong {
-      font-size: 18px;
-    }
-
-    .sticky-cta .btn {
-      font-size: 11px;
-      padding-left: 11px;
-      padding-right: 11px;
-    }
-  }
-
   .nav .btn {
     display: none;
   }
@@ -1484,109 +1423,8 @@ footer strong {
     transform: none;
   }
 
-  .hero-art {
-    width: 500px;
-    max-width: 120vw;
-    height: 510px;
-    transform: scale(0.7);
-    margin: -28px -80px -120px;
-  }
-
   h1 {
     font-size: 38px;
-  }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .sticky-cta {
-    display: flex !important;
-  }
-
-  .wa-float {
-    bottom: calc(82px + env(safe-area-inset-bottom));
-    padding: 0;
-    width: 42px;
-    height: 42px;
-  }
-
-  .wa-label {
-    display: none;
-  }
-
-  body {
-    padding-bottom: calc(92px + env(safe-area-inset-bottom));
-  }
-}
-
-/* Mobile purchase dock: full width keeps the CTA stable on narrow devices. */
-@media (max-width: 980px), (hover: none) and (pointer: coarse) {
-  .sticky-cta {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: none;
-    min-height: 72px;
-    margin: 0;
-    padding: 10px max(12px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-  }
-
-  .sticky-cta span {
-    min-width: 0;
-  }
-
-  .sticky-cta strong {
-    font-size: 19px;
-  }
-
-  .sticky-cta small {
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .sticky-cta .btn {
-    min-height: 44px;
-    padding: 11px 19px;
-    white-space: nowrap;
-  }
-
-  .wa-float {
-    bottom: calc(84px + env(safe-area-inset-bottom));
-    right: max(12px, env(safe-area-inset-right));
-    z-index: 101;
-  }
-
-  body {
-    padding-bottom: calc(86px + env(safe-area-inset-bottom));
-  }
-}
-
-@media (max-width: 360px) {
-  .sticky-cta {
-    min-height: 68px;
-    padding-left: max(10px, env(safe-area-inset-left));
-    padding-right: max(10px, env(safe-area-inset-right));
-  }
-
-  .sticky-cta strong {
-    font-size: 17px;
-  }
-
-  .sticky-cta small {
-    display: none;
-  }
-
-  .sticky-cta .btn {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 
@@ -2036,5 +1874,220 @@ footer strong {
   .week-row {
     gap: 2px;
     padding: 12px 0;
+  }
+}
+
+/* El bloque de abajo gana a cualquier ajuste anterior en pantallas chicas. */
+@media (max-width: 980px) {
+  .transform-section,
+  .preview {
+    overflow: hidden;
+  }
+
+  .split > *,
+  .include > *,
+  .transform-grid > *,
+  .preview-grid > *,
+  .pain-grid > *,
+  .pockets > *,
+  .loot-grid > *,
+  .bonus > * {
+    min-width: 0;
+  }
+
+  .transform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transform-card h3 {
+    font-size: 26px;
+  }
+
+  .hero-art {
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .art-orbit {
+    display: none;
+  }
+
+  .calendar-card {
+    width: min(200px, 58%);
+    right: 8px;
+    top: 12px;
+    padding: 12px;
+    transform: none;
+  }
+
+  .calendar-card > strong {
+    font-size: 20px;
+  }
+
+  .tip-card {
+    width: min(190px, 56%);
+    left: 8px;
+    bottom: 18px;
+    padding: 12px;
+    transform: none;
+  }
+
+  .week-row span::before {
+    content: attr(data-meal);
+    display: block;
+    margin-top: 8px;
+    color: var(--sage);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .sticky-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    gap: 10px;
+    width: 100%;
+    min-height: 72px;
+    margin: 0;
+    padding:
+      10px max(12px, env(safe-area-inset-right))
+      calc(10px + env(safe-area-inset-bottom))
+      max(12px, env(safe-area-inset-left));
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .sticky-cta span {
+    min-width: 0;
+  }
+
+  .sticky-cta strong {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .sticky-cta small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sticky-cta .btn {
+    min-height: 46px;
+    padding: 12px 16px;
+    white-space: nowrap;
+  }
+
+  .wa-mini {
+    display: inline-flex;
+  }
+
+  .wa-float,
+  .nav-inner > .btn {
+    display: none;
+  }
+
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    width: min(1180px, calc(100% - 32px));
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .now {
+    font-size: 36px;
+  }
+
+  .ves {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .proof-grid > div {
+    padding: 8px 10px;
+  }
+
+  .menu-lines span,
+  .menu-lines em,
+  .sheet-copy {
+    overflow-wrap: anywhere;
+  }
+
+  .faq summary {
+    font-size: 15px;
+    padding: 16px;
+  }
+
+  .offer {
+    padding: 20px;
+  }
+
+  .offer-ribbon {
+    margin: -20px -20px 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card,
+  .pocket,
+  .transform-card {
+    padding: 20px;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+
+  .center-cta .btn,
+  .hero-actions .btn,
+  .loot-cta .btn {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 380px) {
+  .sticky-cta {
+    gap: 8px;
+  }
+
+  .sticky-cta small {
+    display: none;
+  }
+
+  .price-row {
+    flex-wrap: wrap;
+  }
+
+  .hero-art {
+    height: 440px;
   }
 }

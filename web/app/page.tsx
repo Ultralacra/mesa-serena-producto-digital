@@ -340,9 +340,9 @@ export default async function Home() {
                 {week.map(([day, breakfast, lunch, dinner]) => (
                   <div className="week-row" role="row" key={day}>
                     <strong>{day}</strong>
-                    <span>{breakfast}</span>
-                    <span>{lunch}</span>
-                    <span>{dinner}</span>
+                    <span data-meal="Desayuno">{breakfast}</span>
+                    <span data-meal="Almuerzo">{lunch}</span>
+                    <span data-meal="Cena">{dinner}</span>
                   </div>
                 ))}
               </div>
@@ -635,6 +635,21 @@ export default async function Home() {
           <strong>{PRODUCT.priceUsd} USD</strong>
           <small>Guía digital + menú semanal</small>
         </span>
+        <a
+          className="wa-mini"
+          href={WHATSAPP_URL}
+          aria-label="Escribir por WhatsApp"
+          title="¿Tienes dudas? Escríbenos por WhatsApp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.9 11.9 0 0 0 5.76 1.47h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.44-8.44zM12.07 21.3h-.01a9.4 9.4 0 0 1-4.78-1.31l-.34-.2-3.74.98 1-3.64-.22-.37a9.35 9.35 0 0 1-1.43-4.99c0-5.18 4.22-9.4 9.41-9.4 2.51 0 4.87.98 6.64 2.76a9.34 9.34 0 0 1 2.75 6.64c0 5.18-4.22 9.4-9.28 9.53zm5.16-7.03c-.28-.14-1.67-.82-1.93-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.37-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.17.19-.28.28-.47.1-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1 .97-1 2.37s1.02 2.75 1.16 2.94c.14.19 2.01 3.07 4.87 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.12.55-.08 1.67-.68 1.9-1.34.24-.66.24-1.22.17-1.34-.07-.11-.26-.18-.54-.32z"
+            />
+          </svg>
+        </a>
         <a className="btn" href="#comprar">Comprar</a>
       </div>
 

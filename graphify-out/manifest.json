@@ -36,15 +36,15 @@
     "semantic_hash": ""
   },
   "web/app/layout.tsx": {
-    "mtime": 1792706790.9331553,
-    "seen": 1792708172.6948192,
-    "ast_hash": "096aba6017503d45f5fc103b3bf99979",
+    "mtime": 1792709289.730914,
+    "seen": 1792709955.2948484,
+    "ast_hash": "e1823fa75ea04ced42031712a9252299",
     "semantic_hash": ""
   },
   "web/app/page.tsx": {
-    "mtime": 1792707919.591602,
-    "seen": 1792708172.6948206,
-    "ast_hash": "bd04c81fb44f2ef574652e5e2df9898d",
+    "mtime": 1792709781.784546,
+    "seen": 1792709955.29485,
+    "ast_hash": "de736d64e0ae4832485e54355c7d1e6d",
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
@@ -2292,9 +2292,9 @@
     "semantic_hash": ""
   },
   "web/components/AdminPanel.tsx": {
-    "mtime": 1792708097.951965,
-    "seen": 1792708172.6948233,
-    "ast_hash": "0700a97dd282af6c82360d8e9026cd8e",
+    "mtime": 1792708472.0064218,
+    "seen": 1792709955.2948534,
+    "ast_hash": "1afffa8034fcbfabcbbc7ed484e117a3",
     "semantic_hash": ""
   },
   "web/lib/admin-auth.ts": {
@@ -2316,8 +2316,8 @@
     "semantic_hash": ""
   },
   "web/app/api/admin/sale-link/route.ts": {
-    "mtime": 1792708079.5718052,
-    "seen": 1792708172.6948097,
+    "mtime": 1792708470.8433633,
+    "seen": 1792709955.2948337,
     "ast_hash": "5e7cfa0e3ab5f1d751c76b9a7c58b503",
     "semantic_hash": ""
   },
@@ -2328,9 +2328,15 @@
     "semantic_hash": ""
   },
   "web/lib/sale.ts": {
-    "mtime": 1792708075.5296729,
-    "seen": 1792708172.6948462,
-    "ast_hash": "bbb13ef1706fea6fabac204b09262751",
+    "mtime": 1792708241.9470704,
+    "seen": 1792709955.294881,
+    "ast_hash": "e863a4c8d96a61d888d46d45d936e423",
+    "semantic_hash": ""
+  },
+  "web/public/img/logo-mesa-serena.svg": {
+    "mtime": 1792708736.829171,
+    "seen": 1792709955.2953515,
+    "ast_hash": "77ef57e917fda57331872252f82ca934",
     "semantic_hash": ""
   }
 }
