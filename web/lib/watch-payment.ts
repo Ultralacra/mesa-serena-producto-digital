@@ -1,7 +1,8 @@
-import { deliverByRef } from "@/lib/deliver";
+import { deliverByRef, notifyUnderpaidByRef } from "@/lib/deliver";
 import { logFlow } from "@/lib/log";
 import { notifyMailWebhook } from "@/lib/notify-webhook";
-import { findOrder, markPaid } from "@/lib/orders";
+import { findOrder, markPaid, patchOrder } from "@/lib/orders";
+import { bsFromCents, evaluatePayment } from "@/lib/payment";
 import { readSkylinkCharge } from "@/lib/skylink";
 
 const watching = new Set<string>();
@@ -22,23 +23,62 @@ async function poll(token: string, buyOrder: string) {
     await sleep(attempt === 1 ? 2000 : 5000);
     try {
       const charge = await readSkylinkCharge(token);
+      const order = findOrder(token) ?? findOrder(buyOrder);
+      const data = charge.data as Record<string, unknown>;
+      const paidRaw = data.paidAmount ?? data.paid_amount;
+      const evaluation = evaluatePayment({
+        status: charge.status,
+        resultCode: String(data.resultCode ?? data.result_code ?? ""),
+        expectedCents: Number(data.amount ?? order?.amountCents ?? 0),
+        paidCents: paidRaw === undefined ? null : Number(paidRaw),
+      });
+
       logFlow("LOCAL · consulta a Skylink", {
         intento: attempt,
         buyOrder,
         status: charge.status,
-        pagado: charge.paid,
+        decision: evaluation.state,
+        pagado: bsFromCents(evaluation.paidCents),
+        faltante: bsFromCents(evaluation.missingCents),
       });
-      if (!charge.paid) continue;
 
+      if (evaluation.state === "pending") continue;
+
+      if (evaluation.state === "underpaid") {
+        patchOrder(buyOrder, { paidAmountCents: evaluation.paidCents ?? undefined });
+        await notifyMailWebhook({
+          type: "compra.monto_incorrecto",
+          eventType: "transaction.needs_review",
+          buyOrder: order?.buyOrder || buyOrder,
+          status: charge.status,
+          resultCode: "MONTO_NO_COINCIDE",
+          amount: evaluation.expectedCents,
+          paidAmount: evaluation.paidCents,
+          missingAmount: evaluation.missingCents,
+          currency: "VES",
+          to: order?.email,
+          name: order?.name,
+          origen: "poll-local",
+          skylink: charge.data,
+        });
+        if (order?.email) {
+          await notifyUnderpaidByRef(order.buyOrder, evaluation);
+        } else {
+          logFlow("LOCAL · monto incorrecto, pero no hay correo en la orden", { buyOrder });
+        }
+        return;
+      }
+
+      // Aprobado (completo, de más, o faltante dentro de tolerancia).
       markPaid(token);
-      const order = findOrder(token) ?? findOrder(buyOrder);
       await notifyMailWebhook({
         type: "compra.pagada",
         eventType: "transaction.authorized",
         buyOrder: order?.buyOrder || buyOrder,
         status: charge.status,
         resultCode: "APPROVED",
-        amount: order?.amountCents,
+        amount: evaluation.expectedCents || order?.amountCents,
+        paidAmount: evaluation.paidCents ?? undefined,
         currency: "VES",
         to: order?.email,
         name: order?.name,

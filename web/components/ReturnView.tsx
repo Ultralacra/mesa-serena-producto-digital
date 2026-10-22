@@ -2,15 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { formatVes } from "@/lib/product";
 
 type Status = {
   paid?: boolean;
   status?: string;
   message?: string;
+  paymentState?: "approved" | "underpaid" | "pending";
+  expectedCents?: number;
+  paidCents?: number | null;
+  missingCents?: number;
   delivered?: boolean;
   deliveryError?: string;
   order?: { name: string; email: string; buyOrder: string } | null;
 };
+
+function bs(cents?: number | null) {
+  if (cents === null || cents === undefined) return "—";
+  return `${formatVes(cents / 100)} Bs`;
+}
 
 export function ReturnView({
   token,
@@ -38,7 +48,7 @@ export function ReturnView({
         console.log("[MESA] USUARIO · estado del pago", { attempt, payload });
         if (stop) return;
         setData(payload);
-        if (payload.paid) {
+        if (payload.paid || payload.paymentState === "underpaid") {
           setLoading(false);
           return;
         }
@@ -109,7 +119,7 @@ export function ReturnView({
                 ) : (
                   " a tu correo"
                 )}
-                . El PDF va adjunto y, si no abre, lo descargas aquí.
+                . Va adjunto y, si no abre, lo descargas aquí.
               </p>
               {data.deliveryError ? (
                 <p className="form-error">
@@ -131,11 +141,57 @@ export function ReturnView({
                 </li>
                 <li>
                   <span>02</span>
-                  <p>Abre el PDF adjunto o usa el botón de descarga.</p>
+                  <p>Abre el adjunto o usa el botón de descarga.</p>
                 </li>
                 <li>
                   <span>03</span>
                   <p>Empieza por la receta 01. El domingo, elige un menú.</p>
+                </li>
+              </ol>
+            </>
+          ) : data.paymentState === "underpaid" ? (
+            <>
+              <p className="kicker">Monto incompleto</p>
+              <h1>
+                El monto pagado <em>no fue el correcto.</em>
+              </h1>
+              <p className="lead">
+                Pagaste <strong>{bs(data.paidCents)}</strong> y el recetario
+                cuesta <strong>{bs(data.expectedCents)}</strong>. Te faltaron{" "}
+                <strong>{bs(data.missingCents)}</strong>, por eso todavía no
+                te lo enviamos.
+              </p>
+              <p className="lead">
+                Te mandamos un correo
+                {email ? (
+                  <>
+                    {" "}
+                    a <strong>{email}</strong>
+                  </>
+                ) : null}{" "}
+                con el detalle. Para completarlo, haz la compra de nuevo
+                escribiendo el monto completo y exacto que muestra la página.
+              </p>
+              <div className="thanks-actions">
+                <a className="btn btn-lg" href="/#comprar">
+                  Completar mi compra
+                </a>
+                <a className="thanks-link" href="/">
+                  Volver al inicio
+                </a>
+              </div>
+              <ol className="thanks-steps">
+                <li>
+                  <span>01</span>
+                  <p>Revisa tu correo: ahí quedó cuánto pagaste y cuánto faltó.</p>
+                </li>
+                <li>
+                  <span>02</span>
+                  <p>Al pagar con pago móvil, escribe el monto dígito por dígito.</p>
+                </li>
+                <li>
+                  <span>03</span>
+                  <p>Cuando el monto sea el correcto, tu recetario sale al instante.</p>
                 </li>
               </ol>
             </>

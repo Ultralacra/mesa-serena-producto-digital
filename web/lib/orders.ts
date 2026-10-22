@@ -11,6 +11,8 @@ export type Order = {
   status: "created" | "paid";
   delivered: boolean;
   createdAt: string;
+  paidAmountCents?: number;
+  underpaidNotified?: boolean;
 };
 
 const file = join(process.cwd(), ".data", "orders.json");
@@ -50,6 +52,15 @@ export function saveOrder(order: Order) {
 export function findOrder(id: string) {
   if (memory.has(id)) return memory.get(id);
   return load().find((item) => item.buyOrder === id || item.token === id);
+}
+
+export function patchOrder(id: string, patch: Partial<Order>) {
+  const orders = load();
+  const match = orders.find((item) => item.buyOrder === id || item.token === id);
+  if (!match) return null;
+  Object.assign(match, patch);
+  save(orders);
+  return match;
 }
 
 export function markPaid(id: string) {

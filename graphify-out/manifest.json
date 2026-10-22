@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "web/app/api/checkout/status/route.ts": {
-    "mtime": 1792688664.4884984,
-    "seen": 1792696324.0829265,
-    "ast_hash": "5cefe7a6e78611bc175f311219971b94",
+    "mtime": 1792700064.2326984,
+    "seen": 1792700237.7670188,
+    "ast_hash": "58fffe3c3691d97bc1d80cc2b3de3c71",
     "semantic_hash": ""
   },
   "web/app/api/rate/route.ts": {
@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "web/app/api/webhooks/skylink/route.ts": {
-    "mtime": 1792689286.1493845,
-    "seen": 1792696324.0829318,
-    "ast_hash": "98f9953a41e5dcac83229f99b68be823",
+    "mtime": 1792700054.187209,
+    "seen": 1792700237.7670228,
+    "ast_hash": "72bdc7aba1ea5818ea3e4e758b2754cb",
     "semantic_hash": ""
   },
   "web/app/gracias/page.tsx": {
@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "web/components/ReturnView.tsx": {
-    "mtime": 1792692149.9591355,
-    "seen": 1792696324.0829368,
-    "ast_hash": "b853e9445fe153cb96d7c0998fbe0a7b",
+    "mtime": 1792700101.1294537,
+    "seen": 1792700237.7670293,
+    "ast_hash": "2c81281f1c55e875c057b4359ba33c4a",
     "semantic_hash": ""
   },
   "web/eslint.config.mjs": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "web/lib/deliver.ts": {
-    "mtime": 1792691566.6848485,
-    "seen": 1792696324.082939,
-    "ast_hash": "42d4bd050d12ec82ff2aabb72eb6ee78",
+    "mtime": 1792700033.858849,
+    "seen": 1792700237.767032,
+    "ast_hash": "4f7518688d7a681f3b49a9ce6052c9b1",
     "semantic_hash": ""
   },
   "web/lib/email.ts": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "web/lib/orders.ts": {
-    "mtime": 1792687246.5720625,
-    "seen": 1792696324.082944,
-    "ast_hash": "518cc6d9b992971bedfdcf624704c799",
+    "mtime": 1792700009.6258695,
+    "seen": 1792700237.767039,
+    "ast_hash": "2a565e66930b7511d724501c247e353a",
     "semantic_hash": ""
   },
   "web/lib/product.ts": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "web/lib/watch-payment.ts": {
-    "mtime": 1792689374.2434945,
-    "seen": 1792696324.0829477,
-    "ast_hash": "b784ca149811c20ab79aa18397e64112",
+    "mtime": 1792700072.5663342,
+    "seen": 1792700237.7670476,
+    "ast_hash": "e6c46dd86bd35b22ecb4fd58e8499738",
     "semantic_hash": ""
   },
   "web/next.config.ts": {
@@ -2196,9 +2196,9 @@
     "semantic_hash": ""
   },
   "videos/src/Ads.tsx": {
-    "mtime": 1792699679.953287,
-    "seen": 1792699715.8241081,
-    "ast_hash": "84700c8e5dbdc65d6d41d4df167d0241",
+    "mtime": 1792700237.1725745,
+    "seen": 1792700237.7670085,
+    "ast_hash": "651f69dcf749ed0df757fb63d36f0c70",
     "semantic_hash": ""
   },
   "videos/src/fonts.ts": {
@@ -2241,6 +2241,24 @@
     "mtime": 1792699606.4219773,
     "seen": 1792699715.8244843,
     "ast_hash": "7b7204ed31071e72ac6acb29078ef4df",
+    "semantic_hash": ""
+  },
+  "web/lib/payment.ts": {
+    "mtime": 1792700002.8093994,
+    "seen": 1792700237.7670407,
+    "ast_hash": "fedd2b306f6946e2ac6c6a8da6c14543",
+    "semantic_hash": ""
+  },
+  "web/lib/underpaid-email.ts": {
+    "mtime": 1792700024.060626,
+    "seen": 1792700237.7670465,
+    "ast_hash": "9b4b9dcab354fdfcb8d36faea62cb8de",
+    "semantic_hash": ""
+  },
+  "videos/public/img/logo-perfil.png": {
+    "mtime": 1792699141.676795,
+    "seen": 1792700237.7674398,
+    "ast_hash": "fd7495c0300aadbf7051db12ad28061e",
     "semantic_hash": ""
   }
 }

@@ -14,34 +14,111 @@ import {
 
 /* Piezas 1080×1350 para Meta Ads. Sistema: foto editorial + serif + sello de precio. */
 
-function BrandBar({ light = false }: { light?: boolean }) {
+/* Marca oficial: 00-perfil-instagram.png tal cual.
+   Bosque + aro de oro + M crema serif + línea terracota debajo.
+   No recrear la M con tipografía: siempre usar el archivo real. */
+function LogoMark({ size = 76 }: { size?: number }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-      <div
-        style={{
-          width: 52,
-          height: 52,
-          borderRadius: 14,
-          backgroundColor: light ? CREMA : BOSQUE,
-          color: light ? BOSQUE : CREMA,
-          display: "grid",
-          placeItems: "center",
-          fontFamily: SERIF,
-          fontSize: 32,
-        }}
-      >
-        M
+    <div
+      style={{
+        width: size,
+        height: size,
+        flex: "none",
+        borderRadius: 999,
+        overflow: "hidden",
+        border: `3px solid ${ORO}`,
+        boxShadow: "0 10px 26px rgba(18,38,31,0.35)",
+        backgroundColor: BOSQUE,
+      }}
+    >
+      <Img
+        src={staticFile("img/logo-perfil.png")}
+        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+      />
+    </div>
+  );
+}
+
+function BrandBar({
+  light = false,
+  pill = false,
+  size = 76,
+}: {
+  light?: boolean;
+  pill?: boolean;
+  size?: number;
+}) {
+  const textColor = pill ? BOSQUE : light ? CREMA : BOSQUE;
+  return (
+    <div
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 18,
+        ...(pill
+          ? {
+              backgroundColor: CREMA,
+              borderRadius: 999,
+              padding: "10px 30px 10px 10px",
+              boxShadow: "0 16px 34px rgba(18,38,31,0.32)",
+              border: `2px solid ${ORO}`,
+            }
+          : {}),
+      }}
+    >
+      <LogoMark size={size} />
+      <div>
+        <div
+          style={{
+            fontFamily: SANS,
+            fontSize: 27,
+            fontWeight: 800,
+            letterSpacing: 5,
+            lineHeight: 1,
+            color: textColor,
+            whiteSpace: "nowrap",
+          }}
+        >
+          MESA SERENA
+        </div>
+        {/* Línea terracota: el mismo gesto que subraya la M del logo */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 10 }}>
+          <div
+            style={{ width: 52, height: 8, borderRadius: 999, backgroundColor: TERRA, flex: "none" }}
+          />
+          <div
+            style={{
+              fontFamily: SANS,
+              fontSize: 15,
+              fontWeight: 800,
+              letterSpacing: 3,
+              color: pill ? TERRA : ORO,
+              whiteSpace: "nowrap",
+            }}
+          >
+            RECETARIO CRIOLLO
+          </div>
+        </div>
       </div>
+    </div>
+  );
+}
+
+function BrandFooter({ dark = false }: { dark?: boolean }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14 }}>
+      <LogoMark size={42} />
       <div
         style={{
           fontFamily: SANS,
-          fontSize: 24,
+          fontSize: 21,
           fontWeight: 800,
-          letterSpacing: 5,
-          color: light ? CREMA : BOSQUE,
+          letterSpacing: 4,
+          color: dark ? ORO : BOSQUE,
+          whiteSpace: "nowrap",
         }}
       >
-        MESA SERENA
+        MESA SERENA · COME CRIOLLO
       </div>
     </div>
   );
@@ -209,7 +286,7 @@ export const Ad02Mercado = () => (
     <div
       style={{
         marginTop: "auto",
-        paddingTop: 28,
+        paddingTop: 24,
         borderTop: `2px solid ${ORO}`,
         textAlign: "center",
         fontFamily: SANS,
@@ -217,7 +294,8 @@ export const Ad02Mercado = () => (
         color: "#5C635D",
       }}
     >
-      Tu recetario llega directo a tu correo
+      <BrandFooter />
+      <div style={{ marginTop: 14 }}>Tu recetario llega directo a tu correo</div>
     </div>
   </AbsoluteFill>
 );
@@ -233,17 +311,8 @@ export const Ad03Familia = () => (
       <AbsoluteFill
         style={{ background: "linear-gradient(180deg, rgba(18,38,31,0.45) 0%, rgba(18,38,31,0) 42%)" }}
       />
-      <div
-        style={{
-          position: "absolute",
-          top: 40,
-          left: 48,
-          backgroundColor: "rgba(18,38,31,0.85)",
-          borderRadius: 18,
-          padding: "12px 18px",
-        }}
-      >
-        <BrandBar light />
+      <div style={{ position: "absolute", top: 40, left: 48 }}>
+        <BrandBar pill />
       </div>
     </div>
     <div style={{ padding: "50px 64px 0", position: "relative" }}>
@@ -289,7 +358,7 @@ export const Ad03Familia = () => (
 export const Ad04Producto = () => (
   <AbsoluteFill style={{ backgroundColor: BOSQUE, padding: "60px 64px" }}>
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-      <BrandBar light />
+      <BrandBar light size={88} />
       <Kicker color={ORO}>EDICIÓN DIGITAL</Kicker>
     </div>
     <div style={{ display: "flex", gap: 44, marginTop: 52, alignItems: "center" }}>
@@ -375,15 +444,9 @@ export const Ad04Producto = () => (
         marginTop: "auto",
         paddingTop: 26,
         borderTop: "2px solid rgba(196,164,106,0.4)",
-        textAlign: "center",
-        fontFamily: SANS,
-        fontSize: 22,
-        fontWeight: 800,
-        letterSpacing: 5,
-        color: ORO,
       }}
     >
-      COME CRIOLLO · SIN COMPRAR COMO RICO
+      <BrandFooter dark />
     </div>
   </AbsoluteFill>
 );
@@ -398,17 +461,8 @@ export const Ad05Semaforo = () => (
       <div style={{ flex: 1, overflow: "hidden" }}>
         <Img src={staticFile("img/mercado.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 40,
-          left: 56,
-          backgroundColor: "rgba(18,38,31,0.82)",
-          borderRadius: 18,
-          padding: "12px 18px",
-        }}
-      >
-        <BrandBar light />
+      <div style={{ position: "absolute", top: 40, left: 56 }}>
+        <BrandBar pill />
       </div>
       <div style={{ position: "absolute", right: 44, top: 392 }}>
         <PriceSeal size={176} />
