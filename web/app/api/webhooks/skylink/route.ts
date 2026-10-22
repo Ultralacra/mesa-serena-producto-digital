@@ -4,6 +4,7 @@ import { logFlow } from "@/lib/log";
 import { notifyMailWebhook } from "@/lib/notify-webhook";
 import { findOrder, markPaid, patchOrder, saveOrder } from "@/lib/orders";
 import { bsFromCents, evaluatePayment } from "@/lib/payment";
+import { customerFromSession } from "@/lib/customer";
 import {
   findPurchaseRecord,
   recordPurchase,
@@ -21,6 +22,7 @@ type SkylinkWebhook = {
     status?: string;
     resultCode?: string;
     resultMessage?: string;
+    sessionId?: string;
   };
 };
 
@@ -37,6 +39,7 @@ export async function POST(request: Request) {
 
   const status = body.transaction?.status ?? "";
   const buyOrder = body.transaction?.buyOrder ?? "";
+  const fromSession = customerFromSession(body.transaction?.sessionId);
   let existing = buyOrder ? findOrder(buyOrder) : undefined;
 
   const evaluation = evaluatePayment({
@@ -78,6 +81,8 @@ export async function POST(request: Request) {
         : Number(body.transaction.paidAmount),
     currency: body.transaction?.currency,
     decision: evaluation.state,
+    customerName: existing?.name || fromSession.name || undefined,
+    customerEmail: existing?.email || fromSession.email || undefined,
     raw: body,
   });
 
@@ -85,18 +90,20 @@ export async function POST(request: Request) {
   // se recupera nombre/correo/monto desde el registro duradero.
   if (buyOrder && !existing?.email) {
     const saved = await findPurchaseRecord(buyOrder);
-    if (saved?.email) {
+    const name = saved?.name || fromSession.name || existing?.name || "";
+    const email = saved?.email || fromSession.email || "";
+    if (email) {
       saveOrder({
         buyOrder,
-        sessionId: saved.sessionId || buyOrder,
-        token: saved.token || "",
-        name: saved.name || "Cliente",
-        email: saved.email,
-        amountCents: saved.amountCents || evaluation.expectedCents,
-        status: saved.delivered ? "paid" : "created",
-        delivered: saved.delivered,
-        createdAt: saved.createdAt,
-        paidAmountCents: saved.paidAmountCents,
+        sessionId: saved?.sessionId || body.transaction?.sessionId || buyOrder,
+        token: saved?.token || "",
+        name: name || "Cliente",
+        email,
+        amountCents: saved?.amountCents || evaluation.expectedCents,
+        status: saved?.delivered ? "paid" : "created",
+        delivered: Boolean(saved?.delivered),
+        createdAt: saved?.createdAt || new Date().toISOString(),
+        paidAmountCents: saved?.paidAmountCents,
       });
       existing = findOrder(buyOrder);
     }
@@ -105,8 +112,8 @@ export async function POST(request: Request) {
   if (buyOrder) {
     await recordPurchase({
       buyOrder,
-      name: existing?.name,
-      email: existing?.email,
+    name: existing?.name || fromSession.name,
+    email: existing?.email || fromSession.email,
       amountCents: evaluation.expectedCents || existing?.amountCents || 0,
       paidAmountCents: evaluation.paidCents ?? undefined,
       status:
@@ -137,6 +144,9 @@ export async function POST(request: Request) {
     paidAmount: body.transaction?.paidAmount,
     missingAmount: evaluation.missingCents || undefined,
     currency: body.transaction?.currency,
+    name: existing?.name || fromSession.name || undefined,
+    email: existing?.email || fromSession.email || undefined,
+    to: existing?.email || fromSession.email || undefined,
     skylink: body,
   });
 
@@ -152,16 +162,17 @@ export async function POST(request: Request) {
   if (!existing) {
     saveOrder({
       buyOrder,
-      sessionId: buyOrder,
+      sessionId: body.transaction?.sessionId || buyOrder,
       token: "",
-      name: "Cliente",
-      email: "",
+      name: fromSession.name || "Cliente",
+      email: fromSession.email,
       amountCents: evaluation.expectedCents,
       status: evaluation.deliver ? "paid" : "created",
       delivered: false,
       createdAt: new Date().toISOString(),
       paidAmountCents: evaluation.paidCents ?? undefined,
     });
+    if (fromSession.email) existing = findOrder(buyOrder);
   }
 
   if (evaluation.state === "underpaid") {

@@ -87,7 +87,10 @@ export function CheckoutForm() {
 
   return (
     <form className="checkout" onSubmit={pay} noValidate>
-      <p>Recetario + 6 guías. Un archivo, al correo cuando el pago quede aprobado.</p>
+      <p>
+        Para la que cocina en casa. El recetario te llega al correo cuando el
+        pago quede aprobado.
+      </p>
       <div className="price-row">
         <span className="now">{PRODUCT.priceUsd} USD</span>
         {quote.equivalentVes ? (
@@ -162,7 +165,10 @@ export function CheckoutForm() {
       <button className="btn btn-lg" type="submit" disabled={saving}>
         {saving ? "Un momento…" : "Quiero mi recetario"}
       </button>
-      <p className="fine">Pagas en bolívares a tasa BCV. Al aprobarse el pago, el PDF va a tu correo.</p>
+      <p className="fine">
+        Pagas en bolívares a tasa BCV. Al aprobarse el pago, tu recetario llega a
+        ese correo.
+      </p>
     </form>
   );
 }

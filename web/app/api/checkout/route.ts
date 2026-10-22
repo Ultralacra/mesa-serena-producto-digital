@@ -56,10 +56,13 @@ export async function POST(request: Request) {
       amountCents,
       buyOrder,
       sessionId,
+      customerName: name,
+      customerEmail: email,
     });
+    const customerSession = charge.sessionId || sessionId;
     saveOrder({
       buyOrder,
-      sessionId,
+      sessionId: customerSession,
       token: charge.token,
       name,
       email,
@@ -70,7 +73,7 @@ export async function POST(request: Request) {
     });
     await recordPurchase({
       buyOrder,
-      sessionId,
+      sessionId: customerSession,
       token: charge.token,
       name,
       email,

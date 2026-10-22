@@ -1,7 +1,7 @@
 # Graph Report - producto digital  (2026-10-22)
 
 ## Corpus Check
-- 291 files · ~799,245 words
+- 291 files · ~799,486 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ecb575a4`
+- Built from commit: `3951578e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -211,15 +211,15 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `POST()` --calls--> `logFlow()`  [EXTRACTED]
-  app/api/admin/login/route.ts → lib/log.ts
+  web/app/api/admin/login/route.ts → web/lib/log.ts
 - `POST()` --calls--> `sessionCookieOptions()`  [EXTRACTED]
-  app/api/admin/logout/route.ts → lib/admin-auth.ts
+  web/app/api/admin/logout/route.ts → web/lib/admin-auth.ts
 - `POST()` --calls--> `recordPurchase()`  [EXTRACTED]
-  app/api/checkout/route.ts → lib/registry.ts
+  web/app/api/checkout/route.ts → web/lib/registry.ts
 - `GET()` --calls--> `recordPurchase()`  [EXTRACTED]
-  app/api/checkout/status/route.ts → lib/registry.ts
+  web/app/api/checkout/status/route.ts → web/lib/registry.ts
 - `GET()` --calls--> `bcvRate()`  [EXTRACTED]
-  app/api/rate/route.ts → lib/skylink.ts
+  web/app/api/rate/route.ts → web/lib/skylink.ts
 
 ## Import Cycles
 - None detected.

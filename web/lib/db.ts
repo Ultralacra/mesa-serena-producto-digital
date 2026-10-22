@@ -50,8 +50,12 @@ async function ensureTables() {
       paid_amount_cents INTEGER,
       currency TEXT,
       decision TEXT,
+      customer_name TEXT,
+      customer_email TEXT,
       raw JSONB
     )`;
+  await q`ALTER TABLE webhook_events ADD COLUMN IF NOT EXISTS customer_name TEXT`;
+  await q`ALTER TABLE webhook_events ADD COLUMN IF NOT EXISTS customer_email TEXT`;
 }
 
 export async function ensureDb() {
@@ -94,6 +98,8 @@ export type WebhookEventRow = {
   paid_amount_cents: number | null;
   currency: string | null;
   decision: string | null;
+  customer_name: string | null;
+  customer_email: string | null;
   raw: unknown;
 };
 
@@ -153,6 +159,8 @@ export async function dbRecordWebhookEvent(e: {
   paidAmountCents?: number | null;
   currency?: string;
   decision?: string;
+  customerName?: string;
+  customerEmail?: string;
   raw: unknown;
 }) {
   await ensureDb();
@@ -160,13 +168,15 @@ export async function dbRecordWebhookEvent(e: {
   await q`
     INSERT INTO webhook_events (
       id, event_type, buy_order, skylink_status, result_code, result_message,
-      amount_cents, paid_amount_cents, currency, decision, raw
+      amount_cents, paid_amount_cents, currency, decision, customer_name,
+      customer_email, raw
     ) VALUES (
       ${e.id}, ${e.eventType ?? null}, ${e.buyOrder ?? null},
       ${e.skylinkStatus ?? null}, ${e.resultCode ?? null},
       ${e.resultMessage ?? null}, ${e.amountCents ?? null},
       ${e.paidAmountCents ?? null}, ${e.currency ?? null},
-      ${e.decision ?? null}, ${JSON.stringify(e.raw ?? {})}::jsonb
+      ${e.decision ?? null}, ${e.customerName ?? null},
+      ${e.customerEmail ?? null}, ${JSON.stringify(e.raw ?? {})}::jsonb
     )
     ON CONFLICT (id) DO NOTHING`;
 }

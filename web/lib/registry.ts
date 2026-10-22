@@ -1,6 +1,11 @@
 import { mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { randomUUID } from "crypto";
+import { customerFromPayload, customerFromSession } from "@/lib/customer";
+import {
+  listSkylinkTransactions,
+  purchaseStatusFromSkylink,
+} from "@/lib/skylink";
 import {
   dbEnabled,
   dbFindPurchase,
@@ -48,6 +53,8 @@ export type WebhookEventRecord = {
   paidAmountCents?: number;
   currency?: string;
   decision?: string;
+  customerName?: string;
+  customerEmail?: string;
   raw: unknown;
 };
 
@@ -316,6 +323,8 @@ export async function listAdminData() {
         paidAmountCents: row.paid_amount_cents ?? undefined,
         currency: row.currency ?? undefined,
         decision: row.decision ?? undefined,
+        customerName: row.customer_name ?? undefined,
+        customerEmail: row.customer_email ?? undefined,
         raw: row.raw,
       }));
     } catch (error) {
@@ -326,17 +335,82 @@ export async function listAdminData() {
     }
   }
 
+  let skylinkTotal = 0;
+  let skylinkError = "";
+  if (process.env.SKYLINK_API_KEY && process.env.SKYLINK_COMMERCE_CODE) {
+    try {
+      const transactions = await listSkylinkTransactions();
+      skylinkTotal = transactions.length;
+      for (const tx of transactions) {
+        const local = byOrder.get(tx.buyOrder);
+        const buyer = customerFromSession(tx.sessionId);
+        const createdAt = tx.createdAt
+          ? new Date(tx.createdAt).toISOString()
+          : local?.createdAt || new Date().toISOString();
+        byOrder.set(tx.buyOrder, {
+          buyOrder: tx.buyOrder,
+          sessionId: tx.sessionId || local?.sessionId,
+          token: tx.token || local?.token,
+          name: buyer.name || local?.name || "",
+          email: buyer.email || local?.email || "",
+          amountCents: Number(tx.amount ?? local?.amountCents ?? 0),
+          paidAmountCents:
+            tx.paidAmount === undefined ? local?.paidAmountCents : tx.paidAmount,
+          status: purchaseStatusFromSkylink(tx.status || local?.status || "created"),
+          delivered: Boolean(local?.delivered),
+          underpaidNotified: local?.underpaidNotified,
+          source: "skylink",
+          createdAt,
+          paidAt:
+            purchaseStatusFromSkylink(tx.status || "") === "paid"
+              ? tx.updatedAt
+                ? new Date(tx.updatedAt).toISOString()
+                : local?.paidAt
+              : local?.paidAt,
+          updatedAt: tx.updatedAt
+            ? new Date(tx.updatedAt).toISOString()
+            : local?.updatedAt || createdAt,
+        });
+      }
+    } catch (error) {
+      skylinkError = error instanceof Error ? error.message : String(error);
+      logFlow("REGISTRO · no se pudo leer el listado de Skylink", {
+        error: skylinkError,
+      });
+    }
+  }
+
   const eventsById = new Map<string, WebhookEventRecord>();
   for (const e of [...dbEvents, ...localEvents()]) {
     if (!eventsById.has(e.id)) eventsById.set(e.id, e);
   }
 
-  const purchases = [...byOrder.values()].sort((a, b) =>
-    b.createdAt.localeCompare(a.createdAt),
-  );
-  const webhookEvents = [...eventsById.values()].sort((a, b) =>
-    b.receivedAt.localeCompare(a.receivedAt),
-  );
+  const purchases = [...byOrder.values()]
+    .map((purchase) => {
+      const fromSession = customerFromSession(purchase.sessionId);
+      return {
+        ...purchase,
+        name: purchase.name || fromSession.name,
+        email: purchase.email || fromSession.email,
+      };
+    })
+    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const byOrderFilled = new Map(purchases.map((purchase) => [purchase.buyOrder, purchase]));
+  const webhookEvents = [...eventsById.values()]
+    .map((event) => {
+      const fromPayload = customerFromPayload(event.raw);
+      const purchase = event.buyOrder
+        ? byOrderFilled.get(event.buyOrder)
+        : undefined;
+      return {
+        ...event,
+        customerName:
+          event.customerName || fromPayload.name || purchase?.name || undefined,
+        customerEmail:
+          event.customerEmail || fromPayload.email || purchase?.email || undefined,
+      };
+    })
+    .sort((a, b) => b.receivedAt.localeCompare(a.receivedAt));
 
-  return { storage, purchases, webhookEvents };
+  return { storage, purchases, webhookEvents, skylinkTotal, skylinkError };
 }

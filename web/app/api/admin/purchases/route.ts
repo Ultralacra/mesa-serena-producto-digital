@@ -65,18 +65,21 @@ export async function GET(request: Request) {
     delivered: data.purchases.filter((p) => p.delivered).length,
     underpaid: data.purchases.filter((p) => p.status === "underpaid").length,
     pending: data.purchases.filter(
-      (p) => p.status !== "paid" && p.status !== "underpaid",
+      (p) => p.status === "created" || p.status === "pending",
     ).length,
     revenueCents: paid.reduce(
       (sum, p) => sum + (p.paidAmountCents ?? p.amountCents ?? 0),
       0,
     ),
     webhookEvents: data.webhookEvents.length,
+    skylinkTotal: data.skylinkTotal,
   };
 
   return NextResponse.json({
     storage: data.storage,
     databaseConfigured: dbEnabled(),
+    skylinkTotal: data.skylinkTotal,
+    skylinkError: data.skylinkError || undefined,
     stats,
     purchases: data.purchases,
     webhookEvents: data.webhookEvents,

@@ -75,7 +75,7 @@ export function receiptEmail(name: string) {
           </tr>
           <tr>
             <td style="background:#163028;padding:20px 36px;font-family:Georgia,serif;font-size:14px;color:#e7dfd2;">
-              Come criollo. Sin pico. Sin comprar como rico.
+              Come lo de tu casa. Sin que se te dispare. Sin comprar como rico.
             </td>
           </tr>
         </table>

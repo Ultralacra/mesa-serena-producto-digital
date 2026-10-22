@@ -29,12 +29,16 @@ type WebhookEvent = {
   paidAmountCents?: number;
   currency?: string;
   decision?: string;
+  customerName?: string;
+  customerEmail?: string;
   raw: unknown;
 };
 
 type AdminData = {
   storage: "neon" | "local";
   databaseConfigured: boolean;
+  skylinkTotal?: number;
+  skylinkError?: string;
   stats: {
     total: number;
     paid: number;
@@ -43,6 +47,7 @@ type AdminData = {
     pending: number;
     revenueCents: number;
     webhookEvents: number;
+    skylinkTotal?: number;
   };
   purchases: Purchase[];
   webhookEvents: WebhookEvent[];
@@ -69,10 +74,13 @@ function fecha(iso?: string) {
 }
 
 const statusLabel: Record<string, string> = {
-  paid: "Pagada",
-  underpaid: "Monto incorrecto",
+  paid: "Autorizada",
+  underpaid: "En revisión",
   created: "Creada",
   pending: "Pendiente",
+  expired: "Expirada",
+  cancelled: "Cancelada",
+  failed: "Fallida",
 };
 
 export default function AdminPanel() {
@@ -121,11 +129,10 @@ export default function AdminPanel() {
       if (filter === "pagadas" && p.status !== "paid") return false;
       if (filter === "entregadas" && !p.delivered) return false;
       if (filter === "incorrectas" && p.status !== "underpaid") return false;
-      if (
-        filter === "pendientes" &&
-        (p.status === "paid" || p.status === "underpaid")
-      )
+      if (filter === "pendientes" && p.status !== "created" && p.status !== "pending") {
         return false;
+      }
+      if (filter === "expiradas" && p.status !== "expired") return false;
       if (!q) return true;
       return (
         p.buyOrder.toLowerCase().includes(q) ||
@@ -142,8 +149,8 @@ export default function AdminPanel() {
           <p className="kicker">Panel privado</p>
           <h1>Compras y webhooks</h1>
           <p className="fine">
-            Quién compró, su correo, cuánto pagó y todo lo que Skylink avisó.
-            Se actualiza solo cada 30 segundos.
+            El listado sale de Skylink. El nombre y el correo son de la persona
+            que creó esa transacción. Se actualiza solo cada 30 segundos.
           </p>
         </div>
         <div className="admin-actions">
@@ -159,7 +166,7 @@ export default function AdminPanel() {
         </div>
       </header>
 
-      {data && !data.databaseConfigured ? (
+      {data && !data.skylinkTotal && !data.databaseConfigured ? (
         <p className="admin-alert" role="alert">
           ⚠️ Este panel está guardando <strong>solo en este equipo</strong>.
           En producción (Vercel) el disco no guarda nada: conecta la base de
@@ -168,10 +175,14 @@ export default function AdminPanel() {
           chat.
         </p>
       ) : null}
-      {data?.databaseConfigured ? (
+      {data?.skylinkError ? (
+        <p className="admin-alert" role="alert">
+          No se pudo leer el listado de transacciones de Skylink: {data.skylinkError}
+        </p>
+      ) : data?.skylinkTotal ? (
         <p className="admin-ok">
-          ✓ Registro duradero activo (Neon). Las compras quedan guardadas
-          aunque Vercel reinicie.
+          ✓ {data.skylinkTotal} transacciones leídas de Skylink, cruzadas con
+          quien escribió su nombre y su correo al crear el cobro.
         </p>
       ) : null}
       {error ? (
@@ -197,11 +208,11 @@ export default function AdminPanel() {
             </article>
             <article>
               <span>{data.stats.underpaid}</span>
-              <p>Monto incorrecto</p>
+              <p>En revisión</p>
             </article>
             <article>
               <span>{data.stats.pending}</span>
-              <p>Pendientes / creadas</p>
+              <p>Creadas, sin pagar</p>
             </article>
             <article>
               <span>{data.stats.webhookEvents}</span>
@@ -211,7 +222,7 @@ export default function AdminPanel() {
 
           <section className="admin-card">
             <div className="admin-tools">
-              <h2>Compras</h2>
+              <h2>Transacciones</h2>
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
@@ -224,10 +235,11 @@ export default function AdminPanel() {
                 aria-label="Filtrar compras"
               >
                 <option value="todas">Todas</option>
-                <option value="pagadas">Pagadas</option>
+                <option value="pagadas">Autorizadas</option>
+                <option value="incorrectas">En revisión</option>
+                <option value="pendientes">Creadas</option>
+                <option value="expiradas">Expiradas</option>
                 <option value="entregadas">Entregadas</option>
-                <option value="incorrectas">Monto incorrecto</option>
-                <option value="pendientes">Pendientes</option>
               </select>
             </div>
 
@@ -243,7 +255,7 @@ export default function AdminPanel() {
                     <tr>
                       <th>Fecha</th>
                       <th>Orden</th>
-                      <th>Cliente</th>
+                      <th>Quién la creó</th>
                       <th>Correo</th>
                       <th>Esperado</th>
                       <th>Pagó</th>
@@ -292,8 +304,8 @@ export default function AdminPanel() {
           <section className="admin-card">
             <h2>Lo que llegó al webhook</h2>
             <p className="fine">
-              Cada aviso de Skylink, tal cual llegó. Abre el detalle para ver
-              el cuerpo completo: ahí está la prueba de cada pago.
+              Cada aviso de Skylink, con la persona que creó esa transacción:
+              su nombre y su correo viajan en el cobro y vuelven en el webhook.
             </p>
             {data.webhookEvents.length === 0 ? (
               <p className="fine">
@@ -308,6 +320,8 @@ export default function AdminPanel() {
                       <th>Llegó</th>
                       <th>Evento</th>
                       <th>Orden</th>
+                      <th>Quién la creó</th>
+                      <th>Correo</th>
                       <th>Estado Skylink</th>
                       <th>Código</th>
                       <th>Esperado</th>
@@ -324,6 +338,8 @@ export default function AdminPanel() {
                         <td>
                           <code>{e.buyOrder || "—"}</code>
                         </td>
+                        <td>{e.customerName || "—"}</td>
+                        <td>{e.customerEmail || "(sin correo)"}</td>
                         <td>{e.skylinkStatus || "—"}</td>
                         <td>{e.resultCode || "—"}</td>
                         <td>{bs(e.amountCents)}</td>

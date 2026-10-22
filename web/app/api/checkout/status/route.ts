@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { deliverByRef, notifyUnderpaidByRef } from "@/lib/deliver";
 import { logFlow } from "@/lib/log";
-import { findOrder, markPaid, patchOrder } from "@/lib/orders";
+import { findOrder, markPaid, patchOrder, saveOrder } from "@/lib/orders";
 import { bsFromCents, evaluatePayment } from "@/lib/payment";
 import { recordPurchase } from "@/lib/registry";
+import { customerFromPayload } from "@/lib/customer";
 import { readSkylinkCharge } from "@/lib/skylink";
 
 export async function GET(request: Request) {
@@ -19,7 +20,29 @@ export async function GET(request: Request) {
     const charge = token
       ? await readSkylinkCharge(token)
       : { status: "unknown", paid: false, data: {} as Record<string, unknown> };
-    const order = findOrder(token || buyOrder);
+    const orderFound = findOrder(token || buyOrder);
+    const buyer = customerFromPayload(charge.data);
+    const chargeOrder = String(
+      (charge.data as Record<string, unknown>).buyOrder ?? buyOrder,
+    );
+    let order = orderFound;
+    if (chargeOrder && buyer.email && !order?.email) {
+      saveOrder({
+        buyOrder: order?.buyOrder || chargeOrder,
+        sessionId:
+          order?.sessionId ||
+          String((charge.data as Record<string, unknown>).sessionId ?? chargeOrder),
+        token: order?.token || token,
+        name: order?.name || buyer.name || "Cliente",
+        email: buyer.email,
+        amountCents: order?.amountCents || Number((charge.data as Record<string, unknown>).amount ?? 0),
+        status: order?.status || "created",
+        delivered: Boolean(order?.delivered),
+        createdAt: order?.createdAt || new Date().toISOString(),
+        paidAmountCents: order?.paidAmountCents,
+      });
+      order = findOrder(order?.buyOrder || chargeOrder);
+    }
 
     const data = charge.data as Record<string, unknown>;
     const paidRaw = data.paidAmount ?? data.paid_amount;

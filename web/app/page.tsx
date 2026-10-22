@@ -19,41 +19,41 @@ const pains = [
   {
     num: "01",
     title: "Me quitaron la arepa",
-    text: "No se acabó la arepa. Se acabó la arepa del tamaño de un plato, con jugo y café con azúcar.",
+    text: "La arepa se queda. Lo que se acaba es la del tamaño de un plato, con jugo y café con azúcar. Comes arepa. Sin que se te dispare.",
   },
   {
     num: "02",
-    title: "Todo lo “light” es caro",
-    text: "Quinoa, salmón y galletas importadas. Tú compras pollo, huevo, caraota y auyama.",
+    title: "Como soso y igual se me sube",
+    text: "Ya dejaste el azúcar y el arroz, y el glucometro no perdona. Casi nunca es falta de voluntad: es cómo se arma el plato.",
   },
   {
     num: "03",
-    title: "Como soso y igual se me sube",
-    text: "El problema casi nunca es la voluntad. Es cómo se arma el plato criollo.",
+    title: "Lo “light” no está en mi mercado",
+    text: "Quinoa, salmón y galletas importadas. Tú compras pollo, huevo, caraota y auyama. Con eso se cocina este libro.",
   },
   {
     num: "04",
-    title: "Cocino para todos y yo aparte",
-    text: "Un caldero. Ellos comen rico. Tú tu porción. Sin plato de enferma.",
+    title: "Cocino para todos y yo como aparte",
+    text: "Un caldero para la casa y otro plato para ti, el de enferma. Aquí se cocina una vez: ellos comen, tú comes tu porción.",
   },
 ];
 
 const includes = [
-  "50 recetas criollas: desayuno, almuerzo, cena, merienda y domingo",
-  "Semáforo venezolano: arepa, yuca, plátano, jugo, papelón",
-  "La arepa sin pico: tamaño, relleno y con qué no combinarla",
-  "3 menús de 7 días, uno por bolsillo",
-  "Lista de mercado para que rinda el real",
-  "Sustituciones y antojos sin papelón",
+  "50 recetas criollas: desayuno, almuerzo, cena, merienda y el domingo",
+  "La arepa, en su punto: el tamaño, el relleno y con qué no la acompañas para que no se te suba",
+  "Semáforo venezolano: arepa, yuca, plátano, jugo y papelón, dicho claro",
+  "3 menús de 7 días, uno para cada bolsillo",
+  "Lista de mercado para que rinda el real de la semana",
+  "Sustituciones y antojos, para la visita y el domingo",
 ];
 
 const bonuses = [
-  ["Semáforo criollo", "Qué sí, qué a veces, qué casi nunca."],
-  ["La arepa sin pico", "El ángulo más venezolano, en una guía corta."],
-  ["3 menús de 7 días", "Diario, cómodo y elevado. Dime qué cocino mañana."],
-  ["Lista de mercado", "Para dejar de improvisar en el mercado."],
-  ["Sustituciones", "Papelón, jugo, arroz, harina, plátano maduro."],
-  ["Antojos sin castigo", "Porque sin postre el libro se siente dieta."],
+  ["La arepa, en su punto", "Tamaño, relleno y con qué no la acompañas para que no se te suba. La guía corta con la que abre el libro."],
+  ["Semáforo criollo", "Qué comes tranquila, qué dejas para a veces y qué casi nunca. Para dejar de adivinar."],
+  ["3 menús de 7 días", "Diario, cómodo y de domingo. Para no preguntarte a las once qué se almuerza."],
+  ["Lista de mercado", "Lo que compras esta semana, con lo que sí se consigue y rinde."],
+  ["Sustituciones", "Papelón, jugo, arroz, harina y plátano maduro: con qué los cambias sin perder el plato."],
+  ["Antojos sin castigo", "El domingo y el postre también están. Si no, el libro se siente dieta."],
 ];
 
 const faqs = [
@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     q: "¿Mi familia tiene que comer “light” o yo cocino aparte?",
-    a: "Ninguna de las dos. Se cocina un solo caldero y todos comen lo mismo, rico. Lo que cambia es cómo armas tu plato: tu porción de arepa, tu parte de proteína y lo que la acompaña. Sin plato de enferma y sin doble cocina.",
+    a: "Ninguna de las dos. Se cocina un solo caldero y todos comen lo mismo, rico. Lo que cambia es tu plato: la arepa más pequeña, tu parte de proteína y lo que va al lado. Comes lo mismo que ellos, sin que se te dispare. Sin plato de enferma y sin cocinar dos veces.",
   },
   {
     q: "¿Cómo pago y en qué moneda?",
@@ -112,7 +112,7 @@ export default async function Home() {
             <a href="#comprar">Comprar</a>
           </nav>
           <a className="btn" href="#comprar">
-            Quiero el recetario — {PRODUCT.priceUsd} USD
+            Quiero mi recetario — {PRODUCT.priceUsd} USD
           </a>
         </div>
       </header>
@@ -120,14 +120,17 @@ export default async function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <p className="kicker">Recetario criollo para diabetes</p>
+            <p className="kicker">Para la que cocina todos los días</p>
             <h1>
               Te dijeron que se acabó la arepa. <em>Te mintieron a medias.</em>
             </h1>
             <p className="lead">
-              Come lo de tu casa —arepa, pabellón, pollo, auyama, caraotas— sin
-              vivir con miedo al pico y sin comprar como rico. 50 recetas
-              venezolanas, para todos los bolsillos.
+              Eres la que pone el almuerzo. El diagnóstico —el tuyo, el de tu
+              esposo o el de tu mamá— te dejó con miedo de mirar el glucometro.
+              Mesa Serena es el recetario para seguir comiendo lo de tu casa
+              —arepa, pabellón, pollo, caraota y auyama— sin que se te
+              dispare y sin comprar como rico. 50 recetas, para el bolsillo
+              de entre semana.
             </p>
             <div className="price-row">
               <span className="now">{PRODUCT.priceUsd} USD</span>
@@ -136,17 +139,17 @@ export default async function Home() {
             <p className="fine">{rateLabel}. Pagas en bolívares con Skylink Pay.</p>
             <div className="hero-actions">
               <a className="btn btn-lg" href="#comprar">
-                Comprar el recetario
+                Quiero mi recetario
               </a>
             </div>
             <p className="fine">
-              El recetario llega a tu correo cuando el pago quede aprobado.
-              Recetario educativo: no sustituye a tu médico.
+              Tu recetario llega directo a tu correo cuando el pago quede
+              aprobado. Recetario educativo: no sustituye a tu médico.
             </p>
             <div className="hero-meta">
-              <span className="chip">50 recetas</span>
-              <span className="chip">3 menús de 7 días</span>
-              <span className="chip">PDF al correo</span>
+              <span className="chip">50 recetas criollas</span>
+              <span className="chip">Menú de 7 días</span>
+              <span className="chip">Sin que se te dispare</span>
             </div>
           </div>
           <div className="hero-visual">
@@ -169,7 +172,7 @@ export default async function Home() {
 
       <section className="pains">
         <div className="wrap">
-          <p className="kicker">Si esto te suena, es para ti</p>
+          <p className="kicker">Si cocinas y te suena, es para ti</p>
           <div className="pain-grid">
             {pains.map((pain) => (
               <article className="card" key={pain.title}>
@@ -199,12 +202,13 @@ export default async function Home() {
               domingo.
             </h2>
             <p className="lead">
-              Si el recetario empieza con quinoa, no fue hecho para Venezuela.
-              Mesa Serena se sienta en las dos mesas: la del día a día y la de
-              la visita.
+              Si el recetario empieza con quinoa, no lo escribieron para tu
+              cocina. El tuyo se sienta en las dos mesas que sí tienes: la del
+              martes, con lo que rindió el mercado, y la del domingo, cuando
+              viene visita.
             </p>
             <a className="btn" href="#comprar">
-              Quiero el de mi mercado
+              Quiero mi recetario
             </a>
           </div>
         </div>
@@ -213,12 +217,12 @@ export default async function Home() {
       <section className="section" id="incluye">
         <div className="wrap include">
           <div>
-            <p className="kicker">Qué estás comprando</p>
-            <h2>No es un PDF suelto. Es el menú de la semana.</h2>
+            <p className="kicker">Qué te llevas</p>
+            <h2>No es una lista de “ya no puedes”. Es el menú de tu semana.</h2>
             <p className="lead">
               Por {PRODUCT.priceUsd} dólares
-              {vesLabel ? ` (${vesLabel})` : ""} te llega un recetario para dejar
-              de improvisar a la hora de comer.
+              {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar a la hora
+              de comer, con la comida que ya sabes hacer.
             </p>
             <ul className="clean">
               {includes.map((item) => (
@@ -249,14 +253,14 @@ export default async function Home() {
       <section className="section section-tight">
         <div className="wrap">
           <p className="kicker">Para todos los bolsillos</p>
-          <h2>El libro no asume que tienes plata</h2>
+          <h2>Cocinas con lo que hay, no con lo que está de moda</h2>
           <div className="pockets">
             <article className="pocket featured">
               <p className="count">30</p>
               <h3>Diario</h3>
               <p>
-                Huevo, pollo, caraota, lenteja, sardina, auyama, arepa pequeña.
-                El 80% de tus días.
+                Huevo, pollo, caraota, lenteja, sardina, auyama y arepa
+                pequeña. El 80% de tus días, con lo del mercado de siempre.
               </p>
             </article>
             <article className="pocket">
@@ -284,15 +288,19 @@ export default async function Home() {
           <div>
             <p className="kicker kicker-gold">Un caldero para toda la casa</p>
             <h2>
-              Tu familia come pabellón. Tú comes el mismo pabellón, en tu
-              porción.
+              Ellos comen pabellón. Tú comes el mismo pabellón, en tu porción.
             </h2>
             <p className="lead">
-              También es el regalo que sí se usa: si tu mamá tiene diabetes, no
-              le mandes más audios. Mándale menú.
+              Un solo caldero. La arepa más pequeña, tu parte de la carne y la
+              caraota, y la ensalada que acompaña. Sin plato de enferma.
+            </p>
+            <p className="lead">
+              Y si quien cocina no eres tú, sino tu mamá: cómpraselo a su
+              correo. Le llega el recetario con su nombre. Tú pagas. Es el
+              regalo que sí se usa, mejor que otro audio de “cuídate”.
             </p>
             <a className="btn" href="#comprar">
-              Comprar para mamá
+              Quiero mi recetario
             </a>
           </div>
           <div className="split-photo">
@@ -308,8 +316,8 @@ export default async function Home() {
 
       <section className="section">
         <div className="wrap">
-          <p className="kicker">Bonos, dentro del mismo PDF</p>
-          <h2>Lo que viene con el recetario</h2>
+          <p className="kicker">Dentro del mismo recetario</p>
+          <h2>Las guías para no volver a improvisar</h2>
           <div className="bonus">
             {bonuses.map(([title, text]) => (
               <article className="card" key={title}>
@@ -326,8 +334,8 @@ export default async function Home() {
           <p className="kicker">Si todavía lo estás pensando</p>
           <h2>Preguntas de verdad</h2>
           <p className="lead faq-lead">
-            Lo que todo el mundo pregunta antes de pagar, respondido sin
-            letra pequeña.
+            Lo que preguntas tú, la que cocina, antes de pagar. Sin letra
+            pequeña y sin promesas de médico.
           </p>
           <div className="faq">
             {faqs.map((item) => (
@@ -354,13 +362,14 @@ export default async function Home() {
               height={586}
             />
           </div>
-          <h2>Come criollo. Sin pico. Sin comprar como rico.</h2>
+          <h2>Come lo de tu casa. Sin que se te dispare. Sin comprar como rico.</h2>
           <p className="lead">
-            50 recetas. Menú de 7 días. Lista de mercado. {PRODUCT.priceUsd} USD
+            50 recetas con lo de tu mercado. El menú de tu semana. La lista
+            para no improvisar. {PRODUCT.priceUsd} USD
             {vesLabel ? ` ${vesLabel}` : ""}.
           </p>
           <a className="btn btn-lg" href="#comprar">
-            Quiero Mesa Serena
+            Quiero mi recetario
           </a>
         </div>
       </section>
@@ -381,7 +390,7 @@ export default async function Home() {
           {vesLabel ? ` ${vesLabel}` : ""}
         </span>
         <a className="btn" href="#comprar">
-          Comprar
+          Quiero mi recetario
         </a>
       </div>
     </>

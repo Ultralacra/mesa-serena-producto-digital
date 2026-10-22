@@ -1,4 +1,5 @@
 import { createHmac } from "crypto";
+import { sessionIdForCustomer } from "@/lib/customer";
 
 const paid = new Set(["approved", "paid", "completed", "success", "authorized"]);
 
@@ -90,14 +91,19 @@ export async function createSkylinkCharge(input: {
   amountCents: number;
   buyOrder: string;
   sessionId: string;
+  customerName?: string;
+  customerEmail?: string;
 }) {
+  const sessionId = input.customerEmail
+    ? sessionIdForCustomer(input.customerName || "", input.customerEmail)
+    : input.sessionId;
   const data = await skylinkRequest("POST", "/api/v1/merchant/transactions", {
     amount: input.amountCents,
     buyOrder: input.buyOrder,
     currency: "VES",
     expirable: true,
     installments: 1,
-    sessionId: input.sessionId,
+    sessionId,
   });
   const token = String(data.token ?? data.paymentToken ?? "");
   const url = String(data.url ?? (token ? `${apiBase()}/pay/${token}` : ""));
@@ -105,6 +111,7 @@ export async function createSkylinkCharge(input: {
   return {
     url,
     token,
+    sessionId,
     id: String(data.id ?? ""),
     status: String(data.status ?? "created"),
     cents: input.amountCents,
@@ -123,4 +130,58 @@ export async function readSkylinkCharge(token: string) {
 
 export function isPaidStatus(status: string) {
   return paid.has(status.toLowerCase());
+}
+
+export type SkylinkTransaction = {
+  buyOrder: string;
+  sessionId?: string;
+  token?: string;
+  amount?: number;
+  paidAmount?: number;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+/** Estado de Skylink traducido al que muestra el admin. */
+export function purchaseStatusFromSkylink(status: string) {
+  const value = status.toLowerCase();
+  if (paid.has(value)) return "paid";
+  if (value === "needs_review") return "underpaid";
+  if (value === "expired") return "expired";
+  if (value === "cancelled" || value === "canceled") return "cancelled";
+  if (value === "failed") return "failed";
+  return "created";
+}
+
+/** Todas las transacciones del comercio. El mismo endpoint del cobro, en GET. */
+export async function listSkylinkTransactions() {
+  const items: SkylinkTransaction[] = [];
+  for (let page = 1; page <= 20; page += 1) {
+    const data = await skylinkRequest(
+      "GET",
+      `/api/v1/merchant/transactions?limit=100&page=${page}`,
+    );
+    const batch = Array.isArray(data.items) ? data.items : [];
+    for (const raw of batch) {
+      const item = raw as Record<string, unknown>;
+      const buyOrder = String(item.buyOrder ?? "");
+      if (!buyOrder) continue;
+      items.push({
+        buyOrder,
+        sessionId: item.sessionId ? String(item.sessionId) : undefined,
+        token: item.token ? String(item.token) : undefined,
+        amount: item.amount === undefined ? undefined : Number(item.amount),
+        paidAmount:
+          item.paidAmount === undefined ? undefined : Number(item.paidAmount),
+        status: item.status ? String(item.status) : undefined,
+        createdAt: item.createdAt ? String(item.createdAt) : undefined,
+        updatedAt: item.updatedAt ? String(item.updatedAt) : undefined,
+      });
+    }
+    const pagination = data.pagination as { totalPages?: number } | undefined;
+    const totalPages = Number(pagination?.totalPages ?? 1);
+    if (page >= totalPages || batch.length === 0) break;
+  }
+  return items;
 }
