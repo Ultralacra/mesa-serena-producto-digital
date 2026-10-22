@@ -1,0 +1,31 @@
+{
+  "name": "mesa-serena",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "pdf": "node scripts/pdf/build-pdf.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "nodemailer": "^10.2.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.1",
+    "@types/node": "^20",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "puppeteer": "^25.16.0",
+    "typescript": "^5"
+  }
+}

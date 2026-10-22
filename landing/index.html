@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mesa Serena — Recetario criollo para diabetes</title>
+  <meta name="description" content="50 recetas venezolanas para diabetes. Arepa, pabellón y pollo del mercado, para todos los bolsillos. PDF 9 USD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;0,9..144,700;1,9..144,500;1,9..144,650&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bosque: #1B3A2F;
+      --bosque-profundo: #12261F;
+      --crema: #F6F0E4;
+      --papel: #FFFBF4;
+      --terracota: #C45C3A;
+      --terracota-oscura: #9A3F26;
+      --oro: #C4A46A;
+      --sage: #5C7A6A;
+      --tinta: #1A1A16;
+      --muted: #5A615C;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--crema);
+      color: var(--tinta);
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(246, 240, 228, 0.94);
+      border-bottom: 1px solid rgba(196, 164, 106, 0.35);
+      backdrop-filter: blur(8px);
+    }
+    .nav-inner, .hero-grid, .split, .pockets, .bonus, .faq, .footer-grid {
+      display: flex; flex-wrap: wrap; gap: 20px; align-items: center;
+    }
+    .nav-inner { justify-content: space-between; padding: 14px 0; }
+    .brand {
+      font-family: Fraunces, serif;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      color: var(--bosque);
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--terracota); color: #fff; text-decoration: none;
+      font-weight: 600; border: 0; cursor: pointer;
+      padding: 12px 18px; font-size: 15px;
+    }
+    .btn:hover { background: var(--terracota-oscura); }
+    .btn-dark { background: var(--bosque); }
+    .btn-dark:hover { background: var(--bosque-profundo); }
+    .btn-lg { padding: 16px 22px; font-size: 16px; width: 100%; max-width: 360px; }
+    .hero { padding: 36px 0 20px; }
+    .hero-grid { align-items: stretch; }
+    .hero-copy { flex: 1 1 420px; min-width: 0; }
+    .hero-visual { flex: 1 1 380px; min-width: 0; position: relative; }
+    .hero-visual img { width: 100%; height: 520px; object-fit: cover; object-position: 50% 78%; }
+    .kicker {
+      letter-spacing: 0.22em; font-size: 12px; font-weight: 600;
+      color: var(--sage); text-transform: uppercase; margin-bottom: 14px;
+    }
+    h1, h2, h3 { font-family: Fraunces, serif; font-weight: 650; line-height: 1.12; color: var(--bosque-profundo); }
+    h1 { font-size: clamp(34px, 6vw, 64px); margin-bottom: 16px; }
+    h1 em { font-style: italic; color: var(--terracota); }
+    h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 12px; }
+    h3 { font-size: 22px; margin-bottom: 8px; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 540px; margin-bottom: 22px; }
+    .price-row { display: flex; gap: 14px; align-items: baseline; margin: 8px 0 18px; }
+    .old { color: var(--muted); text-decoration: line-through; font-size: 16px; }
+    .now { font-family: Fraunces, serif; font-size: 40px; color: var(--terracota); font-weight: 700; }
+    .fine { font-size: 13px; color: var(--muted); margin-top: 10px; }
+    .pains { padding: 10px 0 48px; }
+    .pain-grid, .include, .pockets, .bonus { display: grid; gap: 14px; }
+    .pain-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card {
+      background: var(--papel);
+      border: 1px solid rgba(196, 164, 106, 0.45);
+      padding: 20px;
+    }
+    .card p { color: var(--muted); font-size: 15px; }
+    .section { padding: 56px 0; }
+    .band { background: var(--bosque); color: var(--crema); }
+    .band h2, .band h3 { color: var(--crema); }
+    .band .lead, .band p { color: #D5DDD6; }
+    .split { align-items: center; }
+    .split > * { flex: 1 1 380px; min-width: 0; }
+    .split img { width: 100%; height: 460px; object-fit: cover; }
+    .include { grid-template-columns: 1.1fr 0.9fr; }
+    @media (max-width: 800px) { .include { grid-template-columns: 1fr; } }
+    ul.clean { list-style: none; }
+    ul.clean li {
+      padding: 10px 0 10px 28px; position: relative;
+      border-bottom: 1px solid rgba(196, 164, 106, 0.3);
+    }
+    ul.clean li::before {
+      content: ""; position: absolute; left: 0; top: 18px;
+      width: 8px; height: 8px; background: var(--terracota);
+    }
+    .pockets { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 800px) { .pockets { grid-template-columns: 1fr; } }
+    .pocket { padding: 24px; background: var(--papel); border-top: 4px solid var(--oro); }
+    .pocket.featured { border-top-color: var(--terracota); background: #fff; }
+    .count { font-family: Fraunces, serif; font-size: 42px; color: var(--bosque); }
+    .bonus { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .offer {
+      background: var(--papel);
+      border: 1px solid var(--oro);
+      padding: 32px;
+      max-width: 520px;
+      scroll-margin-top: 84px;
+    }
+    details {
+      background: var(--papel);
+      border: 1px solid rgba(196, 164, 106, 0.45);
+      padding: 14px 18px;
+    }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 600; color: var(--bosque); }
+    details p { margin-top: 8px; color: var(--muted); }
+    footer { background: var(--bosque-profundo); color: #C9D1CB; padding: 36px 0; font-size: 13px; }
+    footer strong { color: var(--crema); }
+    .sticky-cta {
+      display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      background: var(--bosque-profundo); padding: 10px 16px;
+      justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .sticky-cta span { color: var(--crema); font-size: 14px; }
+    @media (max-width: 720px) {
+      .sticky-cta { display: flex; }
+      body { padding-bottom: 72px; }
+      .nav .btn { display: none; }
+      .hero-visual img, .split img { height: 280px; }
+      .hero-visual img { object-position: 50% 82%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cambia el número en wa.me. Formato: código de país + número, sin + ni espacios. -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">MESA SERENA</div>
+      <a class="btn js-wa" href="#comprar">Quiero el recetario — 9 USD</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Recetario criollo para diabetes</p>
+        <h1>Te dijeron que se acabó la arepa. <em>Te mintieron a medias.</em></h1>
+        <p class="lead">
+          Come lo de tu casa —arepa, pabellón, pollo, auyama, caraotas— sin vivir con miedo al pico y sin comprar como rico. 50 recetas venezolanas, para todos los bolsillos.
+        </p>
+        <div class="price-row">
+          <span class="old">valor 12 USD</span>
+          <span class="now">9 USD</span>
+        </div>
+        <a class="btn btn-lg js-wa" href="#comprar">Escribe AREPA y te llega el PDF</a>
+        <p class="fine">PDF al instante por WhatsApp. Recetario educativo: no sustituye a tu médico.</p>
+      </div>
+      <div class="hero-visual">
+        <img src="img/arepa.jpg" alt="Arepa venezolana pequeña con pollo y ensalada" />
+      </div>
+    </div>
+  </section>
+
+  <section class="pains">
+    <div class="wrap">
+      <p class="kicker">Si esto te suena, es para ti</p>
+      <div class="pain-grid">
+        <article class="card">
+          <h3>Me quitaron la arepa</h3>
+          <p>No se acabó la arepa. Se acabó la arepa del tamaño de un plato, con jugo y café con azúcar.</p>
+        </article>
+        <article class="card">
+          <h3>Todo lo “light” es caro</h3>
+          <p>Quinoa, salmón y galletas importadas. Tú compras pollo, huevo, caraota y auyama.</p>
+        </article>
+        <article class="card">
+          <h3>Como soso y igual se me sube</h3>
+          <p>El problema casi nunca es la voluntad. Es cómo se arma el plato criollo.</p>
+        </article>
+        <article class="card">
+          <h3>Cocino para todos y yo como aparte</h3>
+          <p>Un caldero. Ellos comen rico. Tú tu porción. Sin plato de enferma.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap split">
+      <img src="img/mercado.jpg" alt="Ingredientes del mercado venezolano: huevos, auyama, pollo, caraotas" />
+      <div>
+        <p class="kicker" style="color:#C4A46A">Esto no es un recetario de Miami</p>
+        <h2>30 recetas con lo de tu mercado. 14 cuando alcanza. 6 para el domingo.</h2>
+        <p class="lead">Si el recetario empieza con quinoa, no fue hecho para Venezuela. Mesa Serena se sienta en las dos mesas: la del día a día y la de la visita.</p>
+        <a class="btn js-wa" href="#comprar">Quiero el de mi mercado</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="incluye">
+    <div class="wrap include">
+      <div>
+        <p class="kicker">Qué estás comprando</p>
+        <h2>No es un PDF suelto. Es el menú de la semana.</h2>
+        <p class="lead">Por 9 dólares te llega un recetario para dejar de improvisar a la hora de comer.</p>
+        <ul class="clean">
+          <li>50 recetas criollas: desayuno, almuerzo, cena, merienda y domingo</li>
+          <li>Semáforo venezolano: arepa, yuca, plátano, jugo, papelón</li>
+          <li>La arepa sin pico: tamaño, relleno y con qué no combinarla</li>
+          <li>3 menús de 7 días, uno por bolsillo</li>
+          <li>Lista de mercado para que rinda el real</li>
+          <li>Sustituciones y antojos sin papelón</li>
+        </ul>
+      </div>
+      <aside class="offer" id="comprar">
+        <p class="kicker">Lanzamiento</p>
+        <h3>Mesa Serena</h3>
+        <p>Recetario + 6 guías. Un solo PDF, para el celular o para imprimir.</p>
+        <div class="price-row">
+          <span class="old">12 USD</span>
+          <span class="now">9 USD</span>
+        </div>
+        <a class="btn btn-lg js-wa" href="#comprar">Pedir por WhatsApp</a>
+        <p class="fine">Zinli, Binance, Zelle o pago móvil. Te llega al confirmar.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Para todos los bolsillos</p>
+      <h2>El libro no asume que tienes plata</h2>
+      <div class="pockets" style="margin-top:22px">
+        <article class="pocket featured">
+          <p class="count">30</p>
+          <h3>Diario</h3>
+          <p>Huevo, pollo, caraota, lenteja, sardina, auyama, arepa pequeña. El 80% de tus días.</p>
+        </article>
+        <article class="pocket">
+          <p class="count">14</p>
+          <h3>Cómodo</h3>
+          <p>Atún, aguacate, yogurt, cacao, pescado, asado negro sin papelón. Cuando el mercado alcanza.</p>
+        </article>
+        <article class="pocket">
+          <p class="count">6</p>
+          <h3>Elevado</h3>
+          <p>Quinoa, trucha o salmón, aceite de oliva. Domingo, visita, “me lo merezco”.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap split">
+      <div>
+        <p class="kicker" style="color:#C4A46A">Un caldero para toda la casa</p>
+        <h2>Tu familia come pabellón. Tú comes el mismo pabellón, en tu porción.</h2>
+        <p class="lead">También es el regalo que sí se usa: si tu mamá tiene diabetes, no le mandes más audios. Mándale menú.</p>
+        <a class="btn js-wa" href="#comprar">Escribe MAMÁ o FAMILIA</a>
+      </div>
+      <img src="img/oferta.jpg" alt="Mesa criolla con recetario y plato controlado" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">Bonos, dentro del mismo PDF</p>
+      <h2>Lo que sube el valor a 12 USD</h2>
+      <div class="bonus" style="margin-top:22px">
+        <article class="card"><h3>Semáforo criollo</h3><p>Qué sí, qué a veces, qué casi nunca.</p></article>
+        <article class="card"><h3>La arepa sin pico</h3><p>El ángulo más venezolano, en una guía corta.</p></article>
+        <article class="card"><h3>3 menús de 7 días</h3><p>Diario, cómodo y elevado. Dime qué cocino mañana.</p></article>
+        <article class="card"><h3>Lista de mercado</h3><p>Para dejar de improvisar en el mercado.</p></article>
+        <article class="card"><h3>Sustituciones</h3><p>Papelón, jugo, arroz, harina, plátano maduro.</p></article>
+        <article class="card"><h3>Antojos sin castigo</h3><p>Porque sin postre el libro se siente dieta.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:760px">
+      <p class="kicker">Si todavía lo estás pensando</p>
+      <h2>Preguntas de verdad</h2>
+      <div class="faq" style="display:block; margin-top:18px">
+        <details open>
+          <summary>¿Esto me baja la glicemia?</summary>
+          <p>No. Es un recetario educativo. Te ayuda a armar comida criolla con más sentido. Tu médico, endocrino o nutriólogo siguen mandando. Si usas insulina o pastillas, cualquier cambio se habla con ellos.</p>
+        </details>
+        <details>
+          <summary>¿Y si no como salmón ni quinoa?</summary>
+          <p>Mejor. Solo hay 6 recetas de bolsillo elevado. Las otras 44 son de tu cocina: huevo, pollo, caraota, auyama, sardina, arepa.</p>
+        </details>
+        <details>
+          <summary>¿Mi familia tiene que comer “light”?</summary>
+          <p>No. Comen lo mismo. Tú sirves tu porción. El pabellón no se elimina: se arma.</p>
+        </details>
+        <details>
+          <summary>¿Cómo me llega?</summary>
+          <p>Escribes por WhatsApp, pagas 9 USD y te mandamos el PDF en el acto. Un solo archivo. Sin app rara.</p>
+        </details>
+        <details>
+          <summary>¿Por qué 9 y no 12?</summary>
+          <p>9 es precio de lanzamiento. El valor del recetario con las 6 guías es 12. Cuando se acabe el lanzamiento, vuelve a 12.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" style="text-align:center">
+    <div class="wrap">
+      <h2>Come criollo. Sin pico. Sin comprar como rico.</h2>
+      <p class="lead" style="margin:12px auto 22px">50 recetas. Menú de 7 días. Lista de mercado. 9 USD.</p>
+      <a class="btn btn-lg js-wa" href="#comprar" style="margin:0 auto">Quiero Mesa Serena</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Mesa Serena</strong> — Recetario criollo para personas con diabetes. Producto digital educativo. No diagnostica, no trata y no sustituye atención médica.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <span>Mesa Serena · 9 USD</span>
+    <a class="btn js-wa" href="#comprar">Pedir PDF</a>
+  </div>
+
+  <script>
+    const WHATSAPP = "5800000000000"; // cámbialo: código de país + número
+    const texto = encodeURIComponent("Hola, quiero Mesa Serena. Palabra: AREPA");
+    const url = "https://wa.me/" + WHATSAPP + "?text=" + texto;
+    document.querySelectorAll(".js-wa").forEach(function (el) {
+      el.setAttribute("href", url);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
+  </script>
+</body>
+</html>

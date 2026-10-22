@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Mesa Serena</title>
+<style>
+  @font-face { font-family: Display; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff") format("woff"); font-weight: 500; font-style: normal; }
+  @font-face { font-family: Display; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff") format("woff"); font-weight: 600; font-style: normal; }
+  @font-face { font-family: Display; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff") format("woff"); font-weight: 500; font-style: italic; }
+  @font-face { font-family: Text; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff") format("woff"); font-weight: 400; }
+  @font-face { font-family: Text; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/source-serif-4/files/source-serif-4-latin-600-normal.woff") format("woff"); font-weight: 600; }
+  @font-face { font-family: Sans; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff") format("woff"); font-weight: 400; }
+  @font-face { font-family: Sans; src: url("file:///C:/Users/C%C3%A9sar/Desktop/producto%20digital/web/node_modules/@fontsource/manrope/files/manrope-latin-600-normal.woff") format("woff"); font-weight: 600; }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #efe8dc; }
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    padding: 16mm 18mm 18mm;
+    position: relative;
+    page-break-after: always;
+    background:
+      radial-gradient(420px 180px at 100% 0%, rgba(196,164,106,.16), transparent 60%),
+      #f7f2ea;
+    color: #241c16;
+    overflow: hidden;
+  }
+  footer {
+    position: absolute;
+    left: 18mm;
+    right: 18mm;
+    bottom: 9mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.4pt solid #d9ccb6;
+    padding-top: 5pt;
+    font-family: Sans, sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8d7f6a;
+  }
+  footer b { font-weight: 600; letter-spacing: 0.08em; }
+  .eyebrow, h3, .top, .meta {
+    font-family: Sans, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 8pt;
+    font-weight: 600;
+    color: #8a6a45;
+  }
+  h1, h2, .rn { font-family: Display, serif; font-weight: 500; color: #163028; }
+  .display { font-size: 54pt; line-height: 0.9; letter-spacing: -0.03em; margin: 6pt 0 10pt; }
+  .small-display { font-size: 32pt; }
+  .lead { font-family: Text, serif; font-size: 12pt; line-height: 1.45; color: #4d463c; max-width: 36em; margin-bottom: 14pt; }
+  .cover {
+    background: #14261f;
+    color: #f6f0e6;
+    padding: 22mm 20mm 22mm 24mm;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 8mm;
+    background: #c45c3a;
+  }
+  .cover h1 { color: #f6f0e6; font-size: 78pt; line-height: 0.82; font-weight: 500; }
+  .cover h1 em { font-style: italic; color: #e7c98a; }
+  .cover .eyebrow { color: #e7c98a; }
+  .cover .deck { margin-top: 18pt; max-width: 16em; font-family: Text, serif; font-size: 14pt; line-height: 1.4; color: #e7dfd2; }
+  .cover .rule { width: 42mm; height: 0.6pt; background: #e7c98a; margin: 22pt 0; }
+  .cover ul { list-style: none; font-family: Sans, sans-serif; letter-spacing: 0.18em; text-transform: uppercase; font-size: 8pt; color: #e7c98a; }
+  .cover li { margin: 6pt 0; }
+  .cover footer { color: #cbb892; border-color: rgba(231,201,138,.35); }
+  .index { list-style: none; columns: 2; column-gap: 16pt; }
+  .index li {
+    break-inside: avoid;
+    display: grid;
+    grid-template-columns: 18pt 1fr auto;
+    gap: 8pt;
+    align-items: baseline;
+    padding: 5.5pt 0;
+    border-bottom: 0.4pt solid #e4d8c6;
+    font-family: Text, serif;
+    font-size: 11pt;
+  }
+  .index span { font-family: Display, serif; font-style: italic; color: #c45c3a; font-size: 13pt; }
+  .index i { font-style: normal; font-family: Sans, sans-serif; font-size: 7.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: #8d7f6a; }
+  .top { display: flex; justify-content: space-between; border-bottom: 0.4pt solid #d9ccb6; padding-bottom: 7pt; }
+  .rn {
+    font-size: 64pt;
+    line-height: 0.8;
+    font-style: italic;
+    color: #c45c3a;
+    margin: 12pt 0 2pt;
+  }
+  .recipe h1 { font-size: 28pt; line-height: 1.02; max-width: 16em; margin-bottom: 8pt; }
+  .pull { font-family: Display, serif; font-style: italic; font-size: 15pt; line-height: 1.25; color: #3d4a42; max-width: 28em; margin-bottom: 14pt; }
+  .split { display: grid; grid-template-columns: 0.86fr 1.14fr; gap: 16pt; }
+  h3 { margin-bottom: 8pt; }
+  .ings { list-style: none; }
+  .ings li {
+    font-family: Text, serif;
+    font-size: 11pt;
+    padding: 4.5pt 0 4.5pt 12pt;
+    border-bottom: 0.4pt solid #eadfce;
+    position: relative;
+  }
+  .ings li::before {
+    content: "";
+    width: 4pt; height: 4pt; border-radius: 50%;
+    background: #c45c3a;
+    position: absolute; left: 0; top: 10pt;
+  }
+  .steps { list-style: none; }
+  .steps li { display: grid; grid-template-columns: 22pt 1fr; gap: 8pt; margin: 0 0 9pt; }
+  .steps span { font-family: Display, serif; font-style: italic; color: #c45c3a; font-size: 14pt; line-height: 1; }
+  .steps p { font-family: Text, serif; font-size: 11.5pt; line-height: 1.4; }
+  .footnotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14pt;
+    margin-top: 16pt;
+    padding-top: 10pt;
+    border-top: 0.4pt solid #d9ccb6;
+  }
+  .footnotes p { font-family: Text, serif; font-size: 10pt; line-height: 1.35; color: #3f3830; }
+  .footnotes em {
+    display: block;
+    font-family: Sans, sans-serif;
+    font-style: normal;
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8a6a45;
+    margin-bottom: 3pt;
+  }
+  .plate { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18pt; align-items: start; }
+  .rule-list { list-style: none; }
+  .rule-list li {
+    font-family: Text, serif;
+    font-size: 12pt;
+    padding: 8pt 0;
+    border-bottom: 0.4pt solid #e4d8c6;
+  }
+  .rule-list strong { font-family: Display, serif; font-weight: 500; font-size: 16pt; color: #163028; display: block; }
+  .mark {
+    border: 0.6pt solid #c4a46a;
+    min-height: 78mm;
+    padding: 14pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mark b { font-family: Display, serif; font-size: 28pt; font-weight: 500; line-height: 0.95; color: #163028; }
+  .thirds { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; margin-top: 8pt; }
+  .thirds article { padding-top: 8pt; border-top: 2.5pt solid #163028; }
+  .thirds article:nth-child(2) { border-color: #c4a46a; }
+  .thirds article:nth-child(3) { border-color: #c45c3a; }
+  .thirds h2 { font-size: 20pt; margin-bottom: 8pt; }
+  .thirds p { font-family: Text, serif; font-size: 10pt; line-height: 1.4; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt 16pt; }
+  .cards article { padding: 10pt 0 12pt; border-top: 0.6pt solid #163028; }
+  .cards h2 { font-size: 20pt; margin-bottom: 4pt; }
+  .cards p { font-family: Text, serif; font-size: 11pt; }
+  .days { margin-top: 4pt; }
+  .day {
+    display: grid;
+    grid-template-columns: 28mm 1fr;
+    gap: 8pt;
+    padding: 5pt 0;
+    border-bottom: 0.4pt solid #e4d8c6;
+  }
+  .day h2 { font-size: 16pt; font-style: italic; }
+  .day div { display: grid; grid-template-columns: 1fr 1fr; gap: 2pt 12pt; }
+  .day p { font-family: Text, serif; font-size: 9.5pt; }
+  .day b {
+    display: block;
+    font-family: Sans, sans-serif;
+    font-size: 7pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a6a45;
+    font-weight: 600;
+  }
+  .later { margin: 12pt 0 6pt; }
+  .market { columns: 2; padding-left: 14pt; font-family: Text, serif; font-size: 10pt; }
+  .market li { margin: 2pt 0; }
+  table { width: 100%; border-collapse: collapse; }
+  td { font-family: Text, serif; font-size: 10.5pt; vertical-align: top; padding: 7pt 8pt 7pt 0; border-bottom: 0.4pt solid #e4d8c6; }
+  td:first-child { font-family: Display, serif; font-size: 13pt; color: #163028; width: 38%; }
+</style>
+</head>
+<body>
+
+<section class="sheet cover">
+  <p class="eyebrow">Recetario criollo</p>
+  <div style="margin-top:28mm">
+    <h1>Mesa<br/><em>Serena</em></h1>
+    <div class="rule"></div>
+    <p class="deck">Cincuenta recetas para cocinar en casa con diabetes. Arepa, pabellón, pollo, auyama y domingo.</p>
+  </div>
+  <ul>
+    <li>01 — El plato</li>
+    <li>02 — La cocina venezolana</li>
+    <li>03 — Desayunos a domingo</li>
+    <li>04 — Menús y mercado</li>
+  </ul>
+  <footer><span>Guía educativa de cocina</span><b>01</b></footer>
+</section>
+
+
+
+<section class="sheet ">
+    <p class="eyebrow">Contenido</p>
+  <h1 class="display">Dentro</h1>
+  <ol class="index">
+    <li><span>01</span><strong>Cómo armar el plato</strong><i>Método</i></li>
+    <li><span>02</span><strong>Semáforo de cocina</strong><i>Guía</i></li>
+    <li><span>03</span><strong>La arepa</strong><i>Guía</i></li>
+    <li><span>04</span><strong>Desayunos</strong><i>01–10</i></li>
+    <li><span>05</span><strong>Almuerzos</strong><i>11–28</i></li>
+    <li><span>06</span><strong>Cenas</strong><i>29–38</i></li>
+    <li><span>07</span><strong>Meriendas</strong><i>39–46</i></li>
+    <li><span>08</span><strong>Domingo</strong><i>47–50</i></li>
+    <li><span>09</span><strong>Tres semanas de menú</strong><i>Mercado</i></li>
+    <li><span>10</span><strong>Sustituciones</strong><i>Cocina</i></li>
+  </ol>
+    <footer><span>Mesa Serena</span><b>02</b></footer>
+  </section>
+
+<section class="sheet ">
+    <p class="eyebrow">Método</p>
+  <h1 class="display" style="font-size:42pt">Cómo armar<br/>el plato</h1>
+  <div class="plate">
+    <ul class="rule-list">
+      <li><strong>Mitad vegetales</strong>Ensalada, pepino, tomate, repollo, vainitas, berenjena, calabacín, hojas, auyama. Si no se ven, no están.</li>
+      <li><strong>Un cuarto proteína</strong>Huevo, pollo, carne, pescado, sardina o atún.</li>
+      <li><strong>Un cuarto harina</strong>Una sola: arepa pequeña, yuca de un puño, 3 cucharadas de arroz o un cucharón de caraotas.</li>
+      <li><strong>Bebida</strong>Agua o café sin azúcar. Fruta entera, en porción. Nada de jugo.</li>
+    </ul>
+    <div class="mark">
+      <b>Una harina por comida.</b>
+      <p class="lead" style="margin:0">Queso: una cucharada. Aceite: un chorrito. Sofrito sin papelón. La familia come del mismo caldero; tú sirves tu porción.</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:16pt">Recetario educativo. No diagnostica, no trata y no sustituye a tu médico. Si usas insulina o pastillas, cualquier cambio de comida se habla con ellos. Cada receta es para una persona.</p>
+    <footer><span>Mesa Serena</span><b>03</b></footer>
+  </section>
+
+<section class="sheet ">
+    <p class="eyebrow">Guía</p>
+  <h1 class="display" style="font-size:40pt">Semáforo de<br/>la cocina</h1>
+  <p class="lead">No es una lista de prohibidos. Es cómo se usa lo del mercado.</p>
+  <div class="thirds">
+    <article>
+      <h2>A diario</h2>
+      <p>Huevo, pollo, pescado de mercado, sardina, atún al agua, carne magra. Tomate, cebolla, ají, cilantro, pepino, lechuga, repollo, vainita, berenjena, calabacín, auyama. Limón, ajo, comino, canela. Café sin azúcar. Agua. Avena en hojuelas. Caraotas y lentejas en porción, con ensalada.</p>
+    </article>
+    <article>
+      <h2>En porción</h2>
+      <p>Arepa de palma. Yuca o ñame: un puño. Arroz: 3 cucharadas a media taza. Tres tostones al horno. Casabe pequeño. Una cucharada de queso. Un tercio de aguacate. Una tajada al horno. Dos mini empanadas horneadas. Una hallaca. Media taza de quinoa. Fruta entera.</p>
+    </article>
+    <article>
+      <h2>Casi nunca</h2>
+      <p>Jugo, aunque sea natural. Papelón en los guisos. Azúcar en el café. Refresco. Arepa de plato con queso y jugo. Empanada frita. Plátano maduro frito a montón. Torre de arroz. Mayonesa a cucharadas. Ketchup. Leche condensada. Avena de sobrecito. Yogurt de sabores.</p>
+    </article>
+  </div>
+  <p class="lead" style="margin-top:16pt">Arepa, yuca y caraota se miden. El pico casi siempre viene del combo, no de un alimento solo.</p>
+    <footer><span>Mesa Serena</span><b>04</b></footer>
+  </section>
+
+<section class="sheet ">
+    <p class="eyebrow">Guía</p>
+  <h1 class="display" style="font-size:48pt">La arepa</h1>
+  <p class="lead">Del tamaño de la palma, delgada, con proteína adentro. No del tamaño del plato.</p>
+  <div class="cards">
+    <article><h2>Tamaño</h2><p>Cabe en la mano, unos 8 a 10 cm. Si al partirla parece una torta, está grande. Una por comida.</p></article>
+    <article><h2>Relleno</h2><p>Pollo, huevo, carne, atún o sardina. Queso: una cucharada. Vegetal si cabe.</p></article>
+    <article><h2>No la juntes</h2><p>Con jugo, café azucarado, yuca, pan, queso a paladas ni mantequilla a chorro.</p></article>
+    <article><h2>Con auyama</h2><p>Mitad harina PAN, mitad auyama cocida. Sigue siendo pequeña. Receta 04.</p></article>
+  </div>
+  <p class="lead" style="margin-top:18pt">El desayuno que se puede repetir: receta 01, café con canela y pepino si queda hambre.</p>
+    <footer><span>Mesa Serena</span><b>05</b></footer>
+  </section>
+
+<section class="sheet ">
+    <p class="eyebrow">Capítulo</p>
+    <h1 class="display">Desayuno</h1>
+    <p class="lead">10 recetas. Una persona. El bolsillo va al lado del nombre.</p>
+    <ol class="index"><li><span>01</span><strong>Perico de vegetales con arepa pequeña</strong><i>Diario</i></li><li><span>02</span><strong>Avena cremosa de canela</strong><i>Diario</i></li><li><span>03</span><strong>Huevos con espinaca y queso blanco</strong><i>Diario</i></li><li><span>04</span><strong>Arepa de auyama rellena de pollo</strong><i>Diario</i></li><li><span>05</span><strong>Omelette de ají dulce, cebolla y tomate</strong><i>Diario</i></li><li><span>06</span><strong>Panqueques de avena y huevo</strong><i>Diario</i></li><li><span>07</span><strong>Café con leche, huevo y tomate</strong><i>Diario</i></li><li><span>08</span><strong>Casabe con aguacate y huevo</strong><i>Cómodo</i></li><li><span>09</span><strong>Yogurt natural, parchita y semilla</strong><i>Cómodo</i></li><li><span>10</span><strong>Mini cachapa de jojoto con huevo</strong><i>Cómodo</i></li></ol>
+    <footer><span>Mesa Serena</span><b>06</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">01</p>
+    <h1>Perico de vegetales con arepa pequeña</h1>
+    <p class="pull">El huevo llena, el vegetal ocupa el plato, la arepa deja de ser el protagonista.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>2 huevos</li><li>1 tomate</li><li>1/2 cebolla</li><li>1 ají dulce</li><li>cilantro</li><li>1 arepa del tamaño de la palma (no del plato)</li><li>1 cucharada de queso blanco</li><li>sal</li><li>pizca de comino.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Sofríe cebolla, ají y tomate.</p></li><li><span>02</span><p>Mete los huevos.</p></li><li><span>03</span><p>Arepa delgadita.</p></li><li><span>04</span><p>Queso encima, poquito.</p></li><li><span>05</span><p>Café sin azúcar.</p></li><li><span>06</span><p>Cero jugo.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si hay hambre a media mañana, fue la arepa chiquita, no el perico. Acompaña con pepino.</p>
+      <p><em>Evita</em>Arepa de plato + jugo + café con azúcar.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>07</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">02</p>
+    <h1>Avena cremosa de canela</h1>
+    <p class="pull">Avena de verdad, no instantánea azucarada. Fibra que frena el pico.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>4 cucharadas de avena en hojuelas</li><li>agua o leche diluida</li><li>canela</li><li>vainilla</li><li>stevia si quieres</li><li>1 cucharada de chía o linaza si hay.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Cocina 7 minutos, que quede espesa.</p></li><li><span>02</span><p>Canela generosa.</p></li><li><span>03</span><p>Opcional: 4 cubitos de lechosa o 1/2 cambur pequeño, no los dos.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>La avena de sobrecito con sabor no vale. Eso es azúcar con disfraz.</p>
+      <p><em>Evita</em>Avena instantánea + miel a chorro + cambur maduro entero.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>08</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">03</p>
+    <h1>Huevos con espinaca y queso blanco</h1>
+    <p class="pull">Casi sin harina. Ideal si ese día ya vas a comer arepa al mediodía.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>2 huevos</li><li>1 taza de espinaca (o hojas de remolacha, o berro)</li><li>2 cucharadas de queso blanco</li><li>ajo</li><li>pimienta.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Pocha la espinaca con ajo, vierte huevos, queso al final.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si no hay espinaca, usa palitos de acelga o incluso hojas de auyama.</p>
+      <p><em>Evita</em>Huevos + arepa + pan. Elige una harina.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>09</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">04</p>
+    <h1>Arepa de auyama rellena de pollo</h1>
+    <p class="pull">La auyama rinde la harina y baja la carga. El pollo evita que sea solo masa.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>3 cucharadas de harina PAN</li><li>3 de auyama cocida y triturada</li><li>sal</li><li>pollo desmechado</li><li>ensalada de tomate y lechuga.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Mezcla harina con auyama, asar arepita pequeña, rellenar de pollo.</p></li><li><span>02</span><p>Ensalada al lado, no un vasito de jugo.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>La arepa no se saludabiliza haciéndola más grande. Se saludabiliza haciéndola más pequeña y con proteína.</p>
+      <p><em>Evita</em>Arepa de auyama del tamaño de un plato.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>10</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">05</p>
+    <h1>Omelette de ají dulce, cebolla y tomate</h1>
+    <p class="pull">Sabor de perico, sin arepa. Para rotar.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>2 huevos</li><li>2 ajíes dulces</li><li>cebolla</li><li>tomate</li><li>cilantro.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Vegetales primero, huevo después.</p></li><li><span>02</span><p>Dobla.</p></li><li><span>03</span><p>Un cafecito.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si extrañas pan, 2 galletas de soda integral o 1 casabe pequeño, no las dos cosas.</p>
+      <p><em>Evita</em>Omelette + arepa + queso de mano.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>11</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">06</p>
+    <h1>Panqueques de avena y huevo</h1>
+    <p class="pull">Antojo de arequipe/panqueque sin harina blanca ni sirope.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 huevo</li><li>3 cucharadas de avena molida</li><li>canela</li><li>stevia</li><li>1 cucharadita de aceite para el budare.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Licúa o mezcla, 2 panquequitos.</p></li><li><span>02</span><p>Encima: yogurt natural o canela.</p></li><li><span>03</span><p>Nunca sirope ni miel a chorro.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Un chorrito de mantequilla de maní, si hay, llena más que cualquier mermelada.</p>
+      <p><em>Evita</em>Panqueques de harina + sirope de maple.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>12</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">07</p>
+    <h1>Café con leche, huevo y tomate</h1>
+    <p class="pull">El desayuno de “no hay tiempo” que no es empanada.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 huevo duro o estrellado</li><li>1 tomate en rodajas con limón</li><li>café con un chorrito de leche</li><li>sin azúcar.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>6 minutos.</p></li><li><span>02</span><p>Sal y pimienta al tomate.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>El café con azúcar es un pico invisible porque “es poquito todos los días”.</p>
+      <p><em>Evita</em>Empanada de la esquina + jugo de cartón.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>13</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">08</p>
+    <h1>Casabe con aguacate y huevo</h1>
+    <p class="pull">El casabe, en porción, suele sentar mejor que pan. El aguacate frena.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 casabe pequeño o 1/2 grande</li><li>1/3 de aguacate</li><li>1 huevo</li><li>limón</li><li>sal</li><li>pimentón.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Huevo arriba, aguacate machacado, limón.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Casabe entero + aguacate entero + queso es otro desayuno. Porción.</p>
+      <p><em>Evita</em>Casabe de paquete entero con queso a cucharadas.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>14</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">09</p>
+    <h1>Yogurt natural, parchita y semilla</h1>
+    <p class="pull">Antojo fresco, no jugo. Proteína + fruta entera.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 vaso de yogurt natural sin azúcar</li><li>pulpa de 1 parchita</li><li>1 cucharada de chía o avena cruda.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Mezcla y deja 5 minutos que la chía hinche.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Yogurt “light de fresa” casi siempre trae azúcar. Natural, o no es esta receta.</p>
+      <p><em>Evita</em>Yogurt de sabores + granola importada azucarada.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>15</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Desayuno</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">10</p>
+    <h1>Mini cachapa de jojoto con huevo</h1>
+    <p class="pull">El antojo más venezolano del desayuno, en versión que no es un ladrillo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1/2 taza de jojoto tierno licuado</li><li>1 huevo</li><li>pizca de sal</li><li>1 cucharada de queso</li><li>budare.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>1 cachapita delgada, no las tres de la carretera.</p></li><li><span>02</span><p>Huevo o pollo al lado.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Cachapa + queso de mano + mantequilla + jugo es un pico con cédula. Aquí es mini y con proteína.</p>
+      <p><em>Evita</em>Cachapa de carretera con todo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>16</b></footer>
+  </section><section class="sheet ">
+    <p class="eyebrow">Capítulo</p>
+    <h1 class="display">Almuerzo</h1>
+    <p class="lead">18 recetas. Una persona. El bolsillo va al lado del nombre.</p>
+    <ol class="index"><li><span>11</span><strong>Pabellón controlado</strong><i>Diario</i></li><li><span>12</span><strong>Caraotas negras, huevo y ensalada</strong><i>Diario</i></li><li><span>13</span><strong>Pollo guisado con auyama</strong><i>Diario</i></li><li><span>14</span><strong>Carne mechada sin papelón</strong><i>Diario</i></li><li><span>15</span><strong>Pescado al horno con ensalada criolla</strong><i>Diario</i></li><li><span>16</span><strong>Hervido liviano de pollo</strong><i>Diario</i></li><li><span>17</span><strong>Lentejas criollas</strong><i>Diario</i></li><li><span>18</span><strong>Atún con ensalada de huevo</strong><i>Diario</i></li><li><span>19</span><strong>Pollo saltado con pimentón y cebolla</strong><i>Diario</i></li><li><span>20</span><strong>Yuca al vapor + pollo + ensalada</strong><i>Diario</i></li><li><span>21</span><strong>Garbanzos guisados con espinaca</strong><i>Diario</i></li><li><span>22</span><strong>Repollo salteado con pollo desmechado</strong><i>Diario</i></li><li><span>23</span><strong>Empanaditas horneadas de pollo (2 mini)</strong><i>Diario</i></li><li><span>24</span><strong>Arroz (1/2 taza) con pollo y vegetales</strong><i>Cómodo</i></li><li><span>25</span><strong>Berenjenas rellenas de carne magra</strong><i>Cómodo</i></li><li><span>26</span><strong>Ensalada de gallina light</strong><i>Cómodo</i></li><li><span>27</span><strong>Bowl criollo de quinoa, pollo y aguacate</strong><i>Elevado</i></li><li><span>28</span><strong>Trucha o salmón con auyama asada</strong><i>Elevado</i></li></ol>
+    <footer><span>Mesa Serena</span><b>17</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">11</p>
+    <h1>Pabellón controlado</h1>
+    <p class="pull">Pabellón de casa: ensalada grande, carne, caraotas y arroz medidos. Una tajada al horno o ninguna.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>3 cucharadas de caraotas</li><li>3 de arroz (o sin arroz y más ensalada)</li><li>carne mechada</li><li>1 tajada horneada o nada de tajada</li><li>ensalada grande.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Carne sin papelón (cebolla, ajo, pimentón, comino).</p></li><li><span>02</span><p>Caraotas normales.</p></li><li><span>03</span><p>Tajada: una, al horno, no frita.</p></li><li><span>04</span><p>El plato se ve criollo, no de clínica.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>La familia come del mismo caldero. En tu plato gana la ensalada.</p>
+      <p><em>Evita</em>Pabellón montado + tajadas + arepa + jugo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>18</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">12</p>
+    <h1>Caraotas negras, huevo y ensalada</h1>
+    <p class="pull">Cuando no hay carne. La caraota es harina con fibra, no “libre”.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 cucharón de caraotas</li><li>1 huevo</li><li>ensalada de tomate</li><li>cebolla</li><li>lechuga</li><li>aguacate si hay.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Caraotas espesas, huevo frito con poca grasa o cocido.</p></li><li><span>02</span><p>Ensalada que se vea más que las caraotas.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Caraotas + arroz + arepa + jugo es el error clásico. Elige UNA harina.</p>
+      <p><em>Evita</em>Caraotas con arroz y arepa en el mismo plato.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>19</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">13</p>
+    <h1>Pollo guisado con auyama</h1>
+    <p class="pull">La auyama endulza sin papelón y rinde el pollo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Muslo o pechuga</li><li>auyama en cubos</li><li>cebolla</li><li>ají dulce</li><li>ajo</li><li>cilantro</li><li>comino.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Sofrito, pollo, auyama, agua, 25 minutos.</p></li><li><span>02</span><p>Ensalada verde.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si pides arrocito, 3 cucharadas. El plato ya tiene auyama.</p>
+      <p><em>Evita</em>Pollo guisado con papelón o ketchup.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>20</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">14</p>
+    <h1>Carne mechada sin papelón</h1>
+    <p class="pull">El asado/mechada venezolano se endulza de más. Aquí el sabor es sofrito.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Carne de frita o falda</li><li>cebolla</li><li>pimentón</li><li>ajo</li><li>comino</li><li>laurel</li><li>vinagre o limón.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Cocina, desmecha, sofrito largo.</p></li><li><span>02</span><p>Cero azúcar, cero ketchup, cero papelón.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Un chorrito de café o de salsa de soya, si hay, da color oscuro sin dulce.</p>
+      <p><em>Evita</em>Mechada dulce de fiesta con tajadas y arroz suelto.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>21</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">15</p>
+    <h1>Pescado al horno con ensalada criolla</h1>
+    <p class="pull">Barato si es lisa, cazón, filete de mercado. Proteína limpia.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 filete</li><li>limón</li><li>ajo</li><li>pimienta</li><li>tomate</li><li>cebolla</li><li>cilantro</li><li>pepino.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>15–20 min al horno.</p></li><li><span>02</span><p>Ensalada con limón, no con mayonesa a cucharadas.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>El pescado frito empanizado ya no es esta receta.</p>
+      <p><em>Evita</em>Pescado empanizado + tostones + jugo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>22</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">16</p>
+    <h1>Hervido liviano de pollo</h1>
+    <p class="pull">Llena, consuela, y no es sancocho de 4 harinas.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Pollo</li><li>auyama</li><li>zanahoria</li><li>repollo</li><li>cebollín</li><li>cilantro</li><li>1 pedazo pequeño de yuca O 1 de ñame</li><li>no los dos</li><li>no papa + yuca + ocumo.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Caldo claro, desgrasa un poco.</p></li><li><span>02</span><p>Un solo tubérculo por plato.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>El hervido se vuelve pico cuando es una montaña de yuca. El caldo y el pollo son el plato; el tubérculo es el acompañante.</p>
+      <p><em>Evita</em>Sancocho con yuca, papa, ocumo, ñame y mazorca.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>23</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">17</p>
+    <h1>Lentejas criollas</h1>
+    <p class="pull">Más barata que la carne, llena, fibra de verdad.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Lentejas</li><li>zanahoria</li><li>cebolla</li><li>pimentón</li><li>ajo</li><li>comino</li><li>laurel</li><li>un palito de apio si hay.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Sofrito, lentejas, agua, 30–35 min.</p></li><li><span>02</span><p>Ensalada.</p></li><li><span>03</span><p>Sin arroz, o 3 cucharadas.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Un huevo encima las convierte en almuerzo completo.</p>
+      <p><em>Evita</em>Lentejas + arroz + pan.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>24</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">18</p>
+    <h1>Atún con ensalada de huevo</h1>
+    <p class="pull">Nevera vacía, 8 minutos.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 lata de atún al agua</li><li>1 huevo</li><li>tomate</li><li>cebolla</li><li>pepino</li><li>limón</li><li>1 cucharadita de mayonesa o yogurt.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Mezcla.</p></li><li><span>02</span><p>Si hay hambre, 4 galletas de soda o 1 arepita, no un pan completo.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Atún en aceite se escurre. El aceite de la lata no es “sabor”, es grasa extra.</p>
+      <p><em>Evita</em>Atún con mayonesa a cucharadas y pan de sándwich.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>25</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">19</p>
+    <h1>Pollo saltado con pimentón y cebolla</h1>
+    <p class="pull">Sabe a comida de fonda, no de clínica.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Pollo en tiras</li><li>pimentón</li><li>cebolla</li><li>ajo</li><li>orégano</li><li>limón.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Fuego alto, vegetales crujientes.</p></li><li><span>02</span><p>Cama de ensalada o repollo salteado.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si quieres harina, yuca al vapor del tamaño de un huevo, no un tercio de la olla.</p>
+      <p><em>Evita</em>Pollo frito empanizado de la esquina.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>26</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">20</p>
+    <h1>Yuca al vapor + pollo + ensalada</h1>
+    <p class="pull">Enseña la porción de yuca, que es el tropiezo nacional.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Yuca del tamaño de un puño pequeño (o 2 pedazos cortos)</li><li>pollo</li><li>ensalada que cubra el plato.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Yuca sin mojo de mantequilla a chorro.</p></li><li><span>02</span><p>Un chorrito de aceite y ajo, o hogao.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Yuca + nata + queso + carne es una parrilla, no un almuerzo de control.</p>
+      <p><em>Evita</em>Yuca con nata, queso y carne al mismo tiempo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>27</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">21</p>
+    <h1>Garbanzos guisados con espinaca</h1>
+    <p class="pull">Cambia de las caraotas. Fibra + proteína vegetal.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Garbanzos remojados o de lata bien lavados</li><li>espinaca</li><li>tomate</li><li>comino</li><li>ajo.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Sofrito, garbanzo, espinaca al final.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>3/4 de taza de garbanzo es harina. No es “libre por ser saludable”.</p>
+      <p><em>Evita</em>Garbanzos + pan + arroz.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>28</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">22</p>
+    <h1>Repollo salteado con pollo desmechado</h1>
+    <p class="pull">El repollo es barato, rinde y ocupa el plato.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1/4 de repollo</li><li>pollo</li><li>ajo</li><li>pimentón</li><li>pimienta.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Saltea el repollo que quede al dente, mete el pollo.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Esto es cena o almuerzo de calor. Cero harina y nadie se muere de hambre.</p>
+      <p><em>Evita</em>Repollo ahogado en aceite.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>29</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">23</p>
+    <h1>Empanaditas horneadas de pollo (2 mini)</h1>
+    <p class="pull">El antojo de empanada, sin baño de aceite.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Harina PAN para 2 empanadas pequeñas</li><li>pollo guisado seco</li><li>horno o air fryer.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Masa delgada, relleno de pollo, no de queso solo.</p></li><li><span>02</span><p>Ensalada al lado.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>1 empanada de calle frita puede ser el almuerzo entero. Aquí son 2 mini y sin jugo.</p>
+      <p><em>Evita</em>Empanada de la esquina frita + jugo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>30</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">24</p>
+    <h1>Arroz (1/2 taza) con pollo y vegetales</h1>
+    <p class="pull">Para quien extraña el arroz todos los días, con freno.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1/2 taza de arroz cocido (integral si hay)</li><li>pollo</li><li>vegetales salteados de más.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>El arroz es cama pequeña, no torre.</p></li><li><span>02</span><p>Los vegetales se ven más que el grano.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si no hay integral, arroz blanco en esa misma porción pequeña, nunca suelto.</p>
+      <p><em>Evita</em>Torre de arroz que tapa el pollo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>31</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">25</p>
+    <h1>Berenjenas rellenas de carne magra</h1>
+    <p class="pull">Se siente de restaurante sin ser caro del todo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 berenjena</li><li>carne molida o pollo</li><li>tomate</li><li>cebolla</li><li>orégano</li><li>queso rayado poquito.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Hornea la berenjena, rellena, 15 min más.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>El queso es tapita, no capa.</p>
+      <p><em>Evita</em>Berenjena napolitana con queso a paladas.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>32</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">26</p>
+    <h1>Ensalada de gallina light</h1>
+    <p class="pull">Fiesta, reunión, nevera del domingo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Pollo desmechado</li><li>apio</li><li>manzana verde en cubos pequeños o piña poquita</li><li>yogurt natural en vez de mayonesa a cucharadas</li><li>1 cucharada de mayo si acaso</li><li>pimienta</li><li>limón.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Bien fría.</p></li><li><span>02</span><p>Se come con ensalada verde, no con pan de sándwich.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>La receta original es un postre disfrazado de ensalada. Aquí gana el pollo.</p>
+      <p><em>Evita</em>Ensalada de gallina de fiesta con pan y uvas pasas a puños.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>33</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Elevado · 1 persona</span>
+    </header>
+    <p class="rn">27</p>
+    <h1>Bowl criollo de quinoa, pollo y aguacate</h1>
+    <p class="pull">Quinoa con pollo y aguacate. La quinoa también es harina: media taza cocida.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1/2 taza de quinoa cocida</li><li>pollo</li><li>1/4 aguacate</li><li>tomate</li><li>cilantro</li><li>limón</li><li>aceite de oliva.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Arma el bowl: quinoa de base, pollo, aguacate, tomate.</p></li><li><span>02</span><p>Limón y un hilo de oliva.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Quinoa también es harina. La porción es media taza, no un pote.</p>
+      <p><em>Evita</em>Pote de quinoa “saludable” del tamaño de un litro.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>34</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Almuerzo</span>
+      <span>Elevado · 1 persona</span>
+    </header>
+    <p class="rn">28</p>
+    <h1>Trucha o salmón con auyama asada</h1>
+    <p class="pull">Pescado al horno con auyama. Si no hay salmón, trucha o merluza.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Filete</li><li>auyama</li><li>brócoli o vainitas</li><li>limón</li><li>ajo</li><li>aceite de oliva.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Todo al horno.</p></li><li><span>02</span><p>Plato de revista, porción de adulto.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si el salmón no se consigue, trucha, atún fresco o un buen filete de merluza. La receta vive.</p>
+      <p><em>Evita</em>Pescado frito + papas + salsa rosada.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>35</b></footer>
+  </section><section class="sheet ">
+    <p class="eyebrow">Capítulo</p>
+    <h1 class="display">Cena</h1>
+    <p class="lead">10 recetas. Una persona. El bolsillo va al lado del nombre.</p>
+    <ol class="index"><li><span>29</span><strong>Crema de auyama (sin crema de leche)</strong><i>Diario</i></li><li><span>30</span><strong>Caldo de pollo con vegetales</strong><i>Diario</i></li><li><span>31</span><strong>Ensalada tibia de lentejas</strong><i>Diario</i></li><li><span>32</span><strong>Sardinas al limón con pepino</strong><i>Diario</i></li><li><span>33</span><strong>Wrap de lechuga con pollo y queso</strong><i>Diario</i></li><li><span>34</span><strong>Huevos al plato con tomate y ají</strong><i>Diario</i></li><li><span>35</span><strong>Sopa de verduras del mercado</strong><i>Diario</i></li><li><span>36</span><strong>Pescado en salsa de coco light</strong><i>Cómodo</i></li><li><span>37</span><strong>Calabacín relleno de pollo</strong><i>Cómodo</i></li><li><span>38</span><strong>Vegetales asados con huevo</strong><i>Diario</i></li></ol>
+    <footer><span>Mesa Serena</span><b>36</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">29</p>
+    <h1>Crema de auyama (sin crema de leche)</h1>
+    <p class="pull">La cena venezolana con diabetes se gana siendo más liviana que el almuerzo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Auyama</li><li>cebolla</li><li>ajo</li><li>caldo de pollo</li><li>pimienta</li><li>canela pizca.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Hierve, tritura.</p></li><li><span>02</span><p>Un huevo o pollo a un lado si hay hambre.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>No le metas papa para espesar. La auyama ya espesa.</p>
+      <p><em>Evita</em>Crema de auyama con crema de leche y pan.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>37</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">30</p>
+    <h1>Caldo de pollo con vegetales</h1>
+    <p class="pull">Cena de glucometro rebelde. Calma.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Huesos o pechuga</li><li>zanahoria</li><li>calabacín</li><li>cebollín</li><li>cilantro.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Desgrasa.</p></li><li><span>02</span><p>Un pedazo de yuca solo si no almorzaste harina.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si el almuerzo tuvo arepa o yuca, esta cena va sin tubérculo.</p>
+      <p><em>Evita</em>Caldo con yuca, papa y pan.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>38</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">31</p>
+    <h1>Ensalada tibia de lentejas</h1>
+    <p class="pull">De las mejores cenas de nevera.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Lentejas de un día antes</li><li>tomate</li><li>cebolla morada</li><li>limón</li><li>cilantro</li><li>huevo.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Tibia, no sopa.</p></li><li><span>02</span><p>Vinagreta de limón.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Cocina lentejas el domingo y cenas tres noches.</p>
+      <p><em>Evita</em>Lentejas reconvertidas en arroz con todo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>39</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">32</p>
+    <h1>Sardinas al limón con pepino</h1>
+    <p class="pull">Barata, venezolana, olvidada, llena.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1 lata de sardina</li><li>pepino</li><li>cebolla</li><li>limón</li><li>pimienta</li><li>cilantro.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Escurre un poco el aceite, mezcla, tostada de casabe o nada.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si el olor molesta en casa, limón y cebolla abundante. Funciona.</p>
+      <p><em>Evita</em>Sardinas + arepa + jugo.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>40</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">33</p>
+    <h1>Wrap de lechuga con pollo y queso</h1>
+    <p class="pull">Esto sustituye la arepa de la noche.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Hojas grandes de lechuga o repollo</li><li>pollo</li><li>1 cucharada de queso</li><li>tomate.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Arma 2 rollitos.</p></li><li><span>02</span><p>Salsa de yogurt y limón.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si no hay lechuga grande, usa repollo. El truco es el rollo, no la tortilla.</p>
+      <p><em>Evita</em>Wrap de harina de trigo gigante.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>41</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">34</p>
+    <h1>Huevos al plato con tomate y ají</h1>
+    <p class="pull">Cena de 10 minutos cuando no hay quien cocine.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>2 huevos</li><li>tomate</li><li>ají dulce</li><li>cebolla.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Sofrito, huevos encima, tapa 4 minutos.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Un cafecito sin azúcar. Listo.</p>
+      <p><em>Evita</em>Huevos + arepa de noche + queso.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>42</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">35</p>
+    <h1>Sopa de verduras del mercado</h1>
+    <p class="pull">Lo que esté barato esa semana, en un caldero.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Vainita</li><li>calabacín</li><li>repollo</li><li>zanahoria</li><li>acelga</li><li>auyama — lo que haya.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Sofrito, agua, 15 min.</p></li><li><span>02</span><p>Pollo o huevo si necesitas más.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>La sopa crema de… con leche y papa no es esta.</p>
+      <p><em>Evita</em>Crema de vegetales de sobre.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>43</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">36</p>
+    <h1>Pescado en salsa de coco light</h1>
+    <p class="pull">Sabor de costa, porción de adulto.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Filete</li><li>3 cucharadas de leche de coco</li><li>ajo</li><li>ají dulce</li><li>cilantro</li><li>limón.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Salsa corta, no un caldero de coco.</p></li><li><span>02</span><p>Ensalada.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Coco es rico en grasa. Porción de salsa, no de cubeta.</p>
+      <p><em>Evita</em>Pescado ahogado en coco y frito.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>44</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">37</p>
+    <h1>Calabacín relleno de pollo</h1>
+    <p class="pull">Se siente especial un martes.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Calabacín o auyama pequeña</li><li>pollo</li><li>tomate</li><li>orégano</li><li>queso poquito.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Horno.</p></li><li><span>02</span><p>Sirve con ensalada, no con pan.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si no hay calabacín, auyama pequeña. Misma idea.</p>
+      <p><em>Evita</em>Relleno napolitano con queso y pan.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>45</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Cena</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">38</p>
+    <h1>Vegetales asados con huevo</h1>
+    <p class="pull">Cuando el almuerzo fue pesado, esta cena te salva el glucometro de las 10 pm.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Berenjena</li><li>pimentón</li><li>cebolla</li><li>auyama</li><li>1–2 huevos.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Horno o budare.</p></li><li><span>02</span><p>Huevo al final.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Sal, pimienta, un hilo de aceite. Nada de miel para “caramelizar”.</p>
+      <p><em>Evita</em>Vegetales glaseados con azúcar.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>46</b></footer>
+  </section><section class="sheet ">
+    <p class="eyebrow">Capítulo</p>
+    <h1 class="display">Merienda</h1>
+    <p class="lead">8 recetas. Una persona. El bolsillo va al lado del nombre.</p>
+    <ol class="index"><li><span>39</span><strong>Tostones al horno (3) con guacamole</strong><i>Diario</i></li><li><span>40</span><strong>Palitos de queso al horno</strong><i>Cómodo</i></li><li><span>41</span><strong>Mousse de cacao y aguacate</strong><i>Cómodo</i></li><li><span>42</span><strong>Gelatina de parchita sin azúcar</strong><i>Diario</i></li><li><span>43</span><strong>Pepino, limón y sal</strong><i>Diario</i></li><li><span>44</span><strong>Galletas de avena y canela (3)</strong><i>Diario</i></li><li><span>45</span><strong>Helado de yogurt y parchita</strong><i>Cómodo</i></li><li><span>46</span><strong>Café con canela, sin azúcar</strong><i>Diario</i></li></ol>
+    <footer><span>Mesa Serena</span><b>47</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">39</p>
+    <h1>Tostones al horno (3) con guacamole</h1>
+    <p class="pull">El pico de las 4 pm es tan venezolano como la arepa.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Plátano verde para 3 tostones</li><li>aguacate con limón y sal</li><li>o hogao si no hay aguacate.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Horno o sartén con gota de aceite.</p></li><li><span>02</span><p>3 tostones, no el plato.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Tostón frito de fonda no es esta receta.</p>
+      <p><em>Evita</em>Plato de tostones fritos con nata.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>48</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">40</p>
+    <h1>Palitos de queso al horno</h1>
+    <p class="pull">Queso al horno, tres palitos, panado con avena o ajonjolí.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Queso blanco firme</li><li>huevo</li><li>avena molida o ajonjolí para pasar</li><li>horno.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>3 palitos.</p></li><li><span>02</span><p>Ensalada o pepino.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Horno, no freidora. Pepino o ensalada al lado.</p>
+      <p><em>Evita</em>Tequeños fritos de fiesta a puños.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>49</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">41</p>
+    <h1>Mousse de cacao y aguacate</h1>
+    <p class="pull">Se siente postre. No sabe a cartón.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>1/2 aguacate</li><li>1 cucharada de cacao 100%</li><li>stevia</li><li>vainilla</li><li>chorrito de leche.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Triturar.</p></li><li><span>02</span><p>Frío.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Cacao en polvo para chocolate caliente suele traer azúcar. Cacao puro.</p>
+      <p><em>Evita</em>Chocolate de taza con leche condensada.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>50</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">42</p>
+    <h1>Gelatina de parchita sin azúcar</h1>
+    <p class="pull">Postre de nevera para la semana.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Gelatina sin azúcar</li><li>pulpa de parchita</li><li>agua.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>La parchita va entera/pulpa, no como 4 jugos concentrados.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Arma 4 potecitos el domingo.</p>
+      <p><em>Evita</em>Jugo de parchita “natural” en vaso grande.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>51</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">43</p>
+    <h1>Pepino, limón y sal</h1>
+    <p class="pull">El antojo crocante. Cero costo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Pepino</li><li>limón</li><li>pizca de sal</li><li>pimentón</li><li>cilantro.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Corta, limón, sal.</p></li><li><span>02</span><p>Listo.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Cuando creas que no hay merienda, hay pepino.</p>
+      <p><em>Evita</em>Chifles + refresco porque “no había nada”.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>52</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">44</p>
+    <h1>Galletas de avena y canela (3)</h1>
+    <p class="pull">Mata el antojo de galleta de soda a media tarde.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Avena</li><li>huevo</li><li>canela</li><li>stevia</li><li>pizca de polvo de hornear.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>12 min al horno.</p></li><li><span>02</span><p>3 galletas, no el tarro.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Guarda en pote. La porción se decide ahora, no a las 5 pm.</p>
+      <p><em>Evita</em>Galletas María con café azucarado.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>53</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">45</p>
+    <h1>Helado de yogurt y parchita</h1>
+    <p class="pull">El antojo de quiero frío y ácido.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Yogurt natural</li><li>pulpa de parchita</li><li>stevia.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Congela, revuelve a la hora.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>No es topping de chocolate. Es frío y ácido.</p>
+      <p><em>Evita</em>Helado de paleta de la nevera del abasto.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>54</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Merienda</span>
+      <span>Diario · 1 persona</span>
+    </header>
+    <p class="rn">46</p>
+    <h1>Café con canela, sin azúcar</h1>
+    <p class="pull">Café de todos los días, sin azúcar. Canela y vainilla cubren el amargo.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Café</li><li>canela</li><li>vainilla</li><li>leche si quieres</li><li>stevia si acaso.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Café como siempre, sin el azúcar.</p></li><li><span>02</span><p>Canela generosa.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Si vuelve el azúcar al café, el resto del día cuesta más.</p>
+      <p><em>Evita</em>Café con 2 cucharadas “porque es amargo”.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>55</b></footer>
+  </section><section class="sheet ">
+    <p class="eyebrow">Capítulo</p>
+    <h1 class="display">Domingo</h1>
+    <p class="lead">4 recetas. Una persona. El bolsillo va al lado del nombre.</p>
+    <ol class="index"><li><span>47</span><strong>Asado negro sin papelón</strong><i>Cómodo</i></li><li><span>48</span><strong>Pollo al horno estilo brasa casero</strong><i>Cómodo</i></li><li><span>49</span><strong>Hallaca light de pollo (versión controlada)</strong><i>Cómodo</i></li><li><span>50</span><strong>Postre de lechosa y coco</strong><i>Cómodo</i></li></ol>
+    <footer><span>Mesa Serena</span><b>56</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Domingo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">47</p>
+    <h1>Asado negro sin papelón</h1>
+    <p class="pull">Asado de domingo. Color con cebolla frita y un chorrito de café, sin papelón.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Carne para asado</li><li>cebolla</li><li>ajo</li><li>pimentón</li><li>laurel</li><li>pimienta</li><li>vinagre</li><li>un chorrito de café para el color.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Cebolla bien caramelizada.</p></li><li><span>02</span><p>Cero papelón, cero azúcar.</p></li><li><span>03</span><p>Acompañe: vegetales, 3 cucharadas de arroz o nada, ensalada.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Acompaña con vegetales y 3 cucharadas de arroz, o solo ensalada.</p>
+      <p><em>Evita</em>Asado negro de fiesta con papelón, tajadas y arroz suelto.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>57</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Domingo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">48</p>
+    <h1>Pollo al horno estilo brasa casero</h1>
+    <p class="pull">El pollo de tubo con 4 salsas dulces no es esto. El pollo sí.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Pollo</li><li>ajo</li><li>pimentón</li><li>comino</li><li>orégano</li><li>limón</li><li>sal</li><li>pizca de ají.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Marinada 1 hora o de un día para otro.</p></li><li><span>02</span><p>Horno.</p></li><li><span>03</span><p>Piel crocante.</p></li><li><span>04</span><p>Ensalada de repollo.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>La salsa es limón y ají, no BBQ azucarada.</p>
+      <p><em>Evita</em>Pollo de tubo + 4 salsas + yuca frita + gaseosa.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>58</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Domingo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">49</p>
+    <h1>Hallaca light de pollo (versión controlada)</h1>
+    <p class="pull">Una hallaca, masa delgada, relleno de pollo. Ensalada al lado.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Masa más delgada</li><li>relleno de pollo (no de todo el cochino)</li><li>pasas poquitas o sin pasas.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>1 hallaca, no 3.</p></li><li><span>02</span><p>Ensalada al lado.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Una hallaca es el plato. No la torre ni el pan de jamón encima.</p>
+      <p><em>Evita</em>3 hallacas + pan de jamón + ensalada de gallina + ponche.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>59</b></footer>
+  </section><section class="sheet recipe">
+    <header class="top">
+      <span>Domingo</span>
+      <span>Cómodo · 1 persona</span>
+    </header>
+    <p class="rn">50</p>
+    <h1>Postre de lechosa y coco</h1>
+    <p class="pull">Lechosa, coco y canela. Postre criollo sin papelón.</p>
+    <div class="split">
+      <div>
+        <h3>Ingredientes</h3>
+        <ul class="ings"><li>Lechosa verde o madura en porción</li><li>coco rallado sin azúcar</li><li>canela</li><li>stevia</li><li>limón.</li></ul>
+      </div>
+      <div>
+        <h3>Preparación</h3>
+        <ol class="steps"><li><span>01</span><p>Cocción corta o cruda tipo ensalada-postre si está dulce natural.</p></li></ol>
+      </div>
+    </div>
+    <div class="footnotes">
+      <p><em>En la cocina</em>Porción de cuchara, no de fuente. Cubre el antojo de majarete.</p>
+      <p><em>Evita</em>Dulce de lechosa con papelón a cucharones.</p>
+    </div>
+    <footer><span>Mesa Serena</span><b>60</b></footer>
+  </section>
+
+<section class="sheet ">
+    <p class="eyebrow">Siete días</p>
+    <h1 class="display small-display">Menú Diario — 7 días con lo del mercado</h1>
+    <p class="lead">Huevo, pollo, caraota, lenteja, sardina, auyama y arepa pequeña. Una semana completa con lo que casi siempre hay.</p>
+    <div class="days"><article class="day">
+        <h2>Lunes</h2>
+        <div>
+          <p><b>Desayuno</b>1 Perico + arepa pequeña</p>
+          <p><b>Almuerzo</b>11 Pabellón controlado</p>
+          <p><b>Merienda</b>43 Pepino, limón y sal</p>
+          <p><b>Cena</b>30 Caldo de pollo</p>
+        </div>
+      </article><article class="day">
+        <h2>Martes</h2>
+        <div>
+          <p><b>Desayuno</b>2 Avena de canela</p>
+          <p><b>Almuerzo</b>13 Pollo guisado con auyama</p>
+          <p><b>Merienda</b>46 Café con canela</p>
+          <p><b>Cena</b>32 Sardinas con pepino</p>
+        </div>
+      </article><article class="day">
+        <h2>Miércoles</h2>
+        <div>
+          <p><b>Desayuno</b>3 Huevos con espinaca</p>
+          <p><b>Almuerzo</b>17 Lentejas criollas + huevo</p>
+          <p><b>Merienda</b>44 3 galletas de avena</p>
+          <p><b>Cena</b>34 Huevos al plato</p>
+        </div>
+      </article><article class="day">
+        <h2>Jueves</h2>
+        <div>
+          <p><b>Desayuno</b>7 Café, huevo y tomate</p>
+          <p><b>Almuerzo</b>12 Caraotas, huevo y ensalada</p>
+          <p><b>Merienda</b>43 Pepino</p>
+          <p><b>Cena</b>29 Crema de auyama</p>
+        </div>
+      </article><article class="day">
+        <h2>Viernes</h2>
+        <div>
+          <p><b>Desayuno</b>5 Omelette de ají</p>
+          <p><b>Almuerzo</b>19 Pollo saltado</p>
+          <p><b>Merienda</b>39 3 tostones al horno</p>
+          <p><b>Cena</b>38 Vegetales asados con huevo</p>
+        </div>
+      </article><article class="day">
+        <h2>Sábado</h2>
+        <div>
+          <p><b>Desayuno</b>4 Arepa de auyama con pollo</p>
+          <p><b>Almuerzo</b>16 Hervido liviano</p>
+          <p><b>Merienda</b>42 Gelatina de parchita</p>
+          <p><b>Cena</b>31 Ensalada tibia de lentejas</p>
+        </div>
+      </article><article class="day">
+        <h2>Domingo</h2>
+        <div>
+          <p><b>Desayuno</b>6 Panqueques de avena</p>
+          <p><b>Almuerzo</b>15 Pescado al horno</p>
+          <p><b>Merienda</b>46 Café sin azúcar</p>
+          <p><b>Cena</b>33 Wrap de lechuga</p>
+        </div>
+      </article></div>
+    <h3 class="later">Mercado</h3>
+    <ul class="market"><li>Huevos (2 cartones chicos rinden la semana)</li><li>Pollo (muslo o pechuga, 1 a 1.5 kg)</li><li>Carne para mechada (para el lunes y un leftover)</li><li>Caraotas, lentejas</li><li>Auyama, tomate, cebolla, ají dulce, cilantro, pimentón, pepino, lechuga o repollo, zanahoria</li><li>Harina PAN (poca: arepas pequeñas, no torre)</li><li>Plátano verde (para 3 tostones, no para el almuerzo diario)</li><li>Limón, ajo, comino, sal, pimienta, canela</li><li>Café, avena en hojuelas, stevia si usas</li><li>Sardinas en lata, gelatina sin azúcar, parchita si hay</li></ul>
+    <footer><span>Mesa Serena</span><b>61</b></footer>
+  </section>
+<section class="sheet ">
+    <p class="eyebrow">Siete días</p>
+    <h1 class="display small-display">Menú Cómodo — cuando el mercado alcanza</h1>
+    <p class="lead">Entra atún, aguacate, yogurt, cacao, pescado y asado. Misma cocina, un poco más de margen.</p>
+    <div class="days"><article class="day">
+        <h2>Lunes</h2>
+        <div>
+          <p><b>Desayuno</b>8 Casabe, aguacate y huevo</p>
+          <p><b>Almuerzo</b>26 Ensalada de gallina light</p>
+          <p><b>Merienda</b>41 Mousse de cacao</p>
+          <p><b>Cena</b>36 Pescado en coco light</p>
+        </div>
+      </article><article class="day">
+        <h2>Martes</h2>
+        <div>
+          <p><b>Desayuno</b>9 Yogurt, parchita y chía</p>
+          <p><b>Almuerzo</b>24 Arroz 1/2 taza + pollo</p>
+          <p><b>Merienda</b>40 Palitos de queso</p>
+          <p><b>Cena</b>37 Calabacín relleno</p>
+        </div>
+      </article><article class="day">
+        <h2>Miércoles</h2>
+        <div>
+          <p><b>Desayuno</b>10 Mini cachapa + huevo</p>
+          <p><b>Almuerzo</b>25 Berenjenas rellenas</p>
+          <p><b>Merienda</b>45 Helado de yogurt</p>
+          <p><b>Cena</b>30 Caldo de pollo</p>
+        </div>
+      </article><article class="day">
+        <h2>Jueves</h2>
+        <div>
+          <p><b>Desayuno</b>1 Perico + arepa pequeña</p>
+          <p><b>Almuerzo</b>18 Atún con huevo</p>
+          <p><b>Merienda</b>43 Pepino</p>
+          <p><b>Cena</b>31 Lentejas tibias</p>
+        </div>
+      </article><article class="day">
+        <h2>Viernes</h2>
+        <div>
+          <p><b>Desayuno</b>8 Casabe y huevo</p>
+          <p><b>Almuerzo</b>14 Carne mechada sin papelón</p>
+          <p><b>Merienda</b>39 3 tostones</p>
+          <p><b>Cena</b>34 Huevos al plato</p>
+        </div>
+      </article><article class="day">
+        <h2>Sábado</h2>
+        <div>
+          <p><b>Desayuno</b>9 Yogurt y parchita</p>
+          <p><b>Almuerzo</b>48 Pollo brasa casero</p>
+          <p><b>Merienda</b>41 Mousse de cacao</p>
+          <p><b>Cena</b>36 Pescado coco</p>
+        </div>
+      </article><article class="day">
+        <h2>Domingo</h2>
+        <div>
+          <p><b>Desayuno</b>10 Mini cachapa</p>
+          <p><b>Almuerzo</b>47 Asado negro sin papelón</p>
+          <p><b>Merienda</b>50 Postre de lechosa</p>
+          <p><b>Cena</b>29 Crema de auyama</p>
+        </div>
+      </article></div>
+    <h3 class="later">Mercado</h3>
+    <ul class="market"><li>Todo lo del menú diario, más:</li><li>Aguacate (2–3, no una docena)</li><li>Yogurt natural sin azúcar</li><li>Cacao 100%</li><li>Atún al agua</li><li>Casabe</li><li>Filete de pescado</li><li>Berenjena y calabacín</li><li>Queso blanco firme (poco)</li><li>Lechosa, coco rallado sin azúcar</li><li>Leche de coco (una lata alcanza, se usa por cucharadas)</li></ul>
+    <footer><span>Mesa Serena</span><b>62</b></footer>
+  </section>
+<section class="sheet ">
+    <p class="eyebrow">Siete días</p>
+    <h1 class="display small-display">Menú Elevado — domingo, visita, me lo merezco</h1>
+    <p class="lead">Quinoa o pescado bueno algunos días. El resto de la semana sigue con pollo, huevo y auyama.</p>
+    <div class="days"><article class="day">
+        <h2>Lunes</h2>
+        <div>
+          <p><b>Desayuno</b>3 Huevos y espinaca</p>
+          <p><b>Almuerzo</b>13 Pollo con auyama</p>
+          <p><b>Merienda</b>46 Café</p>
+          <p><b>Cena</b>38 Vegetales y huevo</p>
+        </div>
+      </article><article class="day">
+        <h2>Martes</h2>
+        <div>
+          <p><b>Desayuno</b>2 Avena</p>
+          <p><b>Almuerzo</b>27 Bowl de quinoa y pollo</p>
+          <p><b>Merienda</b>43 Pepino</p>
+          <p><b>Cena</b>30 Caldo</p>
+        </div>
+      </article><article class="day">
+        <h2>Miércoles</h2>
+        <div>
+          <p><b>Desayuno</b>8 Casabe y aguacate</p>
+          <p><b>Almuerzo</b>28 Trucha o salmón</p>
+          <p><b>Merienda</b>41 Mousse de cacao</p>
+          <p><b>Cena</b>37 Calabacín relleno</p>
+        </div>
+      </article><article class="day">
+        <h2>Jueves</h2>
+        <div>
+          <p><b>Desayuno</b>1 Perico</p>
+          <p><b>Almuerzo</b>11 Pabellón controlado</p>
+          <p><b>Merienda</b>44 Galletas de avena</p>
+          <p><b>Cena</b>32 Sardinas</p>
+        </div>
+      </article><article class="day">
+        <h2>Viernes</h2>
+        <div>
+          <p><b>Desayuno</b>9 Yogurt y parchita</p>
+          <p><b>Almuerzo</b>19 Pollo saltado</p>
+          <p><b>Merienda</b>39 Tostones</p>
+          <p><b>Cena</b>36 Pescado coco</p>
+        </div>
+      </article><article class="day">
+        <h2>Sábado</h2>
+        <div>
+          <p><b>Desayuno</b>10 Mini cachapa</p>
+          <p><b>Almuerzo</b>25 Berenjena rellena</p>
+          <p><b>Merienda</b>45 Helado yogurt</p>
+          <p><b>Cena</b>31 Lentejas</p>
+        </div>
+      </article><article class="day">
+        <h2>Domingo</h2>
+        <div>
+          <p><b>Desayuno</b>6 Panqueques</p>
+          <p><b>Almuerzo</b>28 Trucha con auyama asada</p>
+          <p><b>Merienda</b>50 Postre de lechosa</p>
+          <p><b>Cena</b>47 Asado o 48 pollo brasa</p>
+        </div>
+      </article></div>
+    <h3 class="later">Mercado</h3>
+    <ul class="market"><li>Lo del menú cómodo, más solo si esa semana hay plata:</li><li>Quinoa (un paquete rinde varias veces: 1/2 taza por plato)</li><li>Trucha, salmón o merluza buena</li><li>Aceite de oliva (un hilo, no un chorro)</li><li>Aguacate extra para el bowl</li></ul>
+    <footer><span>Mesa Serena</span><b>63</b></footer>
+  </section>
+
+<section class="sheet ">
+    <p class="eyebrow">Cocina</p>
+  <h1 class="display" style="font-size:40pt">Sustituciones</h1>
+  <p class="lead">Se cambia el ingrediente. El hábito se queda.</p>
+  <table>
+    <tbody>
+      <tr><td>Papelón / azúcar en guisos</td><td>Cebolla bien caramelizada, pimentón, comino, chorrito de café o vinagre. El color oscuro no necesita dulce.</td></tr><tr><td>Jugo (naranja, parchita, papelón)</td><td>Fruta entera en porción + agua. Parchita en pulpa, no en vaso. Café sin azúcar.</td></tr><tr><td>Refresco</td><td>Agua con limón, café con canela, agua de hierbabuena. El “sin azúcar” de lata también es hábito de pico.</td></tr><tr><td>Arepa de plato</td><td>Arepa de palma, delgada, con proteína adentro y ensalada al lado.</td></tr><tr><td>Arroz torre</td><td>3 cucharadas o 1/2 taza. O nada, y más ensalada / auyama.</td></tr><tr><td>Plátano maduro frito</td><td>Una tajada al horno, o plátano verde en 3 tostones al horno. El maduro frito es postre.</td></tr><tr><td>Yuca montaña</td><td>Puño pequeño. Un tubérculo por plato. Nunca yuca + papa + ocumo.</td></tr><tr><td>Mayonesa a cucharadas</td><td>Yogurt natural + limón + 1 cucharadita de mayo si extrañas el sabor.</td></tr><tr><td>Pan de sándwich</td><td>Casabe pequeño, 2 galletas de soda, o lechuga wrap.</td></tr><tr><td>Galleta María / soda a puños</td><td>3 galletas de avena caseras, o pepino. La porción se decide al hornear.</td></tr><tr><td>Chocolate de taza</td><td>Cacao 100% + stevia + canela. El de sobrecito es azúcar.</td></tr><tr><td>Queso de mano a paladas</td><td>1 cucharada sobre la arepa o el huevo. El queso no es el plato.</td></tr><tr><td>Empanada de la esquina</td><td>2 mini horneadas de pollo, o el wrap de lechuga.</td></tr><tr><td>Salsa BBQ / ketchup</td><td>Limón, ajo, comino, ají. El ketchup es azúcar con color.</td></tr><tr><td>Leche condensada / arequipe</td><td>Yogurt + canela, o mousse de cacao. El dulce condensado no tiene versión “poquito” que funcione todos los días.</td></tr>
+    </tbody>
+  </table>
+    <footer><span>Mesa Serena</span><b>64</b></footer>
+  </section>
+
+</body></html>
