@@ -10,23 +10,17 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont as loadSerif } from "@remotion/google-fonts/InstrumentSerif";
-import { loadFont as loadSans } from "@remotion/google-fonts/Manrope";
-
-const serifNormal = loadSerif("normal", { weights: ["400"], subsets: ["latin"] });
-const serifItalic = loadSerif("italic", { weights: ["400"], subsets: ["latin"] });
-const sans = loadSans("normal", { weights: ["400", "600", "800"], subsets: ["latin"] });
-
-const SERIF = serifNormal.fontFamily;
-const SERIF_IT = serifItalic.fontFamily;
-const SANS = sans.fontFamily;
-
-const BOSQUE = "#1B3A2F";
-const BOSQUE_OSCURO = "#12261F";
-const CREMA = "#F6F0E4";
-const PAPEL = "#FFFBF4";
-const TERRA = "#C45C3A";
-const ORO = "#C4A46A";
+import {
+  BOSQUE,
+  BOSQUE_OSCURO,
+  CREMA,
+  ORO,
+  PAPEL,
+  SANS,
+  SERIF,
+  SERIF_IT,
+  TERRA,
+} from "./fonts";
 
 const easeOut = Easing.bezier(0.16, 1, 0.3, 1);
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;

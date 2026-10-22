@@ -756,15 +756,15 @@
     "semantic_hash": ""
   },
   "videos/src/MesaSerenaAd01.tsx": {
-    "mtime": 1792698915.167533,
-    "seen": 1792699031.1485424,
-    "ast_hash": "ca5cc502b16f39986f4cb3c0f506db4c",
+    "mtime": 1792699418.7636518,
+    "seen": 1792699715.82411,
+    "ast_hash": "dc1c61a737241bb65c5c0ca590c43ace",
     "semantic_hash": ""
   },
   "videos/src/Root.tsx": {
-    "mtime": 1792698915.7098918,
-    "seen": 1792699031.1485438,
-    "ast_hash": "9bd73e83e214baea7f724762b971e216",
+    "mtime": 1792699446.333512,
+    "seen": 1792699715.8241117,
+    "ast_hash": "948b6e5ae482aad9c2708999bcd04844",
     "semantic_hash": ""
   },
   "videos/src/index.ts": {
@@ -2193,6 +2193,54 @@
     "mtime": 1792698858.7430227,
     "seen": 1792699031.1489975,
     "ast_hash": "48ba312da703bcfc17ad786d409d6374",
+    "semantic_hash": ""
+  },
+  "videos/src/Ads.tsx": {
+    "mtime": 1792699679.953287,
+    "seen": 1792699715.8241081,
+    "ast_hash": "84700c8e5dbdc65d6d41d4df167d0241",
+    "semantic_hash": ""
+  },
+  "videos/src/fonts.ts": {
+    "mtime": 1792699417.5538788,
+    "seen": 1792699715.824113,
+    "ast_hash": "5ee229b1197065922c506026587e7d68",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/00-perfil-instagram.png": {
+    "mtime": 1792699141.676795,
+    "seen": 1792699715.82447,
+    "ast_hash": "fd7495c0300aadbf7051db12ad28061e",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-01-arepa.png": {
+    "mtime": 1792699585.3288703,
+    "seen": 1792699715.8244796,
+    "ast_hash": "b2581bdceb7677dea0eb817e9ca2471f",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-02-mercado.png": {
+    "mtime": 1792699590.3315248,
+    "seen": 1792699715.8244808,
+    "ast_hash": "6fc4772174c897a0133b3e14dd23b6c3",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-03-familia.png": {
+    "mtime": 1792699696.571239,
+    "seen": 1792699715.824482,
+    "ast_hash": "8a3a7c2f28cb562e8e3ee4bedc2579c0",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-04-producto.png": {
+    "mtime": 1792699601.472996,
+    "seen": 1792699715.8244834,
+    "ast_hash": "daef6151ef673054720a15e78b23466a",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-05-semaforo.png": {
+    "mtime": 1792699606.4219773,
+    "seen": 1792699715.8244843,
+    "ast_hash": "7b7204ed31071e72ac6acb29078ef4df",
     "semantic_hash": ""
   }
 }

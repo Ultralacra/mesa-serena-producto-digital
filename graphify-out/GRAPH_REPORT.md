@@ -1,16 +1,16 @@
 # Graph Report - producto digital  (2026-10-22)
 
 ## Corpus Check
-- 278 files · ~592,808 words
+- 280 files · ~791,845 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2000 nodes · 2242 edges · 177 communities (161 shown, 15 thin omitted)
+- 2020 nodes · 2287 edges · 183 communities (167 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dfd49a49`
+- Built from commit: `a8a8e7f8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,7 +54,7 @@
 - remotion-multimedia/SKILL.md
 - remotion-interactivity/SKILL.md
 - MesaSerenaAd01.tsx
-- remotion-best-practices/remotion-markup/compositions.md
+- remotion-best-practices/remotion-markup/video-editing.md
 - remotion-interactivity/REFERENCE.md
 - remotion-best-practices/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
 - remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
@@ -108,7 +108,7 @@
 - remotion-saas/REFERENCE.md
 - remotion-best-practices/remotion-saas/rendering.md
 - Map Explainer — architecture reference
-- Adding AI voiceover to a Remotion composition
+- Using calculateMetadata
 - Audio Visualization in Remotion
 - Using Animated images in Remotion
 - Map Explainer — architecture reference
@@ -136,7 +136,7 @@
 - remotion-maps/SKILL.md
 - CesiumJS — 3D flyovers in Remotion
 - Using Three.js and React Three Fiber in Remotion
-- Using calculateMetadata
+- remotion-best-practices/remotion-interactivity/timeline-structure.md
 - Measuring text in Remotion
 - skills/remotion-markup/remotion-maps/REFERENCE.md
 - CesiumJS — 3D flyovers in Remotion
@@ -162,7 +162,7 @@
 - Moving Map Render Stability
 - Map element data sources
 - Moving Map Render Stability
-- Transcribing audio
+- remotion-multimedia/REFERENCE.md
 - Flyover data sources
 - 3D Flyover — troubleshooting
 - remotion-best-practices/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
@@ -191,6 +191,12 @@
 - skills/remotion-markup/motion-blur.md
 - remotion-studio/SKILL.md
 - remotion-upgrade/SKILL.md
+- Using calculateMetadata
+- remotion-best-practices/remotion-markup/compositions.md
+- Editable video timelines
+- Getting video dimensions with Mediabunny
+- Getting video duration with Mediabunny
+- Importing .srt subtitles into Remotion
 
 ## God Nodes (most connected - your core abstractions)
 1. `ALMUERZOS (11–28)` - 19 edges
@@ -208,18 +214,18 @@
 - `GET()` --calls--> `bcvRate()`  [EXTRACTED]
   web/app/api/rate/route.ts → web/lib/skylink.ts
 - `CesiumFlythrough()` --calls--> `smoothFlightPath()`  [EXTRACTED]
-  videos/.agents/skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → videos/.agents/skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/flight-path.ts
+  .agents/skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → .agents/skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/flight-path.ts
 - `CesiumFlythrough()` --calls--> `smoothFlightPath()`  [EXTRACTED]
-  videos/.agents/skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → videos/.agents/skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/flight-path.ts
+  .agents/skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → .agents/skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/flight-path.ts
 - `CesiumFlythrough()` --calls--> `smoothFlightPath()`  [EXTRACTED]
-  videos/.agents/skills/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → videos/.agents/skills/remotion-maps/techniques/cesium/assets/flight-path.ts
+  .agents/skills/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → .agents/skills/remotion-maps/techniques/cesium/assets/flight-path.ts
 - `CesiumFlythrough()` --calls--> `smoothFlightPath()`  [EXTRACTED]
-  videos/.agents/skills/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → videos/.agents/skills/remotion-markup/remotion-maps/techniques/cesium/assets/flight-path.ts
+  .agents/skills/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → .agents/skills/remotion-markup/remotion-maps/techniques/cesium/assets/flight-path.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (177 total, 15 thin omitted)
+## Communities (183 total, 15 thin omitted)
 
 ### Community 0 - "MESA SERENA"
 Cohesion: 0.04
@@ -234,8 +240,8 @@ Cohesion: 0.08
 Nodes (55): POST(), GET(), GET(), POST(), POST(), SkylinkWebhook, bonuses, faqs (+47 more)
 
 ### Community 3 - "Using audio in Remotion"
-Cohesion: 0.04
-Nodes (41): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+33 more)
+Cohesion: 0.08
+Nodes (21): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+13 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.07
@@ -306,8 +312,8 @@ Cohesion: 0.07
 Nodes (27): remotion, @remotion/cli, @remotion/google-fonts, dependencies, react, react-dom, remotion, @remotion/cli (+19 more)
 
 ### Community 26 - "remotion-best-practices/remotion-markup/transitions.md"
-Cohesion: 0.08
-Nodes (24): Choose how items share time, Complete example, Editable timeline structure, Give substantial groups their own timelines, Connected compositions, Create the connection, Extract an existing group, Make the component independent of its parent (+16 more)
+Cohesion: 0.13
+Nodes (14): Available transition types, Calculating total composition duration, Custom presentation, Duration calculation, Getting the duration of a transition, Mixing transitions and overlays, Overlay example, Overlay props (+6 more)
 
 ### Community 27 - "remotion-best-practices/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx"
 Cohesion: 0.10
@@ -354,12 +360,12 @@ Cohesion: 0.10
 Nodes (18): Effects should be inline too, Animate using `interpolate()`, Choose schema fields, Effects should be inline too, Give interactive elements a descriptive name, Keep all CSS styles inline, Keep composition metadata inline, Keep SVG paths editable with `Interactive.Path` (+10 more)
 
 ### Community 38 - "MesaSerenaAd01.tsx"
-Cohesion: 0.10
-Nodes (8): AdProps, CLAMP, easeOut, MesaSerenaAd01(), sans, serifItalic, serifNormal, RemotionRoot()
+Cohesion: 0.08
+Nodes (22): Ad01Arepa(), Ad02Mercado(), Ad03Familia(), Ad04Producto(), Ad05Semaforo(), BOSQUE, BOSQUE_OSCURO, CREMA (+14 more)
 
-### Community 39 - "remotion-best-practices/remotion-markup/compositions.md"
-Cohesion: 0.10
-Nodes (17): Adding the Basic Captions element, Displaying captions alongside video content, Displaying captions in Remotion, Prerequisites, White-space preservation, Default Props and scaffold metadata, Dynamic duration, width, and height, Folders (+9 more)
+### Community 39 - "remotion-best-practices/remotion-markup/video-editing.md"
+Cohesion: 0.29
+Nodes (5): Adding the Basic Captions element, Displaying captions alongside video content, Displaying captions in Remotion, Prerequisites, White-space preservation
 
 ### Community 40 - "remotion-interactivity/REFERENCE.md"
 Cohesion: 0.10
@@ -430,8 +436,8 @@ Cohesion: 0.18
 Nodes (11): 29. Crema de auyama (sin crema de leche) — Diario, 30. Caldo de pollo con vegetales — Diario, 31. Ensalada tibia de lentejas — Diario, 32. Sardinas al limón con pepino — Diario, 33. Wrap de lechuga con pollo y queso — Diario, 34. Huevos al plato con tomate y ají — Diario, 35. Sopa de verduras del mercado — Diario, 36. Pescado en salsa de coco light — Cómodo (+3 more)
 
 ### Community 57 - "remotion-captions/REFERENCE.md"
-Cohesion: 0.20
-Nodes (8): Importing .srt subtitles into Remotion, Prerequisites, Reading an .srt file, Using imported captions, Displaying captions, Generating captions, Importing captions, Post-creation
+Cohesion: 0.18
+Nodes (9): Displaying captions, Generating captions, Importing captions, Post-creation, Choosing a model, Prerequisites, Transcribing, Transcribing audio (+1 more)
 
 ### Community 58 - "MapTiler maps in Remotion"
 Cohesion: 0.18
@@ -573,9 +579,9 @@ Nodes (8): Azure Container Apps, Cloudflare Containers, Comparison of SSR method
 Cohesion: 0.22
 Nodes (8): 1. The render harness (per frame), 2. Timing model — time-based; beat length derived from the sequences, 3. Provider-vector animation, 4. Custom line animation — reveal + electric draw-head, 5. Country animation — border draws → fill blooms → label rises, 6. Labels — HTML overlay, projected each frame, 7. Camera — fixed map plate for any movement, Map Explainer — architecture reference
 
-### Community 93 - "Adding AI voiceover to a Remotion composition"
-Cohesion: 0.22
-Nodes (6): Adding AI voiceover to a Remotion composition, Delaying audio start, Dynamic composition duration with calculateMetadata, Generating audio with ElevenLabs, Prerequisites, Rendering audio in the component
+### Community 93 - "Using calculateMetadata"
+Cohesion: 0.12
+Nodes (13): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata, Adding AI voiceover to a Remotion composition (+5 more)
 
 ### Community 94 - "Audio Visualization in Remotion"
 Cohesion: 0.22
@@ -685,9 +691,9 @@ Nodes (7): Build the flight, Camera behavior, CesiumJS — 3D flyovers in Remoti
 Cohesion: 0.29
 Nodes (6): Animate using `useCurrentFrame()`, No animations not driven by `useCurrentFrame()`, Prerequisites, Using `<Sequence>` inside `<ThreeCanvas>`, Using Three.js and React Three Fiber in Remotion, Using ThreeCanvas
 
-### Community 121 - "Using calculateMetadata"
-Cohesion: 0.29
-Nodes (7): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata
+### Community 121 - "remotion-best-practices/remotion-interactivity/timeline-structure.md"
+Cohesion: 0.17
+Nodes (10): Choose how items share time, Complete example, Editable timeline structure, Give substantial groups their own timelines, Connected compositions, Create the connection, Extract an existing group, Make the component independent of its parent (+2 more)
 
 ### Community 122 - "Measuring text in Remotion"
 Cohesion: 0.29
@@ -789,9 +795,9 @@ Nodes (5): Custom geodata mode, Decision rule, Hybrid mode, Map element data sou
 Cohesion: 0.33
 Nodes (5): Moving Map Render Stability, Plate sizing and sharpness, Required pattern: fixed map plate, Symptom and cause, Verification
 
-### Community 147 - "Transcribing audio"
-Cohesion: 0.40
-Nodes (5): Choosing a model, Prerequisites, Transcribing, Transcribing audio, Transcribing in the browser
+### Community 147 - "remotion-multimedia/REFERENCE.md"
+Cohesion: 0.33
+Nodes (3): Getting audio duration, Getting video dimensions, Getting video duration
 
 ### Community 148 - "Flyover data sources"
 Cohesion: 0.40
@@ -865,25 +871,49 @@ Nodes (3): Dynamic image paths, Getting image dimensions, Sizing and positioning
 Cohesion: 0.50
 Nodes (3): lines, outDir, root
 
+### Community 177 - "Using calculateMetadata"
+Cohesion: 0.29
+Nodes (7): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata
+
+### Community 178 - "remotion-best-practices/remotion-markup/compositions.md"
+Cohesion: 0.29
+Nodes (6): Default Props and scaffold metadata, Dynamic duration, width, and height, Folders, Nesting compositions within another, Source-editable registrations, Stills
+
+### Community 179 - "Editable video timelines"
+Cohesion: 0.33
+Nodes (6): Choose the cut behavior, Editable video timelines, Keep synchronized layers on one clock, Place overlays at the scope they span, Preserve the edit when restructuring, Put music segments on a shared track
+
+### Community 180 - "Getting video dimensions with Mediabunny"
+Cohesion: 0.40
+Nodes (5): Getting video dimensions, Getting video dimensions with Mediabunny, Usage, Using with local files, Using with staticFile in Remotion
+
+### Community 181 - "Getting video duration with Mediabunny"
+Cohesion: 0.40
+Nodes (5): Getting video duration, Getting video duration with Mediabunny, In Node.js and Bun, Usage, Video files from the public/ directory
+
+### Community 182 - "Importing .srt subtitles into Remotion"
+Cohesion: 0.50
+Nodes (4): Importing .srt subtitles into Remotion, Prerequisites, Reading an .srt file, Using imported captions
+
 ## Knowledge Gaps
-- **1299 isolated node(s):** `FlyoverMode`, `__dir`, `START`, `clip`, `even` (+1294 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1410 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **1298 isolated node(s):** `FlyoverMode`, `__dir`, `START`, `clip`, `even` (+1293 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1413 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `MapTiler maps in Remotion` connect `MapTiler maps in Remotion` to `remotion-best-practices/remotion-markup/remotion-maps/REFERENCE.md`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `MapTiler maps in Remotion` connect `MapTiler maps in Remotion` to `remotion-best-practices/remotion-maps/REFERENCE.md`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `CesiumJS — 3D flyovers in Remotion` connect `CesiumJS — 3D flyovers in Remotion` to `remotion-best-practices/remotion-maps/REFERENCE.md`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **What connects `FlyoverMode`, `__dir`, `START` to the rest of the system?**
-  _1299 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1298 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `MESA SERENA` be split into smaller, more focused modules?**
   _Cohesion score 0.044444444444444446 - nodes in this community are weakly interconnected._
 - **Should `deliver.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.08143074581430745 - nodes in this community are weakly interconnected._
 - **Should `Using audio in Remotion` be split into smaller, more focused modules?**
-  _Cohesion score 0.04343971631205674 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
