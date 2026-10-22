@@ -59,24 +59,36 @@ const bonuses = [
 const faqs = [
   {
     q: "¿Esto me baja la glicemia?",
-    a: "No. Es un recetario educativo. Te ayuda a armar comida criolla con más sentido. Tu médico, endocrino o nutriólogo siguen mandando. Si usas insulina o pastillas, cualquier cambio se habla con ellos.",
+    a: "No, y desconfía de quien te lo prometa. Mesa Serena es un recetario educativo: te enseña a armar la comida criolla de siempre con mejor criterio — porción, combinación y orden en el plato. Tu médico, endocrino o nutriólogo siguen mandando, y si usas insulina o pastillas, cualquier cambio se habla primero con ellos.",
     open: true,
   },
   {
-    q: "¿Y si no como salmón ni quinoa?",
-    a: "Mejor. Solo hay 6 recetas de bolsillo elevado. Las otras 44 son de tu cocina: huevo, pollo, caraota, auyama, sardina, arepa.",
+    q: "¿Tengo que comprar salmón, quinoa o cosas caras?",
+    a: "No. De las 50 recetas, 30 son de bolsillo diario — huevo, pollo, caraota, lenteja, sardina, auyama — y 14 de bolsillo cómodo. Solo 6 son de domingo o visita. Si un recetario para Venezuela empieza con quinoa, no fue hecho pensando en tu mercado.",
   },
   {
-    q: "¿Mi familia tiene que comer “light”?",
-    a: "No. Comen lo mismo. Tú sirves tu porción. El pabellón no se elimina: se arma.",
+    q: "¿Mi familia tiene que comer “light” o yo cocino aparte?",
+    a: "Ninguna de las dos. Se cocina un solo caldero y todos comen lo mismo, rico. Lo que cambia es cómo armas tu plato: tu porción de arepa, tu parte de proteína y lo que la acompaña. Sin plato de enferma y sin doble cocina.",
   },
   {
-    q: "¿Cómo me llega?",
-    a: "Pagas con Skylink Pay. Cuando el cobro queda aprobado, el recetario llega a tu correo.",
+    q: "¿Cómo pago y en qué moneda?",
+    a: "Pagas en bolívares, al equivalente en dólares a la tasa BCV del día, desde tu banco. Sin Zelle, sin Binance y sin pasarle una captura a nadie por un chat: pagas en la página de pago y listo.",
   },
   {
-    q: "¿Cómo pago?",
-    a: "Con Skylink Pay, en bolívares a tasa BCV. Nada de Zelle, Binance ni transferencia a un chat.",
+    q: "¿Cuándo me llega el recetario?",
+    a: "Apenas el pago queda aprobado. Te llega un correo con el PDF adjunto y, en la pantalla de gracias que ves al terminar de pagar, también tienes el botón para descargarlo al momento. Si no lo ves en la bandeja, revisa Spam o Promociones: a veces cae ahí.",
+  },
+  {
+    q: "¿Y si no me llega el correo?",
+    a: "No te quedas sin libro. La pantalla de gracias tiene la descarga directa, así que lo guardas en tu celular o computadora en ese mismo momento. Y revisa que el correo que escribiste al comprar esté bien: a esa dirección es a donde sale el PDF.",
+  },
+  {
+    q: "¿Es un libro físico? ¿Lo puedo leer en el celular?",
+    a: "Es un libro digital en PDF, hecho para leerse cómodo en el celular — que es donde lo vas a consultar, en la cocina. También lo puedes abrir en la computadora o imprimir las páginas que más uses, como los menús de 7 días.",
+  },
+  {
+    q: "¿Se lo puedo comprar a mi mamá o a otra persona?",
+    a: "Sí, y es de los regalos que de verdad se usan. Al comprar, escribe el correo de esa persona: el recetario le llega directo a ella, con su nombre. Tú solo pagas.",
   },
 ];
 
@@ -313,6 +325,10 @@ export default async function Home() {
         <div className="wrap faq-wrap">
           <p className="kicker">Si todavía lo estás pensando</p>
           <h2>Preguntas de verdad</h2>
+          <p className="lead faq-lead">
+            Lo que todo el mundo pregunta antes de pagar, respondido sin
+            letra pequeña.
+          </p>
           <div className="faq">
             {faqs.map((item) => (
               <details key={item.q} open={item.open}>
@@ -321,6 +337,10 @@ export default async function Home() {
               </details>
             ))}
           </div>
+          <p className="faq-note">
+            Pago aprobado = recetario en tu correo y descarga en pantalla.
+            Así de simple.
+          </p>
         </div>
       </section>
 

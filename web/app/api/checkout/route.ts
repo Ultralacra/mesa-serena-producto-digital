@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { validateEmail } from "@/lib/email";
 import { logFlow } from "@/lib/log";
 import { saveOrder } from "@/lib/orders";
 import { PRODUCT } from "@/lib/product";
@@ -21,12 +22,13 @@ export async function POST(request: Request) {
   }
 
   const name = body.name?.trim() ?? "";
-  const email = body.email?.trim() ?? "";
+  const checked = validateEmail(body.email ?? "");
+  const email = checked.email;
   if (name.length < 3) {
     return NextResponse.json({ message: "Escribe tu nombre." }, { status: 400 });
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ message: "El correo no es válido." }, { status: 400 });
+  if (checked.error) {
+    return NextResponse.json({ message: checked.error }, { status: 400 });
   }
 
   const stamp = Date.now().toString(36).toUpperCase();

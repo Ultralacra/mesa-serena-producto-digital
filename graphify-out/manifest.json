@@ -1,0 +1,398 @@
+{
+  "web/app/api/checkout/route.ts": {
+    "mtime": 1792696093.9491584,
+    "seen": 1792696324.0829215,
+    "ast_hash": "cd42f16bd50c85d6e32158d4a8a93c07",
+    "semantic_hash": ""
+  },
+  "web/app/api/checkout/status/route.ts": {
+    "mtime": 1792688664.4884984,
+    "seen": 1792696324.0829265,
+    "ast_hash": "5cefe7a6e78611bc175f311219971b94",
+    "semantic_hash": ""
+  },
+  "web/app/api/rate/route.ts": {
+    "mtime": 1792687416.346759,
+    "seen": 1792696324.082929,
+    "ast_hash": "c24ed712dfc923ba9773ff449ad3062a",
+    "semantic_hash": ""
+  },
+  "web/app/api/test-email/route.ts": {
+    "mtime": 1792691569.4011023,
+    "seen": 1792696324.08293,
+    "ast_hash": "681c6d5c6d18c55c5e383d9171beedf3",
+    "semantic_hash": ""
+  },
+  "web/app/api/webhooks/skylink/route.ts": {
+    "mtime": 1792689286.1493845,
+    "seen": 1792696324.0829318,
+    "ast_hash": "98f9953a41e5dcac83229f99b68be823",
+    "semantic_hash": ""
+  },
+  "web/app/gracias/page.tsx": {
+    "mtime": 1792693605.015035,
+    "seen": 1792696324.0829325,
+    "ast_hash": "46717ff7b868c64f8f58bfe507652cf4",
+    "semantic_hash": ""
+  },
+  "web/app/layout.tsx": {
+    "mtime": 1792690495.190871,
+    "seen": 1792696324.0829337,
+    "ast_hash": "02ae2c0c214560050ffe9bc02030f0a5",
+    "semantic_hash": ""
+  },
+  "web/app/page.tsx": {
+    "mtime": 1792696122.5414033,
+    "seen": 1792696324.0829349,
+    "ast_hash": "1e9d1c7f88b481c3c7207ecefc0ed042",
+    "semantic_hash": ""
+  },
+  "web/components/CheckoutForm.tsx": {
+    "mtime": 1792696101.749735,
+    "seen": 1792696324.0829358,
+    "ast_hash": "f80c8167437405bebdd94cef01eeab72",
+    "semantic_hash": ""
+  },
+  "web/components/ReturnView.tsx": {
+    "mtime": 1792692149.9591355,
+    "seen": 1792696324.0829368,
+    "ast_hash": "b853e9445fe153cb96d7c0998fbe0a7b",
+    "semantic_hash": ""
+  },
+  "web/eslint.config.mjs": {
+    "mtime": 1792530696.0105233,
+    "seen": 1792696324.082938,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": ""
+  },
+  "web/lib/deliver.ts": {
+    "mtime": 1792691566.6848485,
+    "seen": 1792696324.082939,
+    "ast_hash": "42d4bd050d12ec82ff2aabb72eb6ee78",
+    "semantic_hash": ""
+  },
+  "web/lib/email.ts": {
+    "mtime": 1792696087.3357055,
+    "seen": 1792696324.0829399,
+    "ast_hash": "85268c20581df28c364677b4218532a1",
+    "semantic_hash": ""
+  },
+  "web/lib/log.ts": {
+    "mtime": 1792689268.0833445,
+    "seen": 1792696324.0829408,
+    "ast_hash": "df073006b2d56eee6d3f7eff5e737935",
+    "semantic_hash": ""
+  },
+  "web/lib/mail.ts": {
+    "mtime": 1792690176.5301027,
+    "seen": 1792696324.082942,
+    "ast_hash": "d76e93bdcad88034faad42983014228d",
+    "semantic_hash": ""
+  },
+  "web/lib/notify-webhook.ts": {
+    "mtime": 1792689269.3260365,
+    "seen": 1792696324.082943,
+    "ast_hash": "5cf75c14db1416bda0fb2208426d96be",
+    "semantic_hash": ""
+  },
+  "web/lib/orders.ts": {
+    "mtime": 1792687246.5720625,
+    "seen": 1792696324.082944,
+    "ast_hash": "518cc6d9b992971bedfdcf624704c799",
+    "semantic_hash": ""
+  },
+  "web/lib/product.ts": {
+    "mtime": 1792690493.3231704,
+    "seen": 1792696324.082945,
+    "ast_hash": "81d5f20e6e9e8228faf890751aa6140e",
+    "semantic_hash": ""
+  },
+  "web/lib/receipt-email.ts": {
+    "mtime": 1792691564.1662183,
+    "seen": 1792696324.082946,
+    "ast_hash": "e504542565edf78948e689dae193d401",
+    "semantic_hash": ""
+  },
+  "web/lib/skylink.ts": {
+    "mtime": 1792687242.4713392,
+    "seen": 1792696324.082947,
+    "ast_hash": "22e610a404c487f516ebaf2c3e1c725f",
+    "semantic_hash": ""
+  },
+  "web/lib/watch-payment.ts": {
+    "mtime": 1792689374.2434945,
+    "seen": 1792696324.0829477,
+    "ast_hash": "b784ca149811c20ab79aa18397e64112",
+    "semantic_hash": ""
+  },
+  "web/next.config.ts": {
+    "mtime": 1792687414.8810918,
+    "seen": 1792696324.082949,
+    "ast_hash": "daad32b4de0b92afe04301ebf0a6cc76",
+    "semantic_hash": ""
+  },
+  "web/package.json": {
+    "mtime": 1792690983.1491156,
+    "seen": 1792696324.0829504,
+    "ast_hash": "a1350ad9f896dd087642664b43acc1af",
+    "semantic_hash": ""
+  },
+  "web/scripts/pdf/build-pdf.mjs": {
+    "mtime": 1792691090.6713116,
+    "seen": 1792696324.0829513,
+    "ast_hash": "38aabeff23ed4e3bdeeca6b46acb21f3",
+    "semantic_hash": ""
+  },
+  "web/scripts/pdf/guides.mjs": {
+    "mtime": 1792690503.0314817,
+    "seen": 1792696324.0829525,
+    "ast_hash": "87c54de651e99d285952e4f327e0838b",
+    "semantic_hash": ""
+  },
+  "web/scripts/pdf/recipes.mjs": {
+    "mtime": 1792690010.3108683,
+    "seen": 1792696324.0829535,
+    "ast_hash": "46b41b935e3408f0f9e1302811e2b3d8",
+    "semantic_hash": ""
+  },
+  "web/scripts/send-test-mail.mjs": {
+    "mtime": 1792687997.0218983,
+    "seen": 1792696324.0829544,
+    "ast_hash": "bd43de5061e7fa008e4f92ca8e017819",
+    "semantic_hash": ""
+  },
+  "web/tsconfig.json": {
+    "mtime": 1792686765.5824633,
+    "seen": 1792696324.0829556,
+    "ast_hash": "02fc19ad21338c2ab820a70136310db4",
+    "semantic_hash": ""
+  },
+  "web/vercel.json": {
+    "mtime": 1792692546.6790283,
+    "seen": 1792696324.0829563,
+    "ast_hash": "feaac6572e040f91c1aa19431c1b82bf",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1792692548.243229,
+    "seen": 1792696324.0829573,
+    "ast_hash": "19822cc8f33ffbeaf2a8abe515df8ca1",
+    "semantic_hash": ""
+  },
+  "anuncios/00-paleta-y-uso.md": {
+    "mtime": 1792687398.4118495,
+    "seen": 1792696324.0829582,
+    "ast_hash": "70c28343f70e7eac6c601d291474826b",
+    "semantic_hash": ""
+  },
+  "anuncios/guiones-imagen.md": {
+    "mtime": 1792687393.3533263,
+    "seen": 1792696324.0829594,
+    "ast_hash": "0d14219e21be16457e16caf12e0bdef6",
+    "semantic_hash": ""
+  },
+  "anuncios/guiones-video.md": {
+    "mtime": 1792687397.6656282,
+    "seen": 1792696324.0829604,
+    "ast_hash": "3cd7257f1be86dce9061197da25e0b7f",
+    "semantic_hash": ""
+  },
+  "anuncios/html/01-arepa.html": {
+    "mtime": 1792687363.2992194,
+    "seen": 1792696324.0829613,
+    "ast_hash": "a7d9522a7cbc1efcd9f77e3abd7d9f5a",
+    "semantic_hash": ""
+  },
+  "anuncios/html/02-mercado.html": {
+    "mtime": 1792687363.7354908,
+    "seen": 1792696324.0829625,
+    "ast_hash": "dec8b8d98249342a8f29767564c03e69",
+    "semantic_hash": ""
+  },
+  "anuncios/html/03-oferta.html": {
+    "mtime": 1792687364.5405014,
+    "seen": 1792696324.0829635,
+    "ast_hash": "5feb3e7713d0b469a02a943a7fad930f",
+    "semantic_hash": ""
+  },
+  "contenido/catalogo-50-recetas.md": {
+    "mtime": 1792686223.6939988,
+    "seen": 1792696324.0829644,
+    "ast_hash": "02295a5bde8cd702578a07d278f5510c",
+    "semantic_hash": ""
+  },
+  "landing/index.html": {
+    "mtime": 1792686704.751694,
+    "seen": 1792696324.0829656,
+    "ast_hash": "9a9fa0beee7cfb39217d73a825af7aaf",
+    "semantic_hash": ""
+  },
+  "marketing/01-playbook-ventas.md": {
+    "mtime": 1792687374.791713,
+    "seen": 1792696324.0829666,
+    "ast_hash": "c3d9bd9353327ea88f200647e76bbe42",
+    "semantic_hash": ""
+  },
+  "web/AGENTS.md": {
+    "mtime": 1792686879.8746514,
+    "seen": 1792696324.0829673,
+    "ast_hash": "c98dbebb744eadc1acc4b9f58bfe0f42",
+    "semantic_hash": ""
+  },
+  "web/README.md": {
+    "mtime": 1792530695.9896145,
+    "seen": 1792696324.0829682,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": ""
+  },
+  "web/content/catalogo-50-recetas.md": {
+    "mtime": 1792686223.6939988,
+    "seen": 1792696324.0829694,
+    "ast_hash": "02295a5bde8cd702578a07d278f5510c",
+    "semantic_hash": ""
+  },
+  "web/content/recetario.html": {
+    "mtime": 1792691235.2043064,
+    "seen": 1792696324.0829704,
+    "ast_hash": "ef7541db8f9407200d7d3885d13ad457",
+    "semantic_hash": ""
+  },
+  "contenido/Mesa-Serena-recetario.pdf": {
+    "mtime": 1792691235.9208643,
+    "seen": 1792696324.0829718,
+    "ast_hash": "d0bec40a1715fd888a6a6e744b3b172f",
+    "semantic_hash": ""
+  },
+  "web/content/Mesa-Serena-recetario.pdf": {
+    "mtime": 1792691235.9208643,
+    "seen": 1792696324.082973,
+    "ast_hash": "d0bec40a1715fd888a6a6e744b3b172f",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/01-arepa-anuncio.png": {
+    "mtime": 1792686573.5017576,
+    "seen": 1792696324.0829742,
+    "ast_hash": "2d215ab81c3c8bc221a407a3a177b9db",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/02-mercado-anuncio.png": {
+    "mtime": 1792686575.1818657,
+    "seen": 1792696324.0829751,
+    "ast_hash": "cefa0a65fc9075c992cf673f2a743fb8",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/03-oferta-anuncio.png": {
+    "mtime": 1792686576.8825915,
+    "seen": 1792696324.0829766,
+    "ast_hash": "1a0b878cc31436eb06d3661d510b6167",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/bases/arepa.jpg": {
+    "mtime": 1792686451.3528156,
+    "seen": 1792696324.0829773,
+    "ast_hash": "e6a73f9d064b23a0c2c8ad0e2d8ad82d",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/bases/mercado.jpg": {
+    "mtime": 1792686450.6577356,
+    "seen": 1792696324.0829782,
+    "ast_hash": "9392f1c1eb7c1e4e1e6fff08cab42d19",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/bases/oferta.jpg": {
+    "mtime": 1792686453.4405248,
+    "seen": 1792696324.0829794,
+    "ast_hash": "a6ac6f81cc408d9103e8cad62b8b6626",
+    "semantic_hash": ""
+  },
+  "landing/img/arepa.jpg": {
+    "mtime": 1792686451.3528156,
+    "seen": 1792696324.0829804,
+    "ast_hash": "e6a73f9d064b23a0c2c8ad0e2d8ad82d",
+    "semantic_hash": ""
+  },
+  "landing/img/mercado.jpg": {
+    "mtime": 1792686450.6577356,
+    "seen": 1792696324.0829813,
+    "ast_hash": "9392f1c1eb7c1e4e1e6fff08cab42d19",
+    "semantic_hash": ""
+  },
+  "landing/img/oferta.jpg": {
+    "mtime": 1792686453.4405248,
+    "seen": 1792696324.0829823,
+    "ast_hash": "a6ac6f81cc408d9103e8cad62b8b6626",
+    "semantic_hash": ""
+  },
+  "web/app/apple-icon.png": {
+    "mtime": 1792695989.6066947,
+    "seen": 1792696324.0829835,
+    "ast_hash": "47c16311b19dfaec415aa67176745e8d",
+    "semantic_hash": ""
+  },
+  "web/app/icon.svg": {
+    "mtime": 1792695909.96164,
+    "seen": 1792696324.0829842,
+    "ast_hash": "d217676eb28e00e6babd3d737d5eee32",
+    "semantic_hash": ""
+  },
+  "web/public/file.svg": {
+    "mtime": 1792530696.0306098,
+    "seen": 1792696324.0829852,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "web/public/globe.svg": {
+    "mtime": 1792530696.035311,
+    "seen": 1792696324.0829864,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "web/public/img/arepa.jpg": {
+    "mtime": 1792686451.3528156,
+    "seen": 1792696324.0829873,
+    "ast_hash": "e6a73f9d064b23a0c2c8ad0e2d8ad82d",
+    "semantic_hash": ""
+  },
+  "web/public/img/ebook-cover.jpg": {
+    "mtime": 1792689729.3399646,
+    "seen": 1792696324.0829883,
+    "ast_hash": "90f17ebd530a9168b3c6d7e627e150bd",
+    "semantic_hash": ""
+  },
+  "web/public/img/ebook.jpg": {
+    "mtime": 1792689733.97532,
+    "seen": 1792696324.0829892,
+    "ast_hash": "fa62ddc7b9bfbbcd8e6580d2fc2ba27f",
+    "semantic_hash": ""
+  },
+  "web/public/img/mercado.jpg": {
+    "mtime": 1792686450.6577356,
+    "seen": 1792696324.0829902,
+    "ast_hash": "9392f1c1eb7c1e4e1e6fff08cab42d19",
+    "semantic_hash": ""
+  },
+  "web/public/img/oferta.jpg": {
+    "mtime": 1792686453.4405248,
+    "seen": 1792696324.0829916,
+    "ast_hash": "a6ac6f81cc408d9103e8cad62b8b6626",
+    "semantic_hash": ""
+  },
+  "web/public/next.svg": {
+    "mtime": 1792530696.0438824,
+    "seen": 1792696324.0829923,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "web/public/vercel.svg": {
+    "mtime": 1792530696.0520153,
+    "seen": 1792696324.0829935,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "web/public/window.svg": {
+    "mtime": 1792530696.0567334,
+    "seen": 1792696324.0829942,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  }
+}

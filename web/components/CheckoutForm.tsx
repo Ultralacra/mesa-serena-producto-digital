@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { normalizeEmail, validateEmail } from "@/lib/email";
 import { formatVes, PRODUCT } from "@/lib/product";
 
 type Quote = {
@@ -15,6 +16,9 @@ export function CheckoutForm() {
   const [quote, setQuote] = useState<Quote>({});
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [emailTouched, setEmailTouched] = useState(false);
 
   useEffect(() => {
     fetch("/api/rate")
@@ -23,37 +27,66 @@ export function CheckoutForm() {
       .catch(() => setQuote({ message: "No se pudo leer la tasa BCV." }));
   }, []);
 
+  const emailCheck = validateEmail(email);
+  const emailOk = emailTouched && email.trim() !== "" && emailCheck.error === "";
+
+  function checkName(value: string) {
+    const message = value.trim().length >= 3 ? "" : "Escribe tu nombre, aunque sea solo el primero.";
+    setNameError(message);
+    return message === "";
+  }
+
+  function checkEmail(value: string) {
+    const message = validateEmail(value).error;
+    setEmailError(message);
+    return message === "";
+  }
+
   async function pay(event: FormEvent) {
     event.preventDefault();
-    setSaving(true);
     setError("");
-    console.log("[MESA] USUARIO · clic en Pagar", {
-      nombre: name.trim(),
-      correo: email.trim(),
-    });
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: name.trim(), email: email.trim() }),
-    });
-    const payload = (await response.json()) as {
-      message?: string;
-      url?: string;
-      buyOrder?: string;
-      token?: string;
-    };
-    if (!response.ok || !payload.url) {
-      console.log("[MESA] USUARIO · checkout falló", payload);
-      setSaving(false);
-      setError(payload.message || "No se pudo abrir Skylink Pay.");
+    const nameOk = checkName(name);
+    const mailOk = checkEmail(email);
+    setEmailTouched(true);
+    if (!nameOk || !mailOk) {
+      document.getElementById(nameOk ? "checkout-email" : "checkout-name")?.focus();
       return;
     }
-    console.log("[MESA] USUARIO · va a Skylink Pay", payload);
-    window.location.assign(payload.url);
+
+    const cleanEmail = normalizeEmail(email);
+    setSaving(true);
+    console.log("[MESA] USUARIO · clic en Quiero mi recetario", {
+      nombre: name.trim(),
+      correo: cleanEmail,
+    });
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name.trim(), email: cleanEmail }),
+      });
+      const payload = (await response.json()) as {
+        message?: string;
+        url?: string;
+        buyOrder?: string;
+        token?: string;
+      };
+      if (!response.ok || !payload.url) {
+        console.log("[MESA] USUARIO · checkout falló", payload);
+        setSaving(false);
+        setError(payload.message || "No se pudo abrir el pago. Inténtalo de nuevo.");
+        return;
+      }
+      console.log("[MESA] USUARIO · va a pagar", payload);
+      window.location.assign(payload.url);
+    } catch {
+      setSaving(false);
+      setError("No se pudo abrir el pago. Revisa tu conexión e inténtalo de nuevo.");
+    }
   }
 
   return (
-    <form className="checkout" onSubmit={pay}>
+    <form className="checkout" onSubmit={pay} noValidate>
       <p>Recetario + 6 guías. Un archivo, al correo cuando el pago quede aprobado.</p>
       <div className="price-row">
         <span className="now">{PRODUCT.priceUsd} USD</span>
@@ -63,35 +96,68 @@ export function CheckoutForm() {
       </div>
       <p className="fine">
         {quote.rate
-          ? `Tasa BCV ${formatVes(quote.rate)} · pagas en bolívares con Skylink Pay.`
+          ? `Tasa BCV ${formatVes(quote.rate)} · pagas en bolívares.`
           : quote.message || "Precio en bolívares a tasa BCV al pagar."}
       </p>
       <p className="fine">Cobro de prueba ahora: {PRODUCT.testVes} Bs.</p>
-      <label>
+      <label htmlFor="checkout-name">
         Nombre
         <input
+          id="checkout-name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            setName(e.target.value);
+            if (nameError) checkName(e.target.value);
+          }}
+          onBlur={() => name.trim() && checkName(name)}
           autoComplete="name"
-          required
-          minLength={3}
+          aria-invalid={Boolean(nameError)}
+          aria-describedby={nameError ? "checkout-name-error" : undefined}
         />
       </label>
-      <label>
+      {nameError ? (
+        <p className="field-error" id="checkout-name-error">
+          {nameError}
+        </p>
+      ) : null}
+      <label htmlFor="checkout-email">
         Correo
         <input
+          id="checkout-email"
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            if (emailError) checkEmail(e.target.value);
+          }}
+          onBlur={() => {
+            setEmailTouched(true);
+            if (email.trim()) checkEmail(email);
+          }}
           autoComplete="email"
-          required
+          inputMode="email"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          placeholder="tucorreo@gmail.com"
+          aria-invalid={Boolean(emailError)}
+          aria-describedby="checkout-email-hint"
         />
       </label>
+      <p
+        className={emailError ? "field-error" : emailOk ? "field-ok" : "field-hint"}
+        id="checkout-email-hint"
+      >
+        {emailError ||
+          (emailOk
+            ? "✓ Bien escrito. A este correo te llega el recetario."
+            : "Revísalo con calma: a este correo te llega el recetario.")}
+      </p>
       {error ? <p className="form-error">{error}</p> : null}
       <button className="btn btn-lg" type="submit" disabled={saving}>
-        {saving ? "Abriendo Skylink Pay…" : "Pagar con Skylink Pay"}
+        {saving ? "Un momento…" : "Quiero mi recetario"}
       </button>
-      <p className="fine">El recetario llega a este correo cuando el cobro quede aprobado.</p>
+      <p className="fine">Pagas en bolívares a tasa BCV. Al aprobarse el pago, el PDF va a tu correo.</p>
     </form>
   );
 }
