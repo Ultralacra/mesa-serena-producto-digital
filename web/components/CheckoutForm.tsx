@@ -166,8 +166,8 @@ export function CheckoutForm() {
         {saving ? "Un momento…" : "Quiero mi recetario"}
       </button>
       <p className="fine">
-        Pago seguro en bolívares a tasa BCV. Sin chats, capturas ni pasos
-        escondidos: pagas aquí y el recetario llega a ese correo.
+        Pagas en bolívares a tasa BCV. Al aprobarse el pago, tu recetario llega
+        a ese correo.
       </p>
     </form>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
 type Purchase = {
@@ -90,6 +90,20 @@ export default function AdminPanel() {
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("todas");
+  const [saleName, setSaleName] = useState("");
+  const [saleEmail, setSaleEmail] = useState("");
+  const [salePhone, setSalePhone] = useState("");
+  const [saleBusy, setSaleBusy] = useState(false);
+  const [saleError, setSaleError] = useState("");
+  const [sale, setSale] = useState<{
+    url: string;
+    buyOrder: string;
+    name: string;
+    email: string;
+    ves: number;
+    priceUsd: number;
+  } | null>(null);
+  const [copied, setCopied] = useState("");
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -116,6 +130,65 @@ export default function AdminPanel() {
     const timer = setInterval(load, 30000);
     return () => clearInterval(timer);
   }, [load]);
+
+  async function createSaleLink(event: FormEvent) {
+    event.preventDefault();
+    setSaleBusy(true);
+    setSaleError("");
+    setCopied("");
+    try {
+      const response = await fetch("/api/admin/sale-link", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: saleName, email: saleEmail }),
+      });
+      const body = (await response.json()) as {
+        message?: string;
+        url?: string;
+        buyOrder?: string;
+        name?: string;
+        email?: string;
+        ves?: number;
+        priceUsd?: number;
+      };
+      if (!response.ok || !body.url) {
+        throw new Error(body.message || "No se pudo crear el enlace.");
+      }
+      setSale({
+        url: body.url,
+        buyOrder: body.buyOrder || "",
+        name: body.name || saleName.trim(),
+        email: body.email || saleEmail.trim(),
+        ves: body.ves || 0,
+        priceUsd: body.priceUsd || 0,
+      });
+      await load();
+    } catch (err) {
+      setSale(null);
+      setSaleError(err instanceof Error ? err.message : "No se pudo crear el enlace.");
+    } finally {
+      setSaleBusy(false);
+    }
+  }
+
+  function saleMessage(link: NonNullable<typeof sale>) {
+    const bolivares = link.ves.toLocaleString("es-VE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    return `Hola ${link.name}. Aquí está tu enlace para pagar Mesa Serena (${link.priceUsd} USD, ${bolivares} Bs). Cuando se apruebe el pago, el recetario llega a ${link.email}.\n${link.url}`;
+  }
+
+  function saleWhatsappHref(link: NonNullable<typeof sale>) {
+    const digits = salePhone.replace(/\D/g, "");
+    const base = digits ? `https://wa.me/${digits}` : "https://wa.me/";
+    return `${base}?text=${encodeURIComponent(saleMessage(link))}`;
+  }
+
+  async function copyText(label: string, value: string) {
+    await navigator.clipboard.writeText(value);
+    setCopied(label);
+  }
 
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" }).catch(() => null);
@@ -218,6 +291,87 @@ export default function AdminPanel() {
               <span>{data.stats.webhookEvents}</span>
               <p>Avisos del webhook</p>
             </article>
+          </section>
+
+          <section className="admin-card">
+            <h2>Enlace para WhatsApp</h2>
+            <p className="fine">
+              Escribe el nombre y el correo de quien va a pagar. El enlace cobra
+              el precio real, 5 USD en bolívares a la tasa del día. Al aprobarse,
+              el recetario se envía solo a ese correo.
+            </p>
+            <form className="admin-sale" onSubmit={createSaleLink}>
+              <label>
+                Nombre
+                <input
+                  value={saleName}
+                  onChange={(event) => setSaleName(event.target.value)}
+                  placeholder="María Pérez"
+                  required
+                  minLength={3}
+                />
+              </label>
+              <label>
+                Correo del recetario
+                <input
+                  type="email"
+                  value={saleEmail}
+                  onChange={(event) => setSaleEmail(event.target.value)}
+                  placeholder="maria@correo.com"
+                  required
+                />
+              </label>
+              <label>
+                WhatsApp (opcional)
+                <input
+                  value={salePhone}
+                  onChange={(event) => setSalePhone(event.target.value)}
+                  placeholder="+58 412 000 0000"
+                  inputMode="tel"
+                />
+              </label>
+              <button className="btn" type="submit" disabled={saleBusy}>
+                {saleBusy ? "Creando…" : "Crear enlace"}
+              </button>
+            </form>
+            {saleError ? (
+              <p className="form-error" role="alert">
+                {saleError}
+              </p>
+            ) : null}
+            {sale ? (
+              <div className="admin-link-box">
+                <p>
+                  Orden <code>{sale.buyOrder}</code> · el recetario irá a{" "}
+                  <strong>{sale.email}</strong>
+                </p>
+                <p className="admin-link-url">{sale.url}</p>
+                <div className="admin-actions">
+                  <button
+                    className="btn admin-btn-ghost"
+                    type="button"
+                    onClick={() => copyText("enlace", sale.url)}
+                  >
+                    {copied === "enlace" ? "Enlace copiado" : "Copiar enlace"}
+                  </button>
+                  <button
+                    className="btn admin-btn-ghost"
+                    type="button"
+                    onClick={() => copyText("mensaje", saleMessage(sale))}
+                  >
+                    {copied === "mensaje" ? "Mensaje copiado" : "Copiar mensaje"}
+                  </button>
+                  <a
+                    className="btn"
+                    href={saleWhatsappHref(sale)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Abrir WhatsApp
+                  </a>
+                </div>
+              </div>
+            ) : null}
           </section>
 
           <section className="admin-card">
