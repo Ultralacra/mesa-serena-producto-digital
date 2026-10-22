@@ -38,13 +38,37 @@ const pains = [
   },
 ];
 
+const week = [
+  ["Lunes", "Perico y arepa pequeña", "Pabellón", "Caldo de pollo"],
+  ["Martes", "Avena de canela", "Pollo con auyama", "Sardinas con pepino"],
+  ["Miércoles", "Huevos con espinaca", "Lentejas y huevo", "Huevos al plato"],
+  ["Jueves", "Café, huevo y tomate", "Caraotas y ensalada", "Crema de auyama"],
+  ["Viernes", "Omelette de ají", "Pollo saltado", "Vegetales y huevo"],
+  ["Sábado", "Arepa de auyama con pollo", "Hervido liviano", "Ensalada de lentejas"],
+  ["Domingo", "Panqueques de avena", "Pescado al horno", "Wrap de lechuga"],
+];
+
+const recipeBlocks = [
+  ["10 desayunos", "Perico, arepa de auyama, avena de canela, huevos con espinaca."],
+  ["18 almuerzos", "Pabellón, caraotas, pollo con auyama, lentejas, hervido."],
+  ["10 cenas", "Caldo de pollo, crema de auyama, sardinas, huevos al plato."],
+  ["8 meriendas", "Tostones al horno, pepino con limón, café con canela."],
+  ["4 de domingo", "Asado sin papelón, pollo brasa, postre de lechosa."],
+];
+
+const tips = [
+  ["El calendario", "Lunes a domingo ya armado: desayuno, almuerzo, merienda y cena. No tienes que inventar el día."],
+  ["La arepa, en su punto", "Del tamaño de la palma, con pollo o huevo adentro y ensalada al lado. Se queda en la mesa."],
+  ["El semáforo", "Arepa, yuca, plátano, jugo y papelón: qué comes tranquila, qué dejas para a veces y qué casi nunca."],
+  ["La lista del mercado", "Huevos, pollo, caraotas, auyama, harina. Lo que está en el puesto de todos los días, no en una tienda de importados."],
+];
 const includes = [
-  "50 recetas criollas: desayuno, almuerzo, cena, merienda y el domingo",
-  "La arepa, en su punto: el tamaño, el relleno y con qué no la acompañas para que no se te suba",
-  "Semáforo venezolano: arepa, yuca, plátano, jugo y papelón, dicho claro",
-  "3 menús de 7 días, uno para cada bolsillo",
-  "Lista de mercado para que rinda el real de la semana",
-  "Sustituciones y antojos, para la visita y el domingo",
+  "El calendario de 7 días, con desayuno, almuerzo, merienda y cena ya escritos",
+  "50 recetas con el mercado del día a día: huevo, pollo, caraota, lenteja, sardina y auyama",
+  "Los tips: semáforo, la arepa en su punto, y con qué cambias el papelón, el jugo y el arroz",
+  "La lista de mercado de la semana, para no pasear el puesto adivinando",
+  "30 platos de todos los días, 14 para cuando alcanza y 6 de domingo",
+  "Un solo caldero: la casa come lo mismo, tú comes tu porción",
 ];
 
 const bonuses = [
@@ -125,12 +149,10 @@ export default async function Home() {
               Te dijeron que se acabó la arepa. <em>Te mintieron a medias.</em>
             </h1>
             <p className="lead">
-              Eres la que pone el almuerzo. El diagnóstico —el tuyo, el de tu
-              esposo o el de tu mamá— te dejó con miedo de mirar el glucometro.
-              Mesa Serena es el recetario para seguir comiendo lo de tu casa
-              —arepa, pabellón, pollo, caraota y auyama— sin que se te
-              dispare y sin comprar como rico. 50 recetas, para el bolsillo
-              de entre semana.
+              Abres el recetario y ya está la semana: el calendario, las 50
+              recetas y los tips. Se cocina con el mercado del día a día
+              —huevo, pollo, caraota, lenteja, sardina y auyama—. La arepa se
+              queda. Sin quinoa y sin comprar como rico.
             </p>
             <div className="price-row">
               <span className="now">{PRODUCT.priceUsd} USD</span>
@@ -147,9 +169,10 @@ export default async function Home() {
               aprobado. Recetario educativo: no sustituye a tu médico.
             </p>
             <div className="hero-meta">
-              <span className="chip">50 recetas criollas</span>
-              <span className="chip">Menú de 7 días</span>
-              <span className="chip">Sin que se te dispare</span>
+              <span className="chip">Mercado del día a día</span>
+              <span className="chip">Calendario de 7 días</span>
+              <span className="chip">50 recetas</span>
+              <span className="chip">Tips de cocina</span>
             </div>
           </div>
           <div className="hero-visual">
@@ -166,6 +189,74 @@ export default async function Home() {
               </div>
               <p className="book-caption">El recetario</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="loot" id="incluye">
+        <div className="wrap">
+          <p className="kicker">Ábrelo antes de pagar</p>
+          <h2>El calendario, las recetas y los tips. Con el mercado de todos los días.</h2>
+          <p className="lead loot-lead">
+            No es teoría. Es lo que cocinas el lunes con lo que compraste hoy:
+            huevo, pollo, caraota y auyama. Si no está en tu mercado, no está
+            en la semana.
+          </p>
+
+          <div className="loot-grid">
+            <article className="card loot-calendar">
+              <p className="kicker">El calendario</p>
+              <h3>Tu semana, ya escrita</h3>
+              <div className="week" role="table" aria-label="Menú de 7 días con el mercado del día a día">
+                <div className="week-head" role="row">
+                  <span>Día</span>
+                  <span>Desayuno</span>
+                  <span>Almuerzo</span>
+                  <span>Cena</span>
+                </div>
+                {week.map(([day, breakfast, lunch, dinner]) => (
+                  <div className="week-row" role="row" key={day}>
+                    <strong>{day}</strong>
+                    <span>{breakfast}</span>
+                    <span>{lunch}</span>
+                    <span>{dinner}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="fine">Menú diario. Hay otro para cuando el mercado alcanza, y uno de domingo.</p>
+            </article>
+
+            <div className="loot-side">
+              <article className="card">
+                <p className="kicker">Las recetas</p>
+                <h3>50 platos que ya sabes comprar</h3>
+                <ul className="loot-list">
+                  {recipeBlocks.map(([title, text]) => (
+                    <li key={title}>
+                      <strong>{title}</strong>
+                      <span>{text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+              <article className="card">
+                <p className="kicker">Los tips</p>
+                <h3>Para no improvisar en la cocina</h3>
+                <ul className="loot-list">
+                  {tips.map(([title, text]) => (
+                    <li key={title}>
+                      <strong>{title}</strong>
+                      <span>{text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div className="loot-cta">
+            <a className="btn" href="#comprar">
+              Quiero mi recetario
+            </a>
           </div>
         </div>
       </section>
@@ -196,16 +287,12 @@ export default async function Home() {
             />
           </div>
           <div>
-            <p className="kicker kicker-gold">Esto no es un recetario de Miami</p>
-            <h2>
-              30 recetas con lo de tu mercado. 14 cuando alcanza. 6 para el
-              domingo.
-            </h2>
+            <p className="kicker kicker-gold">El mercado del día a día</p>
+            <h2>Huevo, pollo, caraota y auyama. Con eso se hace el libro.</h2>
             <p className="lead">
-              Si el recetario empieza con quinoa, no lo escribieron para tu
-              cocina. El tuyo se sienta en las dos mesas que sí tienes: la del
-              martes, con lo que rindió el mercado, y la del domingo, cuando
-              viene visita.
+              30 recetas son del puesto de siempre. 14 entran cuando alcanza el
+              atún o el aguacate. Solo 6 piden algo de domingo. Si el recetario
+              empieza con quinoa, no es para tu cocina.
             </p>
             <a className="btn" href="#comprar">
               Quiero mi recetario
@@ -214,15 +301,15 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="section" id="incluye">
+      <section className="section" id="comprar-wrap">
         <div className="wrap include">
           <div>
             <p className="kicker">Qué te llevas</p>
-            <h2>No es una lista de “ya no puedes”. Es el menú de tu semana.</h2>
+            <h2>El menú de la semana, con lo que ya está en la nevera.</h2>
             <p className="lead">
               Por {PRODUCT.priceUsd} dólares
-              {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar a la hora
-              de comer, con la comida que ya sabes hacer.
+              {vesLabel ? ` (${vesLabel})` : ""} dejas de preguntarte a las once
+              qué se almuerza. La respuesta sale del mercado del día a día.
             </p>
             <ul className="clean">
               {includes.map((item) => (
@@ -253,7 +340,7 @@ export default async function Home() {
       <section className="section section-tight">
         <div className="wrap">
           <p className="kicker">Para todos los bolsillos</p>
-          <h2>Cocinas con lo que hay, no con lo que está de moda</h2>
+          <h2>Cocinas con el mercado del día a día</h2>
           <div className="pockets">
             <article className="pocket featured">
               <p className="count">30</p>
@@ -362,10 +449,10 @@ export default async function Home() {
               height={586}
             />
           </div>
-          <h2>Come lo de tu casa. Sin que se te dispare. Sin comprar como rico.</h2>
+          <h2>El mercado de todos los días. El calendario. Las 50 recetas.</h2>
           <p className="lead">
-            50 recetas con lo de tu mercado. El menú de tu semana. La lista
-            para no improvisar. {PRODUCT.priceUsd} USD
+            Huevo, pollo, caraota y auyama. La semana ya armada. Los tips para
+            no improvisar. {PRODUCT.priceUsd} USD
             {vesLabel ? ` ${vesLabel}` : ""}.
           </p>
           <a className="btn btn-lg" href="#comprar">

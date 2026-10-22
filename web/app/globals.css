@@ -1042,3 +1042,106 @@ footer strong {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.loot {
+  padding: 12px 0 36px;
+}
+
+.loot h2 {
+  max-width: 16ch;
+}
+
+.loot-lead {
+  max-width: 640px;
+  margin-bottom: 22px;
+}
+
+.loot-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.loot-side {
+  display: grid;
+  gap: 16px;
+}
+
+.loot-calendar h3,
+.loot-side h3 {
+  font-size: 28px;
+}
+
+.week {
+  margin-top: 8px;
+  border-top: 1px solid var(--linea);
+}
+
+.week-head,
+.week-row {
+  display: grid;
+  grid-template-columns: 92px 1fr 1fr 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(196, 164, 106, 0.28);
+  font-size: 14px;
+}
+
+.week-head {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 700;
+}
+
+.week-row strong {
+  color: var(--bosque);
+  font-family: var(--font-serif), serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.loot-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.loot-list li {
+  display: grid;
+  gap: 2px;
+}
+
+.loot-list strong {
+  color: var(--bosque);
+}
+
+.loot-list span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.loot-cta {
+  margin-top: 18px;
+}
+
+@media (max-width: 980px) {
+  .loot-grid,
+  .week-head,
+  .week-row {
+    grid-template-columns: 1fr;
+  }
+
+  .week-head {
+    display: none;
+  }
+
+  .week-row {
+    gap: 2px;
+    padding: 12px 0;
+  }
+}
