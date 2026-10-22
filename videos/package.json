@@ -1,0 +1,24 @@
+{
+  "name": "mesa-serena-videos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Videos de Mesa Serena para Meta Ads, hechos con Remotion",
+  "scripts": {
+    "studio": "remotion studio src/index.ts --port=3100",
+    "voice:ad01": "node scripts/generate-voiceover.mjs",
+    "render:ad01": "remotion render src/index.ts MesaSerenaAd01 out/mesa-serena-ad01-arepa.mp4 --port=3100",
+    "still:ad01": "remotion still src/index.ts MesaSerenaAd01 out/ad01-frame.png --frame=45"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.538",
+    "@remotion/google-fonts": "^4.0.538",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.538"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}
