@@ -24,11 +24,21 @@ async function Body({
   const params = await searchParams;
   return (
     <ReturnView
-      token={first(params.token) || first(params.paymentToken)}
+      token={paymentToken(params)}
       buyOrder={first(params.buyOrder) || first(params.order) || first(params.buy_order)}
       downloadUrl={RECETARIO_URL}
     />
   );
+}
+
+function paymentToken(params: Record<string, string | string[] | undefined>) {
+  const candidates = [
+    first(params.token_ws),
+    first(params.TBK_TOKEN),
+    first(params.token),
+    first(params.paymentToken),
+  ];
+  return candidates.find((value) => value && !value.includes("{")) ?? "";
 }
 
 function first(value: string | string[] | undefined) {
