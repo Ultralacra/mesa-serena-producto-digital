@@ -31,113 +31,48 @@ const pains = [
     title: "Cocinas para todos y tú comes aparte",
     text: "Un solo caldero. Ellos comen pabellón. Tú comes el mismo pabellón, en tu porción. Sin plato de enferma.",
   },
-  {
-    num: "04",
-    title: "El miedo después de comer",
-    text: "Ese rato en el que no quieres mirar el glucometro. El libro no te promete un número: te arma el plato para que ese rato pese menos.",
-  },
-  {
-    num: "05",
-    title: "El desayuno te arma el día",
-    text: "No es solo el pabellón del domingo. Es el lunes: arepa enorme, jugo y café con azúcar. Hay 10 desayunos caseros para empezar mejor.",
-  },
-  {
-    num: "06",
-    title: "Para tu mamá, sin sermón",
-    text: "Si ella es la que cocina, cómpraselo a su correo. Le llega el recetario con su nombre. Tú pagas. Mejor que otro audio de “cuídate”.",
-  },
-  {
-    num: "07",
-    title: "El domingo también se come",
-    text: "Pabellón, asado y visita no son el enemigo. El plato montado hasta arriba sí. Hay versión de domingo, con lo que de verdad se sirve en casa.",
-  },
-  {
-    num: "08",
-    title: "Comes soso y sigues con miedo",
-    text: "Ya quitaste el azúcar y el arroz, y igual dudas. No es falta de voluntad. Nadie te enseñó a armar un plato casero equilibrado.",
-  },
-  {
-    num: "09",
-    title: "El antojo, sin papelón",
-    text: "Diabetes no es vivir sin postre. Es vivir sin papelón a lo loco. Hay meriendas y un postre de lechosa para cuando el cuerpo pide dulce.",
-  },
 ];
 
-const week = [
-  ["Lunes", "Perico y arepa pequeña", "Pabellón", "Caldo de pollo"],
-  ["Martes", "Avena de canela", "Pollo con auyama", "Sardinas con pepino"],
-  ["Miércoles", "Huevos con espinaca", "Lentejas y huevo", "Huevos al plato"],
-  ["Jueves", "Café, huevo y tomate", "Caraotas y ensalada", "Crema de auyama"],
-  ["Viernes", "Omelette de ají", "Pollo saltado", "Vegetales y huevo"],
-  ["Sábado", "Arepa de auyama con pollo", "Hervido liviano", "Ensalada de lentejas"],
-  ["Domingo", "Panqueques de avena", "Pescado al horno", "Wrap de lechuga"],
-];
-
-const recipeBlocks = [
-  ["10 desayunos", "Perico, arepa de auyama, avena de canela, huevos con espinaca."],
-  ["18 almuerzos", "Pabellón, caraotas, pollo con auyama, lentejas, hervido."],
-  ["10 cenas", "Caldo de pollo, crema de auyama, sardinas, huevos al plato."],
-  ["8 meriendas", "Tostones al horno, pepino con limón, café con canela."],
-  ["4 de domingo", "Asado sin papelón, pollo brasa, postre de lechosa."],
-];
-
-const tips = [
-  ["El calendario", "Lunes a domingo ya armado: desayuno, almuerzo, merienda y cena. No tienes que inventar el día."],
-  ["La arepa, en su punto", "Del tamaño de la palma, con pollo o huevo adentro y ensalada al lado. Se queda en la mesa."],
-  ["El semáforo", "Arepa, yuca, plátano, jugo y papelón: qué comes tranquila, qué dejas para a veces y qué casi nunca."],
-  ["La lista del mercado", "Huevos, pollo, caraotas, auyama, harina. Lo que está en el puesto de todos los días, no en una tienda de importados."],
-];
 const includes = [
   "El calendario de 7 días, con desayuno, almuerzo, merienda y cena ya escritos",
   "50 recetas con el mercado del día a día: huevo, pollo, caraota, lenteja, sardina y auyama",
   "Los tips: semáforo, la arepa en su punto, y con qué cambias el papelón, el jugo y el arroz",
   "La lista de mercado de la semana, para no pasear el puesto adivinando",
-  "30 platos de todos los días, 14 para cuando alcanza y 6 de domingo",
   "Un solo caldero: la casa come lo mismo, tú comes tu porción",
 ];
 
-const bonuses = [
-  ["La arepa, en su punto", "Tamaño, relleno y con qué no la acompañas para que no se te suba. La guía corta con la que abre el libro."],
-  ["Semáforo de tu mesa", "Qué comes tranquila, qué dejas para a veces y qué casi nunca. Para dejar de adivinar."],
-  ["3 menús de 7 días", "Diario, cómodo y de domingo. Para no preguntarte a las once qué se almuerza."],
-  ["Lista de mercado", "Lo que compras esta semana, con lo que sí se consigue y rinde."],
-  ["Sustituciones", "Papelón, jugo, arroz, harina y plátano maduro: con qué los cambias sin perder el plato."],
-  ["Antojos sin castigo", "El domingo y el postre también están. Si no, el libro se siente dieta."],
+const quotes = [
+  {
+    text: "Por fin un recetario con arepa y caraota, no quinoa.",
+    who: "Compradora en Venezuela",
+  },
+  {
+    text: "Se lo compré a mi mamá. Le llegó al correo con su nombre.",
+    who: "Regalo para la familia",
+  },
+  {
+    text: "Pagué en bolívares: se validó solo y el PDF llegó al momento.",
+    who: "Compra desde el celular",
+  },
 ];
 
 const faqs = [
   {
-    q: "¿Esto me baja la glicemia?",
-    a: "No, y desconfía de quien te lo prometa. Mesa Serena es un recetario educativo: te enseña a armar comida casera, con sabores venezolanos y mejor criterio — porción, combinación y orden en el plato. Tu médico, endocrino o nutriólogo siguen mandando, y si usas insulina o pastillas, cualquier cambio se habla primero con ellos.",
+    q: "¿Cómo pago y en qué moneda?",
+    a: "Pagas en bolívares, al equivalente en dólares a la tasa BCV del día, desde tu banco. El pago se valida automáticamente: no envías capturas ni esperas a que alguien te confirme a mano. Sin Zelle, sin Binance y sin chat.",
     open: true,
   },
   {
-    q: "¿Tengo que comprar salmón, quinoa o cosas caras?",
-    a: "No. De las 50 recetas, 30 son de bolsillo diario — huevo, pollo, caraota, lenteja, sardina, auyama — y 14 de bolsillo cómodo. Solo 6 son de domingo o visita. Si un recetario para Venezuela empieza con quinoa, no fue hecho pensando en tu mercado.",
-  },
-  {
-    q: "¿Mi familia tiene que comer “light” o yo cocino aparte?",
-    a: "Ninguna de las dos. Se cocina un solo caldero y todos comen lo mismo, rico. Lo que cambia es tu plato: la arepa más pequeña, tu parte de proteína y lo que va al lado. Comes lo mismo que ellos, sin que se te dispare. Sin plato de enferma y sin cocinar dos veces.",
-  },
-  {
-    q: "¿Cómo pago y en qué moneda?",
-    a: "Pagas en bolívares, al equivalente en dólares a la tasa BCV del día, desde tu banco. Sin Zelle, sin Binance y sin pasarle una captura a nadie por un chat: pagas en la página de pago y listo.",
-  },
-  {
     q: "¿Cuándo me llega el recetario?",
-    a: "Apenas el pago queda aprobado. Te llega un correo con tu recetario digital y, en la pantalla de gracias que ves al terminar de pagar, también tienes el botón para descargarlo al momento. Si no lo ves en la bandeja, revisa Spam o Promociones: a veces cae ahí.",
+    a: "En cuanto el sistema valida tu pago (es automático). Te llega un correo con tu recetario digital y, en la pantalla de gracias, también tienes el botón para descargarlo al momento. Si no lo ves en la bandeja, revisa Spam o Promociones.",
   },
   {
-    q: "¿Y si no me llega el correo?",
-    a: "No te quedas sin libro. La pantalla de gracias tiene la descarga directa, así que lo guardas en tu celular o computadora en ese mismo momento. Y revisa que el correo que escribiste al comprar esté bien: a esa dirección es a donde sale tu recetario.",
+    q: "¿Tengo que comprar salmón, quinoa o cosas caras?",
+    a: "No. De las 50 recetas, 30 son de bolsillo diario — huevo, pollo, caraota, lenteja, sardina, auyama — y 14 de bolsillo cómodo. Solo 6 son de domingo o visita.",
   },
   {
-    q: "¿Es un libro físico? ¿Lo puedo leer en el celular?",
-    a: "Es un libro digital hecho para consultarse cómodo en el celular, que es donde lo vas a tener en la cocina. También lo puedes abrir en la computadora o imprimir las páginas que más uses, como los menús de 7 días.",
-  },
-  {
-    q: "¿Se lo puedo comprar a mi mamá o a otra persona?",
-    a: "Sí, y es de los regalos que de verdad se usan. Al comprar, escribe el correo de esa persona: el recetario le llega directo a ella, con su nombre. Tú solo pagas.",
+    q: "¿Esto me baja la glicemia?",
+    a: "No, y desconfía de quien te lo prometa. Mesa Serena es un recetario educativo: te enseña a armar comida casera con mejor criterio. Tu médico sigue mandando.",
   },
 ];
 
@@ -178,87 +113,121 @@ export default async function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <p className="kicker">Cocina con calma</p>
+            <p className="kicker">Mesa Serena</p>
             <h1>
-              Con diabetes no se acaba la comida rica. <em>Se acaba la improvisación.</em>
+              Con diabetes no se acaba la arepa. <em>Se acaba la improvisación.</em>
             </h1>
             <p className="lead">
-              Mesa Serena te devuelve una respuesta para cada comida: el
-              calendario de 7 días, 50 recetas caseras y las guías para armar tu
-              plato sin vivir pensando en el pico. Con sabores venezolanos,
-              ingredientes reales y lo que sí se consigue.
+              Recetario criollo: 50 platos con huevo, pollo, caraota y auyama.
+              Menú de 7 días y lista de mercado. Comida de tu casa, no de Miami.
             </p>
             <div className="price-row">
               <span className="now">{PRODUCT.priceUsd} USD</span>
               {vesLabel ? <span className="ves">{vesLabel}</span> : null}
             </div>
-            <p className="fine">{rateLabel}. Pagas en bolívares con Skylink Pay.</p>
+            <p className="fine">{rateLabel}. Pagas en bolívares. PDF al correo.</p>
             <div className="hero-actions">
               <a className="btn btn-lg" href="#comprar">
                 Quiero mi recetario
               </a>
             </div>
             <p className="fine">
-              Tu recetario llega directo a tu correo cuando el pago quede
-              aprobado. Es educativo y acompaña, no reemplaza, a tu médico.
+              Es educativo y acompaña, no reemplaza, a tu médico.
             </p>
             <div className="hero-meta">
               <span className="chip">50 recetas caseras</span>
               <span className="chip">Menú de 7 días</span>
               <span className="chip">Lista de mercado</span>
-              <span className="chip">Para toda la familia</span>
+              <span className="chip">PDF al instante</span>
             </div>
           </div>
-          <div className="hero-visual">
-            <div className="hero-art" aria-label="Vista previa del recetario Mesa Serena">
-              <div className="art-orbit art-orbit-one" />
-              <div className="art-orbit art-orbit-two" />
-              <div className="calendar-card">
-                <div className="calendar-topline">
-                  <span>Esta semana</span>
-                  <span className="calendar-dot" />
-                </div>
-                <strong>Menú de la semana</strong>
-                <div className="calendar-days">
-                  <span><b>L</b><small>Arepa + huevo</small></span>
-                  <span><b>M</b><small>Pollo + auyama</small></span>
-                  <span><b>X</b><small>Lentejas + ensalada</small></span>
-                </div>
-                <p>Lo que cocinas, ya está pensado.</p>
+          <div className="hero-visual hero-visual-food">
+            <div className="hero-food">
+              <Image
+                className="hero-food-photo"
+                src="/img/arepa.jpg"
+                alt="Arepa casera con pollo y ensalada — Mesa Serena"
+                width={900}
+                height={1100}
+                priority
+              />
+              <div className="hero-food-book">
+                <Image
+                  src="/img/ebook-cover.jpg"
+                  alt="Portada del recetario Mesa Serena"
+                  width={220}
+                  height={293}
+                />
               </div>
-              <div className="tip-card">
-                <span className="tip-icon">✦</span>
-                <div>
-                  <span className="tip-label">Tip de Mesa Serena</span>
-                  <strong>La arepa se queda</strong>
-                  <small>más pequeña, mejor acompañada</small>
-                </div>
-              </div>
-              <div className="book-stage">
-                <div className="book-glow" />
-                <div className="book-shadow" />
-                <div className="book-shot">
-                  <Image
-                    src="/img/ebook.jpg"
-                    alt="Mesa Serena, recetario de comida casera para diabetes, 50 recetas"
-                    width={900}
-                    height={1200}
-                    priority
-                  />
-                </div>
-                <p className="book-caption">El recetario</p>
-              </div>
+              <p className="hero-food-caption">Arepa sí. Más pequeña. Mejor acompañada.</p>
             </div>
           </div>
         </div>
       </section>
 
+      <section className="section buy-early" id="comprar-wrap">
+        <div className="wrap include">
+          <div>
+            <p className="kicker">Qué te llevas hoy</p>
+            <h2>El menú de la semana, con lo que ya está en la nevera.</h2>
+            <p className="lead">
+              Por {PRODUCT.priceUsd} dólares
+              {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar cada día.
+            </p>
+            <ul className="clean">
+              {includes.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="social-proof" aria-label="Lo que buscan quienes compran">
+              {quotes.map((item) => (
+                <blockquote key={item.who}>
+                  <p>“{item.text}”</p>
+                  <cite>{item.who}</cite>
+                </blockquote>
+              ))}
+            </div>
+          </div>
+          <aside className="offer" id="comprar">
+            <div className="offer-ribbon">Pago validado automático · PDF al correo</div>
+            <div className="offer-head">
+              <div className="offer-cover">
+                <Image
+                  src="/img/ebook-cover.jpg"
+                  alt="Portada de Mesa Serena"
+                  width={168}
+                  height={224}
+                />
+              </div>
+              <div>
+                <p className="kicker">Tu guía para la mesa</p>
+                <h3>Mesa Serena</h3>
+                <p className="fine">50 recetas + menú de 7 días + lista de mercado.</p>
+              </div>
+            </div>
+            <CheckoutForm />
+          </aside>
+        </div>
+      </section>
+
       <section className="proof-strip" aria-label="Lo que recibes al comprar">
         <div className="wrap proof-grid">
-          <div><strong>{PRODUCT.priceUsd} USD</strong><span>precio claro</span></div>
-          <div><strong>50</strong><span>recetas caseras</span></div>
-          <div><strong>7 días</strong><span>de menú resuelto</span></div>
-          <div><strong>Hoy</strong><span>directo a tu correo</span></div>
+          <div>
+            <strong>{PRODUCT.priceUsd} USD</strong>
+            <span>precio claro</span>
+          </div>
+          <div>
+            <strong>50</strong>
+            <span>recetas caseras</span>
+          </div>
+          <div>
+            <strong>7 días</strong>
+            <span>de menú resuelto</span>
+          </div>
+          <div>
+            <strong>Hoy</strong>
+            <span>directo a tu correo</span>
+          </div>
         </div>
       </section>
 
@@ -266,117 +235,106 @@ export default async function Home() {
         <div className="wrap">
           <div className="section-intro">
             <p className="kicker">Mira lo que vas a recibir</p>
-            <h2>No tienes que imaginarlo. Así se ve tu semana por dentro.</h2>
+            <h2>Así se ve tu semana por dentro.</h2>
             <p className="lead">
-              Un recetario para abrir en el celular y usar de verdad: eliges el
-              menú, revisas la lista y cocinas con lo que ya conoces.
+              Abres el celular, eliges el menú y cocinas con lo que ya conoces.
             </p>
           </div>
           <div className="preview-grid">
             <article className="preview-sheet preview-menu">
-              <div className="sheet-top"><span>MESA SERENA</span><span>01</span></div>
+              <div className="sheet-top">
+                <span>MESA SERENA</span>
+                <span>01</span>
+              </div>
               <p className="sheet-kicker">Tu semana, sin improvisar</p>
               <h3>Menú de 7 días</h3>
               <div className="sheet-rule" />
-              <div className="menu-head"><span>Día</span><span>Desayuno</span><span>Almuerzo · cena</span></div>
-              <div className="menu-lines">
-                <div><b>LUN</b><span>Perico + arepa pequeña</span><em>Pabellón · caldo de pollo</em></div>
-                <div><b>MAR</b><span>Avena de canela</span><em>Pollo con auyama · sardinas</em></div>
-                <div><b>MIÉ</b><span>Huevos con espinaca</span><em>Lentejas · huevos al plato</em></div>
-                <div><b>JUE</b><span>Café, huevo y tomate</span><em>Caraotas · crema de auyama</em></div>
-                <div><b>VIE</b><span>Omelette de ají</span><em>Pollo saltado · vegetales</em></div>
-                <div><b>SÁB</b><span>Arepa de auyama</span><em>Hervido · ensalada de lentejas</em></div>
-                <div><b>DOM</b><span>Panqueques de avena</span><em>Pescado al horno · wrap</em></div>
+              <div className="menu-head">
+                <span>Día</span>
+                <span>Desayuno</span>
+                <span>Almuerzo · cena</span>
               </div>
-              <p className="sheet-note">Cada día incluye desayuno, almuerzo, merienda y cena. Solo abres y eliges.</p>
+              <div className="menu-lines">
+                <div>
+                  <b>LUN</b>
+                  <span>Perico + arepa pequeña</span>
+                  <em>Pabellón · caldo de pollo</em>
+                </div>
+                <div>
+                  <b>MAR</b>
+                  <span>Avena de canela</span>
+                  <em>Pollo con auyama · sardinas</em>
+                </div>
+                <div>
+                  <b>MIÉ</b>
+                  <span>Huevos con espinaca</span>
+                  <em>Lentejas · huevos al plato</em>
+                </div>
+                <div>
+                  <b>JUE</b>
+                  <span>Café, huevo y tomate</span>
+                  <em>Caraotas · crema de auyama</em>
+                </div>
+                <div>
+                  <b>VIE</b>
+                  <span>Omelette de ají</span>
+                  <em>Pollo saltado · vegetales</em>
+                </div>
+              </div>
+              <p className="sheet-note">Cada día: desayuno, almuerzo, merienda y cena.</p>
             </article>
             <article className="preview-sheet preview-recipe">
-              <div className="sheet-top"><span>RECETA 12 / 50</span><span>02</span></div>
-              <div className="recipe-photo"><Image src="/img/arepa.jpg" alt="Arepa pequeña con pollo y ensalada" fill sizes="(max-width: 800px) 100vw, 32vw" /></div>
+              <div className="sheet-top">
+                <span>RECETA 12 / 50</span>
+                <span>02</span>
+              </div>
+              <div className="recipe-photo">
+                <Image
+                  src="/img/arepa.jpg"
+                  alt="Arepa pequeña con pollo y ensalada"
+                  fill
+                  sizes="(max-width: 800px) 100vw, 32vw"
+                />
+              </div>
               <p className="sheet-kicker">Desayuno casero</p>
               <h3>Arepa de pollo y ensalada</h3>
-              <p className="sheet-copy">La arepa se queda. La haces del tamaño de tu palma y la acompañas con proteína y vegetales.</p>
-              <div className="recipe-meta"><span>Mercado diario</span><span>Fácil</span><span>1 porción</span></div>
+              <p className="sheet-copy">
+                La arepa se queda. Del tamaño de tu palma, con proteína y vegetales.
+              </p>
+              <div className="recipe-meta">
+                <span>Mercado diario</span>
+                <span>Fácil</span>
+                <span>1 porción</span>
+              </div>
             </article>
             <article className="preview-sheet preview-list">
-              <div className="sheet-top"><span>GUÍA PRÁCTICA</span><span>03</span></div>
+              <div className="sheet-top">
+                <span>GUÍA PRÁCTICA</span>
+                <span>03</span>
+              </div>
               <p className="sheet-kicker">Antes de ir al mercado</p>
               <h3>Tu lista de compras</h3>
               <ul>
-                <li><span>✓</span>Huevos y pollo</li>
-                <li><span>✓</span>Caraotas y lentejas</li>
-                <li><span>✓</span>Auyama y vegetales</li>
-                <li><span>✓</span>Harina para arepas</li>
-                <li><span>✓</span>Lo necesario para la semana</li>
+                <li>
+                  <span>✓</span>Huevos y pollo
+                </li>
+                <li>
+                  <span>✓</span>Caraotas y lentejas
+                </li>
+                <li>
+                  <span>✓</span>Auyama y vegetales
+                </li>
+                <li>
+                  <span>✓</span>Harina para arepas
+                </li>
+                <li>
+                  <span>✓</span>Lo necesario para la semana
+                </li>
               </ul>
               <div className="list-stamp">Compra con intención</div>
             </article>
           </div>
-          <div className="center-cta"><a className="btn" href="#comprar">Quiero ver el recetario completo</a></div>
-        </div>
-      </section>
-
-      <section className="loot" id="semana">
-        <div className="wrap">
-          <p className="kicker">No compras recetas sueltas</p>
-          <h2>Compras la semana resuelta y la calma de saber qué cocinar.</h2>
-          <p className="lead loot-lead">
-            No más abrir la nevera a las once y pensar “¿y ahora qué hago?”.
-            Aquí encuentras qué comer, qué comprar y cómo servirlo con lo que
-            ya forma parte de tu cocina.
-          </p>
-
-          <div className="loot-grid">
-            <article className="card loot-calendar">
-              <p className="kicker">El calendario</p>
-              <h3>Tu semana deja de ser una pregunta</h3>
-              <div className="week" role="table" aria-label="Menú de 7 días con el mercado del día a día">
-                <div className="week-head" role="row">
-                  <span>Día</span>
-                  <span>Desayuno</span>
-                  <span>Almuerzo</span>
-                  <span>Cena</span>
-                </div>
-                {week.map(([day, breakfast, lunch, dinner]) => (
-                  <div className="week-row" role="row" key={day}>
-                    <strong>{day}</strong>
-                    <span data-meal="Desayuno">{breakfast}</span>
-                    <span data-meal="Almuerzo">{lunch}</span>
-                    <span data-meal="Cena">{dinner}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="fine">Hay un menú diario, otro para cuando el mercado alcanza y uno para el domingo.</p>
-            </article>
-
-            <div className="loot-side">
-              <article className="card">
-                <p className="kicker">Las recetas</p>
-                <h3>50 platos que ya sabes comprar</h3>
-                <ul className="loot-list">
-                  {recipeBlocks.map(([title, text]) => (
-                    <li key={title}>
-                      <strong>{title}</strong>
-                      <span>{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-              <article className="card">
-                <p className="kicker">Los tips</p>
-                <h3>Para no improvisar en la cocina</h3>
-                <ul className="loot-list">
-                  {tips.map(([title, text]) => (
-                    <li key={title}>
-                      <strong>{title}</strong>
-                      <span>{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </div>
-          </div>
-          <div className="loot-cta">
+          <div className="center-cta">
             <a className="btn" href="#comprar">
               Quiero mi recetario
             </a>
@@ -386,9 +344,9 @@ export default async function Home() {
 
       <section className="pains">
         <div className="wrap">
-          <p className="kicker">Nueve formas de llegar hasta aquí</p>
-          <h2>Una de estas es la tuya. El recetario responde las nueve.</h2>
-          <div className="pain-grid">
+          <p className="kicker">Si esto te suena</p>
+          <h2>El recetario responde justo a eso.</h2>
+          <div className="pain-grid pain-grid-short">
             {pains.map((pain) => (
               <article className="card" key={pain.title}>
                 <p className="num">{pain.num}</p>
@@ -405,7 +363,7 @@ export default async function Home() {
           <div className="split-photo">
             <Image
               src="/img/mercado.jpg"
-              alt="Ingredientes caseros con sabores venezolanos: huevos, auyama, pollo, caraotas"
+              alt="Ingredientes caseros: huevos, auyama, pollo, caraotas"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
             />
@@ -414,163 +372,12 @@ export default async function Home() {
             <p className="kicker kicker-gold">El mercado del día a día</p>
             <h2>Huevo, pollo, caraota y auyama. Con eso se hace el libro.</h2>
             <p className="lead">
-              30 recetas son del puesto de siempre. 14 entran cuando alcanza el
-              atún o el aguacate. Solo 6 piden algo de domingo. Si el recetario
-              empieza con quinoa, no es para tu cocina.
+              30 recetas del puesto de siempre. 14 cuando alcanza. Solo 6 de domingo.
+              Si el recetario empieza con quinoa, no es para tu cocina.
             </p>
             <a className="btn" href="#comprar">
               Quiero mi recetario
             </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="comprar-wrap">
-        <div className="wrap include">
-          <div>
-            <p className="kicker">Qué te llevas</p>
-            <h2>El menú de la semana, con lo que ya está en la nevera.</h2>
-            <p className="lead">
-              Por {PRODUCT.priceUsd} dólares
-              {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar cada día.
-              La respuesta sale del mercado que conoces, no de una lista de
-              ingredientes imposibles.
-            </p>
-            <ul className="clean">
-              {includes.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-            <aside className="offer" id="comprar">
-            <div className="offer-ribbon">Recíbelo después de tu pago aprobado</div>
-            <div className="offer-head">
-              <div className="offer-cover">
-                <Image
-                  src="/img/ebook-cover.jpg"
-                  alt="Portada de Mesa Serena"
-                  width={168}
-                  height={224}
-                />
-              </div>
-              <div>
-                <p className="kicker">Tu guía para la mesa</p>
-                <h3>Mesa Serena</h3>
-                <p className="fine">Una guía digital completa. 50 recetas y 6 guías prácticas.</p>
-              </div>
-            </div>
-            <CheckoutForm />
-          </aside>
-        </div>
-      </section>
-
-      <section className="section transform-section">
-        <div className="wrap">
-          <div className="section-intro">
-            <p className="kicker">Lo que cambia en tu día</p>
-            <h2>De pensar “¿qué puedo comer?” a tener una respuesta lista.</h2>
-          </div>
-          <div className="transform-grid">
-            <article className="transform-card before">
-              <span className="transform-label">Sin un plan</span>
-              <h3>La comida se vuelve una preocupación</h3>
-              <ul>
-                <li>Abres la nevera y vuelves a improvisar.</li>
-                <li>Compras sin saber qué alcanza para la semana.</li>
-                <li>Cocinas un plato para todos y otro para ti.</li>
-                <li>Comes con culpa o con miedo a equivocarte.</li>
-              </ul>
-            </article>
-            <div className="transform-arrow" aria-hidden="true">→</div>
-            <article className="transform-card after">
-              <span className="transform-label">Con Mesa Serena</span>
-              <h3>Tu mesa vuelve a sentirse tuya</h3>
-              <ul>
-                <li>Tienes el menú de hoy y de toda la semana.</li>
-                <li>Compras lo que sí se consigue y sí rinde.</li>
-                <li>La familia come lo mismo; cambia tu porción.</li>
-                <li>Vuelves a cocinar comida casera con más tranquilidad.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-tight">
-        <div className="wrap">
-          <p className="kicker">Para todos los bolsillos</p>
-          <h2>Cocinas con el mercado del día a día</h2>
-          <div className="pockets">
-            <article className="pocket featured">
-              <p className="count">30</p>
-              <h3>Diario</h3>
-              <p>
-                Huevo, pollo, caraota, lenteja, sardina, auyama y arepa
-                pequeña. El 80% de tus días, con lo del mercado de siempre.
-              </p>
-            </article>
-            <article className="pocket">
-              <p className="count">14</p>
-              <h3>Cómodo</h3>
-              <p>
-                Atún, aguacate, yogurt, cacao, pescado, asado negro sin papelón.
-                Cuando el mercado alcanza.
-              </p>
-            </article>
-            <article className="pocket">
-              <p className="count">6</p>
-              <h3>Elevado</h3>
-              <p>
-                Quinoa, trucha o salmón, aceite de oliva. Domingo, visita, “me
-                lo merezco”.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="section band">
-        <div className="wrap split">
-          <div>
-            <p className="kicker kicker-gold">Un caldero para toda la casa</p>
-            <h2>
-              Ellos comen pabellón. Tú comes el mismo pabellón, en tu porción.
-            </h2>
-            <p className="lead">
-              Un solo caldero. La arepa más pequeña, tu parte de la carne y la
-              caraota, y la ensalada que acompaña. Sin plato de enferma.
-            </p>
-            <p className="lead">
-              Y si quien cocina no eres tú, sino tu mamá: cómpraselo a su
-              correo. Le llega el recetario con su nombre. Tú pagas. Es el
-              regalo que sí se usa, mejor que otro audio de “cuídate”.
-            </p>
-            <a className="btn" href="#comprar">
-              Quiero mi recetario
-            </a>
-          </div>
-          <div className="split-photo">
-            <Image
-              src="/img/arepa.jpg"
-              alt="Arepa casera con pollo y ensalada"
-              fill
-              sizes="(max-width: 800px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="wrap">
-          <p className="kicker">Dentro del mismo recetario</p>
-          <h2>Las guías para no volver a improvisar</h2>
-          <div className="bonus">
-            {bonuses.map(([title, text]) => (
-              <article className="card" key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -579,10 +386,6 @@ export default async function Home() {
         <div className="wrap faq-wrap">
           <p className="kicker">Si todavía lo estás pensando</p>
           <h2>Preguntas de verdad</h2>
-          <p className="lead faq-lead">
-            Lo que preguntas tú, la que cocina, antes de pagar. Sin letra
-            pequeña y sin promesas de médico.
-          </p>
           <div className="faq">
             {faqs.map((item) => (
               <details key={item.q} open={item.open}>
@@ -592,8 +395,8 @@ export default async function Home() {
             ))}
           </div>
           <p className="faq-note">
-            Pago aprobado = recetario en tu correo y descarga en pantalla.
-            Así de simple.
+            El pago se valida solo. Cuando queda aprobado, el recetario llega al
+            correo y también puedes descargarlo en pantalla.
           </p>
         </div>
       </section>
@@ -610,9 +413,9 @@ export default async function Home() {
           </div>
           <h2>El mercado de todos los días. El calendario. Las 50 recetas.</h2>
           <p className="lead">
-            Huevo, pollo, caraota y auyama. La semana ya armada. Los tips para
-            no improvisar. {PRODUCT.priceUsd} USD
-            {vesLabel ? ` ${vesLabel}` : ""}.
+            {PRODUCT.priceUsd} USD
+            {vesLabel ? ` ${vesLabel}` : ""}. PDF al correo cuando el pago quede
+            aprobado.
           </p>
           <a className="btn btn-lg" href="#comprar">
             Quiero mi recetario
@@ -623,9 +426,10 @@ export default async function Home() {
       <footer>
         <div className="wrap">
           <p>
-            <strong>Mesa Serena</strong> — Recetario de comida casera con sabores venezolanos para personas con
-            diabetes. Producto digital educativo. No diagnostica, no trata y no
-            sustituye atención médica. Pago seguro con Skylink Pay.
+            <strong>Mesa Serena</strong> — Recetario de comida casera con sabores
+            venezolanos para personas con diabetes. Producto digital educativo. No
+            diagnostica, no trata y no sustituye atención médica. Pago seguro con
+            Skylink Pay.
           </p>
         </div>
       </footer>
@@ -650,7 +454,9 @@ export default async function Home() {
             />
           </svg>
         </a>
-        <a className="btn" href="#comprar">Comprar</a>
+        <a className="btn" href="#comprar">
+          Comprar
+        </a>
       </div>
 
       <a

@@ -543,6 +543,116 @@ h3 {
   place-items: center;
 }
 
+.hero-visual-food {
+  min-height: 0;
+}
+
+.hero-visual-food::before {
+  display: none;
+}
+
+.hero-food {
+  position: relative;
+  width: min(520px, 100%);
+}
+
+.hero-food-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 28px 60px rgba(15, 31, 25, 0.18);
+}
+
+.hero-food-book {
+  position: absolute;
+  right: -6%;
+  bottom: 12%;
+  width: min(148px, 32%);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(15, 31, 25, 0.28);
+  border: 3px solid var(--papel);
+  background: var(--papel);
+}
+
+.hero-food-book img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-food-caption {
+  margin-top: 14px;
+  font-family: var(--font-serif), serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--bosque);
+}
+
+.buy-early {
+  padding-top: 12px;
+}
+
+.pay-steps {
+  list-style: none;
+  margin: 16px 0 4px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 8px;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+}
+
+.pay-steps li {
+  font-size: 13px;
+  color: var(--bosque);
+  line-height: 1.4;
+}
+
+.pay-steps strong {
+  color: var(--terracota);
+  margin-right: 4px;
+}
+
+.social-proof {
+  margin-top: 28px;
+  display: grid;
+  gap: 12px;
+}
+
+.social-proof blockquote {
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--papel);
+  border-left: 3px solid var(--oro);
+  border-radius: 0 14px 14px 0;
+}
+
+.social-proof p {
+  margin: 0 0 6px;
+  font-family: var(--font-serif), serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--bosque-profundo);
+  line-height: 1.35;
+}
+
+.social-proof cite {
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pain-grid-short {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .hero-visual::before {
   content: "";
   position: absolute;
@@ -1388,6 +1498,16 @@ footer strong {
   .hero-visual {
     min-height: 0;
     order: -1;
+  }
+
+  .hero-food-book {
+    right: 4%;
+    bottom: 10%;
+    width: min(120px, 30%);
+  }
+
+  .pain-grid-short {
+    grid-template-columns: 1fr;
   }
 
   .book-stage {

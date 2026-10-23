@@ -39,6 +39,26 @@ export async function POST(request: Request) {
 
   const status = body.transaction?.status ?? "";
   const buyOrder = body.transaction?.buyOrder ?? "";
+  if (buyOrder.startsWith("CJ-")) {
+    const target = process.env.CAJA_WEBHOOK_URL?.trim();
+    logFlow("WEBHOOK · pedido de Control de Caja, no se envía el recetario", {
+      buyOrder,
+      reenvia: Boolean(target),
+    });
+    if (target) {
+      await fetch(target, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: rawText,
+      }).catch((error) => {
+        logFlow("WEBHOOK · no se pudo reenviar el pedido de caja", {
+          buyOrder,
+          error: error instanceof Error ? error.message : String(error),
+        });
+      });
+    }
+    return NextResponse.json({ ok: true, delegated: "caja" });
+  }
   const fromSession = customerFromSession(body.transaction?.sessionId);
   let existing = buyOrder ? findOrder(buyOrder) : undefined;
 

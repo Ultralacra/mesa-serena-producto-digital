@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "web/app/api/checkout/status/route.ts": {
-    "mtime": 1792704070.2722647,
-    "seen": 1792708172.6948128,
-    "ast_hash": "c44422634c11b2b7e23fcf216c0f59a8",
+    "mtime": 1792760742.4130113,
+    "seen": 1792772987.7456253,
+    "ast_hash": "8bfaee3a676ec2ff8422af9839de5b0a",
     "semantic_hash": ""
   },
   "web/app/api/rate/route.ts": {
@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "web/app/api/webhooks/skylink/route.ts": {
-    "mtime": 1792704060.4670384,
-    "seen": 1792708172.694817,
-    "ast_hash": "d88c0c782fffa7e028831fbfe4a893b2",
+    "mtime": 1792760741.407266,
+    "seen": 1792772987.7456315,
+    "ast_hash": "7f71da580efc47544d0ec3bd8d3a461a",
     "semantic_hash": ""
   },
   "web/app/gracias/page.tsx": {
@@ -42,21 +42,21 @@
     "semantic_hash": ""
   },
   "web/app/page.tsx": {
-    "mtime": 1792709781.784546,
-    "seen": 1792709955.29485,
-    "ast_hash": "de736d64e0ae4832485e54355c7d1e6d",
+    "mtime": 1792772939.8826387,
+    "seen": 1792772987.7456365,
+    "ast_hash": "5b417e2e23e4d9dde99e72df5a8cdfff",
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
-    "mtime": 1792707871.925807,
-    "seen": 1792708172.6948245,
-    "ast_hash": "4b5a0edd4a63feb24ec20771d6cebabc",
+    "mtime": 1792772869.3815534,
+    "seen": 1792772987.7456412,
+    "ast_hash": "7bd5f2e606609c3a9e9ae39125700da2",
     "semantic_hash": ""
   },
   "web/components/ReturnView.tsx": {
-    "mtime": 1792700101.1294537,
-    "seen": 1792700237.7670293,
-    "ast_hash": "2c81281f1c55e875c057b4359ba33c4a",
+    "mtime": 1792760743.3783824,
+    "seen": 1792772987.745643,
+    "ast_hash": "170426fbb11452f37ca1cb64d3c59e86",
     "semantic_hash": ""
   },
   "web/eslint.config.mjs": {
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "anuncios/guiones-imagen.md": {
-    "mtime": 1792687393.3533263,
-    "seen": 1792696324.0829594,
-    "ast_hash": "0d14219e21be16457e16caf12e0bdef6",
+    "mtime": 1792772958.7390232,
+    "seen": 1792772987.7457106,
+    "ast_hash": "50008cd9468ae09373d739bcfb87b797",
     "semantic_hash": ""
   },
   "anuncios/guiones-video.md": {

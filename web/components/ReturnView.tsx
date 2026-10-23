@@ -14,6 +14,7 @@ type Status = {
   missingCents?: number;
   delivered?: boolean;
   deliveryError?: string;
+  redirect?: string;
   order?: { name: string; email: string; buyOrder: string } | null;
 };
 
@@ -46,6 +47,10 @@ export function ReturnView({
         const res = await fetch(`/api/checkout/status?${query.toString()}`);
         const payload = (await res.json()) as Status;
         console.log("[MESA] USUARIO · estado del pago", { attempt, payload });
+        if (payload.redirect) {
+          window.location.href = payload.redirect;
+          return;
+        }
         if (stop) return;
         setData(payload);
         if (payload.paid || payload.paymentState === "underpaid") {

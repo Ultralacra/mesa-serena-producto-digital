@@ -29,6 +29,9 @@ export function CheckoutForm() {
 
   const emailCheck = validateEmail(email);
   const emailOk = emailTouched && email.trim() !== "" && emailCheck.error === "";
+  const payLabel = quote.equivalentVes
+    ? `Pagar ≈ ${formatVes(quote.equivalentVes)} Bs`
+    : `Pagar ${PRODUCT.priceUsd} USD`;
 
   function checkName(value: string) {
     const message = value.trim().length >= 3 ? "" : "Escribe tu nombre, aunque sea solo el primero.";
@@ -108,6 +111,19 @@ export function CheckoutForm() {
           monto exacto a pagar.
         </p>
       ) : null}
+
+      <ol className="pay-steps" aria-label="Cómo pagar">
+        <li>
+          <strong>1.</strong> Escribes tu nombre y correo
+        </li>
+        <li>
+          <strong>2.</strong> Pagas en bolívares desde tu banco (tasa BCV)
+        </li>
+        <li>
+          <strong>3.</strong> El pago se valida solo: el PDF llega a tu correo
+        </li>
+      </ol>
+
       <label htmlFor="checkout-name">
         Nombre
         <input
@@ -163,11 +179,11 @@ export function CheckoutForm() {
       </p>
       {error ? <p className="form-error">{error}</p> : null}
       <button className="btn btn-lg" type="submit" disabled={saving}>
-        {saving ? "Un momento…" : "Quiero mi recetario"}
+        {saving ? "Un momento…" : payLabel}
       </button>
       <p className="fine">
-        Pagas en bolívares a tasa BCV. Al aprobarse el pago, tu recetario llega
-        a ese correo.
+        Sin Zelle, sin Binance y sin mandar capturas por chat. El pago se valida
+        automáticamente y el recetario llega solo.
       </p>
     </form>
   );

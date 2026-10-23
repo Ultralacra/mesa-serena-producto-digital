@@ -25,6 +25,13 @@ export async function GET(request: Request) {
     const chargeOrder = String(
       (charge.data as Record<string, unknown>).buyOrder ?? buyOrder,
     );
+    if (chargeOrder.startsWith("CJ-")) {
+      const site = (process.env.CAJA_SITE_URL || "http://localhost:3001").replace(/\/$/, "");
+      const next = new URL(`${site}/gracias`);
+      if (token) next.searchParams.set("token_ws", token);
+      next.searchParams.set("buyOrder", chargeOrder);
+      return NextResponse.json({ redirect: next.toString(), paid: false });
+    }
     let order = orderFound;
     if (chargeOrder && buyer.email && !order?.email) {
       saveOrder({
