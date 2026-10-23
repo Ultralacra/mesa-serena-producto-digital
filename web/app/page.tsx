@@ -51,7 +51,7 @@ const quotes = [
     who: "Regalo para la familia",
   },
   {
-    text: "Pagué en bolívares: se validó solo y el PDF llegó al momento.",
+    text: "Pagué en bolívares: se validó solo y el recetario me llegó al momento.",
     who: "Compra desde el celular",
   },
 ];
@@ -64,7 +64,11 @@ const faqs = [
   },
   {
     q: "¿Cuándo me llega el recetario?",
-    a: "En cuanto el sistema valida tu pago (es automático). Te llega un correo con tu recetario digital y, en la pantalla de gracias, también tienes el botón para descargarlo al momento. Si no lo ves en la bandeja, revisa Spam o Promociones.",
+    a: "En cuanto el sistema valida tu pago (es automático). Te llega un correo con tu guía digital y, en la pantalla de gracias, también tienes el botón para descargarlo al momento. Si no lo ves en la bandeja, revisa Spam o Promociones.",
+  },
+  {
+    q: "¿Qué recibo exactamente?",
+    a: "Una guía digital completa: 50 recetas caseras, menú de 7 días, lista de mercado y las guías prácticas. Hecha para abrirla en el celular en la cocina; también la puedes ver en la computadora o imprimir las páginas que más uses.",
   },
   {
     q: "¿Tengo que comprar salmón, quinoa o cosas caras?",
@@ -125,7 +129,7 @@ export default async function Home() {
               <span className="now">{PRODUCT.priceUsd} USD</span>
               {vesLabel ? <span className="ves">{vesLabel}</span> : null}
             </div>
-            <p className="fine">{rateLabel}. Pagas en bolívares. PDF al correo.</p>
+            <p className="fine">{rateLabel}. Pagas en bolívares. Guía digital a tu correo.</p>
             <div className="hero-actions">
               <a className="btn btn-lg" href="#comprar">
                 Quiero mi recetario
@@ -138,7 +142,7 @@ export default async function Home() {
               <span className="chip">50 recetas caseras</span>
               <span className="chip">Menú de 7 días</span>
               <span className="chip">Lista de mercado</span>
-              <span className="chip">PDF al instante</span>
+              <span className="chip">Llega al instante</span>
             </div>
           </div>
           <div className="hero-visual hero-visual-food">
@@ -189,7 +193,7 @@ export default async function Home() {
             </div>
           </div>
           <aside className="offer" id="comprar">
-            <div className="offer-ribbon">Pago validado automático · PDF al correo</div>
+            <div className="offer-ribbon">Pago validado automático · recetario al correo</div>
             <div className="offer-head">
               <div className="offer-cover">
                 <Image
@@ -414,8 +418,8 @@ export default async function Home() {
           <h2>El mercado de todos los días. El calendario. Las 50 recetas.</h2>
           <p className="lead">
             {PRODUCT.priceUsd} USD
-            {vesLabel ? ` ${vesLabel}` : ""}. PDF al correo cuando el pago quede
-            aprobado.
+            {vesLabel ? ` ${vesLabel}` : ""}. La guía digital llega al correo
+            cuando el pago quede aprobado.
           </p>
           <a className="btn btn-lg" href="#comprar">
             Quiero mi recetario

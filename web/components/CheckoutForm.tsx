@@ -120,7 +120,7 @@ export function CheckoutForm() {
           <strong>2.</strong> Pagas en bolívares desde tu banco (tasa BCV)
         </li>
         <li>
-          <strong>3.</strong> El pago se valida solo: el PDF llega a tu correo
+          <strong>3.</strong> El pago se valida solo: el recetario llega a tu correo
         </li>
       </ol>
 

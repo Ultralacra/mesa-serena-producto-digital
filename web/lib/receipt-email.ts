@@ -22,7 +22,7 @@ export function receiptEmail(name: string) {
     "Gracias por la compra. Tu pago quedó aprobado.",
     `${PRODUCT.name} ya es tuyo: 50 recetas criollas, cómo armar el plato, la arepa, tres menús de 7 días y la lista de mercado.`,
     "",
-    "El PDF va adjunto en este correo.",
+    "Tu recetario va adjunto en este correo.",
     "Si no puedes abrirlo, descárgalo aquí:",
     url,
     "",
@@ -53,7 +53,7 @@ export function receiptEmail(name: string) {
             <td style="padding:32px 36px 8px;font-family:Georgia,serif;color:#241c16;font-size:17px;line-height:1.55;">
               <p style="margin:0 0 16px;">Hola ${safeName},</p>
               <p style="margin:0 0 16px;">Tu pago quedó aprobado. Ya es tuyo <strong>${PRODUCT.name}</strong>: 50 recetas criollas, cómo armar el plato, la arepa, tres menús de 7 días y la lista de mercado.</p>
-              <p style="margin:0 0 8px;">El PDF va <strong>adjunto</strong> en este correo. Si no lo ves o no abre, descárgalo con el botón.</p>
+              <p style="margin:0 0 8px;">Tu <strong>recetario</strong> va adjunto en este correo. Si no lo ves o no abre, descárgalo con el botón.</p>
             </td>
           </tr>
           <tr>
