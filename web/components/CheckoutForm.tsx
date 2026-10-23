@@ -2,7 +2,8 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { normalizeEmail, validateEmail } from "@/lib/email";
-import { formatVes, PRODUCT } from "@/lib/product";
+import { LaunchCountdown } from "@/components/LaunchCountdown";
+import { formatVes, isLaunchOfferActive, OFFER, PRODUCT } from "@/lib/product";
 
 type Quote = {
   rate?: number;
@@ -29,6 +30,7 @@ export function CheckoutForm() {
 
   const emailCheck = validateEmail(email);
   const emailOk = emailTouched && email.trim() !== "" && emailCheck.error === "";
+  const launch = isLaunchOfferActive();
   const payLabel = quote.equivalentVes
     ? `Pagar ≈ ${formatVes(quote.equivalentVes)} Bs`
     : `Pagar ${PRODUCT.priceUsd} USD`;
@@ -94,12 +96,17 @@ export function CheckoutForm() {
         Empieza por tu próxima comida. Al aprobarse el pago, recibes el
         recetario directamente en este correo.
       </p>
+      {launch ? (
+        <p className="offer-tag">{OFFER.label}: de {OFFER.compareAtUsd} a {PRODUCT.priceUsd} USD</p>
+      ) : null}
       <div className="price-row">
+        {launch ? <span className="was">{OFFER.compareAtUsd} USD</span> : null}
         <span className="now">{PRODUCT.priceUsd} USD</span>
         {quote.equivalentVes ? (
           <span className="ves">≈ {formatVes(quote.equivalentVes)} Bs</span>
         ) : null}
       </div>
+      {launch ? <LaunchCountdown endsAtIso={OFFER.endsAtIso} /> : null}
       <p className="fine">
         {quote.rate
           ? `Tasa BCV ${formatVes(quote.rate)} · pagas en bolívares.`

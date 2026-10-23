@@ -241,6 +241,15 @@ h3 {
   gap: 14px;
   align-items: baseline;
   margin: 8px 0 10px;
+  flex-wrap: wrap;
+}
+
+.was {
+  font-family: var(--font-serif), serif;
+  font-size: 28px;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
 }
 
 .now {
@@ -254,6 +263,89 @@ h3 {
   font-size: 24px;
   color: var(--bosque);
   font-style: italic;
+}
+
+.offer-tag {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding: 6px 12px;
+  background: var(--crema);
+  border: 1px solid var(--oro);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--bosque);
+}
+
+.offer-tag s {
+  color: var(--muted);
+}
+
+.launch-countdown {
+  margin: 12px 0 4px;
+  padding: 14px 16px;
+  background: var(--bosque);
+  color: var(--crema);
+  border-radius: 16px;
+  max-width: 420px;
+}
+
+.checkout .launch-countdown {
+  max-width: none;
+}
+
+.launch-countdown-label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c8d4ca;
+}
+
+.launch-countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.launch-countdown-grid div {
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+  padding: 8px 4px;
+  background: rgba(244, 238, 227, 0.08);
+  border-radius: 10px;
+}
+
+.launch-countdown-grid strong {
+  font-family: var(--font-serif), serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--crema);
+}
+
+.launch-countdown-grid span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c8d4ca;
+}
+
+.launch-countdown-until {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: #c8d4ca;
+  line-height: 1.35;
+}
+
+.sticky-was {
+  text-decoration: line-through;
+  opacity: 0.55;
+  font-size: 0.78em;
+  margin-right: 2px;
 }
 
 .fine {

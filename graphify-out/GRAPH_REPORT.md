@@ -1,16 +1,16 @@
 # Graph Report - producto digital  (2026-10-23)
 
 ## Corpus Check
-- 294 files · ~801,400 words
+- 295 files · ~801,978 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2119 nodes · 2594 edges · 178 communities (162 shown, 15 thin omitted)
+- 2127 nodes · 2613 edges · 185 communities (169 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f4dc8b06`
+- Built from commit: `6d996145`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -99,7 +99,7 @@
 - 3D Flyover — architecture reference
 - skills/remotion-markup/remotion-maps/techniques/mapbox/TECHNIQUE.md
 - skills/remotion-markup/remotion-maps/techniques/maplibre/TECHNIQUE.md
-- Delaying, trimming
+- Editable video timelines
 - MERIENDAS Y ANTOJOS (39–46)
 - Map Explainer — architecture reference
 - Audio Visualization in Remotion
@@ -125,17 +125,18 @@
 - remotion-best-practices/remotion-markup/remotion-maps/REFERENCE.md
 - MESA SERENA — Catálogo de 50 recetas
 - Mesa Serena — videos para Meta Ads
-- Displaying captions in Remotion
+- logFlow
 - CesiumJS — 3D flyovers in Remotion
 - Using Three.js and React Three Fiber in Remotion
 - Measuring text in Remotion
-- Connected compositions
+- app/page.tsx
 - CesiumJS — 3D flyovers in Remotion
 - remotion-best-practices/remotion-markup/timing.md
 - remotion-render/REFERENCE.md
 - remotion-maps/SKILL.md
 - CesiumJS — 3D flyovers in Remotion
 - Using Three.js and React Three Fiber in Remotion
+- skylink.ts
 - Measuring text in Remotion
 - skills/remotion-markup/remotion-maps/REFERENCE.md
 - CesiumJS — 3D flyovers in Remotion
@@ -161,7 +162,7 @@
 - Moving Map Render Stability
 - Map element data sources
 - Moving Map Render Stability
-- Using calculateMetadata
+- remotion-multimedia/REFERENCE.md
 - Flyover data sources
 - 3D Flyover — troubleshooting
 - remotion-best-practices/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
@@ -170,6 +171,7 @@
 - Flyover data sources
 - 3D Flyover — troubleshooting
 - remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
+- deliver.ts
 - Flyover data sources
 - 3D Flyover — troubleshooting
 - skills/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
@@ -178,6 +180,7 @@
 - Flyover data sources
 - 3D Flyover — troubleshooting
 - skills/remotion-markup/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
+- remotion-best-practices/remotion-saas/rendering.md
 - remotion-best-practices/remotion-markup/images.md
 - remotion-docs/SKILL.md
 - skills/remotion-markup/images.md
@@ -188,10 +191,14 @@
 - skills/remotion-markup/motion-blur.md
 - remotion-studio/SKILL.md
 - remotion-upgrade/SKILL.md
-- remotion-best-practices/remotion-interactivity/timeline-structure.md
+- Delaying, trimming
 - gracias/page.tsx
-- Editable video timelines
+- remotion-best-practices/remotion-markup/video-editing.md
 - Using calculateMetadata
+- Transcribing audio
+- Adding AI voiceover to a Remotion composition
+- Open the preview
+- remotion-docs/REFERENCE.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `logFlow()` - 28 edges
@@ -210,17 +217,17 @@
   web/app/api/admin/login/route.ts → web/lib/log.ts
 - `POST()` --calls--> `sessionCookieOptions()`  [EXTRACTED]
   web/app/api/admin/logout/route.ts → web/lib/admin-auth.ts
-- `GET()` --calls--> `bcvRate()`  [EXTRACTED]
-  web/app/api/rate/route.ts → web/lib/skylink.ts
-- `bs()` --calls--> `formatVes()`  [EXTRACTED]
-  web/components/ReturnView.tsx → web/lib/product.ts
-- `CesiumFlythrough()` --calls--> `smoothFlightPath()`  [EXTRACTED]
-  videos/.agents/skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx → videos/.agents/skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/flight-path.ts
+- `POST()` --calls--> `isAdminRequest()`  [EXTRACTED]
+  web/app/api/admin/sale-link/route.ts → web/lib/admin-auth.ts
+- `POST()` --calls--> `validateEmail()`  [EXTRACTED]
+  web/app/api/admin/sale-link/route.ts → web/lib/email.ts
+- `POST()` --calls--> `validateEmail()`  [EXTRACTED]
+  web/app/api/checkout/route.ts → web/lib/email.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (178 total, 15 thin omitted)
+## Communities (185 total, 15 thin omitted)
 
 ### Community 0 - "MESA SERENA"
 Cohesion: 0.04
@@ -235,8 +242,8 @@ Cohesion: 0.14
 Nodes (11): Adding AI voiceover to a Remotion composition, Delaying audio start, Dynamic composition duration with calculateMetadata, Generating audio with ElevenLabs, Prerequisites, Rendering audio in the component, Getting audio duration, Getting audio duration with Mediabunny (+3 more)
 
 ### Community 3 - "registry.ts"
-Cohesion: 0.05
-Nodes (106): csvEscape(), GET(), POST(), POST(), GET(), GET(), POST(), POST() (+98 more)
+Cohesion: 0.13
+Nodes (32): csvEscape(), GET(), isAdminRequest(), customerFromPayload(), customerFromSession(), dbEnabled(), dbFindPurchase(), dbListPurchases() (+24 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.07
@@ -307,8 +314,8 @@ Cohesion: 0.07
 Nodes (27): remotion, @remotion/cli, @remotion/google-fonts, dependencies, react, react-dom, remotion, @remotion/cli (+19 more)
 
 ### Community 26 - "remotion-best-practices/remotion-markup/transitions.md"
-Cohesion: 0.13
-Nodes (14): Available transition types, Calculating total composition duration, Custom presentation, Duration calculation, Getting the duration of a transition, Mixing transitions and overlays, Overlay example, Overlay props (+6 more)
+Cohesion: 0.08
+Nodes (24): Choose how items share time, Complete example, Editable timeline structure, Give substantial groups their own timelines, Connected compositions, Create the connection, Extract an existing group, Make the component independent of its parent (+16 more)
 
 ### Community 27 - "remotion-best-practices/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx"
 Cohesion: 0.10
@@ -399,8 +406,8 @@ Cohesion: 0.24
 Nodes (11): bearing(), CesiumFlythrough(), CesiumFlythroughProps, clamp(), FlyoverMode, havKm(), lerp(), loadCesium() (+3 more)
 
 ### Community 49 - "remotion-best-practices/SKILL.md"
-Cohesion: 0.08
-Nodes (21): Fetching a page as Markdown, Searching the docs, Workflow, Upgrade Remotion, Captions, Creating a SaaS, automation or application, Creating a video, If you are using another agent client with an in-app browser (+13 more)
+Cohesion: 0.13
+Nodes (13): Upgrade Remotion, Captions, Creating a SaaS, automation or application, Creating a video, Improving Interactivity, Looking up Remotion APIs and documentation, Maps, Multimedia (+5 more)
 
 ### Community 50 - "skills/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx"
 Cohesion: 0.24
@@ -431,8 +438,8 @@ Cohesion: 0.18
 Nodes (11): 29. Crema de auyama (sin crema de leche) — Diario, 30. Caldo de pollo con vegetales — Diario, 31. Ensalada tibia de lentejas — Diario, 32. Sardinas al limón con pepino — Diario, 33. Wrap de lechuga con pollo y queso — Diario, 34. Huevos al plato con tomate y ají — Diario, 35. Sopa de verduras del mercado — Diario, 36. Pescado en salsa de coco light — Cómodo (+3 more)
 
 ### Community 57 - "remotion-captions/REFERENCE.md"
-Cohesion: 0.13
-Nodes (13): Importing .srt subtitles into Remotion, Prerequisites, Reading an .srt file, Using imported captions, Displaying captions, Generating captions, Importing captions, Post-creation (+5 more)
+Cohesion: 0.20
+Nodes (8): Importing .srt subtitles into Remotion, Prerequisites, Reading an .srt file, Using imported captions, Displaying captions, Generating captions, Importing captions, Post-creation
 
 ### Community 58 - "MapTiler maps in Remotion"
 Cohesion: 0.18
@@ -451,7 +458,7 @@ Cohesion: 0.18
 Nodes (11): Choose the source for each map element, Drawing rivers, Files, Hybrid, Keep it minmal, MapTiler maps in Remotion, MapTiler SDK (`@maptiler/sdk`), MapTiler vector (+3 more)
 
 ### Community 62 - "Delaying, trimming"
-Cohesion: 0.22
+Cohesion: 0.25
 Nodes (8): Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate`, `trimBefore`
 
 ### Community 63 - "MapTiler maps in Remotion"
@@ -515,8 +522,8 @@ Cohesion: 0.20
 Nodes (9): Animated flight route example, Basic map example, Camera guidance, Core rules, Lines, Markers and labels, Prerequisites, Rendering (+1 more)
 
 ### Community 78 - "Using audio in Remotion"
-Cohesion: 0.20
-Nodes (10): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+2 more)
+Cohesion: 0.10
+Nodes (17): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+9 more)
 
 ### Community 79 - "Using videos in Remotion"
 Cohesion: 0.20
@@ -538,9 +545,9 @@ Nodes (9): Animated flight route example, Basic map example, Camera guidance, Co
 Cohesion: 0.20
 Nodes (9): Animated flight route example, Basic map example, Camera guidance, Core rules, Lines, Markers and labels, Prerequisites, Rendering (+1 more)
 
-### Community 84 - "Delaying, trimming"
-Cohesion: 0.11
-Nodes (15): Choose the timing boundary, Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate` (+7 more)
+### Community 84 - "Editable video timelines"
+Cohesion: 0.20
+Nodes (7): Choose the timing boundary, Choose the cut behavior, Editable video timelines, Keep synchronized layers on one clock, Place overlays at the scope they span, Preserve the edit when restructuring, Put music segments on a shared track
 
 ### Community 85 - "MERIENDAS Y ANTOJOS (39–46)"
 Cohesion: 0.22
@@ -563,8 +570,8 @@ Cohesion: 0.22
 Nodes (8): 1. The render harness (per frame), 2. Timing model — time-based; beat length derived from the sequences, 3. Provider-vector animation, 4. Custom line animation — reveal + electric draw-head, 5. Country animation — border draws → fill blooms → label rises, 6. Labels — HTML overlay, projected each frame, 7. Camera — fixed map plate for any movement, Map Explainer — architecture reference
 
 ### Community 90 - "remotion-saas/REFERENCE.md"
-Cohesion: 0.12
-Nodes (14): Angular, Choosing a template or a framework, Rendering, Svelte, The `<Player>`, With Vue, Azure Container Apps, Cloudflare Containers (+6 more)
+Cohesion: 0.25
+Nodes (6): Angular, Choosing a template or a framework, Rendering, Svelte, The `<Player>`, With Vue
 
 ### Community 91 - "remotion-best-practices/remotion-markup/compositions.md"
 Cohesion: 0.29
@@ -642,9 +649,9 @@ Nodes (7): 47. Asado negro sin papelón — Cómodo, 48. Pollo al horno estilo b
 Cohesion: 0.29
 Nodes (6): Datos del producto (verificar, no inventar), Flujo de trabajo, Formato Meta Ads, Identidad, Mesa Serena — videos para Meta Ads, Reglas que no se rompen
 
-### Community 110 - "Displaying captions in Remotion"
-Cohesion: 0.40
-Nodes (5): Adding the Basic Captions element, Displaying captions alongside video content, Displaying captions in Remotion, Prerequisites, White-space preservation
+### Community 110 - "logFlow"
+Cohesion: 0.23
+Nodes (26): GET(), POST(), SkylinkWebhook, deliverByRef(), notifyUnderpaid(), notifyUnderpaidByRef(), logFlow(), notifyMailWebhook() (+18 more)
 
 ### Community 111 - "CesiumJS — 3D flyovers in Remotion"
 Cohesion: 0.29
@@ -658,9 +665,9 @@ Nodes (6): Animate using `useCurrentFrame()`, No animations not driven by `useCu
 Cohesion: 0.29
 Nodes (6): Best practices, Checking text overflow, Fitting text to a width, Measuring text dimensions, Measuring text in Remotion, Prerequisites
 
-### Community 114 - "Connected compositions"
-Cohesion: 0.40
-Nodes (5): Connected compositions, Create the connection, Extract an existing group, Make the component independent of its parent, Verify both views
+### Community 114 - "app/page.tsx"
+Cohesion: 0.14
+Nodes (24): faqs, Home(), includes, pains, quotes, CheckoutForm(), checkEmail(), checkName() (+16 more)
 
 ### Community 115 - "CesiumJS — 3D flyovers in Remotion"
 Cohesion: 0.29
@@ -685,6 +692,10 @@ Nodes (7): Build the flight, Camera behavior, CesiumJS — 3D flyovers in Remoti
 ### Community 120 - "Using Three.js and React Three Fiber in Remotion"
 Cohesion: 0.29
 Nodes (6): Animate using `useCurrentFrame()`, No animations not driven by `useCurrentFrame()`, Prerequisites, Using `<Sequence>` inside `<ThreeCanvas>`, Using Three.js and React Three Fiber in Remotion, Using ThreeCanvas
+
+### Community 121 - "skylink.ts"
+Cohesion: 0.21
+Nodes (17): POST(), POST(), GET(), priceQuote(), sessionIdForCustomer(), vesCentsForRate(), createSale(), apiBase() (+9 more)
 
 ### Community 122 - "Measuring text in Remotion"
 Cohesion: 0.29
@@ -786,9 +797,9 @@ Nodes (5): Custom geodata mode, Decision rule, Hybrid mode, Map element data sou
 Cohesion: 0.33
 Nodes (5): Moving Map Render Stability, Plate sizing and sharpness, Required pattern: fixed map plate, Symptom and cause, Verification
 
-### Community 147 - "Using calculateMetadata"
-Cohesion: 0.09
-Nodes (20): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata, Getting video dimensions (+12 more)
+### Community 147 - "remotion-multimedia/REFERENCE.md"
+Cohesion: 0.12
+Nodes (13): Getting video dimensions, Getting video dimensions with Mediabunny, Usage, Using with local files, Using with staticFile in Remotion, Getting video duration, Getting video duration with Mediabunny, In Node.js and Bun (+5 more)
 
 ### Community 148 - "Flyover data sources"
 Cohesion: 0.40
@@ -814,6 +825,10 @@ Nodes (4): City, Flyover data sources, Landscape, Why not extruded buildings
 Cohesion: 0.40
 Nodes (4): 3D Flyover — troubleshooting, Gotchas checklist, Symptom → fix, The headless dead-end (why we render through Remotion)
 
+### Community 156 - "deliver.ts"
+Cohesion: 0.20
+Nodes (14): POST(), deliverRecetario(), logPaidAndMailed(), recetarioAttachment(), sendMail(), transporter(), PaymentEvaluation, toleranceCentsFor() (+6 more)
+
 ### Community 157 - "Flyover data sources"
 Cohesion: 0.40
 Nodes (4): City, Flyover data sources, Landscape, Why not extruded buildings
@@ -838,6 +853,10 @@ Nodes (4): City, Flyover data sources, Landscape, Why not extruded buildings
 Cohesion: 0.40
 Nodes (4): 3D Flyover — troubleshooting, Gotchas checklist, Symptom → fix, The headless dead-end (why we render through Remotion)
 
+### Community 165 - "remotion-best-practices/remotion-saas/rendering.md"
+Cohesion: 0.22
+Nodes (8): Azure Container Apps, Cloudflare Containers, Comparison of SSR methods, GitHub Actions, Plain Node.js APIs, Remotion Lambda, Steps to set up Lambda, Vercel
+
 ### Community 166 - "remotion-best-practices/remotion-markup/images.md"
 Cohesion: 0.50
 Nodes (3): Dynamic image paths, Getting image dimensions, Sizing and positioning
@@ -854,38 +873,54 @@ Nodes (3): Dynamic image paths, Getting image dimensions, Sizing and positioning
 Cohesion: 0.50
 Nodes (3): lines, outDir, root
 
-### Community 177 - "remotion-best-practices/remotion-interactivity/timeline-structure.md"
-Cohesion: 0.22
-Nodes (6): Choose how items share time, Complete example, Editable timeline structure, Give substantial groups their own timelines, Multi-scene videos, Choose the timing boundary
+### Community 177 - "Delaying, trimming"
+Cohesion: 0.25
+Nodes (8): Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate`, `trimBefore`
 
 ### Community 178 - "gracias/page.tsx"
 Cohesion: 0.24
 Nodes (8): Body(), first(), metadata, paymentToken(), bs(), ReturnView(), Status, RECETARIO_URL
 
-### Community 179 - "Editable video timelines"
-Cohesion: 0.33
-Nodes (6): Choose the cut behavior, Editable video timelines, Keep synchronized layers on one clock, Place overlays at the scope they span, Preserve the edit when restructuring, Put music segments on a shared track
-
-### Community 182 - "Using calculateMetadata"
+### Community 179 - "remotion-best-practices/remotion-markup/video-editing.md"
 Cohesion: 0.12
-Nodes (13): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata, Adding AI voiceover to a Remotion composition (+5 more)
+Nodes (12): Adding the Basic Captions element, Displaying captions alongside video content, Displaying captions in Remotion, Prerequisites, White-space preservation, Choose the timing boundary, Choose the cut behavior, Editable video timelines (+4 more)
+
+### Community 180 - "Using calculateMetadata"
+Cohesion: 0.29
+Nodes (7): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata
+
+### Community 181 - "Transcribing audio"
+Cohesion: 0.40
+Nodes (5): Choosing a model, Prerequisites, Transcribing, Transcribing audio, Transcribing in the browser
+
+### Community 182 - "Adding AI voiceover to a Remotion composition"
+Cohesion: 0.33
+Nodes (6): Adding AI voiceover to a Remotion composition, Delaying audio start, Dynamic composition duration with calculateMetadata, Generating audio with ElevenLabs, Prerequisites, Rendering audio in the component
+
+### Community 183 - "Open the preview"
+Cohesion: 0.40
+Nodes (5): If you are using another agent client with an in-app browser, If you are using Cursor, If you do not have an in-app browser, More options, Open the preview
+
+### Community 184 - "remotion-docs/REFERENCE.md"
+Cohesion: 0.50
+Nodes (3): Fetching a page as Markdown, Searching the docs, Workflow
 
 ## Knowledge Gaps
-- **1316 isolated node(s):** `FlyoverMode`, `__dir`, `START`, `clip`, `even` (+1311 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1437 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **1318 isolated node(s):** `FlyoverMode`, `__dir`, `START`, `clip`, `even` (+1313 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1439 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **What connects `FlyoverMode`, `__dir`, `START` to the rest of the system?**
-  _1316 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1318 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `MESA SERENA` be split into smaller, more focused modules?**
   _Cohesion score 0.044444444444444446 - nodes in this community are weakly interconnected._
 - **Should `remotion-best-practices/remotion-markup/voiceover.md` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
 - **Should `registry.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.05112190608373814 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**

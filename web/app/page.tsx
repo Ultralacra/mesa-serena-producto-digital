@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { CheckoutForm } from "@/components/CheckoutForm";
-import { formatVes, PRODUCT, WHATSAPP_URL } from "@/lib/product";
+import { LaunchCountdown } from "@/components/LaunchCountdown";
+import {
+  formatVes,
+  isLaunchOfferActive,
+  OFFER,
+  PRODUCT,
+  WHATSAPP_URL,
+} from "@/lib/product";
 import { bcvRate } from "@/lib/skylink";
 
 async function priceQuote() {
@@ -58,6 +65,10 @@ const quotes = [
 
 const faqs = [
   {
+    q: "¿Por qué veo 7 USD tachados?",
+    a: "El precio regular de referencia es 7 USD. Durante el lanzamiento lo dejas en 5 USD. Cuando cierre la ventana de lanzamiento, vuelve el precio habitual.",
+  },
+  {
     q: "¿Cómo pago y en qué moneda?",
     a: "Pagas en bolívares, al equivalente en dólares a la tasa BCV del día, desde tu banco. El pago se valida automáticamente: no envías capturas ni esperas a que alguien te confirme a mano. Sin Zelle, sin Binance y sin chat.",
     open: true,
@@ -86,6 +97,7 @@ export default async function Home() {
   const rateLabel = quote
     ? `Tasa BCV ${formatVes(quote.rate)}`
     : "Precio en bolívares a tasa BCV al pagar";
+  const launch = isLaunchOfferActive();
 
   return (
     <>
@@ -125,10 +137,18 @@ export default async function Home() {
               Recetario criollo: 50 platos con huevo, pollo, caraota y auyama.
               Menú de 7 días y lista de mercado. Comida de tu casa, no de Miami.
             </p>
+            {launch ? (
+              <p className="offer-tag">
+                {OFFER.label}: <s>{OFFER.compareAtUsd} USD</s> → {PRODUCT.priceUsd}{" "}
+                USD
+              </p>
+            ) : null}
             <div className="price-row">
+              {launch ? <span className="was">{OFFER.compareAtUsd} USD</span> : null}
               <span className="now">{PRODUCT.priceUsd} USD</span>
               {vesLabel ? <span className="ves">{vesLabel}</span> : null}
             </div>
+            {launch ? <LaunchCountdown endsAtIso={OFFER.endsAtIso} /> : null}
             <p className="fine">{rateLabel}. Pagas en bolívares. Guía digital a tu correo.</p>
             <div className="hero-actions">
               <a className="btn btn-lg" href="#comprar">
@@ -175,8 +195,19 @@ export default async function Home() {
             <p className="kicker">Qué te llevas hoy</p>
             <h2>El menú de la semana, con lo que ya está en la nevera.</h2>
             <p className="lead">
-              Por {PRODUCT.priceUsd} dólares
-              {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar cada día.
+              {launch ? (
+                <>
+                  Precio de lanzamiento: de {OFFER.compareAtUsd} a{" "}
+                  <strong>{PRODUCT.priceUsd} USD</strong>
+                  {vesLabel ? ` (${vesLabel})` : ""}. Menú de 7 días, 50 recetas,
+                  lista de mercado y pago que se valida solo.
+                </>
+              ) : (
+                <>
+                  Por {PRODUCT.priceUsd} dólares
+                  {vesLabel ? ` (${vesLabel})` : ""} dejas de improvisar cada día.
+                </>
+              )}
             </p>
             <ul className="clean">
               {includes.map((item) => (
@@ -193,7 +224,11 @@ export default async function Home() {
             </div>
           </div>
           <aside className="offer" id="comprar">
-            <div className="offer-ribbon">Pago validado automático · recetario al correo</div>
+            <div className="offer-ribbon">
+              {launch
+                ? `Lanzamiento · ${OFFER.compareAtUsd} → ${PRODUCT.priceUsd} USD · pago automático`
+                : "Pago validado automático · recetario al correo"}
+            </div>
             <div className="offer-head">
               <div className="offer-cover">
                 <Image
@@ -218,7 +253,7 @@ export default async function Home() {
         <div className="wrap proof-grid">
           <div>
             <strong>{PRODUCT.priceUsd} USD</strong>
-            <span>precio claro</span>
+            <span>{launch ? "precio lanzamiento" : "precio claro"}</span>
           </div>
           <div>
             <strong>50</strong>
@@ -417,7 +452,13 @@ export default async function Home() {
           </div>
           <h2>El mercado de todos los días. El calendario. Las 50 recetas.</h2>
           <p className="lead">
-            {PRODUCT.priceUsd} USD
+            {launch ? (
+              <>
+                <s>{OFFER.compareAtUsd} USD</s> {PRODUCT.priceUsd} USD
+              </>
+            ) : (
+              <>{PRODUCT.priceUsd} USD</>
+            )}
             {vesLabel ? ` ${vesLabel}` : ""}. La guía digital llega al correo
             cuando el pago quede aprobado.
           </p>
@@ -440,8 +481,19 @@ export default async function Home() {
 
       <div className="sticky-cta">
         <span>
-          <strong>{PRODUCT.priceUsd} USD</strong>
-          <small>Guía digital + menú semanal</small>
+          <strong>
+            {launch ? (
+              <>
+                <span className="sticky-was">{OFFER.compareAtUsd}</span>{" "}
+                {PRODUCT.priceUsd} USD
+              </>
+            ) : (
+              <>{PRODUCT.priceUsd} USD</>
+            )}
+          </strong>
+          <small>
+            {launch ? "Precio de lanzamiento · guía + menú" : "Guía digital + menú semanal"}
+          </small>
         </span>
         <a
           className="wa-mini"

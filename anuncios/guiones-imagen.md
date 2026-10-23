@@ -26,7 +26,7 @@ Te dijeron que con diabetes se acabó la arepa. Tranquila. Se acabó la arepa de
 
 Mesa Serena es un recetario criollo para diabetes: 50 recetas con lo de Venezuela. Arepa pequeña, pabellón controlado, pollo, auyama, caraotas. 30 recetas de mercado barato.
 
-5 USD. Pagas en la web. El recetario llega al correo.
+Precio de lanzamiento: de 7 a 5 USD. Pagas en la web. El recetario llega al correo.
 
 Escribe AREPA y te lo aparto.
 
@@ -108,7 +108,7 @@ Enviar mensaje de WhatsApp
 
 **Titular A:** Come criollo. Sin pico.  
 **Titular B:** Arepa sí. Pico no.  
-**Titular C:** 50 recetas. 5 USD. Tu mercado.
+**Titular C:** 50 recetas. De 7 a 5 USD. Tu mercado.
 
 **Descripción A:** Recetario venezolano para diabetes. Guía digital inmediata.  
 **Descripción B:** 30 recetas de mercado barato + menú de 7 días.

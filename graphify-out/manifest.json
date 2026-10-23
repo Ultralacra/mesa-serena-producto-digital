@@ -42,15 +42,15 @@
     "semantic_hash": ""
   },
   "web/app/page.tsx": {
-    "mtime": 1792772939.8826387,
-    "seen": 1792772987.7456365,
-    "ast_hash": "5b417e2e23e4d9dde99e72df5a8cdfff",
+    "mtime": 1792774938.3305168,
+    "seen": 1792774977.7458858,
+    "ast_hash": "08a70abcf3e73cd2dc4854b11344e579",
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
-    "mtime": 1792772869.3815534,
-    "seen": 1792772987.7456412,
-    "ast_hash": "7bd5f2e606609c3a9e9ae39125700da2",
+    "mtime": 1792774900.3160992,
+    "seen": 1792774977.7458904,
+    "ast_hash": "9cea476345b7fe7db52440d8c4784a68",
     "semantic_hash": ""
   },
   "web/components/ReturnView.tsx": {
@@ -102,15 +102,15 @@
     "semantic_hash": ""
   },
   "web/lib/product.ts": {
-    "mtime": 1792707785.8506854,
-    "seen": 1792708172.6948426,
-    "ast_hash": "55ecace9ca3c2fa2ca47d782339a5f41",
+    "mtime": 1792774874.2170005,
+    "seen": 1792774977.7459102,
+    "ast_hash": "02e6f9f62e367aaf27b42230c65e7af9",
     "semantic_hash": ""
   },
   "web/lib/receipt-email.ts": {
-    "mtime": 1792703758.8279905,
-    "seen": 1792708172.694844,
-    "ast_hash": "7794f4e31aa79fd1f5fe01897dfb9cc7",
+    "mtime": 1792773849.083071,
+    "seen": 1792774977.7459116,
+    "ast_hash": "02d7c4aca655093d2a3d368f9d2c8d14",
     "semantic_hash": ""
   },
   "web/lib/skylink.ts": {
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "anuncios/guiones-imagen.md": {
-    "mtime": 1792772958.7390232,
-    "seen": 1792772987.7457106,
-    "ast_hash": "50008cd9468ae09373d739bcfb87b797",
+    "mtime": 1792774962.799971,
+    "seen": 1792774977.7459333,
+    "ast_hash": "304a54d4c5e3f21126a3fb52eb7638ba",
     "semantic_hash": ""
   },
   "anuncios/guiones-video.md": {
@@ -2337,6 +2337,12 @@
     "mtime": 1792708736.829171,
     "seen": 1792709955.2953515,
     "ast_hash": "77ef57e917fda57331872252f82ca934",
+    "semantic_hash": ""
+  },
+  "web/components/LaunchCountdown.tsx": {
+    "mtime": 1792774893.4116316,
+    "seen": 1792774977.745892,
+    "ast_hash": "3fb2ca94d0e1b47dbbe8722881c487c6",
     "semantic_hash": ""
   }
 }
