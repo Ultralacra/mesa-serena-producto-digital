@@ -42,15 +42,15 @@
     "semantic_hash": ""
   },
   "web/app/page.tsx": {
-    "mtime": 1792774938.3305168,
-    "seen": 1792774977.7458858,
-    "ast_hash": "08a70abcf3e73cd2dc4854b11344e579",
+    "mtime": 1792787875.6269379,
+    "seen": 1792787899.1855526,
+    "ast_hash": "2130316d9ad49796342f6d18d5d5fda3",
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
-    "mtime": 1792774900.3160992,
-    "seen": 1792774977.7458904,
-    "ast_hash": "9cea476345b7fe7db52440d8c4784a68",
+    "mtime": 1792787812.7733426,
+    "seen": 1792787899.1855588,
+    "ast_hash": "43437e09abde86a7ebacc78325ddb0ac",
     "semantic_hash": ""
   },
   "web/components/ReturnView.tsx": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "web/lib/product.ts": {
-    "mtime": 1792774874.2170005,
-    "seen": 1792774977.7459102,
-    "ast_hash": "02e6f9f62e367aaf27b42230c65e7af9",
+    "mtime": 1792775041.2776356,
+    "seen": 1792787899.1855805,
+    "ast_hash": "b04c3ba63f396e04b518dfd30e000f92",
     "semantic_hash": ""
   },
   "web/lib/receipt-email.ts": {

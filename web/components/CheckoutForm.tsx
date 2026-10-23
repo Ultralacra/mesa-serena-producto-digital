@@ -3,7 +3,13 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { normalizeEmail, validateEmail } from "@/lib/email";
 import { LaunchCountdown } from "@/components/LaunchCountdown";
-import { formatVes, isLaunchOfferActive, OFFER, PRODUCT } from "@/lib/product";
+import {
+  formatVes,
+  isLaunchOfferActive,
+  OFFER,
+  PRODUCT,
+  WHATSAPP_URL,
+} from "@/lib/product";
 
 type Quote = {
   rate?: number;
@@ -32,8 +38,8 @@ export function CheckoutForm() {
   const emailOk = emailTouched && email.trim() !== "" && emailCheck.error === "";
   const launch = isLaunchOfferActive();
   const payLabel = quote.equivalentVes
-    ? `Pagar ≈ ${formatVes(quote.equivalentVes)} Bs`
-    : `Pagar ${PRODUCT.priceUsd} USD`;
+    ? `Pagar ${formatVes(quote.equivalentVes)} Bs ahora`
+    : `Pagar ${PRODUCT.priceUsd} USD ahora`;
 
   function checkName(value: string) {
     const message = value.trim().length >= 3 ? "" : "Escribe tu nombre, aunque sea solo el primero.";
@@ -92,42 +98,44 @@ export function CheckoutForm() {
 
   return (
     <form className="checkout" onSubmit={pay} noValidate>
-      <p>
-        Empieza por tu próxima comida. Al aprobarse el pago, recibes el
-        recetario directamente en este correo.
+      <p className="checkout-promise">
+        En menos de 1 minuto lo tienes en el correo. Pagas en bolívares; el pago
+        se valida solo.
+      </p>
+      <p className="checkout-value">
+        No es un archivo suelto: <strong>menú de 7 días</strong>,{" "}
+        <strong>50 recetas caseras</strong> y <strong>lista de mercado</strong>.
       </p>
       {launch ? (
-        <p className="offer-tag">{OFFER.label}: de {OFFER.compareAtUsd} a {PRODUCT.priceUsd} USD</p>
+        <p className="offer-tag">
+          {OFFER.label}: de {OFFER.compareAtUsd} a {PRODUCT.priceUsd} USD · hoy
+        </p>
       ) : null}
       <div className="price-row">
         {launch ? <span className="was">{OFFER.compareAtUsd} USD</span> : null}
         <span className="now">{PRODUCT.priceUsd} USD</span>
-        {quote.equivalentVes ? (
-          <span className="ves">≈ {formatVes(quote.equivalentVes)} Bs</span>
-        ) : null}
       </div>
-      {launch ? <LaunchCountdown endsAtIso={OFFER.endsAtIso} /> : null}
-      <p className="fine">
-        {quote.rate
-          ? `Tasa BCV ${formatVes(quote.rate)} · pagas en bolívares.`
-          : quote.message || "Precio en bolívares a tasa BCV al pagar."}
-      </p>
       {quote.equivalentVes ? (
-        <p className="fine">
-          Hoy son <strong>{formatVes(quote.equivalentVes)} Bs</strong>. Ese es el
-          monto exacto a pagar.
+        <p className="ves-big">
+          Hoy pagas <strong>{formatVes(quote.equivalentVes)} Bs</strong>
         </p>
+      ) : (
+        <p className="fine">{quote.message || "Precio en bolívares a tasa BCV al pagar."}</p>
+      )}
+      {launch ? <LaunchCountdown endsAtIso={OFFER.endsAtIso} /> : null}
+      {quote.rate ? (
+        <p className="fine">Tasa BCV {formatVes(quote.rate)}. Sin Zelle ni capturas.</p>
       ) : null}
 
       <ol className="pay-steps" aria-label="Cómo pagar">
         <li>
-          <strong>1.</strong> Escribes tu nombre y correo
+          <strong>1.</strong> Nombre y correo
         </li>
         <li>
-          <strong>2.</strong> Pagas en bolívares desde tu banco (tasa BCV)
+          <strong>2.</strong> Pagas en Bs desde tu banco
         </li>
         <li>
-          <strong>3.</strong> El pago se valida solo: el recetario llega a tu correo
+          <strong>3.</strong> Se valida solo → recetario al correo
         </li>
       </ol>
 
@@ -152,7 +160,7 @@ export function CheckoutForm() {
         </p>
       ) : null}
       <label htmlFor="checkout-email">
-        Correo
+        Correo (aquí llega tu recetario)
         <input
           id="checkout-email"
           type="email"
@@ -181,17 +189,24 @@ export function CheckoutForm() {
       >
         {emailError ||
           (emailOk
-            ? "✓ Bien escrito. A este correo te llega el recetario."
-            : "Revísalo con calma: a este correo te llega el recetario.")}
+            ? "✓ Listo. A este correo te llega la guía."
+            : "Revísalo: a este correo te llega la guía digital.")}
       </p>
       {error ? <p className="form-error">{error}</p> : null}
       <button className="btn btn-lg" type="submit" disabled={saving}>
-        {saving ? "Un momento…" : payLabel}
+        {saving ? "Abriendo el pago…" : payLabel}
       </button>
-      <p className="fine">
-        Sin Zelle, sin Binance y sin mandar capturas por chat. El pago se valida
-        automáticamente y el recetario llega solo.
+      <p className="fine checkout-secure">
+        Pago seguro con Skylink. Validación automática. Sin chats ni capturas.
       </p>
+      <a
+        className="checkout-wa"
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ¿Dudas antes de pagar? Escríbenos por WhatsApp
+      </a>
     </form>
   );
 }

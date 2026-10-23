@@ -186,6 +186,125 @@ footer .whatsapp-inline {
   align-items: center;
 }
 
+.hero-buy {
+  padding-bottom: 36px;
+}
+
+.hero-buy-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 400px);
+  gap: 40px;
+  align-items: start;
+}
+
+.hero-bullets {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.hero-bullets li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 16px;
+  color: var(--bosque);
+  line-height: 1.35;
+}
+
+.hero-bullets li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--terracota);
+  font-weight: 800;
+}
+
+.hero-wa {
+  width: auto;
+  margin-top: 0;
+  padding: 14px 20px;
+}
+
+.hero-ves {
+  margin: 0 0 8px;
+}
+
+.ves-big {
+  margin: 0 0 8px;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(26px, 4vw, 34px);
+  color: var(--bosque);
+  line-height: 1.15;
+}
+
+.ves-big strong {
+  color: var(--terracota);
+  font-weight: 400;
+}
+
+.checkout-promise {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--bosque);
+  line-height: 1.4;
+}
+
+.checkout-value {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.checkout-secure {
+  text-align: center;
+}
+
+.checkout-wa {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--bosque);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.checkout-wa:hover {
+  color: var(--terracota);
+}
+
+.include-after {
+  align-items: start;
+}
+
+.include-photo {
+  margin-top: 28px;
+  width: min(420px, 100%);
+}
+
+.include-photo .hero-food-photo {
+  aspect-ratio: 5 / 4;
+}
+
+.center-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.center-cta .btn-wa {
+  width: auto;
+}
+
 .kicker {
   letter-spacing: 0.28em;
   font-size: 11px;
@@ -1590,6 +1709,25 @@ footer strong {
   .hero-visual {
     min-height: 0;
     order: -1;
+  }
+
+  .hero-buy-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-buy .offer {
+    order: -1;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-wa {
+    width: 100%;
+    text-align: center;
   }
 
   .hero-food-book {
