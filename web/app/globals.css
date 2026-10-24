@@ -1438,6 +1438,7 @@ footer strong {
 }
 
 .wa-float {
+  display: none !important;
   position: fixed;
   right: max(16px, env(safe-area-inset-right));
   bottom: max(16px, env(safe-area-inset-bottom));
@@ -1513,7 +1514,7 @@ footer strong {
 }
 
 .wa-mini {
-  display: none;
+  display: none !important;
   align-items: center;
   justify-content: center;
   width: 46px;
@@ -2371,7 +2372,7 @@ footer strong {
   }
 
   .wa-mini {
-    display: inline-flex;
+    display: none !important;
   }
 
   .wa-float,
