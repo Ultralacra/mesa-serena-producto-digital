@@ -1,7 +1,7 @@
 # Graph Report - producto digital  (2026-10-24)
 
 ## Corpus Check
-- 297 files · ~814,079 words
+- 297 files · ~837,179 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e017f1bd`
+- Built from commit: `8173b524`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -656,7 +656,7 @@ Nodes (6): Best practices, Checking text overflow, Fitting text to a width, Meas
 
 ### Community 114 - "app/page.tsx"
 Cohesion: 0.15
-Nodes (22): faqs, heroBullets, Home(), includes, priceQuote(), quotes, CheckoutForm(), checkEmail() (+14 more)
+Nodes (22): faqs, heroBullets, Home(), includes, priceQuote(), trust, CheckoutForm(), checkEmail() (+14 more)
 
 ### Community 115 - "CesiumJS — 3D flyovers in Remotion"
 Cohesion: 0.29

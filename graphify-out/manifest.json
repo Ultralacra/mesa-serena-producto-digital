@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "web/app/page.tsx": {
-    "mtime": 1792787875.6269379,
-    "seen": 1792787899.1855526,
-    "ast_hash": "2130316d9ad49796342f6d18d5d5fda3",
+    "mtime": 1792868747.4226499,
+    "seen": 1792868797.9074848,
+    "ast_hash": "760929d702e45142caa5c67e06ad7071",
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
@@ -2361,6 +2361,18 @@
     "mtime": 1792808716.0135837,
     "seen": 1792858577.9046857,
     "ast_hash": "bcc731999c534e3cbbf76b7187c06553",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-06-venta-1x1.jpg": {
+    "mtime": 1792859739.8149998,
+    "seen": 1792868797.9080744,
+    "ast_hash": "a0716d5e320914e5eed505e92b882562",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-06-venta-9x16.jpg": {
+    "mtime": 1792859749.1698804,
+    "seen": 1792868797.9080768,
+    "ast_hash": "9662535cdb99ae8aa14a3facd2004fd7",
     "semantic_hash": ""
   }
 }

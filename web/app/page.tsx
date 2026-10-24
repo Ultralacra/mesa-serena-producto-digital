@@ -36,18 +36,22 @@ const includes = [
   "Un solo caldero: la familia come lo mismo, tú tu porción",
 ];
 
-const quotes = [
+const trust = [
   {
-    text: "Por fin un recetario con arepa y caraota, no quinoa.",
-    who: "Compradora en Venezuela",
+    title: "Pago directo desde tu banco",
+    text: "En bolívares, a la tasa BCV del día. No mandas capturas por chat ni esperas que alguien confirme a mano: el sistema valida el pago solo.",
   },
   {
-    text: "Se lo compré a mi mamá. Le llegó al correo con su nombre.",
-    who: "Regalo para la familia",
+    title: "Lo recibes en el momento",
+    text: "Al quedar aprobado, el recetario sale a tu correo y además lo descargas ahí mismo en pantalla. No queda nada pendiente.",
   },
   {
-    text: "Pagué en bolívares: se validó solo y el recetario me llegó al momento.",
-    who: "Compra desde el celular",
+    title: "Hecho para el mercado de aquí",
+    text: "Huevo, pollo, caraota, auyama y arepa. 30 de las 50 recetas salen del puesto de todos los días; nada de quinoa ni salmón.",
+  },
+  {
+    title: "Educativo, sin promesas falsas",
+    text: "No te prometemos bajar la glicemia ni dejar la pastilla. Te damos el plato armado. Tu médico sigue mandando.",
   },
 ];
 
@@ -235,15 +239,15 @@ export default async function Home() {
               </p>
             </div>
           </div>
-          <div className="social-proof" aria-label="Lo que buscan quienes compran">
-            {quotes.map((item) => (
-              <blockquote key={item.who}>
-                <p>“{item.text}”</p>
-                <cite>{item.who}</cite>
-              </blockquote>
+          <div className="trust-list" aria-label="Por qué puedes comprar con tranquilidad">
+            {trust.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
             ))}
             <a className="btn" href="#comprar">
-              Volver a comprar — {PRODUCT.priceUsd} USD
+              Comprar ahora — {PRODUCT.priceUsd} USD
             </a>
           </div>
         </div>

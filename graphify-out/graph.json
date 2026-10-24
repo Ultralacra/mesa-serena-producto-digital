@@ -846,7 +846,7 @@
       "file_type": "code",
       "norm_label": "home()",
       "source_file": "web/app/page.tsx",
-      "source_location": "L78"
+      "source_location": "L82"
     },
     {
       "id": "web_app_page_pricequote",
@@ -6649,7 +6649,7 @@
       "file_type": "code",
       "norm_label": "faqs",
       "source_file": "web/app/page.tsx",
-      "source_location": "L54"
+      "source_location": "L58"
     },
     {
       "id": "web_app_page_herobullets",
@@ -6674,13 +6674,13 @@
       "source_location": "L31"
     },
     {
-      "id": "web_app_page_quotes",
-      "label": "quotes",
+      "id": "web_app_page_trust",
+      "label": "trust",
       "_origin": "ast",
       "community": 114,
       "community_name": "app/page.tsx",
       "file_type": "code",
-      "norm_label": "quotes",
+      "norm_label": "trust",
       "source_file": "web/app/page.tsx",
       "source_location": "L39"
     },
@@ -27113,7 +27113,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/app/page.tsx",
-      "source_location": "L79",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -27125,7 +27125,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/app/page.tsx",
-      "source_location": "L80",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -27137,7 +27137,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/app/page.tsx",
-      "source_location": "L81",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -50278,7 +50278,7 @@
     },
     {
       "source": "web_app_page",
-      "target": "web_app_page_quotes",
+      "target": "web_app_page_trust",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -50295,7 +50295,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/app/page.tsx",
-      "source_location": "L54",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -50306,7 +50306,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/app/page.tsx",
-      "source_location": "L78",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -55410,5 +55410,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e017f1bd35976373a8bdfc8218ad02bddbb5e3c5"
+  "built_at_commit": "8173b52484d90fbde2095ec1ec34d9f351e0c053"
 }
