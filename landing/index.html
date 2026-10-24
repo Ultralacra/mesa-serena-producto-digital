@@ -144,11 +144,10 @@
   </style>
 </head>
 <body>
-  <!-- Cambia el número en wa.me. Formato: código de país + número, sin + ni espacios. -->
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand">MESA SERENA</div>
-      <a class="btn js-wa" href="#comprar">Quiero el recetario — 9 USD</a>
+      <a class="btn" href="#comprar">Quiero el recetario — 9 USD</a>
     </div>
   </header>
 
@@ -322,7 +321,7 @@
     <div class="wrap">
       <h2>Come criollo. Sin pico. Sin comprar como rico.</h2>
       <p class="lead" style="margin:12px auto 22px">50 recetas. Menú de 7 días. Lista de mercado. 9 USD.</p>
-      <a class="btn btn-lg js-wa" href="#comprar" style="margin:0 auto">Quiero Mesa Serena</a>
+      <a class="btn btn-lg" href="#comprar" style="margin:0 auto">Quiero Mesa Serena</a>
     </div>
   </section>
 
@@ -334,18 +333,8 @@
 
   <div class="sticky-cta">
     <span>Mesa Serena · 9 USD</span>
-    <a class="btn js-wa" href="#comprar">Pedir PDF</a>
+    <a class="btn" href="#comprar">Pedir PDF</a>
   </div>
 
-  <script>
-    const WHATSAPP = "5800000000000"; // cámbialo: código de país + número
-    const texto = encodeURIComponent("Hola, quiero Mesa Serena. Palabra: AREPA");
-    const url = "https://wa.me/" + WHATSAPP + "?text=" + texto;
-    document.querySelectorAll(".js-wa").forEach(function (el) {
-      el.setAttribute("href", url);
-      el.setAttribute("target", "_blank");
-      el.setAttribute("rel", "noopener");
-    });
-  </script>
 </body>
 </html>

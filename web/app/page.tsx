@@ -6,7 +6,6 @@ import {
   isLaunchOfferActive,
   OFFER,
   PRODUCT,
-  WHATSAPP_URL,
 } from "@/lib/product";
 import { bcvRate } from "@/lib/skylink";
 
@@ -149,14 +148,6 @@ export default async function Home() {
               <a className="btn btn-lg" href="#comprar">
                 Quiero mi recetario ahora
               </a>
-              <a
-                className="btn btn-wa hero-wa"
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Dudas por WhatsApp
-              </a>
             </div>
             <p className="fine">
               Educativo: acompaña, no reemplaza, a tu médico.
@@ -298,7 +289,7 @@ export default async function Home() {
             </a>
             <a
               className="btn btn-wa hero-wa"
-              href={WHATSAPP_URL}
+              href="#comprar"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -362,7 +353,7 @@ export default async function Home() {
         </span>
         <a
           className="wa-mini"
-          href={WHATSAPP_URL}
+          href="#comprar"
           aria-label="Escribir por WhatsApp"
           title="¿Tienes dudas? Escríbenos por WhatsApp"
           target="_blank"
@@ -382,7 +373,7 @@ export default async function Home() {
 
       <a
         className="wa-float"
-        href={WHATSAPP_URL}
+        href="#comprar"
         aria-label="Escribir por WhatsApp"
         title="¿Tienes dudas? Escríbenos por WhatsApp"
         target="_blank"

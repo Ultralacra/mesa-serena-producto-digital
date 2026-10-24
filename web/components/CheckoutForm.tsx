@@ -9,7 +9,6 @@ import {
   isLaunchOfferActive,
   OFFER,
   PRODUCT,
-  WHATSAPP_URL,
 } from "@/lib/product";
 
 type Quote = {
@@ -205,14 +204,6 @@ export function CheckoutForm() {
       <p className="fine checkout-secure">
         Pago seguro con Skylink. Validación automática. Sin chats ni capturas.
       </p>
-      <a
-        className="checkout-wa"
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ¿Dudas antes de pagar? Escríbenos por WhatsApp
-      </a>
     </form>
   );
 }

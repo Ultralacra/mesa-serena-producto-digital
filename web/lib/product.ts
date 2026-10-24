@@ -18,10 +18,6 @@ export const OFFER = {
     "2026-10-26T23:59:59-04:00",
 };
 
-export const WHATSAPP_URL =
-  "https://wa.me/56937761679?text=" +
-    encodeURIComponent("Hola, quiero mi recetario de Mesa Serena.");
-
 export function isLaunchOfferActive(now = Date.now()) {
   const ends = Date.parse(OFFER.endsAtIso);
   return Number.isFinite(ends) && now < ends;
