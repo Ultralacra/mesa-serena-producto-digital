@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "web/app/layout.tsx": {
-    "mtime": 1792709289.730914,
-    "seen": 1792709955.2948484,
-    "ast_hash": "e1823fa75ea04ced42031712a9252299",
+    "mtime": 1792858540.9033568,
+    "seen": 1792858577.9042788,
+    "ast_hash": "a1ed908d77a48085f3128298f21e9722",
     "semantic_hash": ""
   },
   "web/app/page.tsx": {
@@ -48,15 +48,15 @@
     "semantic_hash": ""
   },
   "web/components/CheckoutForm.tsx": {
-    "mtime": 1792787812.7733426,
-    "seen": 1792787899.1855588,
-    "ast_hash": "43437e09abde86a7ebacc78325ddb0ac",
+    "mtime": 1792858543.6722379,
+    "seen": 1792858577.9042854,
+    "ast_hash": "2d4638349170475a901f501b15ba551f",
     "semantic_hash": ""
   },
   "web/components/ReturnView.tsx": {
-    "mtime": 1792760743.3783824,
-    "seen": 1792772987.745643,
-    "ast_hash": "170426fbb11452f37ca1cb64d3c59e86",
+    "mtime": 1792858554.6425028,
+    "seen": 1792858577.904291,
+    "ast_hash": "5b1d60b140e67df2bc7332c3c8676a88",
     "semantic_hash": ""
   },
   "web/eslint.config.mjs": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "web/lib/product.ts": {
-    "mtime": 1792775041.2776356,
-    "seen": 1792787899.1855805,
-    "ast_hash": "b04c3ba63f396e04b518dfd30e000f92",
+    "mtime": 1792808598.9631267,
+    "seen": 1792858577.9043102,
+    "ast_hash": "02e6f9f62e367aaf27b42230c65e7af9",
     "semantic_hash": ""
   },
   "web/lib/receipt-email.ts": {
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "anuncios/guiones-imagen.md": {
-    "mtime": 1792774962.799971,
-    "seen": 1792774977.7459333,
-    "ast_hash": "304a54d4c5e3f21126a3fb52eb7638ba",
+    "mtime": 1792808610.4093719,
+    "seen": 1792858577.904338,
+    "ast_hash": "0d4206b7078ad51d86830840acbd4e65",
     "semantic_hash": ""
   },
   "anuncios/guiones-video.md": {
@@ -2343,6 +2343,24 @@
     "mtime": 1792774893.4116316,
     "seen": 1792774977.745892,
     "ast_hash": "3fb2ca94d0e1b47dbbe8722881c487c6",
+    "semantic_hash": ""
+  },
+  "web/components/MetaPixel.tsx": {
+    "mtime": 1792858534.4979396,
+    "seen": 1792858577.904289,
+    "ast_hash": "0516b1802d8afa593068ea91b65f62e0",
+    "semantic_hash": ""
+  },
+  "web/lib/meta-pixel.ts": {
+    "mtime": 1792858530.1666195,
+    "seen": 1792858577.9043043,
+    "ast_hash": "aad47d364d92fc9869057c485054237f",
+    "semantic_hash": ""
+  },
+  "anuncios/imagenes/meta-06-venta-lanzamiento.jpg": {
+    "mtime": 1792808716.0135837,
+    "seen": 1792858577.9046857,
+    "ast_hash": "bcc731999c534e3cbbf76b7187c06553",
     "semantic_hash": ""
   }
 }

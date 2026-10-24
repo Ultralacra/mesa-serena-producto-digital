@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { formatVes } from "@/lib/product";
+import { trackMeta } from "@/lib/meta-pixel";
+import { formatVes, PRODUCT } from "@/lib/product";
 
 type Status = {
   paid?: boolean;
@@ -34,6 +35,7 @@ export function ReturnView({
 }) {
   const [data, setData] = useState<Status>({});
   const [loading, setLoading] = useState(Boolean(token));
+  const [purchaseTracked, setPurchaseTracked] = useState(false);
 
   useEffect(() => {
     if (!token) return;
@@ -72,6 +74,28 @@ export function ReturnView({
       stop = true;
     };
   }, [token, buyOrder]);
+
+  useEffect(() => {
+    if (!data.paid || purchaseTracked) return;
+    const orderId = data.order?.buyOrder || buyOrder || token;
+    const key = `mesa-purchase-${orderId}`;
+    if (typeof window !== "undefined" && sessionStorage.getItem(key)) {
+      setPurchaseTracked(true);
+      return;
+    }
+    trackMeta("Purchase", {
+      content_name: PRODUCT.name,
+      currency: "USD",
+      value: PRODUCT.priceUsd,
+      order_id: orderId,
+    });
+    try {
+      sessionStorage.setItem(key, "1");
+    } catch {
+      /* ignore */
+    }
+    setPurchaseTracked(true);
+  }, [data.paid, data.order?.buyOrder, buyOrder, token, purchaseTracked]);
 
   const rawName = data.order?.name?.trim().split(/\s+/)[0] ?? "";
   const name = rawName

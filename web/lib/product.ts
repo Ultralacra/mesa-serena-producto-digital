@@ -15,7 +15,7 @@ export const OFFER = {
   label: "Precio de lanzamiento",
   endsAtIso:
     process.env.NEXT_PUBLIC_LAUNCH_ENDS_AT?.trim() ||
-    "2026-10-23T23:59:59-04:00",
+    "2026-10-26T23:59:59-04:00",
 };
 
 export const WHATSAPP_URL =

@@ -8,6 +8,65 @@ Palabra clave del comentario o DM = la que abre el WhatsApp.
 
 ---
 
+## ANUNCIO VENTA — Web (pegar YA · objetivo Conversiones / Tráfico a web con venta clara)
+
+Usar la misma imagen de comida. Destino: **sitio web** (landing Mesa Serena).  
+Botón CTA: **Comprar** o **Más información**.
+
+### Texto principal (pegar tal cual)
+
+Te dijeron que con diabetes se acabó la comida rica. No.
+Se acabó improvisar.
+
+Mesa Serena es tu guía digital de comida casera venezolana:
+• 50 recetas (huevo, pollo, caraota, auyama — no quinoa)
+• Menú de 7 días ya armado
+• Lista de mercado de la semana
+
+Precio de lanzamiento: de 7 USD a 5 USD.
+Pagas en bolívares a tasa BCV. El pago se valida solo.
+El recetario te llega al correo en minutos.
+
+Toca Comprar y llévatelo hoy.
+
+### Titular
+Recetario Mesa Serena · de 7 a 5 USD
+
+### Descripción
+50 recetas + menú 7 días. Pagas en Bs. Llega al correo.
+
+### Texto EN la imagen (si puedes editar la pieza)
+- MESA SERENA
+- Hook: Menú de 7 días. Sin improvisar.
+- Apoyo: 50 recetas criollas
+- Precio: De 7 a 5 USD
+- Pie: Pagas en Bs · llega al correo
+
+---
+
+## ANUNCIO VENTA — WhatsApp (alternativa si no hay evento Compra)
+
+Botón CTA: **Enviar mensaje de WhatsApp**.
+
+### Texto principal
+
+¿Cocinas con diabetes y cada día improvisas qué comer?
+
+Mesa Serena: guía digital con 50 recetas criollas, menú de 7 días y lista de mercado.
+Precio de lanzamiento: 5 USD (antes 7).
+Pagas en la web en bolívares. Te llega al correo.
+
+Escribe QUIERO y te paso el link para comprar.
+
+### Titular
+De 7 a 5 USD · recetario al correo
+
+### Descripción
+Menú 7 días + 50 recetas. Escribe QUIERO.
+
+---
+
+
 ## IMAGEN 01 — Arepa
 **Archivo:** `imagenes/01-arepa-anuncio.png`  
 **Ángulo:** identidad / “me quitaron la arepa”  

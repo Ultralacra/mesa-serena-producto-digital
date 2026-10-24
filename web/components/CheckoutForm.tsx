@@ -3,6 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { normalizeEmail, validateEmail } from "@/lib/email";
 import { LaunchCountdown } from "@/components/LaunchCountdown";
+import { trackMeta } from "@/lib/meta-pixel";
 import {
   formatVes,
   isLaunchOfferActive,
@@ -89,6 +90,11 @@ export function CheckoutForm() {
         return;
       }
       console.log("[MESA] USUARIO · va a pagar", payload);
+      trackMeta("InitiateCheckout", {
+        content_name: PRODUCT.name,
+        currency: "USD",
+        value: PRODUCT.priceUsd,
+      });
       window.location.assign(payload.url);
     } catch {
       setSaving(false);
